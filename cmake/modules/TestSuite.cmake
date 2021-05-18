@@ -96,13 +96,21 @@ endfunction()
 # usually do not need to call this directly when using `llvm_test_executable`
 # or `llvm_test_library`.
 function(test_suite_add_build_dependencies target)
-  add_dependencies(${target}
-    build-HashProgramOutput.sh
-    build-timeit
-    # build-timeit-target
-    build-fpcmp
-    # build-fpcmp-target
-  )
+  if(ARCH MATCHES "MOS")
+    add_dependencies(${target}
+      build-HashProgramOutput.sh
+      build-timeit
+      build-fpcmp
+    )
+  else()
+    add_dependencies(${target}
+      build-HashProgramOutput.sh
+      build-timeit
+      build-timeit-target
+      build-fpcmp
+      build-fpcmp-target
+    )
+  endif()
 endfunction()
 
 # Internal function that transforms a list of flags to a string and appends
