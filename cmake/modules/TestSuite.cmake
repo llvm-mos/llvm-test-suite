@@ -99,9 +99,8 @@ function(test_suite_add_build_dependencies target)
   add_dependencies(${target}
     build-HashProgramOutput.sh
     build-timeit
-    build-timeit-target
-    # FIXME: Reenable once MOS supports floating point.
-    # build-fpcmp
+    # build-timeit-target
+    build-fpcmp
     # build-fpcmp-target
   )
 endfunction()
