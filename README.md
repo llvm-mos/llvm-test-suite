@@ -13,3 +13,13 @@ Please see the LLVM testing infrastructure guide:
   https://llvm.org/docs/TestSuiteGuide.html
 
 for more information on the contents of this repository.
+
+# CMake Command
+
+The following command can at least allow some of the single-source test cases to
+compile and run (fail). A working (such as it is) compiler and SDK build are
+expected to be in $HOME/llvm-mos and $HOME/llvm-mos-sdk, respectively.
+
+```console
+$ cmake -DCMAKE_C_COMPILER=$HOME/llvm-mos/build/bin/clang -DARCH="MOS" -DTEST_SUITE_ARCH_FLAGS="--target=mos --config $HOME/llvm-mos-sdk/build/sim.cfg" -DTEST_SUITE_SUBDIRS=SingleSource/ -DTEST_SUITE_RUN_UNDER=$HOME/llvm-mos-sdk/build/bin/sim -DTEST_SUITE_USER_MODE_EMULATION=yes -C../cmake/caches/Os.cmake -G Ninja .
+```
