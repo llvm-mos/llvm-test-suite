@@ -1,12 +1,6 @@
 ********************
 ********************
-Failed Tests (32):
-  test-suite :: SingleSource/Regression/C/Regression-C-2003-05-21-UnionTest.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2003-10-12-GlobalVarInitializers.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2008-01-07-LongDouble.test
-  test-suite :: SingleSource/Regression/C/Regression-C-ConstructorDestructorAttributes.test
-  test-suite :: SingleSource/Regression/C/Regression-C-PR1386.test
-  test-suite :: SingleSource/Regression/C/Regression-C-callargs.test
+Failed Tests (26):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-return-addr.test
   test-suite :: SingleSource/UnitTests/2002-05-02-ArgumentTest.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest3.test
@@ -1359,7 +1353,7 @@ Executable Missing Tests (1321):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 316.02s
+Testing Time: 311.00s
   Passed            :  443
-  Failed            :   32
+  Failed            :   26
   Executable Missing: 1321
