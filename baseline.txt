@@ -1,60 +1,37 @@
 ********************
 ********************
-Failed Tests (55):
+Failed Tests (32):
   test-suite :: SingleSource/Regression/C/Regression-C-2003-05-21-UnionTest.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2003-05-22-LocalTypeTest.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2003-05-22-VarSizeArray.test
   test-suite :: SingleSource/Regression/C/Regression-C-2003-10-12-GlobalVarInitializers.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2004-02-03-AggregateCopy.test
   test-suite :: SingleSource/Regression/C/Regression-C-2008-01-07-LongDouble.test
   test-suite :: SingleSource/Regression/C/Regression-C-ConstructorDestructorAttributes.test
-  test-suite :: SingleSource/Regression/C/Regression-C-DuffsDevice.test
   test-suite :: SingleSource/Regression/C/Regression-C-PR1386.test
   test-suite :: SingleSource/Regression/C/Regression-C-callargs.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20070201-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr67037.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr79286.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-return-addr.test
   test-suite :: SingleSource/UnitTests/2002-05-02-ArgumentTest.test
-  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest1.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest3.test
   test-suite :: SingleSource/UnitTests/2002-05-02-ManyArguments.test
-  test-suite :: SingleSource/UnitTests/2002-05-03-NotTest.test
-  test-suite :: SingleSource/UnitTests/2002-08-02-CastTest.test
   test-suite :: SingleSource/UnitTests/2002-08-02-CastTest2.test
-  test-suite :: SingleSource/UnitTests/2002-10-09-ArrayResolution.test
   test-suite :: SingleSource/UnitTests/2002-10-12-StructureArgs.test
   test-suite :: SingleSource/UnitTests/2002-10-12-StructureArgsSimple.test
   test-suite :: SingleSource/UnitTests/2002-10-13-BadLoad.test
-  test-suite :: SingleSource/UnitTests/2002-12-13-MishaTest.test
-  test-suite :: SingleSource/UnitTests/2003-05-02-DependentPHI.test
   test-suite :: SingleSource/UnitTests/2003-05-12-MinIntProblem.test
   test-suite :: SingleSource/UnitTests/2003-05-26-Shorts.test
   test-suite :: SingleSource/UnitTests/2003-05-31-CastToBool.test
   test-suite :: SingleSource/UnitTests/2003-07-06-IntOverflow.test
-  test-suite :: SingleSource/UnitTests/2003-07-08-BitOpsTest.test
   test-suite :: SingleSource/UnitTests/2003-07-10-SignConversions.test
-  test-suite :: SingleSource/UnitTests/2003-09-18-BitFieldTest.test
-  test-suite :: SingleSource/UnitTests/2003-10-29-ScalarReplBug.test
   test-suite :: SingleSource/UnitTests/2004-02-02-NegativeZero.test
-  test-suite :: SingleSource/UnitTests/2004-06-20-StaticBitfieldInit.test
-  test-suite :: SingleSource/UnitTests/2005-11-29-LongSwitch.test
   test-suite :: SingleSource/UnitTests/2006-01-23-UnionInit.test
-  test-suite :: SingleSource/UnitTests/2006-01-29-SimpleIndirectCall.test
   test-suite :: SingleSource/UnitTests/2006-12-01-float_varg.test
   test-suite :: SingleSource/UnitTests/2006-12-11-LoadConstants.test
   test-suite :: SingleSource/UnitTests/2007-01-04-KNR-Args.test
-  test-suite :: SingleSource/UnitTests/2008-04-18-LoopBug.test
-  test-suite :: SingleSource/UnitTests/2008-04-20-LoopBug2.test
   test-suite :: SingleSource/UnitTests/2009-04-16-BitfieldInitialization.test
   test-suite :: SingleSource/UnitTests/FloatPrecision.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/div.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/shr.test
   test-suite :: SingleSource/UnitTests/StructModifyTest.test
-  test-suite :: SingleSource/UnitTests/Threads/2010-12-08-tls.test
   test-suite :: SingleSource/UnitTests/Vector/Vector-build2.test
   test-suite :: SingleSource/UnitTests/Vector/Vector-constpool.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-divides.test
   test-suite :: SingleSource/UnitTests/Vector/Vector-simple.test
 
 ********************
@@ -1382,7 +1359,7 @@ Executable Missing Tests (1321):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 95.78s
-  Passed            :  420
-  Failed            :   55
+Testing Time: 316.02s
+  Passed            :  443
+  Failed            :   32
   Executable Missing: 1321
