@@ -22,7 +22,7 @@ if (ARCH MATCHES "MOS")
     2008-01-07-LongDouble.c
     callargs.c
 
-    # Requires long long (64-bit) int.
+    # Requires long long int print.
     PR1386.c
 
     # Requires GCC constructor/destructor extension.

@@ -1,32 +1,11 @@
 ********************
-********************
-Failed Tests (23):
-  test-suite :: SingleSource/UnitTests/2002-05-02-ArgumentTest.test
-  test-suite :: SingleSource/UnitTests/2002-05-02-ManyArguments.test
-  test-suite :: SingleSource/UnitTests/2002-10-12-StructureArgs.test
-  test-suite :: SingleSource/UnitTests/2002-10-12-StructureArgsSimple.test
-  test-suite :: SingleSource/UnitTests/2002-10-13-BadLoad.test
-  test-suite :: SingleSource/UnitTests/2003-05-12-MinIntProblem.test
-  test-suite :: SingleSource/UnitTests/2003-05-26-Shorts.test
-  test-suite :: SingleSource/UnitTests/2003-05-31-CastToBool.test
-  test-suite :: SingleSource/UnitTests/2003-07-06-IntOverflow.test
+Failed Tests (3):
   test-suite :: SingleSource/UnitTests/2003-07-10-SignConversions.test
-  test-suite :: SingleSource/UnitTests/2004-02-02-NegativeZero.test
   test-suite :: SingleSource/UnitTests/2006-01-23-UnionInit.test
-  test-suite :: SingleSource/UnitTests/2006-12-01-float_varg.test
-  test-suite :: SingleSource/UnitTests/2006-12-11-LoadConstants.test
-  test-suite :: SingleSource/UnitTests/2007-01-04-KNR-Args.test
-  test-suite :: SingleSource/UnitTests/2009-04-16-BitfieldInitialization.test
-  test-suite :: SingleSource/UnitTests/FloatPrecision.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/div.test
-  test-suite :: SingleSource/UnitTests/SignlessTypes/shr.test
-  test-suite :: SingleSource/UnitTests/StructModifyTest.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-build2.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-constpool.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-simple.test
 
 ********************
-Executable Missing Tests (1321):
+Executable Missing Tests (1315):
   test-suite :: SingleSource/Benchmarks/Adobe-C++/functionobjects.test
   test-suite :: SingleSource/Benchmarks/Adobe-C++/loop_unroll.test
   test-suite :: SingleSource/Benchmarks/Adobe-C++/simple_types_constant_folding.test
@@ -1335,12 +1314,6 @@ Executable Missing Tests (1321):
   test-suite :: SingleSource/UnitTests/SignlessTypes/factor.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/rem.test
   test-suite :: SingleSource/UnitTests/TestLoop.test
-  test-suite :: SingleSource/UnitTests/Threads/tls.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-build.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-multiplies.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-sumarray-dbl.test
-  test-suite :: SingleSource/UnitTests/Vector/Vector-sumarray.test
-  test-suite :: SingleSource/UnitTests/Vectorizer/gcc-loops.test
   test-suite :: SingleSource/UnitTests/byval-alignment.test
   test-suite :: SingleSource/UnitTests/conditional-gnu-ext-cxx.test
   test-suite :: SingleSource/UnitTests/conditional-gnu-ext.test
@@ -1350,7 +1323,7 @@ Executable Missing Tests (1321):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 6380.13s
-  Passed            :  446
-  Failed            :   23
-  Executable Missing: 1321
+Testing Time: 1034.29s
+  Passed            :  444
+  Failed            :    3
+  Executable Missing: 1315

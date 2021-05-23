@@ -2,9 +2,11 @@ include(CheckCCompilerFlag)
 
 add_subdirectory(C++11)
 add_subdirectory(SignlessTypes)
-add_subdirectory(Threads)
-add_subdirectory(Vector)
-add_subdirectory(Vectorizer)
+if(NOT ARCH STREQUAL "MOS")
+  add_subdirectory(Threads)
+  add_subdirectory(Vector)
+  add_subdirectory(Vectorizer)
+endif()
 # FIXME: Disable SJLJ tests for now, until EH edges are represented.
 # add_subdirectory(SetjmpLongjmp)
 if(TARGET_OS STREQUAL "Darwin")
@@ -49,6 +51,37 @@ if(NOT ARCH STREQUAL "x86")
     ms_struct-bitfield-init-1.c
     ms_struct_pack_layout.c
     ms_struct_pack_layout-1.c
+  )
+endif()
+if(ARCH STREQUAL "MOS")
+  list(REMOVE_ITEM Source
+    # Permanently disabled tests.
+    # ---------------------------
+
+    # Requires 32-bit int.
+    2002-10-13-BadLoad.c
+    2003-05-12-MinIntProblem.c
+    2003-05-26-Shorts.c
+    2003-07-06-IntOverflow.c
+
+    # Temporarily disabled tests.
+    # ---------------------------
+
+    # Requires printf floating point.
+    2002-05-02-ArgumentTest.c
+    2002-05-02-ManyArguments.c
+    2002-10-12-StructureArgs.c
+    2002-10-12-StructureArgsSimple.c
+    2004-02-02-NegativeZero.c
+    2006-12-01-float_varg.c
+    2007-01-04-KNR-Args.c
+    2009-04-16-BitfieldInitialization.c
+    FloatPrecision.c
+    StructModifyTest.c
+
+    # Requires printf long long.
+    2003-05-31-CastToBool.c
+    2006-12-11-LoadConstants.c
   )
 endif()
 
