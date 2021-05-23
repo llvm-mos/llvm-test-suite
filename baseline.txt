@@ -1,11 +1,8 @@
 ********************
 ********************
-Failed Tests (26):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-return-addr.test
+Failed Tests (23):
   test-suite :: SingleSource/UnitTests/2002-05-02-ArgumentTest.test
-  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest3.test
   test-suite :: SingleSource/UnitTests/2002-05-02-ManyArguments.test
-  test-suite :: SingleSource/UnitTests/2002-08-02-CastTest2.test
   test-suite :: SingleSource/UnitTests/2002-10-12-StructureArgs.test
   test-suite :: SingleSource/UnitTests/2002-10-12-StructureArgsSimple.test
   test-suite :: SingleSource/UnitTests/2002-10-13-BadLoad.test
@@ -1353,7 +1350,7 @@ Executable Missing Tests (1321):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 311.00s
-  Passed            :  443
-  Failed            :   26
+Testing Time: 6380.13s
+  Passed            :  446
+  Failed            :   23
   Executable Missing: 1321
