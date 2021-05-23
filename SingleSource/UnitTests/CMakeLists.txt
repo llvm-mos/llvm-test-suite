@@ -63,6 +63,8 @@ if(ARCH STREQUAL "MOS")
     2003-05-12-MinIntProblem.c
     2003-05-26-Shorts.c
     2003-07-06-IntOverflow.c
+    2003-07-10-SignConversions.c
+    2006-01-23-UnionInit.c
 
     # Temporarily disabled tests.
     # ---------------------------

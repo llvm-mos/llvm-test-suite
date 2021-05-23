@@ -1,10 +1,4 @@
 ********************
-Failed Tests (3):
-  test-suite :: SingleSource/UnitTests/2003-07-10-SignConversions.test
-  test-suite :: SingleSource/UnitTests/2006-01-23-UnionInit.test
-  test-suite :: SingleSource/UnitTests/SignlessTypes/div.test
-
-********************
 Executable Missing Tests (1315):
   test-suite :: SingleSource/Benchmarks/Adobe-C++/functionobjects.test
   test-suite :: SingleSource/Benchmarks/Adobe-C++/loop_unroll.test
@@ -1323,7 +1317,6 @@ Executable Missing Tests (1315):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 1034.29s
+Testing Time: 1020.72s
   Passed            :  444
-  Failed            :    3
   Executable Missing: 1315

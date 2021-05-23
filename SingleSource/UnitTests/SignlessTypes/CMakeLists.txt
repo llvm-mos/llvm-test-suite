@@ -9,6 +9,7 @@ if(ARCH STREQUAL "MOS")
     # ---------------------------
 
     # Requires 32-bit int.
+    div.c
     shr.c
   )
 endif()
