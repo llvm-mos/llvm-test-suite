@@ -1,169 +1,14 @@
 ********************
-Executable Missing Tests (1315):
-  test-suite :: SingleSource/Benchmarks/Adobe-C++/functionobjects.test
-  test-suite :: SingleSource/Benchmarks/Adobe-C++/loop_unroll.test
-  test-suite :: SingleSource/Benchmarks/Adobe-C++/simple_types_constant_folding.test
-  test-suite :: SingleSource/Benchmarks/Adobe-C++/simple_types_loop_invariant.test
-  test-suite :: SingleSource/Benchmarks/Adobe-C++/stepanov_abstraction.test
-  test-suite :: SingleSource/Benchmarks/Adobe-C++/stepanov_vector.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/Large/fasta.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/fannkuch.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/n-body.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/nsieve-bits.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/partialsums.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/puzzle.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/recursive.test
-  test-suite :: SingleSource/Benchmarks/BenchmarkGame/spectral-norm.test
-  test-suite :: SingleSource/Benchmarks/CoyoteBench/almabench.test
-  test-suite :: SingleSource/Benchmarks/CoyoteBench/fftbench.test
-  test-suite :: SingleSource/Benchmarks/CoyoteBench/huffbench.test
-  test-suite :: SingleSource/Benchmarks/CoyoteBench/lpbench.test
-  test-suite :: SingleSource/Benchmarks/Dhrystone/dry.test
-  test-suite :: SingleSource/Benchmarks/Dhrystone/fldry.test
-  test-suite :: SingleSource/Benchmarks/Linpack/linpack-pc.test
-  test-suite :: SingleSource/Benchmarks/McGill/chomp.test
-  test-suite :: SingleSource/Benchmarks/McGill/exptree.test
-  test-suite :: SingleSource/Benchmarks/McGill/misr.test
-  test-suite :: SingleSource/Benchmarks/McGill/queens.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++-EH/spirit.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/Large/ray.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/Large/sphereflake.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/bigfib.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/mandel-text.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/oopack_v1p8.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/stepanov_container.test
-  test-suite :: SingleSource/Benchmarks/Misc-C++/stepanov_v1p2.test
-  test-suite :: SingleSource/Benchmarks/Misc/ReedSolomon.test
-  test-suite :: SingleSource/Benchmarks/Misc/dt.test
-  test-suite :: SingleSource/Benchmarks/Misc/evalloop.test
-  test-suite :: SingleSource/Benchmarks/Misc/fbench.test
-  test-suite :: SingleSource/Benchmarks/Misc/ffbench.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-1.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-2.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-3.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-4.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-5.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-6.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-7.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops-8.test
-  test-suite :: SingleSource/Benchmarks/Misc/flops.test
-  test-suite :: SingleSource/Benchmarks/Misc/fp-convert.test
-  test-suite :: SingleSource/Benchmarks/Misc/himenobmtxpa.test
-  test-suite :: SingleSource/Benchmarks/Misc/lowercase.test
-  test-suite :: SingleSource/Benchmarks/Misc/mandel-2.test
-  test-suite :: SingleSource/Benchmarks/Misc/mandel.test
-  test-suite :: SingleSource/Benchmarks/Misc/matmul_f64_4x4.test
-  test-suite :: SingleSource/Benchmarks/Misc/oourafft.test
-  test-suite :: SingleSource/Benchmarks/Misc/perlin.test
-  test-suite :: SingleSource/Benchmarks/Misc/pi.test
-  test-suite :: SingleSource/Benchmarks/Misc/revertBits.test
-  test-suite :: SingleSource/Benchmarks/Misc/richards_benchmark.test
-  test-suite :: SingleSource/Benchmarks/Misc/salsa20.test
-  test-suite :: SingleSource/Benchmarks/Misc/whetstone.test
-  test-suite :: SingleSource/Benchmarks/Polybench/datamining/correlation/correlation.test
-  test-suite :: SingleSource/Benchmarks/Polybench/datamining/covariance/covariance.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/2mm/2mm.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/3mm/3mm.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/atax/atax.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/bicg/bicg.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/cholesky/cholesky.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/doitgen/doitgen.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/gemm/gemm.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/gemver/gemver.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/gesummv/gesummv.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/mvt/mvt.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/symm/symm.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/syr2k/syr2k.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/syrk/syrk.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/trisolv/trisolv.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/kernels/trmm/trmm.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/solvers/durbin/durbin.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/solvers/dynprog/dynprog.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/solvers/gramschmidt/gramschmidt.test
-  test-suite :: SingleSource/Benchmarks/Polybench/linear-algebra/solvers/lu/lu.test
-  test-suite :: SingleSource/Benchmarks/Polybench/medley/floyd-warshall/floyd-warshall.test
-  test-suite :: SingleSource/Benchmarks/Polybench/medley/reg_detect/reg_detect.test
-  test-suite :: SingleSource/Benchmarks/Polybench/stencils/adi/adi.test
-  test-suite :: SingleSource/Benchmarks/Polybench/stencils/fdtd-2d/fdtd-2d.test
-  test-suite :: SingleSource/Benchmarks/Polybench/stencils/fdtd-apml/fdtd-apml.test
-  test-suite :: SingleSource/Benchmarks/Polybench/stencils/jacobi-1d-imper/jacobi-1d-imper.test
-  test-suite :: SingleSource/Benchmarks/Polybench/stencils/jacobi-2d-imper/jacobi-2d-imper.test
-  test-suite :: SingleSource/Benchmarks/Polybench/stencils/seidel-2d/seidel-2d.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/EH/Shootout-C++-except.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-ackermann.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-ary.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-ary2.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-ary3.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-fibo.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-hash.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-hash2.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-heapsort.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-hello.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-lists.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-lists1.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-matrix.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-methcall.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-moments.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-nestedloop.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-objinst.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-random.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-reversefile.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-sieve.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-spellcheck.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-strcat.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-sumcol.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-wc.test
-  test-suite :: SingleSource/Benchmarks/Shootout-C++/Shootout-C++-wordfreq.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-ackermann.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-ary3.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-fib2.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-hash.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-heapsort.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-hello.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-lists.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-matrix.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-methcall.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-nestedloop.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-objinst.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-random.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-sieve.test
-  test-suite :: SingleSource/Benchmarks/Shootout/Shootout-strcat.test
-  test-suite :: SingleSource/Benchmarks/SmallPT/smallpt.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Bubblesort.test
-  test-suite :: SingleSource/Benchmarks/Stanford/FloatMM.test
-  test-suite :: SingleSource/Benchmarks/Stanford/IntMM.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Oscar.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Perm.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Puzzle.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Queens.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Quicksort.test
-  test-suite :: SingleSource/Benchmarks/Stanford/RealMM.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Towers.test
-  test-suite :: SingleSource/Benchmarks/Stanford/Treesort.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-ConditionalExpr.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-class_hierarchy.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-ctor_dtor_count-2.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-ctor_dtor_count.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-dead_try_block.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-exception_spec_test.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-function_try_block.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-inlined_cleanup.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-recursive-throw.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-simple_rethrow.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-simple_throw.test
-  test-suite :: SingleSource/Regression/C++/EH/Regression-C++-throw_rethrow_test.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-2003-05-14-array-init.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-2003-09-29-NonPODsByValue.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-2008-01-29-ParamAliasesReturn.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-2011-03-28-Bitfield.test
+Failed Tests (1):
+  test-suite :: SingleSource/UnitTests/SignlessTypes/cast2.test
+
+********************
+Executable Missing Tests (1155):
   test-suite :: SingleSource/Regression/C++/Regression-C++-BuiltinTypeInfo.test
   test-suite :: SingleSource/Regression/C++/Regression-C++-fixups.test
   test-suite :: SingleSource/Regression/C++/Regression-C++-global_ctor.test
   test-suite :: SingleSource/Regression/C++/Regression-C++-ofstream_ctor.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-pointer_member.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-pointer_method.test
   test-suite :: SingleSource/Regression/C++/Regression-C++-pointer_method2.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-short_circuit_dtor.test
   test-suite :: SingleSource/Regression/C/Regression-C-2003-05-14-initialize-string.test
   test-suite :: SingleSource/Regression/C/Regression-C-2003-05-21-BitfieldHandling.test
   test-suite :: SingleSource/Regression/C/Regression-C-2003-05-21-UnionBitfields.test
@@ -1303,7 +1148,6 @@ Executable Missing Tests (1315):
   test-suite :: SingleSource/UnitTests/DefaultInitDynArrays.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/Large/cast.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/cast-bug.test
-  test-suite :: SingleSource/UnitTests/SignlessTypes/cast2.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/ccc.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/factor.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/rem.test
@@ -1317,6 +1161,7 @@ Executable Missing Tests (1315):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 1020.72s
-  Passed            :  444
-  Executable Missing: 1315
+Testing Time: 981.21s
+  Passed            :  451
+  Failed            :    1
+  Executable Missing: 1155
