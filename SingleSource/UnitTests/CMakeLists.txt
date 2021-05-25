@@ -74,6 +74,7 @@ if(ARCH STREQUAL "MOS")
     2002-05-02-ManyArguments.c
     2002-10-12-StructureArgs.c
     2002-10-12-StructureArgsSimple.c
+    2003-08-05-CastFPToUint.c
     2004-02-02-NegativeZero.c
     2006-12-01-float_varg.c
     2007-01-04-KNR-Args.c
