@@ -16,6 +16,7 @@ if (ARCH MATCHES "MOS")
     2003-05-21-UnionBitfields.c
     2003-05-21-UnionTest.c
     2003-10-12-GlobalVarInitializers.c
+    globalrefs.c
 
     # Temporarily disabled tests.
     # ---------------------------
