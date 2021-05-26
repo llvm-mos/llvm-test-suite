@@ -1,17 +1,13 @@
 ********************
-Failed Tests (3):
+Failed Tests (5):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050224-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr83362.test
-  test-suite :: SingleSource/UnitTests/2003-08-05-CastFPToUint.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-return-addr.test
+  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest3.test
+  test-suite :: SingleSource/UnitTests/2002-08-02-CastTest2.test
 
 ********************
-Executable Missing Tests (948):
-  test-suite :: SingleSource/Regression/C++/Regression-C++-BuiltinTypeInfo.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-global_ctor.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-ofstream_ctor.test
-  test-suite :: SingleSource/Regression/C++/Regression-C++-pointer_method2.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2003-05-21-BitfieldHandling.test
-  test-suite :: SingleSource/Regression/C/Regression-C-2003-05-21-UnionBitfields.test
+Executable Missing Tests (942):
   test-suite :: SingleSource/Regression/C/Regression-C-2004-03-15-IndirectGoto.test
   test-suite :: SingleSource/Regression/C/Regression-C-2004-08-12-InlinerAndAllocas.test
   test-suite :: SingleSource/Regression/C/Regression-C-2005-05-06-LongLongSignedShift.test
@@ -956,7 +952,7 @@ Executable Missing Tests (948):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 1939.44s
-  Passed            : 656
-  Failed            :   3
-  Executable Missing: 948
+Testing Time: 338.47s
+  Passed            : 653
+  Failed            :   5
+  Executable Missing: 942
