@@ -25,7 +25,9 @@ if (ARCH MATCHES "MOS")
 
     # Requires floating point printf.
     2008-01-07-LongDouble.c
+    bigstack.c
     callargs.c
+    casts.c
 
     # Requires long long int printf.
     PR1386.c
@@ -36,6 +38,9 @@ if (ARCH MATCHES "MOS")
 
     # Requires GCC constructor/destructor extension.
     ConstructorDestructorAttributes.c
+
+    # Requires malloc.
+    badidx.c
   )
 endif()
 
