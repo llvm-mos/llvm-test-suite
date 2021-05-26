@@ -20,12 +20,19 @@ if (ARCH MATCHES "MOS")
     # Temporarily disabled tests.
     # ---------------------------
 
+    # Requires indirect branch.
+    2004-03-15-IndirectGoto.c
+
     # Requires floating point printf.
     2008-01-07-LongDouble.c
     callargs.c
 
-    # Requires long long int print.
+    # Requires long long int printf.
     PR1386.c
+    2005-05-06-LongLongSignedShift.c
+
+    # Requires fprintf.
+    PR491.c
 
     # Requires GCC constructor/destructor extension.
     ConstructorDestructorAttributes.c
