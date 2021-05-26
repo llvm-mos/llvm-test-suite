@@ -14,12 +14,29 @@ Please see the LLVM testing infrastructure guide:
 
 for more information on the contents of this repository.
 
-# CMake Command
+# Running the Tests
 
-The following command can at least allow some of the single-source test cases to
-compile and run (fail). A working (such as it is) compiler and SDK build are
-expected to be in $HOME/llvm-mos and $HOME/llvm-mos-sdk, respectively.
+A working (such as it is) compiler and SDK build are expected to be in
+$HOME/llvm-mos and $HOME/llvm-mos-sdk, respectively. `llvm-lit` in the
+the llvm-mos project should also have been built.
+
+Use CMake to configure the SingleSource directory for MOS:
 
 ```console
+$ mkdir build
+$ cd build
 $ cmake -DCMAKE_C_COMPILER=$HOME/llvm-mos/build/bin/clang -DARCH="MOS" -DTEST_SUITE_ARCH_FLAGS="--target=mos --config $HOME/llvm-mos-sdk/build/sim.cfg" -DTEST_SUITE_SUBDIRS=SingleSource/ -DTEST_SUITE_RUN_UNDER=$HOME/llvm-mos-sdk/build/bin/sim -DTEST_SUITE_USER_MODE_EMULATION=yes -C../cmake/caches/Os.cmake -G Ninja .
+```
+
+Next, you can compile the tests. Most of them will have compile failures, so
+disable ninja's fail-fast mode with `-k`.
+
+```console
+$ ninja -k 0
+```
+
+Finally, run the tests and produce a report.
+
+```console
+$ ../../llvm-mos/build/bin/llvm-lit -v -o results.json .
 ```
