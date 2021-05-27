@@ -17,6 +17,7 @@ if (ARCH MATCHES "MOS")
     2003-05-21-UnionTest.c
     2003-10-12-GlobalVarInitializers.c
     globalrefs.c
+    sumarray2d.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -29,6 +30,9 @@ if (ARCH MATCHES "MOS")
     bigstack.c
     callargs.c
     casts.c
+    matrixTranspose.c
+    test_indvars.c
+    uint64_to_float.c
 
     # Requires long long int printf.
     PR1386.c
@@ -42,6 +46,11 @@ if (ARCH MATCHES "MOS")
 
     # Requires malloc.
     badidx.c
+    sumarray.c
+    sumarraymalloc.c
+
+    # Requires strcmp.
+    testtrace.c
   )
 endif()
 
