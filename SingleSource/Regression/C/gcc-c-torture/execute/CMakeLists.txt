@@ -327,6 +327,27 @@ if(ARCH MATCHES "ARM")
   list(APPEND TestsToSkip ${ARMTestsToSkip})
 endif()
 
+if(ARCH MATCHES "MOS")
+  file(GLOB MOSTestsToSkip CONFIGURE_DEPENDS
+    # Permanently disabled tests.
+    # ---------------------------
+
+    # Requires 16-bit registers.
+    20001009-2.c
+
+    # Temporarily disabled tests.
+    # ---------------------------
+
+    # Requires floating point.
+    20000731-1.c
+
+    # Requires malloc.
+    20000914-1.c
+  )
+
+  list(APPEND TestsToSkip ${MOSTestsToSkip})
+endif()
+
 # Darwin Test Blacklist
 if(TARGET_OS STREQUAL "Darwin")
   file(GLOB DarwinTestsToSkip CONFIGURE_DEPENDS
