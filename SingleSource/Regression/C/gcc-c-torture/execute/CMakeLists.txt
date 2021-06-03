@@ -336,6 +336,11 @@ if(ARCH MATCHES "MOS")
     20001009-2.c
     20030222-1.c
 
+    # Requires 32-bit in.
+    20040629-1.c
+    20040705-1.c
+    20040705-2.c
+
     # Temporarily disabled tests.
     # ---------------------------
 
@@ -352,6 +357,9 @@ if(ARCH MATCHES "MOS")
     # Requires __builtin_return_address.
     20030323-1.c
     20030811-1.c
+
+    # Requires computed goto.
+    20040302-1.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
