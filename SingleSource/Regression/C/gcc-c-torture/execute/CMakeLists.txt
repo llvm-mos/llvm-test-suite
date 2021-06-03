@@ -334,15 +334,24 @@ if(ARCH MATCHES "MOS")
 
     # Requires 16-bit registers.
     20001009-2.c
+    20030222-1.c
 
     # Temporarily disabled tests.
     # ---------------------------
 
     # Requires floating point.
     20000731-1.c
+    20020413-1.c
+    20021120-1.c
+    20030209-1.c
 
     # Requires malloc.
     20000914-1.c
+    20020406-1.c
+
+    # Requires __builtin_return_address.
+    20030323-1.c
+    20030811-1.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
