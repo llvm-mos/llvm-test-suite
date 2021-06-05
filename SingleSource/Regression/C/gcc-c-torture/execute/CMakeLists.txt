@@ -336,10 +336,15 @@ if(ARCH MATCHES "MOS")
     20001009-2.c
     20030222-1.c
 
-    # Requires 32-bit in.
+    # Requires 32-bit int.
     20040629-1.c
     20040705-1.c
     20040705-2.c
+
+    # Requires vector types.
+    20050316-1.c
+    20050604-1.c
+    20060420-1.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -349,10 +354,12 @@ if(ARCH MATCHES "MOS")
     20020413-1.c
     20021120-1.c
     20030209-1.c
+    20071030-1.c
 
     # Requires malloc.
     20000914-1.c
     20020406-1.c
+    20051113-1.c
 
     # Requires __builtin_return_address.
     20030323-1.c
@@ -360,6 +367,7 @@ if(ARCH MATCHES "MOS")
 
     # Requires computed goto.
     20040302-1.c
+    20071210-1.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
