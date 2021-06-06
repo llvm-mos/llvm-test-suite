@@ -1,5 +1,5 @@
 ********************
-Failed Tests (644):
+Failed Tests (647):
   test-suite :: SingleSource/Regression/C/Regression-C-2004-08-12-InlinerAndAllocas.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000112-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000113-1.test
@@ -213,6 +213,7 @@ Failed Tests (644):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920428-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920429-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-1.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-4.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-5.test
@@ -580,6 +581,7 @@ Failed Tests (644):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strct-pack-4.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strct-stdarg-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strct-varg-1.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-17.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-3.test
@@ -632,6 +634,7 @@ Failed Tests (644):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-fp-cmp-4l.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-fp-cmp-6.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mul-subnormal-single-1.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mzero3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mzero6.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-rbug.test
   test-suite :: SingleSource/UnitTests/2002-05-19-DivTest.test
@@ -646,27 +649,13 @@ Failed Tests (644):
   test-suite :: SingleSource/UnitTests/TestLoop.test
 
 ********************
-Executable Missing Tests (217):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20041126-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050218-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050316-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050502-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050604-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050826-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20051113-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20060420-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20071030-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20071210-1.test
-
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20071219-1.test
+Executable Missing Tests (190):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20071220-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20071220-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20081103-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20141022-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20190820-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920302-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920410-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-8.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920810-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-921208-2.test
@@ -705,7 +694,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-loop-ivopts-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-memchr-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-memcpy-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-memcpy-bi.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-postmod-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr15262-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr17377.test
@@ -714,12 +702,9 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr28982b.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr31448.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr34456.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr36038.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr36343.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr37573.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr38533.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr38969.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr39339.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr40022.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr40404.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr41239.test
@@ -728,7 +713,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr41463.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr42614.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr42691.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr43236.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr43385.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr43560.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr44575.test
@@ -746,7 +730,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr53645-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr53645.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr56982.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57130.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57344-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57344-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57344-3.test
@@ -759,7 +742,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr60960.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr64006.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65053-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65369.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65427.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65648.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65956.test
@@ -768,7 +750,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr69097-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr70460.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr70602.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr77718.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr78170.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr79354.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr80421.test
@@ -778,7 +759,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr84524.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr84748.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr86528.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr86714.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr87290.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr89195.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr91137.test
@@ -794,12 +774,9 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-stdarg-3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-stdarg-4.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-stkalign.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-17.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-18.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-5.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strncmp-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ret-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-usad-run.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-user-printf.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-10.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-21.test
@@ -810,7 +787,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-20041213-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-acc1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-acc2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-builtin-nan-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-copysign1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-copysign2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-fp-cmp-1.test
@@ -823,7 +799,6 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-hugeval.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-minuszero.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mzero2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mzero3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mzero4.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-mzero5.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/ieee/GCC-C-execute-ieee-pr28634.test
@@ -867,7 +842,7 @@ Executable Missing Tests (217):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 2148.48s
-  Passed            : 711
-  Failed            : 644
-  Executable Missing: 217
+Testing Time: 1648.03s
+  Passed            : 729
+  Failed            : 647
+  Executable Missing: 190
