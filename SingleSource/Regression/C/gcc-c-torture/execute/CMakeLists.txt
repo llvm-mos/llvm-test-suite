@@ -340,11 +340,16 @@ if(ARCH MATCHES "MOS")
     20040629-1.c
     20040705-1.c
     20040705-2.c
+    20141022-1.c
+    20190820-1.c
 
     # Requires vector types.
     20050316-1.c
     20050604-1.c
     20060420-1.c
+
+    # Requires >=64K objects.
+    920410-1.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -368,6 +373,11 @@ if(ARCH MATCHES "MOS")
     # Requires computed goto.
     20040302-1.c
     20071210-1.c
+    20071220-1.c
+    920302-1.c
+
+    # Requires pointer registers for inline assembly.
+    20071220-2.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
