@@ -656,7 +656,6 @@ Executable Missing Tests (190):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20190820-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920302-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920410-1.test
-
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-8.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920810-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-921208-2.test
@@ -669,6 +668,7 @@ Executable Missing Tests (190):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-960521-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-980605-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-980709-1.test
+
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-981001-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-990130-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-990628-1.test

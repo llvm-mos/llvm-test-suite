@@ -332,9 +332,10 @@ if(ARCH MATCHES "MOS")
     # Permanently disabled tests.
     # ---------------------------
 
-    # Requires 16-bit registers.
+    # Requires int registers.
     20001009-2.c
     20030222-1.c
+    960312-1.c
 
     # Requires 32-bit int.
     20040629-1.c
@@ -350,6 +351,9 @@ if(ARCH MATCHES "MOS")
 
     # Requires >=64K objects.
     920410-1.c
+    921208-2.c
+    930106-1.c
+    980605-1.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -360,11 +364,19 @@ if(ARCH MATCHES "MOS")
     20021120-1.c
     20030209-1.c
     20071030-1.c
+    920501-8.c
+    930513-1.c
+    930614-2.c
+    930930-2.c
+    980709-1.c
 
     # Requires malloc.
     20000914-1.c
     20020406-1.c
     20051113-1.c
+    920810-1.c
+    941014-2.c
+    960521-1.c
 
     # Requires __builtin_return_address.
     20030323-1.c
