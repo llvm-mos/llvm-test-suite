@@ -668,7 +668,6 @@ Executable Missing Tests (190):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-960521-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-980605-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-980709-1.test
-
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-981001-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-990130-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-990628-1.test
@@ -693,6 +692,7 @@ Executable Missing Tests (190):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-gofast.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-ipa-sra-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-loop-ivopts-1.test
+
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-memchr-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-memcpy-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-postmod-1.test

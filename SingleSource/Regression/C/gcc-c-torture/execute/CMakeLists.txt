@@ -336,6 +336,7 @@ if(ARCH MATCHES "MOS")
     20001009-2.c
     20030222-1.c
     960312-1.c
+    990130-1.c
 
     # Requires 32-bit int.
     20040629-1.c
@@ -343,6 +344,9 @@ if(ARCH MATCHES "MOS")
     20040705-2.c
     20141022-1.c
     20190820-1.c
+    bitfld-4.c
+    bitfld-6.c
+    bitfld-7.c
 
     # Requires vector types.
     20050316-1.c
@@ -354,6 +358,15 @@ if(ARCH MATCHES "MOS")
     921208-2.c
     930106-1.c
     980605-1.c
+    ipa-sra-2.c
+
+    # Requires __builtin_prefetch.
+    builtin-prefetch-1.c
+    builtin-prefetch-2.c
+    builtin-prefetch-3.c
+    builtin-prefetch-4.c
+    builtin-prefetch-5.c
+    builtin-prefetch-6.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -369,6 +382,12 @@ if(ARCH MATCHES "MOS")
     930614-2.c
     930930-2.c
     980709-1.c
+    990826-0.c
+    cbrt.c
+    complex-5.c
+    floatunsisf-1.c
+    gofast.c
+    loop-ivopts-1.c
 
     # Requires malloc.
     20000914-1.c
@@ -377,10 +396,14 @@ if(ARCH MATCHES "MOS")
     920810-1.c
     941014-2.c
     960521-1.c
+    990628-1.c
 
     # Requires __builtin_return_address.
     20030323-1.c
     20030811-1.c
+
+    # Requires __builtin_frame_address.
+    frame-address.c
 
     # Requires computed goto.
     20040302-1.c
@@ -390,6 +413,13 @@ if(ARCH MATCHES "MOS")
 
     # Requires pointer registers for inline assembly.
     20071220-2.c
+
+    # Requires setjmp
+    built-in-setjmp.c
+
+    # Requires FILE*
+    fprintf-1.c
+    fprintf-2.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
