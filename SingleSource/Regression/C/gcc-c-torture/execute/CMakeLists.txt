@@ -1,4 +1,6 @@
-add_subdirectory(ieee)
+if(NOT ARCH MATCHES "MOS")
+  add_subdirectory(ieee)
+endif()
 
 # GCC C Torture Suite is conventionally run without warnings
 list(APPEND CFLAGS "-w")
@@ -337,16 +339,58 @@ if(ARCH MATCHES "MOS")
     20030222-1.c
     960312-1.c
     990130-1.c
+    pr38533.c
 
     # Requires 32-bit int.
+    20020404-1.c
+    20021024-1.c
+    20040709-2.c
+    20040709-3.c
+    20040811-1.c
+    20081117-1.c
+    20120919-1.c
+    20181120-1.c
     20040629-1.c
+    20040703-1.c
     20040705-1.c
     20040705-2.c
-    20141022-1.c
-    20190820-1.c
+    20040709-1.c
+    20050316-1.c
+    20061101-1.c
+    pr19689.c
+    pr68648.c
+    pr7284-1.c
+    bitfld-7.c
+    ipa-sra-2.c
+    pr37573.c
+    pr56799.c
+    pr58570.c
+    pr66556.c
+    pr89195.c
+    usmul.c
+    vrp-5.c
+    vrp-6.c
     bitfld-4.c
     bitfld-6.c
-    bitfld-7.c
+    bswap-2.c
+    cmpsi-2.c
+    pr31448.c
+    pr38151.c
+    pr43220.c
+    pr51581-1.c
+    pr67781.c
+    pr70602.c
+    pr29797-1.c
+    pr45262.c
+    pr51581-2.c
+    pr52979-1.c
+    pr52979-2.c
+    pr57124.c
+    pr57344-2.c
+    pr60822.c
+    pr78170.c
+    shiftdi.c
+
 
     # Requires vector types.
     20050316-1.c
@@ -354,11 +398,17 @@ if(ARCH MATCHES "MOS")
     20060420-1.c
 
     # Requires >=64K objects.
+    20030209-1.c
+    20040805-1.c
     920410-1.c
+    921113-1.c
     921208-2.c
     930106-1.c
     980605-1.c
     ipa-sra-2.c
+    memcpy-1.c
+    pr20621-1.c
+    pr28982b.c
 
     # Requires __builtin_prefetch.
     builtin-prefetch-1.c
@@ -372,54 +422,261 @@ if(ARCH MATCHES "MOS")
     # ---------------------------
 
     # Requires floating point.
+    20000223-1.c
+    20000603-1.c
+    20000605-1.c
     20000731-1.c
+    20001017-1.c
+    20001121-1.c
+    20010118-1.c
+    20010605-2.c
+    20011217-1.c
+    20020213-1.c
+    20020225-2.c
+    20020227-1.c
+    20020314-1.c
+    20020321-1.c
+    20020411-1.c
     20020413-1.c
+    20020720-1.c
+    20021118-2.c
     20021120-1.c
+    20030125-1.c
     20030209-1.c
+    20030216-1.c
+    20030714-1.c
+    20030910-1.c
+    20030914-1.c
+    20031003-1.c
+    20031214-1.c
+    20040208-1.c
+    20040709-1.c
+    20040709-2.c
+    20040831-1.c
+    20041113-1.c
+    20050121-1.c
+    20050215-1.c
+    20050316-2.c
+    20050604-1.c
+    20060420-1.c
     20071030-1.c
+    20080117-1.c
+    20080502-1.c
+    20080529-1.c
+    20081103-1.c
+    20100708-1.c
+    20120919-1.c
     920501-8.c
+    920625-1.c
+    920710-1.c
+    920721-2.c
+    920929-1.c
+    921013-1.c
+    921019-2.c
+    921112-1.c
+    921113-1.c
+    921124-1.c
+    921208-1.c
+    921208-2.c
+    930106-1.c
     930513-1.c
+    930603-1.c
+    930608-1.c
+    930614-1.c
     930614-2.c
+    930622-2.c
+    930628-1.c
+    930702-1.c
+    930818-1.c
     930930-2.c
+    941021-1.c
+    960215-1.c
+    960405-1.c
+    960512-1.c
+    960513-1.c
+    961223-1.c
+    980205.c
+    980604-1.c
+    980605-1.c
     980709-1.c
+    990117-1.c
+    990127-2.c
+    990413-2.c
     990826-0.c
+    990829-1.c
+    991019-1.c
+    991030-1.c
+    991228-1.c
+    alias-1.c
+    align-2.c
+    builtin-types-compatible-p.c
     cbrt.c
+    CMakeLists.txt
+    cmpsf-1.c
+    comp-goto-1.c
+    complex-1.c
+    complex-2.c
+    complex-3.c
+    complex-4.c
     complex-5.c
+    complex-6.c
+    complex-7.c
+    conversion.c
+    cvt-1.c
+    float-floor.c
     floatunsisf-1.c
+    func-ptr-1.c
     gofast.c
+    ipa-sra-1.c
+    loop-8.c
     loop-ivopts-1.c
+    lto-tbaa-1.c
+    memcpy-2.c
+    memset-1.c
+    memset-2.c
+    memset-3.c
+    multi-ix.c
+    nest-stdar-1.c
+    postmod-1.c
+    pr15262-1.c
+    pr15262-2.c
+    pr15262.c
+    pr23324.c
+    pr23941.c
+    pr28982a.c
+    pr28982b.c
+    pr29156.c
+    pr29798.c
+    pr35456.c
+    pr35800.c
+    pr36034-1.c
+    pr36034-2.c
+    pr36343.c
+    pr38969.c
+    pr39228.c
+    pr39501.c
+    pr40493.c
+    pr42248.c
+    pr42691.c
+    pr44468.c
+    pr44575.c
+    pr44683.c
+    pr44942.c
+    pr47538.c
+    pr49218.c
+    pr49644.c
+    pr56205.c
+    pr58574.c
+    pr59643.c
+    pr64979.c
+    pr66233.c
+    pr67929_1.c
+    pr68390.c
+    pr79043.c
+    pr79354.c
+    pr85331.c
+    regstack-1.c
+    scal-to-vec1.c
+    scal-to-vec3.c
+    stdarg-1.c
+    stdarg-2.c
+    stdarg-3.c
+    stdarg-4.c
+    strcmp-1.c
+    strcpy-1.c
+    strct-pack-1.c
+    strlen-1.c
+    strncmp-1.c
+    struct-aliasing-1.c
+    struct-ret-1.c
+    va-arg-12.c
+    va-arg-15.c
+    va-arg-16.c
+    va-arg-17.c
+    va-arg-18.c
+    va-arg-26.c
+    va-arg-5.c
+    va-arg-6.c
+    va-arg-7.c
+    va-arg-pack-1.c
+    va-arg-trap-1.c
 
     # Requires malloc.
     20000914-1.c
+    20001203-2.c
     20020406-1.c
-    20051113-1.c
+    20071018-1.c
+    20071120-1.c
     920810-1.c
     941014-2.c
+    20051113-1.c
+    pr84339.c
+    pr84478.c
     960521-1.c
+    pr43008.c
     990628-1.c
+    pr36765.c
+    pr41395-1.c
+    pr41463.c
+    pr42614.c
+    strlen-7.c
+    CMakeLists.txt
+    comp-goto-1.c
+    pr15262-1.c
+    pr41395-2.c
+    pr90949.c
+    va-arg-21.c
 
     # Requires __builtin_return_address.
+    20010122-1.c
     20030323-1.c
     20030811-1.c
+    pr17377.c
 
     # Requires __builtin_frame_address.
     frame-address.c
 
     # Requires computed goto.
     20040302-1.c
+    20041214-1.c
     20071210-1.c
     20071220-1.c
     920302-1.c
+    920501-3.c
+    920501-4.c
+    920501-5.c
+    980526-1.c
+    comp-goto-1.c
+    comp-goto-2.c
+    pr70460.c
 
     # Requires pointer registers for inline assembly.
     20071220-2.c
 
     # Requires setjmp
     built-in-setjmp.c
+    pr56982.c
+    pr84521.c
 
     # Requires FILE*
     fprintf-1.c
     fprintf-2.c
+    printf-2.c
+    user-printf.c
+    vfprintf-1.c
+
+    # Requires qsort
+    pr34456.c
+
+    # Requres "g" inline asm contraint.
+    pr40022.c
+    pr51933.c
+    pr56866.c
+    pr65053-2.c
+    pr68328.c
+    pr78726.c
+    pr81588.c
+    pr82954.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
