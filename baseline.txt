@@ -537,23 +537,7 @@ Failed Tests (535):
   test-suite :: SingleSource/UnitTests/TestLoop.test
 
 ********************
-Executable Missing Tests (63):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr40404.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr41239.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr43385.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr43560.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr45695.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr49279.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr49390.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr52286.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr53645-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr53645.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57344-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57344-3.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr57344-4.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr58831.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr60960.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr64006.test
+Executable Missing Tests (46):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65427.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65648.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65956.test
@@ -588,7 +572,6 @@ Executable Missing Tests (63):
   test-suite :: SingleSource/UnitTests/2007-04-25-weak.test
   test-suite :: SingleSource/UnitTests/2008-07-13-InlineSetjmp.test
   test-suite :: SingleSource/UnitTests/2009-12-07-StructReturn.test
-  test-suite :: SingleSource/UnitTests/2010-05-24-BitfieldTest.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-006.test
   test-suite :: SingleSource/UnitTests/AtomicOps.test
   test-suite :: SingleSource/UnitTests/C++11/stdthreadbug.test
@@ -603,7 +586,7 @@ Executable Missing Tests (63):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 1304.56s
-  Passed            : 657
+Testing Time: 1316.01s
+  Passed            : 661
   Failed            : 535
-  Executable Missing:  63
+  Executable Missing:  46

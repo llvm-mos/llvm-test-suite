@@ -340,6 +340,10 @@ if(ARCH MATCHES "MOS")
     960312-1.c
     990130-1.c
     pr38533.c
+    pr41239.c
+    pr43385.c
+    pr45695.c
+    pr52286.c
 
     # Requires 32-bit int.
     20020404-1.c
@@ -392,12 +396,19 @@ if(ARCH MATCHES "MOS")
     pr60822.c
     pr78170.c
     shiftdi.c
+    pr57344-1.c
+    pr57344-3.c
+    pr57344-4.c
 
 
     # Requires vector types.
     20050316-1.c
     20050604-1.c
     20060420-1.c
+    pr53645-2.c
+    pr53645.c
+    pr60960.c
+
 
     # Requires >=64K objects.
     20030209-1.c
@@ -654,6 +665,9 @@ if(ARCH MATCHES "MOS")
 
     # Requires pointer registers for inline assembly.
     20071220-2.c
+    pr43560.c
+    pr49279.c
+    pr49390.c
 
     # Requires setjmp
     built-in-setjmp.c
