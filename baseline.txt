@@ -1,5 +1,5 @@
 ********************
-Failed Tests (536):
+Failed Tests (535):
   test-suite :: SingleSource/Regression/C/Regression-C-2004-08-12-InlinerAndAllocas.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000112-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000113-1.test
@@ -189,8 +189,6 @@ Failed Tests (536):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920428-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920429-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-6.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-9.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920506-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920520-1.test
@@ -524,39 +522,27 @@ Failed Tests (536):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-widechar-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-widechar-3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-zerolen-1.test
+  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
   test-suite :: SingleSource/UnitTests/2002-05-19-DivTest.test
+  test-suite :: SingleSource/UnitTests/2003-05-31-CastToBool.test
+  test-suite :: SingleSource/UnitTests/2003-05-31-LongShifts.test
   test-suite :: SingleSource/UnitTests/2003-07-09-SignedArgs.test
   test-suite :: SingleSource/UnitTests/2005-05-13-SDivTwo.test
   test-suite :: SingleSource/UnitTests/2006-02-04-DivRem.test
-  test-suite :: SingleSource/UnitTests/2020-01-06-coverage-002.test
+  test-suite :: SingleSource/UnitTests/2006-12-11-LoadConstants.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-003.test
-  test-suite :: SingleSource/UnitTests/2020-01-06-coverage-004.test
-  test-suite :: SingleSource/UnitTests/2020-01-06-coverage-005.test
-  test-suite :: SingleSource/UnitTests/2020-01-06-coverage-008.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-009.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/cast-bug.test
   test-suite :: SingleSource/UnitTests/TestLoop.test
+  test-suite :: SingleSource/UnitTests/initp1.test
 
 ********************
-Executable Missing Tests (31):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-10.test
-  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
-  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest2.test
-  test-suite :: SingleSource/UnitTests/2002-08-19-CodegenBug.test
-  test-suite :: SingleSource/UnitTests/2003-04-22-Switch.test
-  test-suite :: SingleSource/UnitTests/2003-05-07-VarArgs.test
-  test-suite :: SingleSource/UnitTests/2003-05-14-AtExit.test
-  test-suite :: SingleSource/UnitTests/2003-05-31-LongShifts.test
-  test-suite :: SingleSource/UnitTests/2003-07-09-LoadShorts.test
-  test-suite :: SingleSource/UnitTests/2003-08-11-VaListArg.test
-  test-suite :: SingleSource/UnitTests/2004-11-28-GlobalBoolLayout.test
+Executable Missing Tests (18):
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-2.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-6.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr40404.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr64006.test
   test-suite :: SingleSource/UnitTests/2005-05-11-Popcount-ffs-fls.test
-  test-suite :: SingleSource/UnitTests/2005-05-12-Int64ToFP.test
-  test-suite :: SingleSource/UnitTests/2005-07-15-Bitfield-ABI.test
-  test-suite :: SingleSource/UnitTests/2005-07-17-INT-To-FP.test
-  test-suite :: SingleSource/UnitTests/2007-03-02-VaCopy.test
-  test-suite :: SingleSource/UnitTests/2007-04-25-weak.test
-
   test-suite :: SingleSource/UnitTests/2008-07-13-InlineSetjmp.test
   test-suite :: SingleSource/UnitTests/2009-12-07-StructReturn.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-006.test
@@ -567,13 +553,12 @@ Executable Missing Tests (31):
   test-suite :: SingleSource/UnitTests/SignlessTypes/ccc.test
   test-suite :: SingleSource/UnitTests/SignlessTypes/rem.test
   test-suite :: SingleSource/UnitTests/byval-alignment.test
-  test-suite :: SingleSource/UnitTests/initp1.test
   test-suite :: SingleSource/UnitTests/matrix-types-spec.test
   test-suite :: SingleSource/UnitTests/member-function-pointers.test
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 1331.88s
-  Passed            : 665
-  Failed            : 536
-  Executable Missing:  31
+Testing Time: 1344.79s
+  Passed            : 674
+  Failed            : 535
+  Executable Missing:  18
