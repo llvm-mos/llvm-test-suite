@@ -552,6 +552,7 @@ Executable Missing Tests (46):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-simd-6.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-stkalign.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-5.test
+
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-10.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest2.test

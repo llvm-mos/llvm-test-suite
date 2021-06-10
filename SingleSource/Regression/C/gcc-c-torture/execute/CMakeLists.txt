@@ -344,6 +344,9 @@ if(ARCH MATCHES "MOS")
     pr43385.c
     pr45695.c
     pr52286.c
+    pr65648.c
+    pr84524.c
+    stkalign.c
 
     # Requires 32-bit int.
     20020404-1.c
@@ -408,6 +411,10 @@ if(ARCH MATCHES "MOS")
     pr53645-2.c
     pr53645.c
     pr60960.c
+    pr65427.c
+    scal-to-vec2.c
+    simd-5.c
+    simd-6.c
 
 
     # Requires >=64K objects.
@@ -430,6 +437,9 @@ if(ARCH MATCHES "MOS")
     builtin-prefetch-4.c
     builtin-prefetch-5.c
     builtin-prefetch-6.c
+
+    # Requires __int128
+    pr84748.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -668,6 +678,7 @@ if(ARCH MATCHES "MOS")
     pr43560.c
     pr49279.c
     pr49390.c
+    pr80421.c
 
     # Requires setjmp
     built-in-setjmp.c
@@ -693,6 +704,7 @@ if(ARCH MATCHES "MOS")
     pr78726.c
     pr81588.c
     pr82954.c
+    pr65956.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
