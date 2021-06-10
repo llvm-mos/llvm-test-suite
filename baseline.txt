@@ -546,7 +546,6 @@ Executable Missing Tests (31):
   test-suite :: SingleSource/UnitTests/2003-04-22-Switch.test
   test-suite :: SingleSource/UnitTests/2003-05-07-VarArgs.test
   test-suite :: SingleSource/UnitTests/2003-05-14-AtExit.test
-
   test-suite :: SingleSource/UnitTests/2003-05-31-LongShifts.test
   test-suite :: SingleSource/UnitTests/2003-07-09-LoadShorts.test
   test-suite :: SingleSource/UnitTests/2003-08-11-VaListArg.test
@@ -557,6 +556,7 @@ Executable Missing Tests (31):
   test-suite :: SingleSource/UnitTests/2005-07-17-INT-To-FP.test
   test-suite :: SingleSource/UnitTests/2007-03-02-VaCopy.test
   test-suite :: SingleSource/UnitTests/2007-04-25-weak.test
+
   test-suite :: SingleSource/UnitTests/2008-07-13-InlineSetjmp.test
   test-suite :: SingleSource/UnitTests/2009-12-07-StructReturn.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-006.test
