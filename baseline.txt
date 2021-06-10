@@ -1,5 +1,5 @@
 ********************
-Failed Tests (535):
+Failed Tests (536):
   test-suite :: SingleSource/Regression/C/Regression-C-2004-08-12-InlinerAndAllocas.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000112-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000113-1.test
@@ -526,6 +526,7 @@ Failed Tests (535):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-zerolen-1.test
   test-suite :: SingleSource/UnitTests/2002-05-19-DivTest.test
   test-suite :: SingleSource/UnitTests/2003-07-09-SignedArgs.test
+  test-suite :: SingleSource/UnitTests/2005-05-13-SDivTwo.test
   test-suite :: SingleSource/UnitTests/2006-02-04-DivRem.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-002.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-003.test
@@ -537,22 +538,7 @@ Failed Tests (535):
   test-suite :: SingleSource/UnitTests/TestLoop.test
 
 ********************
-Executable Missing Tests (46):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65427.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65648.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr65956.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr69097-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr80421.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr84524.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr84748.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr86528.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr87290.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-scal-to-vec2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-simd-5.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-simd-6.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-stkalign.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-5.test
-
+Executable Missing Tests (31):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-10.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest2.test
@@ -566,7 +552,6 @@ Executable Missing Tests (46):
   test-suite :: SingleSource/UnitTests/2004-11-28-GlobalBoolLayout.test
   test-suite :: SingleSource/UnitTests/2005-05-11-Popcount-ffs-fls.test
   test-suite :: SingleSource/UnitTests/2005-05-12-Int64ToFP.test
-  test-suite :: SingleSource/UnitTests/2005-05-13-SDivTwo.test
   test-suite :: SingleSource/UnitTests/2005-07-15-Bitfield-ABI.test
   test-suite :: SingleSource/UnitTests/2005-07-17-INT-To-FP.test
   test-suite :: SingleSource/UnitTests/2007-03-02-VaCopy.test
@@ -587,7 +572,7 @@ Executable Missing Tests (46):
   test-suite :: SingleSource/UnitTests/printargs.test
 
 
-Testing Time: 1316.01s
-  Passed            : 661
-  Failed            : 535
-  Executable Missing:  46
+Testing Time: 1331.88s
+  Passed            : 665
+  Failed            : 536
+  Executable Missing:  31
