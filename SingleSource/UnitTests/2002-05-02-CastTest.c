@@ -1,6 +1,7 @@
+// Modified by LLVM-MOS.
+
 #include <stdlib.h>
 #include <stdio.h>
-#include <sys/types.h>
 
 /* Linux defines these in stdint.h, sun might not have that file, don't mess 
    around when it's this easy to fix */
@@ -8,10 +9,10 @@ typedef unsigned char uint8;
 typedef   signed char int8;
 
 int
-main(int argc, char** argv)
+main(void)
 {
-  char  c1 = (argc >= 2)? atoi(argv[1]) : 100;  /* 100 = 'd' */
-  short s1 = (argc >= 3)? atoi(argv[2]) : -769; /* 0xfcff = -769 */
+  char  c1 = 100;  /* 100 = 'd' */
+  short s1 = 769; /* 0xfcff = -769 */
   
   unsigned char ubc0 = (unsigned char) c1;      /* 100 = 'd' */
   uint8  ubs0 = (uint8) s1;                     /* 0xff = 255 */
