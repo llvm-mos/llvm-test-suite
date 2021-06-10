@@ -34,10 +34,6 @@ if (ARCH MATCHES "MOS")
     test_indvars.c
     uint64_to_float.c
 
-    # Requires long long int printf.
-    PR1386.c
-    2005-05-06-LongLongSignedShift.c
-
     # Requires fprintf.
     PR491.c
 

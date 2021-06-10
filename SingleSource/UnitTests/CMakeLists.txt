@@ -83,10 +83,6 @@ if(ARCH STREQUAL "MOS")
     FloatPrecision.c
     StructModifyTest.c
 
-    # Requires printf long long.
-    2003-05-31-CastToBool.c
-    2006-12-11-LoadConstants.c
-
     # Requires malloc.
     2002-08-19-CodegenBug.c
 
