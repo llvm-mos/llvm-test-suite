@@ -7,9 +7,11 @@
 
 include(Host)
 
-add_executable(fpcmp-target ${CMAKE_CURRENT_SOURCE_DIR}/fpcmp.c)
-llvm_codesign(fpcmp-target)
-add_executable(build-fpcmp-target ALIAS fpcmp-target)
+if(NOT ARCH STREQUAL "MOS")
+  add_executable(fpcmp-target ${CMAKE_CURRENT_SOURCE_DIR}/fpcmp.c)
+  llvm_codesign(fpcmp-target)
+  add_executable(build-fpcmp-target ALIAS fpcmp-target)
+endif()
 llvm_add_host_executable(build-fpcmp fpcmp fpcmp.c)
 
 add_custom_command(
@@ -34,8 +36,10 @@ if(TEST_SUITE_USE_PERF)
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/timeit.sh)
   add_custom_target(build-timeit-target DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/timeit-target)
 else()
-  add_executable(timeit-target ${CMAKE_CURRENT_SOURCE_DIR}/timeit.c)
-  llvm_codesign(timeit-target)
-  add_executable(build-timeit-target ALIAS timeit-target)
+  if(NOT ARCH STREQUAL "MOS")
+    add_executable(timeit-target ${CMAKE_CURRENT_SOURCE_DIR}/timeit.c)
+    llvm_codesign(timeit-target)
+    add_executable(build-timeit-target ALIAS timeit-target)
+  endif()
   llvm_add_host_executable(build-timeit timeit timeit.c)
 endif()

@@ -66,6 +66,16 @@ if(ARCH STREQUAL "MOS")
     2003-07-10-SignConversions.c
     2005-07-15-Bitfield-ABI.c
     2006-01-23-UnionInit.c
+    2020-01-06-coverage-006.c
+
+    # Requires libc++
+    matrix-types-spec.cpp
+
+    # Requires <strings.h>
+    2005-05-11-Popcount-ffs-fls.c
+
+    # Requires atomic operations
+    AtomicOps.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -84,12 +94,15 @@ if(ARCH STREQUAL "MOS")
     2006-12-01-float_varg.c
     2007-01-04-KNR-Args.c
     2009-04-16-BitfieldInitialization.c
+    2009-12-07-StructReturn.c
     FloatPrecision.c
     StructModifyTest.c
+    byval-alignment.c
 
     # Requires malloc.
     2002-08-19-CodegenBug.c
     2003-07-09-LoadShorts.c
+    DefaultInitDynArrays.cpp
 
     # Requires atexit.
     2003-05-14-AtExit.c
@@ -97,8 +110,11 @@ if(ARCH STREQUAL "MOS")
     # Requires scanf.
     2004-11-28-GlobalBoolLayout.c
 
-    # Requires <strings.h>
-    2005-05-11-Popcound-ffs-fls.c
+    # Requires setjmp.
+    2008-07-13-InlineSetjmp.c
+
+    # Requires argc/argv.
+    printargs.c
   )
 endif()
 

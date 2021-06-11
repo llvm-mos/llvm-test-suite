@@ -1,4 +1,6 @@
-#include <cstdio>
+// Modified by LLVM-MOS
+
+#include <stdio.h>
 
 // Test for member function pointers.
 

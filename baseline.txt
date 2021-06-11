@@ -1,5 +1,5 @@
 ********************
-Failed Tests (535):
+Failed Tests (538):
   test-suite :: SingleSource/Regression/C/Regression-C-2004-08-12-InlinerAndAllocas.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000112-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000113-1.test
@@ -189,6 +189,8 @@ Failed Tests (535):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920428-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920429-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-1.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-2.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-6.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-9.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920506-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920520-1.test
@@ -497,6 +499,7 @@ Failed Tests (535):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-4.test
+  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-5.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ini-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ini-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ini-3.test
@@ -536,29 +539,7 @@ Failed Tests (535):
   test-suite :: SingleSource/UnitTests/TestLoop.test
   test-suite :: SingleSource/UnitTests/initp1.test
 
-********************
-Executable Missing Tests (18):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-2.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-920501-6.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr40404.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr64006.test
-  test-suite :: SingleSource/UnitTests/2005-05-11-Popcount-ffs-fls.test
-  test-suite :: SingleSource/UnitTests/2008-07-13-InlineSetjmp.test
-  test-suite :: SingleSource/UnitTests/2009-12-07-StructReturn.test
-  test-suite :: SingleSource/UnitTests/2020-01-06-coverage-006.test
-  test-suite :: SingleSource/UnitTests/AtomicOps.test
-  test-suite :: SingleSource/UnitTests/C++11/stdthreadbug.test
-  test-suite :: SingleSource/UnitTests/DefaultInitDynArrays.test
-  test-suite :: SingleSource/UnitTests/SignlessTypes/Large/cast.test
-  test-suite :: SingleSource/UnitTests/SignlessTypes/ccc.test
-  test-suite :: SingleSource/UnitTests/SignlessTypes/rem.test
-  test-suite :: SingleSource/UnitTests/byval-alignment.test
-  test-suite :: SingleSource/UnitTests/matrix-types-spec.test
-  test-suite :: SingleSource/UnitTests/member-function-pointers.test
-  test-suite :: SingleSource/UnitTests/printargs.test
 
-
-Testing Time: 1344.79s
-  Passed            : 674
-  Failed            : 535
-  Executable Missing:  18
+Testing Time: 1332.06s
+  Passed: 676
+  Failed: 538
