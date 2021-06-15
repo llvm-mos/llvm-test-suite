@@ -49,14 +49,12 @@ Failed Tests (47):
   test-suite :: SingleSource/UnitTests/initp1.test
 
 ********************
-Executable Missing Tests (4):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-991112-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-ffs-2.test
+Executable Missing Tests (2):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr79737-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr85169.test
 
 
 Testing Time: 30.04s
-  Passed            : 1164
+  Passed            : 1166
   Failed            :   47
-  Executable Missing:    4
+  Executable Missing:    2
