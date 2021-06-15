@@ -16,6 +16,7 @@ if (ARCH MATCHES "MOS")
     2003-05-21-UnionBitfields.c
     2003-05-21-UnionTest.c
     2003-10-12-GlobalVarInitializers.c
+    2004-08-12-InlinerAndAllocas.c
     globalrefs.c
     sumarray2d.c
 
@@ -45,8 +46,8 @@ if (ARCH MATCHES "MOS")
     sumarray.c
     sumarraymalloc.c
 
-    # Requires strcmp.
-    testtrace.c
+    # Requires argc/argv.
+    2005-05-06-LongLongSignedShift.c
   )
 endif()
 
