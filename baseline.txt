@@ -1,6 +1,7 @@
 ********************
-Failed Tests (538):
+Failed Tests (534):
   test-suite :: SingleSource/Regression/C/Regression-C-2004-08-12-InlinerAndAllocas.test
+  test-suite :: SingleSource/Regression/C/Regression-C-2005-05-06-LongLongSignedShift.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000112-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000113-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000205-1.test
@@ -49,7 +50,6 @@ Failed Tests (538):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000818-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000819-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000910-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000910-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20000917-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20001013-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20001024-1.test
@@ -172,7 +172,6 @@ Failed Tests (538):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050119-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050131-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050203-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050224-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20050410-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20070424-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20070623-1.test
@@ -485,7 +484,6 @@ Failed Tests (538):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr71335.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr71550.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr78856.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr91137.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-ptr-arith-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-scope-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-simd-1.test
@@ -499,7 +497,6 @@ Failed Tests (538):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-4.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-strlen-5.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ini-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ini-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-struct-ini-3.test
@@ -515,7 +512,6 @@ Failed Tests (538):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-22.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-24.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-va-arg-4.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-vla-dealloc-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-vrp-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-vrp-2.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-vrp-3.test
@@ -526,11 +522,11 @@ Failed Tests (538):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-widechar-3.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-zerolen-1.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
+  test-suite :: SingleSource/UnitTests/2002-05-02-CastTest3.test
   test-suite :: SingleSource/UnitTests/2002-05-19-DivTest.test
-  test-suite :: SingleSource/UnitTests/2003-05-31-CastToBool.test
   test-suite :: SingleSource/UnitTests/2003-05-31-LongShifts.test
   test-suite :: SingleSource/UnitTests/2003-07-09-SignedArgs.test
-  test-suite :: SingleSource/UnitTests/2005-05-13-SDivTwo.test
+  test-suite :: SingleSource/UnitTests/2006-01-29-SimpleIndirectCall.test
   test-suite :: SingleSource/UnitTests/2006-02-04-DivRem.test
   test-suite :: SingleSource/UnitTests/2006-12-11-LoadConstants.test
   test-suite :: SingleSource/UnitTests/2020-01-06-coverage-003.test
@@ -540,6 +536,6 @@ Failed Tests (538):
   test-suite :: SingleSource/UnitTests/initp1.test
 
 
-Testing Time: 1332.06s
-  Passed: 676
-  Failed: 538
+Testing Time: 120.14s
+  Passed: 680
+  Failed: 534

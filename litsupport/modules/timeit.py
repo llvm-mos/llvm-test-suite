@@ -20,7 +20,7 @@ def _mutateCommandLine(context, commandline):
     timeit = "%s/tools/%s" % (config.test_source_root, timeit_name)
     args = ["--limit-core", "0"]
     args += ["--limit-cpu", "7200"]
-    args += ["--timeout", "300"]
+    args += ["--timeout", "30"]
     args += ["--limit-file-size", "104857600"]
     args += ["--limit-rss-size", "838860800"]
     workdir = cmd.workdir
