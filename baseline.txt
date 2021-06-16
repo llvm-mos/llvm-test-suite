@@ -1,12 +1,8 @@
 ********************
-Failed Tests (22):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-20071211-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-arith-rand-ll.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-arith-rand.test
+Failed Tests (18):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-bf-pack-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-bswap-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-divmod-1.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr87290.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr90025.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-string-opt-5.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
@@ -23,12 +19,7 @@ Failed Tests (22):
   test-suite :: SingleSource/UnitTests/TestLoop.test
   test-suite :: SingleSource/UnitTests/initp1.test
 
-********************
-Executable Missing Tests (1):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr85169.test
 
-
-Testing Time: 30.33s
-  Passed            : 1190
-  Failed            :   22
-  Executable Missing:    1
+Testing Time: 34.91s
+  Passed: 1193
+  Failed:   18

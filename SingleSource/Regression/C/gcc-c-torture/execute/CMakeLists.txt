@@ -361,6 +361,7 @@ if(ARCH MATCHES "MOS")
     20040811-1.c
     20050316-1.c
     20061101-1.c
+    20071211-1.c
     20081117-1.c
     20120919-1.c
     20141022-1.c
@@ -412,6 +413,7 @@ if(ARCH MATCHES "MOS")
     pr53645.c
     pr60960.c
     pr65427.c
+    pr85169.c
     scal-to-vec2.c
     simd-5.c
     simd-6.c
