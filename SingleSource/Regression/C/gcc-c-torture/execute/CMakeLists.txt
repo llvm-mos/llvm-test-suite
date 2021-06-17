@@ -384,6 +384,7 @@ if(ARCH MATCHES "MOS")
     bitfld-6.c
     bswap-2.c
     cmpsi-2.c
+    divmod-1.c
     pr31448.c
     pr38151.c
     pr43220.c
