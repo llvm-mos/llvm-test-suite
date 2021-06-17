@@ -1,7 +1,5 @@
 ********************
-Failed Tests (15):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr52760.test
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr90025.test
+Failed Tests (13):
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest.test
   test-suite :: SingleSource/UnitTests/2002-05-02-CastTest3.test
   test-suite :: SingleSource/UnitTests/2002-05-19-DivTest.test
@@ -17,6 +15,6 @@ Failed Tests (15):
   test-suite :: SingleSource/UnitTests/initp1.test
 
 
-Testing Time: 31.42s
-  Passed: 1195
-  Failed:   15
+Testing Time: 30.04s
+  Passed: 1196
+  Failed:   13

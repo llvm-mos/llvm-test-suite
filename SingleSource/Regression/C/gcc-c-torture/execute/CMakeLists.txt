@@ -367,43 +367,44 @@ if(ARCH MATCHES "MOS")
     20141022-1.c
     20181120-1.c
     20190820-1.c
-    pr19689.c
-    pr68648.c
-    pr7284-1.c
-    bitfld-7.c
-    ipa-sra-2.c
-    pr37573.c
-    pr56799.c
-    pr58570.c
-    pr66556.c
-    pr89195.c
-    usmul.c
-    vrp-5.c
-    vrp-6.c
     bitfld-4.c
     bitfld-6.c
+    bitfld-7.c
     bswap-2.c
     cmpsi-2.c
     divmod-1.c
+    ipa-sra-2.c
+    pr19689.c
+    pr29797-1.c
     pr31448.c
+    pr37573.c
     pr38151.c
     pr43220.c
-    pr51581-1.c
-    pr67781.c
-    pr70602.c
-    pr29797-1.c
     pr45262.c
+    pr51581-1.c
     pr51581-2.c
     pr52979-1.c
     pr52979-2.c
+    pr56799.c
     pr57124.c
-    pr57344-2.c
-    pr60822.c
-    pr78170.c
-    shiftdi.c
     pr57344-1.c
+    pr57344-2.c
     pr57344-3.c
     pr57344-4.c
+    pr58570.c
+    pr60822.c
+    pr66556.c
+    pr67781.c
+    pr68648.c
+    pr70602.c
+    pr7284-1.c
+    pr78170.c
+    pr89195.c
+    pr90025.c
+    shiftdi.c
+    usmul.c
+    vrp-5.c
+    vrp-6.c
 
 
     # Requires vector types.
