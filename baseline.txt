@@ -1,6 +1,5 @@
 ********************
-Failed Tests (18):
-  test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-bf-pack-1.test
+Failed Tests (17):
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-bswap-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-divmod-1.test
   test-suite :: SingleSource/Regression/C/gcc-c-torture/execute/GCC-C-execute-pr90025.test
@@ -20,6 +19,6 @@ Failed Tests (18):
   test-suite :: SingleSource/UnitTests/initp1.test
 
 
-Testing Time: 34.91s
-  Passed: 1193
-  Failed:   18
+Testing Time: 30.04s
+  Passed: 1194
+  Failed:   17
