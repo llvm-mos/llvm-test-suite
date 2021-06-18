@@ -1,3 +1,5 @@
+# Modified by LLVM-MOS.
+
 if(NOT ARCH MATCHES "MOS")
   add_subdirectory(ieee)
 endif()

@@ -1,7 +1,9 @@
+// Modified by LLVM-MOS.
+
 int printf(const char *, ...);
 
-int main(int argc, char** argv) {
-  short s1 = (argc >= 3)? argc : -769; /* 0xf7ff = -769 */
+int main(void) {
+  short s1 = -769; /* 0xf7ff = -769 */
 
   unsigned short us2 = (unsigned short) s1;     /* 0xf7ff = 64767 */
   

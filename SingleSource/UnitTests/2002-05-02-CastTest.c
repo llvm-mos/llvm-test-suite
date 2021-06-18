@@ -12,7 +12,7 @@ int
 main(void)
 {
   char  c1 = 100;  /* 100 = 'd' */
-  short s1 = 769; /* 0xfcff = -769 */
+  short s1 = -769; /* 0xfcff = -769 */
   
   unsigned char ubc0 = (unsigned char) c1;      /* 100 = 'd' */
   uint8  ubs0 = (uint8) s1;                     /* 0xff = 255 */

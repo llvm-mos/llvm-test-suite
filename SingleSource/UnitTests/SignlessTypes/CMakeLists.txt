@@ -20,6 +20,9 @@ if(ARCH STREQUAL "MOS")
 
     # Requires rand
     rem.c
+
+    # Requires argc/argv
+    cast-bug.c
   )
 endif()
 

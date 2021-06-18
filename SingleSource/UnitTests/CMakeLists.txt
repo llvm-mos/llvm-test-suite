@@ -1,3 +1,5 @@
+# Modified by LLVM-MOS.
+
 include(CheckCCompilerFlag)
 
 add_subdirectory(C++11)
@@ -60,12 +62,17 @@ if(ARCH STREQUAL "MOS")
 
     # Requires 32-bit int.
     2002-10-13-BadLoad.c
+    2002-05-02-CastTest.c
+    2002-05-19-DivTest.c
     2003-05-12-MinIntProblem.c
     2003-05-26-Shorts.c
     2003-07-06-IntOverflow.c
+    2003-07-09-SignedArgs.c
     2003-07-10-SignConversions.c
     2005-07-15-Bitfield-ABI.c
     2006-01-23-UnionInit.c
+    2006-02-04-DivRem.c
+    2006-12-11-LoadConstants.c
     2020-01-06-coverage-006.c
 
     # Requires libc++
@@ -76,6 +83,9 @@ if(ARCH STREQUAL "MOS")
 
     # Requires atomic operations
     AtomicOps.c
+
+    # Undefined behavior?!
+    2020-01-06-coverage-009.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -114,7 +124,13 @@ if(ARCH STREQUAL "MOS")
     2008-07-13-InlineSetjmp.c
 
     # Requires argc/argv.
+    2003-05-31-LongShifts.c
+    2006-01-29-SimpleIndirectCall.c
     printargs.c
+    TestLoop.c
+
+    # Requires static constructors.
+    initp1.cpp
   )
 endif()
 
