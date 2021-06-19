@@ -1,3 +1,5 @@
+# Modified by LLVM-MOS.
+
 list(APPEND CXXFLAGS -std=c++11 -pthread)
 list(APPEND LDFLAGS -pthread)
 

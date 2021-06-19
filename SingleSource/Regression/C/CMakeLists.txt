@@ -1,3 +1,5 @@
+# Modified by LLVM-MOS.
+
 if(ARCH MATCHES "x86" OR ARCH MATCHES "riscv" OR
    ARCH MATCHES "SystemZ" OR ARCH MATCHES "Mips" OR
    ARCH MATCHES "AArch64" OR ARCH MATCHES "ARM" OR
@@ -5,7 +7,7 @@ if(ARCH MATCHES "x86" OR ARCH MATCHES "riscv" OR
   add_subdirectory(gcc-c-torture)
 endif()
 
-if (ARCH MATCHES "MOS")
+if (ARCH STREQUAL "MOS")
   file(GLOB Source RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.c)
   list(REMOVE_ITEM Source
     # Permanently disabled tests.

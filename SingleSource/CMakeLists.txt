@@ -1,3 +1,5 @@
+# Modified by LLVM-MOS.
+
 if(NOT ARCH STREQUAL "MOS")
   add_subdirectory(Benchmarks)
 endif()

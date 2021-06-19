@@ -1,6 +1,6 @@
 # Modified by LLVM-MOS.
 
-if(NOT ARCH MATCHES "MOS")
+if(NOT ARCH STREQUAL "MOS")
   add_subdirectory(ieee)
 endif()
 
@@ -331,7 +331,7 @@ if(ARCH MATCHES "ARM")
   list(APPEND TestsToSkip ${ARMTestsToSkip})
 endif()
 
-if(ARCH MATCHES "MOS")
+if(ARCH STREQUAL "MOS")
   file(GLOB MOSTestsToSkip CONFIGURE_DEPENDS
     # Permanently disabled tests.
     # ---------------------------
@@ -407,7 +407,6 @@ if(ARCH MATCHES "MOS")
     usmul.c
     vrp-5.c
     vrp-6.c
-
 
     # Requires vector types.
     20050316-1.c

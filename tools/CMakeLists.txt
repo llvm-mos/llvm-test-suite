@@ -5,6 +5,8 @@
 # the host system (even when cross-compiling the benchmark) with
 # `llvm_add_host_executable`.
 
+# Modified by LLVM-MOS.
+
 include(Host)
 
 if(NOT ARCH STREQUAL "MOS")
