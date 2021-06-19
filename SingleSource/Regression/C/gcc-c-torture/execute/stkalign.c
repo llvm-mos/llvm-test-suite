@@ -1,6 +1,7 @@
 /* { dg-options "-fno-inline" } */
 /* Check that stack alignment is not affected by variables not placed
    on the stack.  */
+// Modified by LLVM-MOS.
 
 #include <assert.h>
 
@@ -12,7 +13,6 @@ unsigned test(unsigned n, unsigned p)
   unsigned x;
 
   assert(__alignof__(s) == ALIGNMENT);
-  asm ("" : "=g" (x), "+m" (s) : "0" (&x));
 
   return n ? test(n - 1, x) : (x ^ p);
 }
@@ -23,7 +23,6 @@ unsigned test2(unsigned n, unsigned p)
   unsigned x;
 
   assert(__alignof__(s) != ALIGNMENT);
-  asm ("" : "=g" (x), "+m" (s) : "0" (&x));
 
   return n ? test2(n - 1, x) : (x ^ p);
 }

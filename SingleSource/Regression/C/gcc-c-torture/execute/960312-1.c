@@ -1,3 +1,5 @@
+// Modified by LLVM-MOS.
+
 struct S
 {
   int *sp, fc, *sc, a[2];
@@ -11,7 +13,6 @@ f (struct S *x)
   int t3 = t[2];
   int a0 = x->a[0];
   int a1 = x->a[1];
-  asm("": :"r" (t2), "r" (t3));
   t[2] = t1;
   t[0] = a1;
   x->a[1] = a0;

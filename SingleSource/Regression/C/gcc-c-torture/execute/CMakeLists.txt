@@ -336,20 +336,6 @@ if(ARCH STREQUAL "MOS")
     # Permanently disabled tests.
     # ---------------------------
 
-    # Requires int registers.
-    20001009-2.c
-    20030222-1.c
-    960312-1.c
-    990130-1.c
-    pr38533.c
-    pr41239.c
-    pr43385.c
-    pr45695.c
-    pr52286.c
-    pr65648.c
-    pr84524.c
-    stkalign.c
-
     # Requires 32-bit int.
     20020404-1.c
     20021024-1.c

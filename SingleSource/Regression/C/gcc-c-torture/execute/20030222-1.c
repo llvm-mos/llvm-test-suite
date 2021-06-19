@@ -5,13 +5,16 @@
    for a long long.  */
 /* { dg-skip-if "asm would require extra shift-left-4-byte" { spu-*-* } } */
 /* { dg-skip-if "asm requires register allocation" { nvptx-*-* } } */
+
+// Modified by LLVM-MOS.
+
 #include <limits.h>
 
 void
 ll_to_int (long long x, volatile int *p)
 {
   int i;
-  asm ("" : "=r" (i) : "0" (x));
+  i = x;
   *p = i;
 }
 

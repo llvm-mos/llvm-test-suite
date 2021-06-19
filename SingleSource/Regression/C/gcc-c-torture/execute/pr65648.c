@@ -1,4 +1,5 @@
 /* PR target/65648 */
+// Modified by LLVM-MOS.
 
 int a = 0, *b = 0, c = 0;
 static int d = 0;
@@ -10,13 +11,11 @@ unsigned char j = 0;
 __attribute__((noinline, noclone)) void
 foo (int x, int *y)
 {
-  asm volatile ("" : : "r" (x), "r" (y) : "memory");
 }
 
 __attribute__((noinline, noclone)) void
 bar (const char *x, long long y)
 {
-  asm volatile ("" : : "r" (x), "r" (&y) : "memory");
   if (y != 0)
     __builtin_abort ();
 }

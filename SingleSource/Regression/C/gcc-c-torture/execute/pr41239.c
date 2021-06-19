@@ -1,4 +1,5 @@
 /* PR rtl-optimization/41239 */
+// Modified by LLVM-MOS.
 
 struct S
 {
@@ -38,29 +39,24 @@ main (void)
 __attribute__((noinline)) char
 fn1 (int x, const char *y, int z, const char *w, const char *v)
 {
-  asm volatile ("" : : "r" (w), "r" (v) : "memory");
-  asm volatile ("" : "+r" (x) : "r" (y), "r" (z) : "memory");
   return x;
 }
 
 __attribute__((noinline)) int
 fn3 (int x)
 {
-  asm volatile ("" : "+r" (x) : : "memory");
   return x;
 }
 
 __attribute__((noinline)) int
 fn4 (const char *x, ...)
 {
-  asm volatile ("" : "+r" (x) : : "memory");
   return *x;
 }
 
 __attribute__((noinline)) void
 fn2 (int x, ...)
 {
-  asm volatile ("" : "+r" (x) : : "memory");
   if (x)
     /* Could be a longjmp or throw too.  */
     exit (0);
