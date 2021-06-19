@@ -10,9 +10,6 @@ endif()
 if (ARCH STREQUAL "MOS")
   file(GLOB Source RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.c)
   list(REMOVE_ITEM Source
-    # Permanently disabled tests.
-    # ---------------------------
-
     # Temporarily disabled tests.
     # ---------------------------
 

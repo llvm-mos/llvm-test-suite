@@ -1,9 +1,11 @@
+// Modified by LLVM-MOS.
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int SumArray(int Array[][100], unsigned int NumI, unsigned int NumJ) {
+long SumArray(int Array[][100], unsigned int NumI, unsigned int NumJ) {
   unsigned i, j;
-  int Result = 0;
+  long Result = 0;
   
   for (i = 0; i < NumI; i++)
     for (j = 0; j < NumJ; j++)
@@ -24,7 +26,7 @@ int main() {
       if (j != i)
         Array[i][j] = i+j;
   
-  printf("Sum(Array[%d,%d] = %d\n", 100, 100, SumArray(Array, 100, 100));
+  printf("Sum(Array[%d,%d] = %ld\n", 100, 100, SumArray(Array, 100, 100));
   
   return 0;
 }

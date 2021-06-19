@@ -1,5 +1,3 @@
-// Modified by LLVM-MOS.
-
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -30,7 +28,7 @@ main(void)
   int is5 = ((int)  bs0) + 1;                   /* ((int) -1)   + 1 = 0 */
 
   unsigned int uic4 = (unsigned int) c1;        /*  100 = 'd' */
-  unsigned int uis4 = (unsigned int) s1;        /* 0xfffff7ff = 4294966527 */
+  unsigned long uis4 = (unsigned long) s1;        /* 0xfffff7ff = 4294966527 */
   
   printf("ubc0 = '%c'\t   [0x%x]\n", ubc0, ubc0);
   printf("ubs0 = %u\t   [0x%x]\n",   ubs0, ubs0);
@@ -46,7 +44,7 @@ main(void)
   printf("is4  = %d\t   [0x%x]\n",   is4,  is4);
   printf("is5  = %d\t   [0x%x]\n",   is5,  is5);
   printf("uic4 = '%c'\t   [0x%x]\n", uic4, uic4);
-  printf("uis4 = %u  [0x%x]\n",   uis4, uis4);
+  printf("uis4 = %lu  [0x%lx]\n",   uis4, uis4);
   
   return 0;
 }
