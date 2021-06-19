@@ -1,7 +1,6 @@
 /* PR middle-end/38533 */
-// Modified by LLVM-MOS.
 
-#define A f = 0; e |= f;
+#define A asm volatile ("" : "=r" (f) : "0" (0)); e |= f;
 #define B A A A A A A A A A A A
 #define C B B B B B B B B B B B
 

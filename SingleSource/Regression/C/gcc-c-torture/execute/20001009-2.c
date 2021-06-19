@@ -1,4 +1,3 @@
-// Modified by LLVM-MOS.
 int b=1;
 int foo()
 {
@@ -8,6 +7,7 @@ int foo()
   for (;b;b--)
   {
     c=1;
+    asm(""::"r"(c));
     c=(signed char)a;
   }
   if (c!=-1)

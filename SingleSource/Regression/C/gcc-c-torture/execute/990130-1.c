@@ -1,4 +1,3 @@
-// Modified by LLVM-MOS.
 int count = 0;
 int dummy;
 
@@ -12,7 +11,7 @@ bar(void)
 static void
 foo(void)
 {
-  bar();
+  asm("" : "+r"(*bar()));
 }
 
 main()

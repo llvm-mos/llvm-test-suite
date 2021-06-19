@@ -1,5 +1,4 @@
 /* PR c/43385 */
-// Modified by LLVM-MOS.
 
 extern void abort (void);
 
@@ -25,6 +24,7 @@ int
 main (void)
 {
   int z = 0;
+  asm ("" : "+r" (z));
   foo (z + 2, z + 1);
   if (e != 1)
     abort ();
