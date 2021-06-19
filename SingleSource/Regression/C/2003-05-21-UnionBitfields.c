@@ -6,7 +6,7 @@ int target_isinf(double x) {
     double d;
     struct {
       unsigned mantissa2;
-      unsigned mantissa1 : 20;
+      unsigned long mantissa1 : 20;
       unsigned exponent  : 11;
       unsigned sign      :  1;
     } big_endian;

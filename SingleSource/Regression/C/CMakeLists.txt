@@ -13,22 +13,16 @@ if (ARCH STREQUAL "MOS")
     # Permanently disabled tests.
     # ---------------------------
 
-    # Depends on 32-bit integers.
-    2003-05-21-BitfieldHandling.c
-    2003-05-21-UnionBitfields.c
-    2003-05-21-UnionTest.c
-    2003-10-12-GlobalVarInitializers.c
-    2004-08-12-InlinerAndAllocas.c
-    globalrefs.c
-    sumarray2d.c
-
     # Temporarily disabled tests.
     # ---------------------------
 
     # Requires indirect branch.
     2004-03-15-IndirectGoto.c
 
-    # Requires floating point printf.
+    # Requires floating point.
+    2003-05-21-UnionBitfields.c
+    2003-05-21-UnionTest.c
+    2003-10-12-GlobalVarInitializers.c
     2008-01-07-LongDouble.c
     bigstack.c
     callargs.c

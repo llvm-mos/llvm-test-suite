@@ -5,15 +5,17 @@
  * memory addresses to get output that matches that of the native compiler.
  */
 
+ // Modified by LLVM-MOS.
+
 #include <stdio.h>
 
 #define __STDC_LIMIT_MACROS 1
 #include <inttypes.h>
 
 struct test {
-  int A;
-  struct { unsigned X; unsigned Y; } S;
-  int B;
+  long A;
+  struct { unsigned long X; unsigned long Y; } S;
+  long B;
   struct test* next;
 };
 

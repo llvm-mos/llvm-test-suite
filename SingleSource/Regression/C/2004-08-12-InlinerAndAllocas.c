@@ -1,6 +1,8 @@
 // A compiler cannot inline Callee into main unless it is prepared to reclaim
 // the stack memory allocated in it.
 
+// Modified by LLVM-MOS.
+
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <stdlib.h>
 #else
@@ -18,9 +20,10 @@ static int Callee(int i) {
 }
 
 int main() {
-  int i, j = 0;
+  int i;
+  long j = 0;
   for (i = 0; i < 10000; ++i)
     j += Callee(i);
-  printf("%d\n", j);
+  printf("%ld\n", j);
   return 0;
 }

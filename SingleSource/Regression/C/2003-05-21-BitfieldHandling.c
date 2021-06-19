@@ -1,3 +1,5 @@
+// Modified by LLVM-MOS.
+
 struct test_empty {
 } e;
 int Esize = sizeof(e);
@@ -40,7 +42,7 @@ struct test5 {
 struct test6 {
   char x:1;
   long long :42;
-  int Y : 21;
+  long Y : 21;
 } F6; int F6size = sizeof(F6);  // Size = 8
 
 struct test {
