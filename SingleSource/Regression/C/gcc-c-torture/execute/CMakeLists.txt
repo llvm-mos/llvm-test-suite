@@ -365,14 +365,11 @@ if(ARCH STREQUAL "MOS")
     20061101-1.c
     20081117-1.c
     20120919-1.c
-    20181120-1.c
-    20190820-1.c
     bitfld-4.c
     bitfld-6.c
     bitfld-7.c
     bswap-2.c
     cmpsi-2.c
-    divmod-1.c
     ipa-sra-2.c
     pr19689.c
     pr29797-1.c
@@ -387,7 +384,6 @@ if(ARCH STREQUAL "MOS")
     pr52979-2.c
     pr56799.c
     pr57124.c
-    pr57344-1.c
     pr57344-2.c
     pr57344-3.c
     pr57344-4.c

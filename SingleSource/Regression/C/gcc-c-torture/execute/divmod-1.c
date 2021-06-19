@@ -1,11 +1,13 @@
+// Modified by LLVM-MOS.
+
 div1 (signed char x)
 {
   return x / -1;
 }
 
-div2 (signed short x)
+long div2 (signed short x)
 {
-  return x / -1;
+  return x / -1L;
 }
 
 div3 (signed char x, signed char y)
@@ -13,9 +15,9 @@ div3 (signed char x, signed char y)
   return x / y;
 }
 
-div4 (signed short x, signed short y)
+long div4 (signed short x, signed short y)
 {
-  return x / y;
+  return x / (long)y;
 }
 
 mod1 (signed char x)
@@ -23,9 +25,9 @@ mod1 (signed char x)
   return x % -1;
 }
 
-mod2 (signed short x)
+long mod2 (signed short x)
 {
-  return x % -1;
+  return x % -1L;
 }
 
 mod3 (signed char x, signed char y)
@@ -33,9 +35,9 @@ mod3 (signed char x, signed char y)
   return x % y;
 }
 
-mod4 (signed short x, signed short y)
+long mod4 (signed short x, signed short y)
 {
-  return x % y;
+  return x % (long)y;
 }
 
 signed long
@@ -54,11 +56,11 @@ main ()
 {
   if (div1 (-(1 << 7)) != 1 << 7)
     abort ();
-  if (div2 (-(1 << 15)) != 1 << 15)
+  if (div2 (-(1 << 15)) != 1L << 15)
     abort ();
   if (div3 (-(1 << 7), -1) != 1 << 7)
     abort ();
-  if (div4 (-(1 << 15), -1) != 1 << 15)
+  if (div4 (-(1 << 15), -1) != 1L << 15)
     abort ();
   if (mod1 (-(1 << 7)) != 0)
     abort ();

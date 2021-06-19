@@ -1,5 +1,6 @@
 /* PR rtl-optimization/91347 */
 /* Reported by John David Anglin <danglin@gcc.gnu.org> */
+// Modified by LLVM-MOS.
 
 typedef unsigned short __u16;
 typedef __signed__ int __s32;
@@ -55,7 +56,7 @@ put_dec (char *buf, unsigned long long n)
 
 struct printf_spec {
  unsigned int type:8;
- signed int field_width:24;
+ signed long field_width:24;
  unsigned int flags:8;
  unsigned int base:8;
  signed int precision:16;
@@ -71,7 +72,7 @@ number (char *buf, char *end, unsigned long long num, struct printf_spec spec)
  int need_pfx = ((spec.flags & 64) && spec.base != 10);
  int i;
  bool is_zero = num == 0LL;
- int field_width = spec.field_width;
+ long field_width = spec.field_width;
  int precision = spec.precision;
 
  i = 0;
