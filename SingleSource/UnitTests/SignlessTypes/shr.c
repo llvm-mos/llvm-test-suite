@@ -34,9 +34,9 @@ unsigned ShrTest5(unsigned X, unsigned C) {
   return (X >> C) & AndRHS;
 }
 
-unsigned ShrTest6(int X, unsigned C) {
+unsigned long ShrTest6(long X, unsigned long C) {
   // (X >>s C) & AndRHS) -> X >> C if AndRHS == AllOne >> C
-  int AndRHS = (unsigned)0xFFFFFFFF >> C;
+  long AndRHS = (unsigned long)0xFFFFFFFF >> C;
   return (X >> C) & AndRHS;
 }
 
@@ -65,17 +65,17 @@ int ShrTest11(int Y, int X, unsigned C) {
   return (Y | (X >> C)) << C;
 }
 
-int ShrTest12(int Y, int X, unsigned C, int CC) {
+long ShrTest12(long Y, long X, unsigned long C, long CC) {
   // (Y + ((X >> C) & CC)) << C  ->  ((X & (CC << C)) + (Y << C))
   return (Y + ((X >> C) & CC)) << C;
 }
 
-int ShrTest13(int Y, int X, unsigned C, int CC) {
+long ShrTest13(long Y, long X, unsigned long C, long CC) {
   // (Y & ((X >> C) & CC)) << C  ->  ((X & (CC << C)) & (Y << C))
   return (Y & ((X >> C) & CC)) << C;
 }
 
-int ShrTest14(int Y, int X, unsigned C, int CC) {
+long ShrTest14(long Y, long X, unsigned long C, long CC) {
   // (Y | ((X >> C) & CC)) << C  ->  ((X & (CC << C)) | (Y << C))
   return (Y | ((X >> C) & CC)) << C;
 }
@@ -98,15 +98,15 @@ int main(int argc, char **argv) {
   printf("ShrTest3(-73) = %d\n", ShrTest3(-73));
   printf("ShrTest4(-73) = %d\n", ShrTest4(-73));
   printf("ShrTest5(7773, 11) = %d\n", ShrTest5(7773, 11));
-  printf("ShrTest6(-73, 11) = %d\n", ShrTest6(-73, 11));
+  printf("ShrTest6(-73, 11) = %ld\n", ShrTest6(-73, 11));
   printf("ShrTest7(-737) = %d\n", ShrTest7(-737));
   printf("ShrTest8(73) = %d\n", ShrTest8(73));
   printf("ShrTest9(13, 7773, 11) = %d\n", ShrTest9(13, 7773, 11));
   printf("ShrTest10(13, 7773, 11) = %d\n", ShrTest10(13, 7773, 11));
   printf("ShrTest11(13, 7773, 11) = %d\n", ShrTest11(13, 7773, 11));
-  printf("ShrTest12(7773, -73, 11, 3773) = %d\n", ShrTest12(7773, -73, 11, 3773));
-  printf("ShrTest13(7773, -73, 11, 3773) = %d\n", ShrTest13(7773, -73, 11, 3773));
-  printf("ShrTest14(7773, -73, 11, 3773) = %d\n", ShrTest14(7773, -73, 11, 3773));
+  printf("ShrTest12(7773, -73, 11, 3773) = %ld\n", ShrTest12(7773, -73, 11, 3773));
+  printf("ShrTest13(7773, -73, 11, 3773) = %ld\n", ShrTest13(7773, -73, 11, 3773));
+  printf("ShrTest14(7773, -73, 11, 3773) = %ld\n", ShrTest14(7773, -73, 11, 3773));
   printf("ShrTest15(7773, 13, 11) = %d\n", ShrTest15(7773, 13, 11));
   printf("ShrTest16(-73, 11, 13) = %d\n", ShrTest16(-73, 11, 13));
   return 0;

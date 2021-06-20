@@ -1,3 +1,5 @@
+// Modified by LLVM-MOS.
+
 /* 
  * This file is used to test division operations in conjunction with
  * the Signless Types feature. The DIV instruction was replaced with
@@ -68,13 +70,13 @@ unsigned uDivTest15(unsigned X, unsigned Y) {
   /* udiv X, (Select Cond, C1, C2) --> Select Cond, (shr X, C1), (shr X, C2) */
   return X / (X == Y, ((unsigned)2), ((unsigned)4));
 }
-unsigned uDivTest16(unsigned X, unsigned Y) {
+unsigned long uDivTest16(unsigned long X, unsigned long Y) {
   /* -X/C -> X/-C */
   return -X / 2;
 }
-unsigned uDivTest17(unsigned X, unsigned Y) {
+unsigned long uDivTest17(unsigned long X, unsigned long Y) {
   /* -X/C -> X/-C */
-  return -X / ((unsigned)2);
+  return -X / ((unsigned long)2);
 }
 
 int main(int argc, char**argv) {
@@ -93,7 +95,7 @@ int main(int argc, char**argv) {
   printf("uDivTest13(42,3) = %u\n", uDivTest13(42,3));
   printf("uDivTest14(42,3) = %u\n", uDivTest14(42,3));
   printf("uDivTest15(42,3) = %u\n", uDivTest15(42,3));
-  printf("uDivTest16(42,3) = %u\n", uDivTest16(42,3));
-  printf("uDivTest17(42,3) = %u\n", uDivTest17(42,3));
+  printf("uDivTest16(42,3) = %lu\n", uDivTest16(42,3));
+  printf("uDivTest17(42,3) = %lu\n", uDivTest17(42,3));
   return 0;
 }
