@@ -62,9 +62,7 @@ if(ARCH STREQUAL "MOS")
 
     # Requires 32-bit int.
     2002-10-13-BadLoad.c
-    2003-05-12-MinIntProblem.c
     2003-05-26-Shorts.c
-    2003-07-06-IntOverflow.c
     2003-07-09-SignedArgs.c
     2003-07-10-SignConversions.c
     2005-07-15-Bitfield-ABI.c

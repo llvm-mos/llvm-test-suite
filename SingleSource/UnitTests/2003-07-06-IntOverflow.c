@@ -10,41 +10,44 @@
  * -- correct handling of high bits during native code generation for
  *    a sequence of operations involving -, * and /.
  */
+
+// Modified by LLVM-MOS.
+
 #include <stdio.h>
 
-void compareOvf(int x, int y)
+void compareOvf(long x, long y)
 {
-  int sum = x * x + y * y;
-  if (sum < (1 << 22))
+  long sum = x * x + y * y;
+  if (sum < (1L << 22))
     printf("compare after overflow is TRUE\n");
   else
     printf("compare after overflow is FALSE\n");
 }
 
-void divideOvf(int x, int y)
+void divideOvf(long x, long y)
 {
-  int sum = x * x + y * y;
-  int rem = (1 << 31) / sum;
-  printf("divide after overflow = %d (0x%x)\n", rem, rem);
+  long sum = x * x + y * y;
+  long rem = (1L << 31) / sum;
+  printf("divide after overflow = %ld (0x%lx)\n", rem, rem);
 }
 
-void divideNeg(int x, int y)
+void divideNeg(long x, long y)
 {
-  int sum = x * x - y * y;
-  int rem = sum / (1 << 18);
-  printf("divide negative value by power-of-2 = %d (0x%x)\n", rem, rem);
+  long sum = x * x - y * y;
+  long rem = sum / (1L << 18);
+  printf("divide negative value by power-of-2 = %ld (0x%lx)\n", rem, rem);
 }
 
-void subtractOvf(int x, int y)
+void subtractOvf(long x, long y)
 {
-  int sum = x * x + y * y;
-  int rem = (1u << 31) - sum;
-  printf("subtract after overflow = %d (0x%x)\n", rem, rem);
+  long sum = x * x + y * y;
+  long rem = (1lu << 31) - sum;
+  printf("subtract after overflow = %ld (0x%lx)\n", rem, rem);
 }
 
 int main()
 {
-  int b21 = 1 << 21;
+  long b21 = 1L << 21;
   compareOvf(b21,       b21);
   divideOvf(b21 + 1,    b21 + 2);
   divideNeg(b21 + 1,    b21 + 2);       /* arg1 must be < arg2 */

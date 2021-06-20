@@ -1,6 +1,8 @@
+// Modified by LLVM-MOS.
+
 #include <stdio.h>
 
-void foo(int X) {
+void foo(long X) {
   if (X+1 < 0)
     printf("success\n");
 }
