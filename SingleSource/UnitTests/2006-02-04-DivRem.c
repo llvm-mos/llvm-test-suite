@@ -1,10 +1,12 @@
+// Modified by LLVM-MOS.
+
 #include <stdio.h>
 
-void test(unsigned X, unsigned Y) {
-  printf("%u %u %u %u\n", X, Y, X / (8 << (Y&15)), X % (8 << (Y&15)));
+void test(unsigned long X, unsigned long Y) {
+  printf("%lu %lu %lu %lu\n", X, Y, X / (8ul << (Y&15)), X % (8ul << (Y&15)));
 }
 
-int i;
+long i;
 int main(void) {
   long long l;
 
