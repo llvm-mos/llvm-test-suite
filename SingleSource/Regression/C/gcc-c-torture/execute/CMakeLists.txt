@@ -385,8 +385,6 @@ if(ARCH STREQUAL "MOS")
     pr56799.c
     pr57124.c
     pr57344-2.c
-    pr57344-3.c
-    pr57344-4.c
     pr58570.c
     pr60822.c
     pr66556.c
@@ -396,7 +394,6 @@ if(ARCH STREQUAL "MOS")
     pr7284-1.c
     pr78170.c
     pr89195.c
-    pr90025.c
     shiftdi.c
     usmul.c
     vrp-5.c

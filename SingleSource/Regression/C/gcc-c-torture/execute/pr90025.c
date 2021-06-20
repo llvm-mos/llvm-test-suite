@@ -1,4 +1,5 @@
 /* PR middle-end/90025 */
+// Modified by LLVM-MOS.
 
 __attribute__((noipa)) void
 bar (char *p)
@@ -13,10 +14,10 @@ bar (char *p)
 }
 
 __attribute__((noipa)) void
-foo (unsigned int x)
+foo (unsigned long x)
 {
   char s[32] = { 'f', 'o', 'o', 'b', 'a', 'r', 0 };
-  ((unsigned int *) s)[2] = __builtin_bswap32 (x);
+  ((unsigned long *) s)[2] = __builtin_bswap32 (x);
   bar (s);
 }
 
