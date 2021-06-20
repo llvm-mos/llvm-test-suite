@@ -1,3 +1,5 @@
+// Modified by LLVM-MOS.
+
 #include <stdio.h>
 
 //===- PR156 --------------------------------------------------------------===//
@@ -51,7 +53,7 @@ union foo {
 
 union nameData {
   char data[64];
-  int alignmentDummy;
+  long alignmentDummy;
 } nd = {"relname"};
 
 //===- PR199 --------------------------------------------------------------===//
@@ -140,10 +142,10 @@ int main() {
   spinlock_t lock;
   printf("PR156: %s\n", init_task_union.task.comm);
   printf("PR295/PR568: %d, %d\n", fixed_tl[0].word.pad, fixed_tl[0].base);
-  printf("PR574: %d, %d, %d, %d\n", (int)bkv4.gv4.av4, cav1.dv1, cav1.ev1,
+  printf("PR574: %ld, %d, %d, %d\n", (long)bkv4.gv4.av4, cav1.dv1, cav1.ev1,
          cav1.fv1[0]);
   printf("PR162: %d, %d, %d\n", V.X.A, V.X.B, V.C);
-  printf("PR650: %s, %d\n", nd.data, nd.alignmentDummy);
+  printf("PR650: %s, %ld\n", nd.data, nd.alignmentDummy);
   printf("PR199: %d, %d, %d, %d\n", hobbit.a, hobbit.values[0], 
          hobbit.values[1], hobbit.values[2]);
   printf("PR199: %d, %d, %d, %d\n", hobbit2.a, hobbit2.values[0], 
@@ -156,6 +158,6 @@ int main() {
   printf("PR627: %d\n", (int)sizeof(lock));
   XX = ucast_test();
   printf("PR684: %d, %d, %d %d\n", XX.s.i1, XX.s.i2, XX.s.i3, XX.i);
-  printf("rdar://6828787: %d, %d, %d\n", foo2.a, (int)foo2.x, foo2.y);
+  printf("rdar://6828787: %d, %ld, %d\n", foo2.a, (long)foo2.x, foo2.y);
   return 0;
 }
