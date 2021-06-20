@@ -63,7 +63,6 @@ if(ARCH STREQUAL "MOS")
     # Requires 32-bit int.
     2002-10-13-BadLoad.c
     2003-05-26-Shorts.c
-    2020-01-06-coverage-006.c
 
     # Requires libc++
     matrix-types-spec.cpp

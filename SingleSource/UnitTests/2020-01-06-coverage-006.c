@@ -1,3 +1,5 @@
+// Modified by LLVM-MOS.
+
 #include <stdint.h>
 #include <stdio.h>
 #include <inttypes.h>
@@ -5,9 +7,9 @@
 #pragma pack(1)
 
 struct s {
-  int : 28;
-  unsigned : 17;
-  unsigned a : 25;
+  long : 28;
+  unsigned long : 17;
+  unsigned long a : 25;
 } b;
 
 volatile int32_t c;
@@ -32,7 +34,7 @@ int main() {
   b.a = val_1;
   d();
 
-  printf("b.a = %u\n", b.a);
+  printf("b.a = %lu\n", b.a);
   printf("c = %" PRIi32 "\n", c);
   printf("x = %" PRIi32 "\n", x);
 
