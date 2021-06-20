@@ -63,7 +63,6 @@ if(ARCH STREQUAL "MOS")
     # Requires 32-bit int.
     2002-10-13-BadLoad.c
     2003-05-26-Shorts.c
-    2005-07-15-Bitfield-ABI.c
     2006-01-23-UnionInit.c
     2006-02-04-DivRem.c
     2006-12-11-LoadConstants.c
