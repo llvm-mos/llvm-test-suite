@@ -1,3 +1,6 @@
+
+// Modified by LLVM-MOS.
+
 #include <stdio.h>
 
 long zz() { return 0x00000000L; }
@@ -159,15 +162,15 @@ long long bit63() { return 0x8000000000000000LL; }
 
 
 int main(int argc, const char *argv[]) {
-  printf("%08x\n", zz());
-  printf("%08x\n", zs());
-  printf("%08x\n", zu());
-  printf("%08x\n", sz());
-  printf("%08x\n", ss());
-  printf("%08x\n", su());
-  printf("%08x\n", uz());
-  printf("%08x\n", us());
-  printf("%08x\n", uu());
+  printf("%08lx\n", zz());
+  printf("%08lx\n", zs());
+  printf("%08lx\n", zu());
+  printf("%08lx\n", sz());
+  printf("%08lx\n", ss());
+  printf("%08lx\n", su());
+  printf("%08lx\n", uz());
+  printf("%08lx\n", us());
+  printf("%08lx\n", uu());
   
   printf("%016llx\n", zzzz());
   printf("%016llx\n", zzzs());
