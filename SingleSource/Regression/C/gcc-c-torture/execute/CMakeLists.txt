@@ -407,8 +407,10 @@ if(ARCH STREQUAL "MOS")
     pr53645.c
     pr60960.c
     pr65427.c
+    pr70903.c
     pr85169.c
     scal-to-vec2.c
+    simd-2.c
     simd-5.c
     simd-6.c
 
@@ -478,6 +480,7 @@ if(ARCH STREQUAL "MOS")
     20050316-2.c
     20050604-1.c
     20060420-1.c
+    20070614-1.c
     20071030-1.c
     20080117-1.c
     20080502-1.c
