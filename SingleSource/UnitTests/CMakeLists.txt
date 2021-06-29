@@ -120,6 +120,9 @@ if(ARCH STREQUAL "MOS")
 
     # Requires static constructors.
     initp1.cpp
+
+    # Requires vtables.
+    member-function-pointers.cpp
   )
 endif()
 
