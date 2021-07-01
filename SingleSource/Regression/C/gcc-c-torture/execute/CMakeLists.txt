@@ -365,6 +365,7 @@ if(ARCH STREQUAL "MOS")
     20061101-1.c
     20081117-1.c
     20120919-1.c
+    20180131-1.c
     bitfld-4.c
     bitfld-6.c
     bitfld-7.c
