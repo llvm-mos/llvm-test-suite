@@ -403,6 +403,7 @@ if(ARCH STREQUAL "MOS")
     20050316-1.c
     20050604-1.c
     20060420-1.c
+    pr23135.c
     pr53645-2.c
     pr53645.c
     pr60960.c
@@ -410,7 +411,9 @@ if(ARCH STREQUAL "MOS")
     pr70903.c
     pr85169.c
     scal-to-vec2.c
+    simd-1.c
     simd-2.c
+    simd-4.c
     simd-5.c
     simd-6.c
 
@@ -438,6 +441,16 @@ if(ARCH STREQUAL "MOS")
 
     # Requires __int128
     pr84748.c
+
+    # Requires __builtin_trap
+    20020418-1.c
+
+    # Too big at -O0
+    strlen-5.c
+
+    # Too much stack at -O0
+    20000412-2.c
+    nestfunc-4.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -698,11 +711,13 @@ if(ARCH STREQUAL "MOS")
     pr40022.c
     pr51933.c
     pr56866.c
+    pr65053-1.c
     pr65053-2.c
     pr68328.c
     pr78726.c
     pr81588.c
     pr82954.c
+    pr88904.c
     pr65956.c
   )
 
