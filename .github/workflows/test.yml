@@ -1,0 +1,62 @@
+name: Test
+on:
+  push:
+    branches: [ mysterymath-automation ]
+  schedule:
+    - cron: '19 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        opt: [O0, O3, Os, Oz]
+
+    steps:
+      - name: Install build dependencies.
+        run: |
+          sudo apt-get install cmake ninja-build
+          python -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
+      - name: Download the latest llvm-mos release ZIP.
+        run: |
+          curl -L -o llvm-mos.zip \
+            https://github.com/llvm-mos/llvm-mos/releases/download/llvm-mos-linux-main/llvm-mos-linux-main.zip
+      - name: Unzip llvm-mos.
+        run: unzip llvm-mos.zip
+      - name: Check out the SDK.
+        uses: actions/checkout@v2
+        with:
+          repository: 'llvm-mos/llvm-mos-sdk'
+          path: 'llvm-mos-sdk'
+      - name: Build the SDK.
+        run: |
+          cd llvm-mos-sdk
+          mkdir build
+          cd build
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/bin -G "Ninja" ..
+          ninja
+      - name: Check out the test suite.
+        uses: actions/checkout@v2
+        with:
+          path: 'llvm-test-suite'
+      - name: Build the test suite.
+        run: |
+          cd llvm-test-suite
+          mkdir build
+          cd build
+          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
+            -DARCH="MOS" \
+            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg" \
+            -DTEST_SUITE_SUBDIRS=SingleSource/ \
+            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
+            -DTEST_SUITE_USER_MODE_EMULATION=yes \
+            -G Ninja \
+            -C../cmake/caches/${{ matrix.opt }}.cmake \
+            ..
+          ninja
+      - name: Run the test suite.
+        run: |
+          cd llvm-test-suite/build
+          lit .
