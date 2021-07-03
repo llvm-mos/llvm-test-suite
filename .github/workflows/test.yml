@@ -81,6 +81,7 @@ jobs:
         run: |
           cd llvm-mos
           cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug
+          cmake --build build
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
