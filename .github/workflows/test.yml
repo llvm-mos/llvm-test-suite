@@ -80,7 +80,7 @@ jobs:
       - name: Build the compiler in debug mode.
         run: |
           cd llvm-mos
-          cmake -C clang/cmake/caches/MOS.cmake -G ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug
+          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
@@ -91,7 +91,7 @@ jobs:
           cd llvm-mos-sdk
           mkdir build
           cd build
-          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/build/bin -G "Ninja" ..
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/build/bin -G Ninja ..
           ninja
       - name: Check out the test suite.
         uses: actions/checkout@v2
