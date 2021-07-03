@@ -81,7 +81,8 @@ jobs:
         run: |
           cd llvm-mos
           cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug
-          cmake --build build
+          cd build
+          cmake --build . --target clang lld llvm-ar llvm-ranlib
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
