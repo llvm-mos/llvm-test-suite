@@ -71,7 +71,7 @@ jobs:
     steps:
       - name: Install build dependencies.
         run: |
-          sudo apt-get install cmake ninja-build
+          sudo apt-get install cmake ninja-build lld
       - name: Check out the compiler.
         uses: actions/checkout@v2
         with:
@@ -80,7 +80,7 @@ jobs:
       - name: Build the compiler in debug mode.
         run: |
           cd llvm-mos
-          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug
+          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
           cd build
           cmake --build . --target clang lld llvm-ar llvm-ranlib
       - name: Check out the SDK.
