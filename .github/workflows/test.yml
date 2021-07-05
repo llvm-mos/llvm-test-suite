@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         opt: [O0, O3, Os, Oz]
+      fail-fast: false
 
     steps:
       - name: Install build dependencies.
@@ -67,6 +68,7 @@ jobs:
     strategy:
       matrix:
         opt: [O0, O3, Os, Oz]
+      fail-fast: false
 
     steps:
       - name: Install build dependencies.
