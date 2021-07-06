@@ -86,7 +86,7 @@ jobs:
           cd llvm-mos
           cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
           cd build
-          cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
+          cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size llvm-lit
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
@@ -118,3 +118,7 @@ jobs:
             -C../cmake/caches/${{ matrix.opt }}.cmake \
             ..
           ninja
+      - name: Run the test suite.
+        run: |
+          cd llvm-test-suite/build
+          $GITHUB_WORKSPACE/llvm-mos/build/bin/llvm-lit .
