@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         opt: [O0, O3, Os, Oz]
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=4']
       fail-fast: false
 
     steps:
@@ -49,7 +50,7 @@ jobs:
           cd build
           cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
             -DARCH="MOS" \
-            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg" \
+            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg ${{ matrix.num-imag-ptrs }}" \
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
             -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
             -DTEST_SUITE_USER_MODE_EMULATION=yes \
@@ -68,6 +69,7 @@ jobs:
     strategy:
       matrix:
         opt: [O0, O3, Os, Oz]
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=4']
       fail-fast: false
 
     steps:
@@ -108,7 +110,7 @@ jobs:
           cd build
           cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/build/bin/clang \
             -DARCH="MOS" \
-            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg -Wl,-mllvm,-verify-machineinstrs" \
+            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg -Wl,-mllvm,-verify-machineinstrs ${{ matrix.num-imag-ptrs }}" \
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
             -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
             -DTEST_SUITE_USER_MODE_EMULATION=yes \
