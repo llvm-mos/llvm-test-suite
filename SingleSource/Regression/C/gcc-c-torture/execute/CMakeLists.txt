@@ -447,6 +447,7 @@ if(ARCH STREQUAL "MOS")
     20020418-1.c
 
     # Too big at -O0
+    strlen-4.c
     strlen-5.c
 
     # Too much stack at -O0
