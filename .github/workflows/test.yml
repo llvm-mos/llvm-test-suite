@@ -16,7 +16,7 @@ jobs:
         num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=5']
         exclude:
           - opt: O0
-            num-imag-pts: '-Wl,-mllvm,-num-imag-ptrs=5'
+            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=5'
       fail-fast: false
 
     steps:
@@ -75,7 +75,7 @@ jobs:
         num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=5']
         exclude:
           - opt: O0
-            num-imag-pts: '-Wl,-mllvm,-num-imag-ptrs=5'
+            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=5'
       fail-fast: false
 
     steps:
