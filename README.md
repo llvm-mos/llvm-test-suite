@@ -4,10 +4,6 @@ Given its very broad scope, it's likely that quite a bit of this test suite will
 *never* work on MOS. For example, it's unlikely that, say, an unaltered 7zip can
 be made to fit in 64KiB.
 
-As testing progresses, sections of the test suite known to work on MOS will be
-carved out in this document, and instructions to run the supported subset will
-be provided. For now, this subset is empty.
-
 Please see the LLVM testing infrastructure guide:
 
   https://llvm.org/docs/TestSuiteGuide.html
@@ -27,6 +23,10 @@ $ mkdir build
 $ cd build
 $ cmake -DCMAKE_C_COMPILER=$HOME/llvm-mos/build/bin/clang -DARCH="MOS" -DTEST_SUITE_ARCH_FLAGS="--config $HOME/llvm-mos-sdk/build/sim.cfg" -DTEST_SUITE_SUBDIRS=SingleSource/ -DTEST_SUITE_RUN_UNDER=$HOME/llvm-mos-sdk/build/bin/sim -DTEST_SUITE_USER_MODE_EMULATION=yes -C../cmake/caches/Os.cmake -G Ninja ..
 ```
+
+A variety of options can be added after "sim.cfg" to test different modes of the
+compiler. Similarly, different optimization profiles can be selected using a
+different CMake cache file.
 
 Next, you can compile the tests. Most of them will have compile failures, so
 disable ninja's fail-fast mode with `-k`.
