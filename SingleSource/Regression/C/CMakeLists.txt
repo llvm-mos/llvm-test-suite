@@ -1,4 +1,4 @@
-# Modified by LLVM-MOS.
+# Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 if(ARCH MATCHES "x86" OR ARCH MATCHES "riscv" OR
    ARCH MATCHES "SystemZ" OR ARCH MATCHES "Mips" OR
