@@ -1,7 +1,7 @@
 // A compiler cannot inline Callee into main unless it is prepared to reclaim
 // the stack memory allocated in it.
 
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <stdlib.h>

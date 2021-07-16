@@ -1,4 +1,4 @@
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 // PR594
 
 struct X {

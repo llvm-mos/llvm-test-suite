@@ -1,4 +1,4 @@
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 div1 (signed char x)
 {

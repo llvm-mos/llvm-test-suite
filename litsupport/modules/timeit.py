@@ -3,7 +3,7 @@ from litsupport import testplan
 import os
 import re
 
-# Modified by LLVM-MOS.
+# Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 def _mutateCommandLine(context, commandline):
     timefile = context.tmpBase + ".time"

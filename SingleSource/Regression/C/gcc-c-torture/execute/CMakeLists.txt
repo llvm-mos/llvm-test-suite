@@ -1,4 +1,4 @@
-# Modified by LLVM-MOS.
+# Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 if(NOT ARCH STREQUAL "MOS")
   add_subdirectory(ieee)

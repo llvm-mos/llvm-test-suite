@@ -3,7 +3,7 @@
  * with no function calls and no arithmetic.
  */
 
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 

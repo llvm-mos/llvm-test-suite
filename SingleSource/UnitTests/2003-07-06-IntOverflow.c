@@ -11,7 +11,7 @@
  *    a sequence of operations involving -, * and /.
  */
 
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 

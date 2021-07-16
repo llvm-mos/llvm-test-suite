@@ -1,3 +1,5 @@
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
+
 /*
  * This file is used to test shift right operations in conjunction with
  * the Signless Types features. The SHR instruction was replaced with

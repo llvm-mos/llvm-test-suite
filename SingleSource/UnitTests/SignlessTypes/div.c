@@ -1,4 +1,4 @@
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 /* 
  * This file is used to test division operations in conjunction with

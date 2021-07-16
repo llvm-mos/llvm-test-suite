@@ -1,3 +1,5 @@
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
+
 #include <stdlib.h>
 #include <stdio.h>
 

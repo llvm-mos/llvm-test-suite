@@ -1,4 +1,4 @@
-// Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #define ABORT() do { __builtin_printf("assert.\n");  __builtin_abort (); }while(0)
 int f(int a) __attribute__((noinline));

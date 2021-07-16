@@ -5,7 +5,7 @@
  * memory addresses to get output that matches that of the native compiler.
  */
 
- // Modified by LLVM-MOS.
+// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 

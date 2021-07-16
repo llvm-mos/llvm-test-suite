@@ -3,6 +3,9 @@
 # Defines helper functions to build benchmarks and the corresponding .test files
 #
 ##===----------------------------------------------------------------------===##
+
+# Modified by Daniel Thornburgh (mysterymath@gmail.com).
+
 include(TestFile)
 include(CopyDir)
 
