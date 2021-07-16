@@ -336,20 +336,6 @@ if(ARCH STREQUAL "MOS")
     # Permanently disabled tests.
     # ---------------------------
 
-    # Requires int registers.
-    20001009-2.c
-    20030222-1.c
-    960312-1.c
-    990130-1.c
-    pr38533.c
-    pr41239.c
-    pr43385.c
-    pr45695.c
-    pr52286.c
-    pr65648.c
-    pr84524.c
-    stkalign.c
-
     # Requires 32-bit int.
     20020404-1.c
     20021024-1.c
@@ -453,6 +439,10 @@ if(ARCH STREQUAL "MOS")
     # Too much stack at -O0
     20000412-2.c
     nestfunc-4.c
+
+    # Requires silent inline asm operand truncation.
+    20030222-1.c
+    pr52286.c
 
     # Temporarily disabled tests.
     # ---------------------------
@@ -687,13 +677,6 @@ if(ARCH STREQUAL "MOS")
     comp-goto-2.c
     pr70460.c
 
-    # Requires pointer registers for inline assembly.
-    20071220-2.c
-    pr43560.c
-    pr49279.c
-    pr49390.c
-    pr80421.c
-
     # Requires setjmp
     built-in-setjmp.c
     pr56982.c
@@ -721,6 +704,7 @@ if(ARCH STREQUAL "MOS")
     pr82954.c
     pr88904.c
     pr65956.c
+    stkalign.c
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
