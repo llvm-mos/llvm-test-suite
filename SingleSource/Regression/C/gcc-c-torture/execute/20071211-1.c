@@ -1,4 +1,3 @@
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 extern void abort() __attribute__ ((noreturn));
 

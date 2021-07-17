@@ -1,4 +1,3 @@
-# Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 set(RUN_OPTIONS 31415926)
 set(HASH_PROGRAM_OUTPUT 1)

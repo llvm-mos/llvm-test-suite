@@ -4,7 +4,6 @@
 #
 ##===----------------------------------------------------------------------===##
 
-# Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 include(TestFile)
 include(CopyDir)

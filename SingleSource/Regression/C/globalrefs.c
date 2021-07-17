@@ -5,7 +5,6 @@
  * memory addresses to get output that matches that of the native compiler.
  */
 
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 

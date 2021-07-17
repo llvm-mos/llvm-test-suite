@@ -1,4 +1,3 @@
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 #include <stdlib.h>

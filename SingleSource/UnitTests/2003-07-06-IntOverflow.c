@@ -11,7 +11,6 @@
  *    a sequence of operations involving -, * and /.
  */
 
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 

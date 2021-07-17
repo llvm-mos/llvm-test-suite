@@ -5,7 +5,6 @@
 # the host system (even when cross-compiling the benchmark) with
 # `llvm_add_host_executable`.
 
-# Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 include(Host)
 

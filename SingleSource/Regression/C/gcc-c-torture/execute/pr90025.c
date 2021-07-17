@@ -1,5 +1,4 @@
 /* PR middle-end/90025 */
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 __attribute__((noipa)) void
 bar (char *p)

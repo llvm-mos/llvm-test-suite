@@ -1,6 +1,5 @@
 /* PR rtl-optimization/91347 */
 /* Reported by John David Anglin <danglin@gcc.gnu.org> */
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 typedef unsigned short __u16;
 typedef __signed__ int __s32;

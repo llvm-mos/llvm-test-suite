@@ -3,7 +3,6 @@
  * with no function calls and no arithmetic.
  */
 
-// Modified by Daniel Thornburgh (mysterymath@gmail.com).
 
 #include <stdio.h>
 
