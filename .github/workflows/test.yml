@@ -84,16 +84,18 @@ jobs:
           cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
           cd build
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
-      - name: Upload the compiler binaries.
+      - name: Upload the compiler.
         uses: actions/upload-artifact@v2
         with:
-          name: compiler-binaries
+          name: compiler
           path: |
             llvm-mos/build/bin/clang
             llvm-mos/build/bin/lld
             llvm-mos/build/bin/llvm-ar
+            llvm-mos/build/bin/llvm-lit
             llvm-mos/build/bin/llvm-ranlib
             llvm-mos/build/bin/llvm-size
+            llvm-mos/build/lib/clang
 
   verify:
     needs: build-debug
@@ -113,10 +115,11 @@ jobs:
       - name: Install build dependencies.
         run: |
           sudo apt-get install cmake ninja-build lld
-      - name: Download the compiler binaries.
+      - name: Download the compiler.
         uses: actions/download-artifact@v2
         with:
-          name: compiler-binaries
+          name: compiler
+          path: llvm-mos
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
@@ -127,7 +130,7 @@ jobs:
           cd llvm-mos-sdk
           mkdir build
           cd build
-          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/build/bin -G Ninja ..
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/bin -G Ninja ..
           ninja
       - name: Check out the test suite.
         uses: actions/checkout@v2
@@ -138,7 +141,7 @@ jobs:
           cd llvm-test-suite
           mkdir build
           cd build
-          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/build/bin/clang \
+          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
             -DARCH="MOS" \
             -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg -Wl,-mllvm,-verify-machineinstrs ${{ matrix.num-imag-ptrs }}" \
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
@@ -151,4 +154,4 @@ jobs:
       - name: Run the test suite.
         run: |
           cd llvm-test-suite/build
-          $GITHUB_WORKSPACE/llvm-mos/build/bin/llvm-lit .
+          $GITHUB_WORKSPACE/llvm-mos/bin/llvm-lit .
