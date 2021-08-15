@@ -66,17 +66,8 @@ jobs:
           cd llvm-test-suite/build
           lit .
 
-  verify:
+  build-debug:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        opt: [O0, O3, Os, Oz]
-        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=5']
-        exclude:
-          - opt: O0
-            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=5'
-      fail-fast: false
 
     steps:
       - name: Install build dependencies.
@@ -93,6 +84,34 @@ jobs:
           cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
           cd build
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
+      - name: Upload the compiler binaries.
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiler-binaries
+          path: llvm-mos/build/bin/
+
+  verify:
+    needs: build-debug
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        opt: [O0, O3, Os, Oz]
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=5']
+        exclude:
+          - opt: O0
+            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=5'
+      fail-fast: false
+
+    steps:
+      - name: Install build dependencies.
+        run: |
+          sudo apt-get install cmake ninja-build lld
+      - name: Download the compiler binaries.
+        uses: actions/download-artifact@v2
+        with:
+          name: compiler-binaries
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
