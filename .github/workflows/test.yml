@@ -88,7 +88,12 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: compiler-binaries
-          path: llvm-mos/build/bin/
+          path: |
+            llvm-mos/build/bin/clang
+            llvm-mos/build/bin/lld
+            llvm-mos/build/bin/llvm-ar
+            llvm-mos/build/bin/llvm-ranlib
+            llvm-mos/build/bin/llvm-size
 
   verify:
     needs: build-debug
