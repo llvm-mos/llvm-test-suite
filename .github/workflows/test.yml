@@ -84,18 +84,13 @@ jobs:
           cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
           cd build
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
+      - name: Archive the compiler.
+        run: tar -cf compiler.tar llvm-mos/build/bin llvm-mos/build/lib/clang
       - name: Upload the compiler.
         uses: actions/upload-artifact@v2
         with:
           name: compiler
-          path: |
-            llvm-mos/build/bin/clang
-            llvm-mos/build/bin/ld.lld
-            llvm-mos/build/bin/llvm-ar
-            llvm-mos/build/bin/llvm-lit
-            llvm-mos/build/bin/llvm-ranlib
-            llvm-mos/build/bin/llvm-size
-            llvm-mos/build/lib/clang
+          path: compiler.tar
 
   verify:
     needs: build-debug
@@ -120,8 +115,8 @@ jobs:
         with:
           name: compiler
           path: llvm-mos
-      - name: Give compiler binaries execute permission.
-        run: chmod +x llvm-mos/bin/*
+      - name: Extract the compiler.
+        run: tar -xpf compiler.tar
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
