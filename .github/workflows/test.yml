@@ -114,7 +114,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: compiler
-          path: llvm-mos
       - name: Extract the compiler.
         run: tar -xpf compiler.tar
       - name: Check out the SDK.
