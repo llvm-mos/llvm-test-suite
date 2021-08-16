@@ -120,6 +120,8 @@ jobs:
         with:
           name: compiler
           path: llvm-mos
+      - name: Give compiler binaries execute permission.
+        run: chmod +x llvm-mos/bin/*
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
