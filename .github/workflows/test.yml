@@ -126,7 +126,7 @@ jobs:
           cd llvm-mos-sdk
           mkdir build
           cd build
-          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/bin -G Ninja ..
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/build/bin -G Ninja ..
           ninja
       - name: Check out the test suite.
         uses: actions/checkout@v2
@@ -137,7 +137,7 @@ jobs:
           cd llvm-test-suite
           mkdir build
           cd build
-          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
+          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/build/bin/clang \
             -DARCH="MOS" \
             -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg -Wl,-mllvm,-verify-machineinstrs ${{ matrix.num-imag-ptrs }}" \
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
@@ -150,4 +150,4 @@ jobs:
       - name: Run the test suite.
         run: |
           cd llvm-test-suite/build
-          $GITHUB_WORKSPACE/llvm-mos/bin/llvm-lit .
+          $GITHUB_WORKSPACE/llvm-mos/build/bin/llvm-lit .
