@@ -21,7 +21,7 @@ Use CMake to configure the SingleSource directory for MOS:
 ```console
 $ mkdir build
 $ cd build
-$ cmake -DCMAKE_C_COMPILER=$HOME/llvm-mos/build/bin/clang -DARCH="MOS" -DTEST_SUITE_ARCH_FLAGS="--config $HOME/llvm-mos-sdk/build/sim.cfg" -DTEST_SUITE_SUBDIRS=SingleSource/ -DTEST_SUITE_RUN_UNDER=$HOME/llvm-mos-sdk/build/bin/sim -DTEST_SUITE_USER_MODE_EMULATION=yes -C../cmake/caches/Os.cmake -G Ninja ..
+$ cmake -DCMAKE_C_COMPILER=$HOME/llvm-mos/build/bin/clang -DARCH="MOS" -DTEST_SUITE_ARCH_FLAGS="--config $HOME/llvm-mos-sdk/build/sim.cfg" -DTEST_SUITE_SUBDIRS=SingleSource/ -DTEST_SUITE_RUN_UNDER=$HOME/llvm-mos-sdk/build/bin/sim -DTEST_SUITE_USER_MODE_EMULATION=yes -DTEST_SUITE_LLVM_SIZE="" -DCMAKE_STRIP="" -C../cmake/caches/Os.cmake -G Ninja ..
 ```
 
 A variety of options can be added after "sim.cfg" to test different modes of the
