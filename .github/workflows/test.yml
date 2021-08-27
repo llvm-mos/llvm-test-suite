@@ -57,6 +57,8 @@ jobs:
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
             -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
             -DTEST_SUITE_USER_MODE_EMULATION=yes \
+            -DTEST_SUITE_LLVM_SIZE="" \
+            -DCMAKE_STRIP="" \
             -G Ninja \
             -C../cmake/caches/${{ matrix.opt }}.cmake \
             ..
@@ -143,6 +145,8 @@ jobs:
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
             -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
             -DTEST_SUITE_USER_MODE_EMULATION=yes \
+            -DTEST_SUITE_LLVM_SIZE="" \
+            -DCMAKE_STRIP="" \
             -G Ninja \
             -C../cmake/caches/${{ matrix.opt }}.cmake \
             ..
