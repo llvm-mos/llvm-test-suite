@@ -81,15 +81,17 @@
 /*#include "defns.h"*/
 
 #include <stdlib.h>
-#include <time.h>
+/*#include <time.h>*/
 
 /* Define if should use homemade str* functions. */
 
 /*#define MYSTRFNS */
 
+#define SMALL_PROBLEM_SIZE
+
 /* Accuracy of timings and human fatigue controlled by next two lines */
 #ifdef SMALL_PROBLEM_SIZE
-#define LOOPS	2000000
+#define LOOPS	200000
 #else
 #define LOOPS	100000000
 #endif
@@ -99,7 +101,7 @@
 #undef	NOSTRUCTASSIGN		/* Define if compiler can't assign structures */
 
 /* define only one of the next three defines */
-#define CLOCK
+/*#define CLOCK*/
 /*#define TIMES			/* Use times(2) time function */
 /*#define TIME			/* Use time(2) time function */
 
@@ -209,7 +211,7 @@ Proc0()
 	Enumeration	 	EnumLoc;
 	String30		String1Loc;
 	String30		String2Loc;
-	register unsigned int	i;
+	register unsigned long	i;
 
 #ifdef CLOCK
 	long			starttime;
@@ -241,9 +243,10 @@ Proc0()
 	times(&tms);
 	nulltime = tms.tms_utime - starttime; /* Computes overhead of looping */
 #endif
+       static RecordType Record1, Record2;
 
-	PtrGlbNext = (RecordPtr) malloc(sizeof(RecordType));
-	PtrGlb = (RecordPtr) malloc(sizeof(RecordType));
+	PtrGlbNext = &Record2;
+	PtrGlb = &Record1;
 	PtrGlb->PtrComp = PtrGlbNext;
 	PtrGlb->Discr = Ident1;
 	PtrGlb->EnumComp = Ident3;

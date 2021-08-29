@@ -99,7 +99,7 @@
 #undef	NOSTRUCTASSIGN		/* Define if compiler can't assign structures */
 
 /* define only one of the next three defines */
-#define CLOCK
+/*#define CLOCK*/
 /*#define TIMES			/* Use times(2) time function */
 /*#define TIME			/* Use time(2) time function */
 
