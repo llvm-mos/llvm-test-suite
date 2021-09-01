@@ -91,7 +91,7 @@
 
 /* Accuracy of timings and human fatigue controlled by next two lines */
 #ifdef SMALL_PROBLEM_SIZE
-#define LOOPS	200000
+#define LOOPS	2000000
 #else
 #define LOOPS	100000000
 #endif
