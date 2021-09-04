@@ -443,6 +443,9 @@ if(ARCH STREQUAL "MOS")
     20030222-1.c
     pr52286.c
 
+    # Has undefined behavior?!?
+    string-opt-18.c
+
     # Temporarily disabled tests.
     # ---------------------------
 
