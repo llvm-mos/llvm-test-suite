@@ -13,10 +13,10 @@ jobs:
     strategy:
       matrix:
         opt: [O0, O3, Os, Oz]
-        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=6']
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=16']
         exclude:
           - opt: O0
-            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=6'
+            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=16'
       fail-fast: false
 
     steps:
@@ -102,10 +102,10 @@ jobs:
     strategy:
       matrix:
         opt: [O0, O3, Os, Oz]
-        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=6']
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=16']
         exclude:
           - opt: O0
-            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=6'
+            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=16'
       fail-fast: false
 
     steps:
