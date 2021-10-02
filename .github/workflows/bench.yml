@@ -1,0 +1,68 @@
+name: Benchmark
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '57 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=16']
+      fail-fast: false
+
+    steps:
+      - name: Install build dependencies.
+        run: |
+          sudo apt-get install cmake ninja-build
+      - name: Check out the test suite.
+        uses: actions/checkout@v2
+      - name: Download the latest llvm-mos release ZIP.
+        run: |
+          curl -L -o llvm-mos.zip \
+            https://github.com/llvm-mos/llvm-mos/releases/download/llvm-mos-linux-main/llvm-mos-linux-main.zip
+      - name: Unzip llvm-mos.
+        run: unzip llvm-mos.zip
+      - name: Check out the SDK.
+        uses: actions/checkout@v2
+        with:
+          repository: 'llvm-mos/llvm-mos-sdk'
+          path: 'llvm-mos-sdk'
+      - name: Build the SDK.
+        run: |
+          cd llvm-mos-sdk
+          mkdir build
+          cd build
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/bin -G "Ninja" ..
+          ninja
+      - name: Build the benchmarks.
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
+            -DARCH="MOS" \
+            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg ${{ matrix.num-imag-ptrs }}" \
+            -DTEST_SUITE_SUBDIRS=SingleSource/ \
+            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
+            -DTEST_SUITE_USER_MODE_EMULATION=yes \
+            -DTEST_SUITE_LLVM_SIZE="" \
+            -DCMAKE_STRIP="" \
+            -G Ninja \
+            -C../cmake/caches/Os.cmake \
+            ..
+          ninja SingleSource/Benchmarks/all
+      - name: Run the benchmark.
+        run: |
+          ./bench.sh > output.json
+      - name: Store the benchmark results.
+        uses: rhysd/github-action-benchmark@v1
+        with:
+          name: Benchmark -Os ${{ matrix.num-imag-ptrs }}
+          tool: 'googlecpp'
+          output-file-path: output.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
