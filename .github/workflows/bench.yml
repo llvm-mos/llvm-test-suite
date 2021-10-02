@@ -59,7 +59,7 @@ jobs:
         run: |
           ./bench.sh > output.json
       - name: Store the benchmark results.
-        uses: rhysd/github-action-benchmark@v1
+        uses: ktrz/github-action-benchmark@fix/manual-and-scheduled-runs
         with:
           name: Benchmark -Os ${{ matrix.num-imag-ptrs }}
           tool: 'googlecpp'
