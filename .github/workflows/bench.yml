@@ -59,7 +59,7 @@ jobs:
         run: |
           ./bench.sh > output.json
       - name: Store the benchmark results.
-        uses: llvm-mos/github-action-benchmark
+        uses: llvm-mos/github-action-benchmark@master
         with:
           name: Benchmark -Os ${{ matrix.num-imag-ptrs }}
           tool: 'googlecpp'
