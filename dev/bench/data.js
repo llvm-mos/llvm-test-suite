@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1633227540510,
+  "lastUpdate": 1633227562609,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -145,6 +145,36 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/8a9d9f43a8645b7ad854df418d5575e6cec5b969"
         },
         "date": 1633146945447,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "Dhrystone",
+            "value": 404595409,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 404595409 cycles\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "b9edab2c629d47b4e289ff2ca96e8a3d28d742f7",
+          "message": "Specify branch.",
+          "timestamp": "2021-10-02T18:41:07-07:00",
+          "tree_id": "7c4ccf3a4fed7f7490460b604a90641de482f549",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/b9edab2c629d47b4e289ff2ca96e8a3d28d742f7"
+        },
+        "date": 1633227561376,
         "tool": "googlecpp",
         "benches": [
           {
