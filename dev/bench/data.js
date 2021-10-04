@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1633366517961,
+  "lastUpdate": 1633366523779,
   "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
@@ -83,6 +83,32 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/b9edab2c629d47b4e289ff2ca96e8a3d28d742f7"
         },
         "date": 1633227539250,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "Dhrystone",
+            "value": 404595409,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 404595409 cycles\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "b9edab2c629d47b4e289ff2ca96e8a3d28d742f7",
+          "message": "Specify branch.",
+          "timestamp": "2021-10-03T01:41:07Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/b9edab2c629d47b4e289ff2ca96e8a3d28d742f7"
+        },
+        "date": 1633366521698,
         "tool": "googlecpp",
         "benches": [
           {
