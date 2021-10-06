@@ -2,6 +2,10 @@
 
 file=$(mktemp)
 $SIM --cycles $2 2> $file
+if [ $? -ne 0 ]; then
+  cat $file
+  exit
+fi
 read cycles unit < $file
 cat << EOF
   {

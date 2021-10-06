@@ -1,6 +1,7 @@
 #!/bin/bash
 
 : ${SIM:=llvm-mos-sdk/build/bin/sim}
+export SIM
 
 cat << EOF
 {
