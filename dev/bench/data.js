@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1633500776405,
-  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
+  "lastUpdate": 1633508260376,
+  "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
       {
@@ -381,6 +381,74 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d6120dcf01dd6dc7b81485648deed77225c19380"
         },
         "date": 1633500763286,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 8442880,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8442880 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 870668,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 870668 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 5040121,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 5040121 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 9531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 9531 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 25318,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 25318 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 268,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 268 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 68870,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 68870 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 404595409,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 404595409 cycles\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "d6120dcf01dd6dc7b81485648deed77225c19380",
+          "message": "Export SIM; add error messaging.",
+          "timestamp": "2021-10-06T06:07:09Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d6120dcf01dd6dc7b81485648deed77225c19380"
+        },
+        "date": 1633508258992,
         "tool": "googlecpp",
         "benches": [
           {
