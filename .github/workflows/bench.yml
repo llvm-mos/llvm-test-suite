@@ -58,6 +58,7 @@ jobs:
       - name: Run the benchmark.
         run: |
           ./bench.sh > output.json
+          cat output.json
       - name: Store the benchmark results.
         uses: llvm-mos/github-action-benchmark@master
         with:
