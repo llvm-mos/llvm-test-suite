@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1633594694175,
+  "lastUpdate": 1633681076292,
   "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
@@ -672,6 +672,74 @@ window.BENCHMARK_DATA = {
             "value": 5040121,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 5040121 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 9531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 9531 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 25318,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 25318 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 268,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 268 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 68870,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 68870 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 404595409,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 404595409 cycles\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "d6120dcf01dd6dc7b81485648deed77225c19380",
+          "message": "Export SIM; add error messaging.",
+          "timestamp": "2021-10-06T06:07:09Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d6120dcf01dd6dc7b81485648deed77225c19380"
+        },
+        "date": 1633681074548,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 7903876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7903876 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 869782,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 869782 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 5128020,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 5128020 cycles\nthreads: 1"
           },
           {
             "name": "6502-compilers/bench/coroutine",
