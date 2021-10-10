@@ -28,15 +28,14 @@ A variety of options can be added after "sim.cfg" to test different modes of the
 compiler. Similarly, different optimization profiles can be selected using a
 different CMake cache file.
 
-Next, you can compile the tests. Most of them will have compile failures, so
-disable ninja's fail-fast mode with `-k`.
+Next, you can compile the tests. 
 
 ```console
-$ ninja -k 0
+$ ninja
 ```
 
-Finally, run the tests and produce a report.
+Finally, run the tests:
 
 ```console
-$ ../../llvm-mos/build/bin/llvm-lit -v -o results.json .
+$ ../../llvm-mos/build/bin/llvm-lit -v .
 ```
