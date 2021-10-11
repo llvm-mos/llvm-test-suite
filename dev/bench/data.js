@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1633853831018,
+  "lastUpdate": 1633940276464,
   "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
@@ -626,6 +626,74 @@ window.BENCHMARK_DATA = {
             "value": 404595409,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 404595409 cycles\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "GitHub"
+          },
+          "id": "61a4cd812bf941613768008628f24b9d01a1ad37",
+          "message": "Update README.md",
+          "timestamp": "2021-10-10T03:07:17Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/61a4cd812bf941613768008628f24b9d01a1ad37"
+        },
+        "date": 1633940274668,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 7548175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7548175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 852184,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 852184 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 4848252,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 4848252 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 9531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 9531 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 25318,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 25318 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 261,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 261 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 67831,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 67831 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 390529664,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 390529664 cycles\nthreads: 1"
           }
         ]
       }
