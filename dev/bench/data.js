@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1634113073528,
-  "repoUrl": "",
+  "lastUpdate": 1634164386220,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -781,6 +781,78 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/61a4cd812bf941613768008628f24b9d01a1ad37"
         },
         "date": 1634113065997,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 7548175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7548175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 852184,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 852184 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 4848252,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 4848252 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 9531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 9531 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 25318,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 25318 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 261,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 261 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 67831,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 67831 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 390529664,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 390529664 cycles\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "82b432e3fc9cb5018ef682a85390f2fa643bd929",
+          "message": "Add on-demand Verify workflow w/ custom branch.",
+          "timestamp": "2021-10-13T15:27:50-07:00",
+          "tree_id": "60730c47cd641a4c408f355bd0e3a9a3b4049692",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/82b432e3fc9cb5018ef682a85390f2fa643bd929"
+        },
+        "date": 1634164383591,
         "tool": "googlecpp",
         "benches": [
           {
