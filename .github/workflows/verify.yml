@@ -1,0 +1,98 @@
+name: Verify
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'LLVM-MOS branch'
+        required: true
+        default: main
+
+jobs:
+  build-debug:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install build dependencies.
+        run: |
+          sudo apt-get install cmake ninja-build lld
+      - name: Check out the compiler.
+        uses: actions/checkout@v2
+        with:
+          repository: 'llvm-mos/llvm-mos'
+          path: 'llvm-mos'
+          ref: ${{ github.event.inputs.branch }}
+      - name: Build the compiler in debug mode.
+        run: |
+          cd llvm-mos
+          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
+          cd build
+          cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
+      - name: Archive the compiler.
+        run: tar -cf compiler.tar llvm-mos/{build/{bin,lib/clang},llvm/utils/lit}
+      - name: Upload the compiler.
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiler
+          path: compiler.tar
+
+  verify:
+    needs: build-debug
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        opt: [O0, O3, Os, Oz]
+        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=16']
+        exclude:
+          - opt: O0
+            num-imag-ptrs: '-Wl,-mllvm,-num-imag-ptrs=16'
+      fail-fast: false
+
+    steps:
+      - name: Install build dependencies.
+        run: |
+          sudo apt-get install cmake ninja-build
+      - name: Download the compiler.
+        uses: actions/download-artifact@v2
+        with:
+          name: compiler
+      - name: Extract the compiler.
+        run: tar -xpf compiler.tar
+      - name: Check out the SDK.
+        uses: actions/checkout@v2
+        with:
+          repository: 'llvm-mos/llvm-mos-sdk'
+          path: 'llvm-mos-sdk'
+      - name: Build the SDK.
+        run: |
+          cd llvm-mos-sdk
+          mkdir build
+          cd build
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/build/bin -G Ninja ..
+          ninja
+      - name: Check out the test suite.
+        uses: actions/checkout@v2
+        with:
+          path: 'llvm-test-suite'
+      - name: Verify the test suite.
+        run: |
+          cd llvm-test-suite
+          mkdir build
+          cd build
+          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/build/bin/clang \
+            -DARCH="MOS" \
+            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg -Wl,-mllvm,-verify-machineinstrs ${{ matrix.num-imag-ptrs }}" \
+            -DTEST_SUITE_SUBDIRS=SingleSource/ \
+            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
+            -DTEST_SUITE_USER_MODE_EMULATION=yes \
+            -DTEST_SUITE_LLVM_SIZE="" \
+            -DCMAKE_STRIP="" \
+            -G Ninja \
+            -C../cmake/caches/${{ matrix.opt }}.cmake \
+            ..
+          ninja
+      - name: Run the test suite.
+        run: |
+          cd llvm-test-suite/build
+          $GITHUB_WORKSPACE/llvm-mos/build/bin/llvm-lit .
