@@ -87,12 +87,14 @@ jobs:
           cd build
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
       - name: Archive the compiler.
-        run: tar -cf compiler.tar llvm-mos/{build/{bin,lib/clang},llvm/utils/lit}
+        run: |
+          tar --zstd -cf compiler.tar.zst llvm-mos/{build/{bin,lib/clang},llvm/utils/lit}
+          rm -rf llvm-mos
       - name: Upload the compiler.
         uses: actions/upload-artifact@v2
         with:
           name: compiler
-          path: compiler.tar
+          path: compiler.tar.zst
 
   verify:
     needs: build-debug
@@ -117,7 +119,7 @@ jobs:
         with:
           name: compiler
       - name: Extract the compiler.
-        run: tar -xpf compiler.tar
+        run: tar -xpf compiler.tar.zst
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
