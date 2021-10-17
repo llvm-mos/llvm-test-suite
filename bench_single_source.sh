@@ -1,7 +1,7 @@
 #!/bin/bash
 
 file=$(mktemp)
-$SIM --cycles $2 2> $file
+$SIM --cycles $2 2> $file > /dev/null
 if [ $? -ne 0 ]; then
   cat $file
   exit

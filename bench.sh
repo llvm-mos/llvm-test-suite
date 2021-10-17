@@ -23,6 +23,8 @@ echo ","
 ./bench_single_source.sh 6502-compilers/bench/unzip build/SingleSource/Benchmarks/6502-compilers-bench/unzip
 echo ","
 ./bench_single_source.sh Dhrystone build/SingleSource/Benchmarks/Dhrystone/dry
+echo ","
+./bench_single_source.sh "BYTE Sieve" build/SingleSource/Benchmarks/byte/sieve
 
 cat << EOF
   ]
