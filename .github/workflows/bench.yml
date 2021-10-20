@@ -57,7 +57,7 @@ jobs:
           ninja SingleSource/Benchmarks/all
       - name: Run the benchmark.
         run: |
-          ./bench.sh > output.json
+          LLVM_MOS=$GITHUB_WORKSPACE/llvm-mos LLVM_MOS_SDK=$GITHUB_WORKSPACE/llvm-mos-sdk/build ./bench.sh > output.json
           cat output.json
       - name: Store the benchmark results.
         uses: llvm-mos/github-action-benchmark@master

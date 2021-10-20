@@ -1,30 +1,33 @@
 #!/bin/bash
 
-: ${SIM:=llvm-mos-sdk/build/bin/sim}
-export SIM
+set -u
+: $LLVM_MOS_SDK
+export LLVM_MOS_SDK
 
 cat << EOF
 {
   "benchmarks": [
 EOF
 
-./bench_single_source.sh 6502-compilers/bench/ccgame/game_01_start build/SingleSource/Benchmarks/6502-compilers-bench/ccgame/game_01_start
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/ccgame/game_01_start build/SingleSource/Benchmarks/6502-compilers-bench/ccgame/game_01_start
 echo ","
-./bench_single_source.sh 6502-compilers/bench/ccgame/game_modern_optims build/SingleSource/Benchmarks/6502-compilers-bench/ccgame/game_modern_optims
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/ccgame/game_modern_optims build/SingleSource/Benchmarks/6502-compilers-bench/ccgame/game_modern_optims
 echo ","
-./bench_single_source.sh 6502-compilers/bench/ccgame/game_modern_optims_structarray build/SingleSource/Benchmarks/6502-compilers-bench/ccgame/game_modern_optims_structarray
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/ccgame/game_modern_optims_structarray build/SingleSource/Benchmarks/6502-compilers-bench/ccgame/game_modern_optims_structarray
 echo ","
-./bench_single_source.sh 6502-compilers/bench/coroutine build/SingleSource/Benchmarks/6502-compilers-bench/coroutine
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/coroutine build/SingleSource/Benchmarks/6502-compilers-bench/coroutine
 echo ","
-./bench_single_source.sh 6502-compilers/bench/memcpy build/SingleSource/Benchmarks/6502-compilers-bench/memcpy
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/memcpy build/SingleSource/Benchmarks/6502-compilers-bench/memcpy
 echo ","
-./bench_single_source.sh 6502-compilers/bench/rpg build/SingleSource/Benchmarks/6502-compilers-bench/rpg
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/rpg build/SingleSource/Benchmarks/6502-compilers-bench/rpg
 echo ","
-./bench_single_source.sh 6502-compilers/bench/unzip build/SingleSource/Benchmarks/6502-compilers-bench/unzip
+SingleSource/Benchmarks/bench.sh 6502-compilers/bench/unzip build/SingleSource/Benchmarks/6502-compilers-bench/unzip
 echo ","
-./bench_single_source.sh Dhrystone build/SingleSource/Benchmarks/Dhrystone/dry
+SingleSource/Benchmarks/bench.sh Dhrystone build/SingleSource/Benchmarks/Dhrystone/dry
 echo ","
-./bench_single_source.sh "BYTE Sieve" build/SingleSource/Benchmarks/byte/sieve
+SingleSource/Benchmarks/bench.sh "BYTE Sieve" build/SingleSource/Benchmarks/byte/sieve
+echo ","
+MultiSource/Benchmarks/coremark/bench.sh
 
 cat << EOF
   ]

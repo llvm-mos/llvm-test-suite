@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -u
+
 file=$(mktemp)
-$SIM --cycles $2 2> $file > /dev/null
+$LLVM_MOS_SDK/bin/sim --cycles $2 2> $file > /dev/null
 if [ $? -ne 0 ]; then
   cat $file
   exit
