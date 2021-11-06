@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1636100315796,
+  "lastUpdate": 1636186671527,
   "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
@@ -2954,6 +2954,86 @@ window.BENCHMARK_DATA = {
             "value": 4759108,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 4759108 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 9535,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 9535 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 14512,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 14512 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 151,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 151 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 54259,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 54259 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284638568,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284638568 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21849367,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21849367 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 257,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 257 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "cc2964fc8b24419ecf198b059620248547e72d50",
+          "message": "Port CoreMark to llvm-mos.",
+          "timestamp": "2021-10-20T05:07:29Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/cc2964fc8b24419ecf198b059620248547e72d50"
+        },
+        "date": 1636186670410,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 7398998,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7398998 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 890240,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 890240 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 4485349,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 4485349 cycles\nthreads: 1"
           },
           {
             "name": "6502-compilers/bench/coroutine",
