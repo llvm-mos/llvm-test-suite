@@ -665,20 +665,6 @@ if(ARCH STREQUAL "MOS")
     # Requires __builtin_frame_address.
     frame-address.c
 
-    # Requires computed goto.
-    20040302-1.c
-    20041214-1.c
-    20071210-1.c
-    20071220-1.c
-    920302-1.c
-    920501-3.c
-    920501-4.c
-    920501-5.c
-    980526-1.c
-    comp-goto-1.c
-    comp-goto-2.c
-    pr70460.c
-
     # Requires setjmp
     built-in-setjmp.c
     pr56982.c
