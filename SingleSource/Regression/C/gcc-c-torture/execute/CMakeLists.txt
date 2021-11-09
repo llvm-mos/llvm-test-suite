@@ -446,6 +446,9 @@ if(ARCH STREQUAL "MOS")
     # Has undefined behavior?!?
     string-opt-18.c
 
+    # Bizarre use of computed goto (LLVM bug 45818).
+    920302-1.c
+
     # Temporarily disabled tests.
     # ---------------------------
 
