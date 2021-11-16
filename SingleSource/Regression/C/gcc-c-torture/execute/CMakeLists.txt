@@ -668,9 +668,8 @@ if(ARCH STREQUAL "MOS")
     # Requires __builtin_frame_address.
     frame-address.c
 
-    # Requires setjmp
+    # Requires built-in-setjmp
     built-in-setjmp.c
-    pr56982.c
     pr84521.c
 
     # Requires FILE*

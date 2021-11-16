@@ -108,9 +108,6 @@ if(ARCH STREQUAL "MOS")
     # Requires scanf.
     2004-11-28-GlobalBoolLayout.c
 
-    # Requires setjmp.
-    2008-07-13-InlineSetjmp.c
-
     # Requires argc/argv.
     2003-05-31-LongShifts.c
     2006-01-29-SimpleIndirectCall.c
