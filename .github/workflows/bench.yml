@@ -10,11 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        num-imag-ptrs: ['', '-Wl,-mllvm,-num-imag-ptrs=16']
-      fail-fast: false
-
     steps:
       - name: Install build dependencies.
         run: |
@@ -45,7 +40,7 @@ jobs:
           cd build
           cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
             -DARCH="MOS" \
-            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg ${{ matrix.num-imag-ptrs }}" \
+            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg" \
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
             -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
             -DTEST_SUITE_USER_MODE_EMULATION=yes \
@@ -62,7 +57,7 @@ jobs:
       - name: Store the benchmark results.
         uses: llvm-mos/github-action-benchmark@master
         with:
-          name: Benchmark -Os ${{ matrix.num-imag-ptrs }}
+          name: Benchmark -Os
           tool: 'googlecpp'
           output-file-path: output.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
