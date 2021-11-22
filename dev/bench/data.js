@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1637482688881,
+  "lastUpdate": 1637569158104,
   "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
@@ -4551,6 +4551,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d74bb9a489ed4be7328d744f8297419f30d54a20"
         },
         "date": 1637482687304,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 6639128,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6639128 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 854667,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 854667 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 4113246,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 4113246 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8127,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8127 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 13712,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 13712 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 151,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 151 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 49005,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 49005 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 280506860,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 280506860 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21340238,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21340238 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 233,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 233 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "d74bb9a489ed4be7328d744f8297419f30d54a20",
+          "message": "Remove num-imag-ptrs from test suite.",
+          "timestamp": "2021-11-16T22:13:24Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d74bb9a489ed4be7328d744f8297419f30d54a20"
+        },
+        "date": 1637569156790,
         "tool": "googlecpp",
         "benches": [
           {
