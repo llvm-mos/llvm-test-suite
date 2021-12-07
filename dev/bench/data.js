@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1638778721222,
+  "lastUpdate": 1638865159178,
   "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
@@ -5812,6 +5812,86 @@ window.BENCHMARK_DATA = {
             "value": 128,
             "unit": "sec/iter",
             "extra": "iterations: 10\ncpu: 128 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "d74bb9a489ed4be7328d744f8297419f30d54a20",
+          "message": "Remove num-imag-ptrs from test suite.",
+          "timestamp": "2021-11-16T22:13:24Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d74bb9a489ed4be7328d744f8297419f30d54a20"
+        },
+        "date": 1638865157241,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 5028042,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 5028042 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 829153,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 829153 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 3718926,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3718926 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7364,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7364 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16572,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16572 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 149,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 149 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 43441,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 43441 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 280506707,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 280506707 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21074711,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21074711 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 129,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 129 sec\nthreads: 1"
           }
         ]
       }
