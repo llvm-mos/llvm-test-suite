@@ -62,6 +62,7 @@ if(ARCH STREQUAL "MOS")
     # Requires 32-bit int.
     2002-10-13-BadLoad.c
     2003-05-26-Shorts.c
+    2003-07-09-LoadShorts.c
 
     # Requires libc++
     matrix-types-spec.cpp
@@ -96,11 +97,6 @@ if(ARCH STREQUAL "MOS")
     FloatPrecision.c
     StructModifyTest.c
     byval-alignment.c
-
-    # Requires malloc.
-    2002-08-19-CodegenBug.c
-    2003-07-09-LoadShorts.c
-    DefaultInitDynArrays.cpp
 
     # Requires atexit.
     2003-05-14-AtExit.c
