@@ -32,17 +32,17 @@ jobs:
           cd llvm-mos-sdk
           mkdir build
           cd build
-          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/bin -G "Ninja" ..
-          ninja
+          cmake -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/llvm-mos -G "Ninja" ..
+          ninja install
       - name: Build the benchmarks.
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/clang \
-            -DARCH="MOS" \
-            -DTEST_SUITE_ARCH_FLAGS="--config $GITHUB_WORKSPACE/llvm-mos-sdk/build/sim.cfg" \
+          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/mos-sim-clang \
+            -DCMAKE_CXX_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/mos-sim-clang++ \
+            -DARCH=MOS \
             -DTEST_SUITE_SUBDIRS=SingleSource/ \
-            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos-sdk/build/bin/sim \
+            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos/bin/mos-sim \
             -DTEST_SUITE_USER_MODE_EMULATION=yes \
             -DTEST_SUITE_LLVM_SIZE="" \
             -DCMAKE_STRIP="" \
@@ -52,7 +52,7 @@ jobs:
           ninja SingleSource/Benchmarks/all
       - name: Run the benchmark.
         run: |
-          LLVM_MOS=$GITHUB_WORKSPACE/llvm-mos LLVM_MOS_SDK=$GITHUB_WORKSPACE/llvm-mos-sdk/build ./bench.sh > output.json
+          LLVM_MOS=$GITHUB_WORKSPACE/llvm-mos LLVM_MOS_SDK=$GITHUB_WORKSPACE/llvm-mos ./bench.sh > output.json
           cat output.json
       - name: Store the benchmark results.
         uses: llvm-mos/github-action-benchmark@master

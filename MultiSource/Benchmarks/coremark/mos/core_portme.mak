@@ -31,7 +31,7 @@ OUTFLAG= -o
 CC = $(LLVM_MOS)/bin/clang
 # Flag : CFLAGS
 #	Use this flag to define compiler options. Note, you can add compiler options from the command line using XCFLAGS="other flags"
-PORT_CFLAGS = --config $(LLVM_MOS_SDK)/sim.cfg -Os
+PORT_CFLAGS = --config $(LLVM_MOS_SDK)/bin/mos-sim.cfg -Os
 FLAGS_STR = "$(PORT_CFLAGS) $(XCFLAGS) $(XLFLAGS) $(LFLAGS_END)"
 CFLAGS = $(PORT_CFLAGS) -I$(PORT_DIR) -I. -DFLAGS_STR=\"$(FLAGS_STR)\"
 #Flag : LFLAGS_END
@@ -49,7 +49,7 @@ PORT_SRCS = $(PORT_DIR)/core_portme.c
 
 #For native compilation and execution
 LOAD = echo No-op load of
-RUN = $(LLVM_MOS_SDK)/bin/sim
+RUN = $(LLVM_MOS_SDK)/bin/mos-sim
 
 OEXT = .o
 EXE = .sim
