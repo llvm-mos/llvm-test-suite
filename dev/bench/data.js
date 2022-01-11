@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1641938387878,
+  "lastUpdate": 1641944490899,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -7779,6 +7779,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos/commit/aefa0324ea9be4cf1a0b140de21d1a81203ab6df"
         },
         "date": 1641938386350,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3839100,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3839100 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813978,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813978 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2533763,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2533763 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7373,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7373 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16581,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16581 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 158,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 158 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39292,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39292 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506718,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506718 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21347105,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21347105 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 128,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 128 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jackoalan@gmail.com",
+            "name": "Jack Andersen",
+            "username": "jackoalan"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "58a62c29a151647571f5124320fd7f3d00c0ff8f",
+          "message": "Recursively gather config and linker script files as dependencies.\n\nAdds simple .cfg and ldscript parsers to gather all paths rooted at each\nplatform's config file. Config modifications will invalidate sources and\nldscript modifications will invalidate example executables.",
+          "timestamp": "2022-01-11T15:35:13-08:00",
+          "tree_id": "c121d370e03f455dc4bb6f493a7af58be8f47c33",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/58a62c29a151647571f5124320fd7f3d00c0ff8f"
+        },
+        "date": 1641944489098,
         "tool": "googlecpp",
         "benches": [
           {
