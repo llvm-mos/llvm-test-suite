@@ -411,6 +411,7 @@ if(ARCH STREQUAL "MOS")
     921113-1.c
     921208-2.c
     930106-1.c
+    960521-1.c
     980605-1.c
     ipa-sra-2.c
     memcpy-1.c
@@ -632,32 +633,6 @@ if(ARCH STREQUAL "MOS")
     va-arg-7.c
     va-arg-pack-1.c
     va-arg-trap-1.c
-
-    # Requires malloc.
-    20000914-1.c
-    20001203-2.c
-    20020406-1.c
-    20071018-1.c
-    20071120-1.c
-    920810-1.c
-    941014-2.c
-    20051113-1.c
-    pr84339.c
-    pr84478.c
-    960521-1.c
-    pr43008.c
-    990628-1.c
-    pr36765.c
-    pr41395-1.c
-    pr41463.c
-    pr42614.c
-    strlen-7.c
-    CMakeLists.txt
-    comp-goto-1.c
-    pr15262-1.c
-    pr41395-2.c
-    pr90949.c
-    va-arg-21.c
 
     # Requires __builtin_return_address.
     20010122-1.c

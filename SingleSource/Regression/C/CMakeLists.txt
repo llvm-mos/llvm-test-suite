@@ -33,9 +33,8 @@ if (ARCH STREQUAL "MOS")
     # Requires GCC constructor/destructor extension.
     ConstructorDestructorAttributes.c
 
-    # Requires malloc.
+    # Requires atoi.
     badidx.c
-    sumarray.c
     sumarraymalloc.c
 
     # Requires argc/argv.
