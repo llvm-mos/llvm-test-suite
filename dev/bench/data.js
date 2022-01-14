@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1642196704695,
+  "lastUpdate": 1642199401712,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -8526,6 +8526,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos/commit/d11f6cc32691da95c392d52f01714002f048555b"
         },
         "date": 1642196702938,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3839000,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3839000 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 814479,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 814479 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2533663,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2533663 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7373,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7373 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16581,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16581 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 158,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 158 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39292,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39292 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506718,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506718 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21347085,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21347085 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "132cefe293d9454893ce74ad22d3ed04b6c69dad",
+          "message": "[NFC] CMPXXXTerm -> CMPTermXXX; addressing modes last.",
+          "timestamp": "2022-01-14T10:13:30-08:00",
+          "tree_id": "7cd5586b81c14c1bc0cf44e1c3ce666767c5606d",
+          "url": "https://github.com/llvm-mos/llvm-mos/commit/132cefe293d9454893ce74ad22d3ed04b6c69dad"
+        },
+        "date": 1642199399354,
         "tool": "googlecpp",
         "benches": [
           {
