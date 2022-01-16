@@ -19,9 +19,6 @@ if(ARCH STREQUAL "MOS")
     # Requires RTTI.
     BuiltinTypeInfo.cpp
 
-    # Requires global constructors/destructors.
-    global_ctor.cpp
-
     # Requires vtables.
     pointer_method2.cpp
   )

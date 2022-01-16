@@ -98,9 +98,6 @@ if(ARCH STREQUAL "MOS")
     StructModifyTest.c
     byval-alignment.c
 
-    # Requires atexit.
-    2003-05-14-AtExit.c
-
     # Requires scanf.
     2004-11-28-GlobalBoolLayout.c
 
@@ -109,9 +106,6 @@ if(ARCH STREQUAL "MOS")
     2006-01-29-SimpleIndirectCall.c
     printargs.c
     TestLoop.c
-
-    # Requires static constructors.
-    initp1.cpp
 
     # Requires vtables.
     member-function-pointers.cpp

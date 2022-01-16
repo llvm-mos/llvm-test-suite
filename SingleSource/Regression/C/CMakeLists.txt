@@ -30,9 +30,6 @@ if (ARCH STREQUAL "MOS")
     # Requires fprintf.
     PR491.c
 
-    # Requires GCC constructor/destructor extension.
-    ConstructorDestructorAttributes.c
-
     # Requires atoi.
     badidx.c
     sumarraymalloc.c
