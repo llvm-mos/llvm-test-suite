@@ -64,10 +64,7 @@ int main() {
 
   static constexpr uint8_t alloc_sizes[] = {1, 4, 16, 7, 35, 100, 3, 9};
   static constexpr auto ALLOC_COUNT = static_size(alloc_sizes);
-  // TODO: implement __cxa_atexit
-  // for c++ objects with destructors that are declared at static or global
-  // scope
-  unique_ptr<uint8_t> allocations[ALLOC_COUNT] = {};
+  static unique_ptr<uint8_t> allocations[ALLOC_COUNT] = {};
 
   for (uint8_t i = 0; i < ALLOC_COUNT; i += 1) {
     const auto alloc_sz = alloc_sizes[i];
