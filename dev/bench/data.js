@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1642809533716,
-  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
+  "lastUpdate": 1642839133096,
+  "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
       {
@@ -10512,6 +10512,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos/commit/5e24b8bd57819c809c82cf1d171bb9663f5b929f"
         },
         "date": 1642809531736,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3831239,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3831239 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 816596,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 816596 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2532344,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2532344 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7508,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7508 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16716,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16716 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 293,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 293 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39422,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39422 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506876 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21365603,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21365603 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "GitHub"
+          },
+          "id": "0c3fe19e00c96f87d971492f1a5994c295c6844e",
+          "message": "Merge pull request #7 from karunski/feature/atexit\n\nEnable init and atexit-related unit tests.",
+          "timestamp": "2022-01-17T21:10:35Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/0c3fe19e00c96f87d971492f1a5994c295c6844e"
+        },
+        "date": 1642839130935,
         "tool": "googlecpp",
         "benches": [
           {
