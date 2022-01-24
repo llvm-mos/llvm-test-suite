@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1643005373283,
-  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
+  "lastUpdate": 1643011735323,
+  "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
       {
@@ -11342,6 +11342,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/2257d75ced166846b696ecd2c40971a07b422e80"
         },
         "date": 1643005371174,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3831239,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3831239 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 816596,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 816596 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2532344,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2532344 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7508,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7508 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16716,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16716 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 293,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 293 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39422,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39422 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506876 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21347183,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21347183 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "GitHub"
+          },
+          "id": "2257d75ced166846b696ecd2c40971a07b422e80",
+          "message": "Merge pull request #8 from karunski/feature/realloc\n\nUnit tests for realloc",
+          "timestamp": "2022-01-24T06:16:30Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/2257d75ced166846b696ecd2c40971a07b422e80"
+        },
+        "date": 1643011733776,
         "tool": "googlecpp",
         "benches": [
           {
