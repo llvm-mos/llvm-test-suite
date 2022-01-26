@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1643176320438,
+  "lastUpdate": 1643176335667,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -12174,6 +12174,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/8b070b51677639617ea46f43c6a1da7cd5f6c1e6"
         },
         "date": 1643176318250,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3831610,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3831610 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 814339,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 814339 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2531405,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2531405 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7561,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7561 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16768,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16768 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 346,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 346 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39479,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39479 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506899,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506899 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21347236,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21347236 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7b672f635b534e5f4eaee8bd452fa5beee3d07f1",
+          "message": "Merge pull request #10 from karunski/pure-virtual-function-abi\n\nTests to ensure vtable-related ABI functions are defined.",
+          "timestamp": "2022-01-25T21:46:07-08:00",
+          "tree_id": "a5881215694c8568e95db6cbc2eaae2e3fe18082",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/7b672f635b534e5f4eaee8bd452fa5beee3d07f1"
+        },
+        "date": 1643176334133,
         "tool": "googlecpp",
         "benches": [
           {
