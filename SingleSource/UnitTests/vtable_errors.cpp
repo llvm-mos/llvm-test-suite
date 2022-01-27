@@ -41,6 +41,8 @@ public:
 
 SingleInheritance::~SingleInheritance() {}
 
+const char * SingleInheritance::methodA() { return ""; }
+
 Base &Base::polyFactory() {
   static SingleInheritance si;
   return si;

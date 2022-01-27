@@ -109,7 +109,6 @@ if(ARCH STREQUAL "MOS")
 
     # Requires vtables.
     member-function-pointers.cpp
-    vtable_errors.cpp
   )
 endif()
 
