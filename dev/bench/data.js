@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1643311532280,
+  "lastUpdate": 1643333385691,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -12922,6 +12922,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos/commit/e2bbdb64f0f798677c9194d86db60f680a75adb0"
         },
         "date": 1643311530146,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3831278,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3831278 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 815581,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 815581 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2529583,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2529583 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7453,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7453 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16661,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16661 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 238,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 238 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39372,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39372 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506792,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506792 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21347122,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21347122 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d930b296eeba6b2f971d55f90c08d128f694807e",
+          "message": "Merge pull request #11 from karunski/bugfix/issue-27\n\nFix missing virtual function in test class.",
+          "timestamp": "2022-01-27T17:23:19-08:00",
+          "tree_id": "7dbaed673ae27f4a624277c84c6f5ddb4b16836a",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d930b296eeba6b2f971d55f90c08d128f694807e"
+        },
+        "date": 1643333383865,
         "tool": "googlecpp",
         "benches": [
           {
