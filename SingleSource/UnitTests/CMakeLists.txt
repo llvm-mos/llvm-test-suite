@@ -106,9 +106,6 @@ if(ARCH STREQUAL "MOS")
     2006-01-29-SimpleIndirectCall.c
     printargs.c
     TestLoop.c
-
-    # Requires vtables.
-    member-function-pointers.cpp
   )
 endif()
 

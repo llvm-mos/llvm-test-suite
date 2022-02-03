@@ -16,11 +16,8 @@ if(ARCH STREQUAL "MOS")
     # Temporarily disabled tests.
     # ---------------------------
 
-    # Requires RTTI.
+    # Requires cstdio
     BuiltinTypeInfo.cpp
-
-    # Requires vtables.
-    pointer_method2.cpp
   )
 endif()
 
