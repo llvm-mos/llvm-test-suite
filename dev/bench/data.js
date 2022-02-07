@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644207695290,
-  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
+  "lastUpdate": 1644221372238,
+  "repoUrl": "",
   "entries": {
     "Benchmark -Os": [
       {
@@ -14730,6 +14730,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/0954bcc47a25ac981ce2ebb58da51cc35c38b130"
         },
         "date": 1644207693467,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3839101,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3839101 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813949,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813949 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2532402,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2532402 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7374,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7374 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39293,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39293 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506719,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506719 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21302531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21302531 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "GitHub"
+          },
+          "id": "d2e8baf8967e77c1b3bbb4259e950f8915fdb917",
+          "message": "Merge pull request #12 from karunski/feature/rtti\n\nUnit tests for dynamic_cast",
+          "timestamp": "2022-02-03T01:48:02Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d2e8baf8967e77c1b3bbb4259e950f8915fdb917"
+        },
+        "date": 1644221370807,
         "tool": "googlecpp",
         "benches": [
           {
