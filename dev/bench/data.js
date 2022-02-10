@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644469195845,
+  "lastUpdate": 1644472455793,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -15222,6 +15222,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos/commit/3f9c71a044d051881939660e15ba1d6c8562d462"
         },
         "date": 1644469193772,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3839101,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3839101 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813949,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813949 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2532402,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2532402 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7374,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7374 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39293,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39293 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506719,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506719 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21302531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21302531 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jackoalan@gmail.com",
+            "name": "Jack Andersen",
+            "username": "jackoalan"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "19ea9eab486f7bd784f2c4b80cba759044ca5740",
+          "message": "Add MC instructions, relocations, and disassembler support for 65816.\n\n## New addressing modes\n\n* Immediate16\n* Relative16\n* AbsoluteLong\n* AbsoluteXLong\n* Indirect (existing Indirect renamed to Indirect16)\n* IndexedIndirect16\n* IndirectLong\n* IndirectIndexedLong\n\n## New instructions\n\n* Long addressing modes for ADC, SBC, AND, EOR, ORA, LDA, STA\n* Long jump and subroutine instructions\n* Immediate16 versions of applicable instructions\n* SEP/REP\n\n## Assembler support\n\n* mos16() modifier to emit an 8-bit value as a 16-bit immediate operand.\n* Zero-bank relaxation step to transform Addr16 -> Addr24 (may be\n  chained with zero-page relaxation).\n\n## Relocations\n\n* R_MOS_PCREL_16\n* Implement R_MOS_ADDR24 in lld\n* Fix lld's ability to relocate PCREL (even though the assembler always does\n  it in practice).\n\n## Disassembler support\n\n* Add Mapping symbols $ml, $mh, $xl, $xh to correctly decode 16-bit immediate\n  operands. These set a simulated M and X flag high or low. Low states enable\n  the Immediate16 decode tables.",
+          "timestamp": "2022-02-09T18:23:05-08:00",
+          "tree_id": "4aff3a824f578129e78d6cfb6c1222fb8d3fe552",
+          "url": "https://github.com/llvm-mos/llvm-mos/commit/19ea9eab486f7bd784f2c4b80cba759044ca5740"
+        },
+        "date": 1644472453768,
         "tool": "googlecpp",
         "benches": [
           {
