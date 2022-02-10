@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644481190275,
-  "repoUrl": "",
+  "lastUpdate": 1644482663631,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -15386,6 +15386,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d2e8baf8967e77c1b3bbb4259e950f8915fdb917"
         },
         "date": 1644481188479,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3839101,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3839101 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813949,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813949 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2532402,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2532402 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7374,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7374 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 39293,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 39293 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 292506719,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 292506719 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21302531,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21302531 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 126,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "40e293bc06763a99bd65d61945a489f6aee251b6",
+          "message": "Bump nth-check from 2.0.0 to 2.0.1 in /mlir/utils/vscode\n\nBumps [nth-check](https://github.com/fb55/nth-check) from 2.0.0 to 2.0.1.\n- [Release notes](https://github.com/fb55/nth-check/releases)\n- [Commits](https://github.com/fb55/nth-check/compare/v2.0.0...v2.0.1)\n\n---\nupdated-dependencies:\n- dependency-name: nth-check\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+          "timestamp": "2022-02-09T21:48:26-08:00",
+          "tree_id": "0d997a0b8b604965a351b00d62b688d80e1edd83",
+          "url": "https://github.com/llvm-mos/llvm-mos/commit/40e293bc06763a99bd65d61945a489f6aee251b6"
+        },
+        "date": 1644482661756,
         "tool": "googlecpp",
         "benches": [
           {
