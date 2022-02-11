@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644567002270,
-  "repoUrl": "",
+  "lastUpdate": 1644578128621,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -15611,6 +15611,90 @@ window.BENCHMARK_DATA = {
             "value": 126,
             "unit": "sec/iter",
             "extra": "iterations: 10\ncpu: 126 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "449398fa39ec415696cb97201a8f5e3d1ec7e75b",
+          "message": "Introduce G_INC and G_DEC.\n\nThese pseudos bundle the usual multi-byte increment/decrement pattern\ntogether more tightly. The code generator had problems keeping N and Z\nsafe across the many jumps required to use this pattern. Keeping this in\na variable-width pseudo until after regalloc makes this much easier.",
+          "timestamp": "2022-02-10T23:50:46-08:00",
+          "tree_id": "06361b085948d6535a41dfcdfd7ee2eaad2c561d",
+          "url": "https://github.com/llvm-mos/llvm-mos/commit/449398fa39ec415696cb97201a8f5e3d1ec7e75b"
+        },
+        "date": 1644578126332,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3872421,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3872421 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813789,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813789 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2511852,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2511852 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7374,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7374 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76491,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76491 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288490816,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288490816 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 19932616,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 19932616 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
           }
         ]
       }
