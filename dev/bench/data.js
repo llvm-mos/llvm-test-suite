@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644826243978,
-  "repoUrl": "",
+  "lastUpdate": 1644862046163,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -16042,6 +16042,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d2e8baf8967e77c1b3bbb4259e950f8915fdb917"
         },
         "date": 1644826242649,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3872421,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3872421 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813789,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813789 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2511852,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2511852 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7374,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7374 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76491,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76491 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288490816,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288490816 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 19932616,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 19932616 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "956464a200f34dfc1750e29bf7d92072d6e40a4b",
+          "message": "Fix case where atexit called within atexit handler.\n\n\"[Upon exit:] First, all functions registered by the atexit function are\ncalled, in the reverse order of their registration, except that a\nfunction is called after any previously registered functions that had\nalready been called at the time it was registered.\"\n\nIt's unspecified whether or not a call to atexit after exit() (i.e.,\ninside an atexit() handler) succeeds, but we were summarily returning 1\neven though the registered functions never get called.\n\nStill, it's important that this call to __cxa_atexit succeed, since it\nis necessary to clean up objects created in destructors. This is\naccomplished by popping atexit handlers one at a time, which allows the\nmost recently popped handler to push handlers to be taken care of next.",
+          "timestamp": "2022-02-14T10:00:46-08:00",
+          "tree_id": "b31f1a543147737b0f76b86efe764416e1278a31",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/956464a200f34dfc1750e29bf7d92072d6e40a4b"
+        },
+        "date": 1644862044183,
         "tool": "googlecpp",
         "benches": [
           {
