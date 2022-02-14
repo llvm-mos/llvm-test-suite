@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644862050056,
+  "lastUpdate": 1644881885603,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -16210,6 +16210,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/53684c1f0c806cbbd790840eac8353d30fcdecbd"
         },
         "date": 1644862048073,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3872421,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3872421 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813789,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813789 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2511852,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2511852 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7374,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7374 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76491,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76491 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288490816,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288490816 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 19932616,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 19932616 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mjanos5@gmail.com",
+            "name": "Mátyás János",
+            "username": "mjanos5"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9f45933b12137df86e324861a5fd6175922baa81",
+          "message": "Refactor (#152)\n\n* Refactor.\n\n* cleanup visitRelaxableOperand\n\n* refactor\n\n* refactor\n\n* refactor\n\n* reformatting from pull request #147\n\n* reformat\n\n* fix comment\n\n* revert requiresMoreThan8Bits\n\n* make fixuplength-related functions static local\n\n* remove not needed files\n\n* remove invalid const keyword\n\n* fix unused variable compiler warning\n\n* fix formatting\n\n* refactor\n\n* reformat\n\n* refactor\n\n* refactor\n\n* fix parameters\n\n* reformat\n\n* fix return type\n\n* fix review findings",
+          "timestamp": "2022-02-14T12:04:41-08:00",
+          "tree_id": "5b7becd541f0b6e86400afd558ec22cd80c2912e",
+          "url": "https://github.com/llvm-mos/llvm-mos/commit/9f45933b12137df86e324861a5fd6175922baa81"
+        },
+        "date": 1644881882809,
         "tool": "googlecpp",
         "benches": [
           {
