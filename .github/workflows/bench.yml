@@ -17,12 +17,12 @@ jobs:
           sudo apt-get install cmake ninja-build
       - name: Check out the test suite.
         uses: actions/checkout@v2
-      - name: Download the latest llvm-mos release ZIP.
+      - name: Download the latest llvm-mos release.
         run: |
-          curl -L -o llvm-mos.zip \
-            https://github.com/llvm-mos/llvm-mos/releases/download/llvm-mos-linux-main/llvm-mos-linux-main.zip
-      - name: Unzip llvm-mos.
-        run: unzip llvm-mos.zip
+          curl -L -o llvm-mos.tar.xz \
+            https://github.com/llvm-mos/llvm-mos/releases/download/llvm-mos-linux-main/llvm-mos-linux-main.tar.xz
+      - name: Extract llvm-mos.
+        run: tar -xvf llvm-mos.tar.xz
       - name: Check out the SDK.
         uses: actions/checkout@v2
         with:
