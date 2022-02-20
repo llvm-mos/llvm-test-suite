@@ -224,25 +224,14 @@ if(CMAKE_SYSTEM_NAME STREQUAL "AIX")
   endif()
 endif()
 
-# This is either directly the C++ ABI library or the full C++ library
-# which pulls in the ABI transitively.
-set(TEST_SUITE_CXX_ABI "default" CACHE STRING "Specify C++ ABI library to use.")
-set(CXXABIS "none default libstdc++ libsupc++ libc++ libc++abi")
-set_property(CACHE TEST_SUITE_CXX_ABI PROPERTY STRINGS "${CXXABIS}")
-if (TEST_SUITE_CXX_ABI STREQUAL "default")
-  if (APPLE OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD|Fuchsia")
-    set(TEST_SUITE_CXX_ABI_LIBNAME "c++abi")
-  else()
-    set(TEST_SUITE_CXX_ABI_LIBNAME "supc++")
-  endif()
-else()
-  STRING(REGEX REPLACE "^lib" "" TEST_SUITE_CXX_ABI_LIBNAME ${TEST_SUITE_CXX_ABI})
-endif()
-
 include(TestSuite)
 include(SingleMultiSource)
 # Needs by External/sollve_vv.
 find_package(OpenMP)
+# Fortran Helper Modules
+if(TEST_SUITE_FORTRAN)
+  include(Fortran)
+endif()
 
 if(NOT DEFINED TARGET_OS)
   message(STATUS "Check target operating system - ${CMAKE_SYSTEM_NAME}")
@@ -298,10 +287,12 @@ mark_as_advanced(TEST_SUITE_LIT)
 
 add_subdirectory(tools)
 # Shortcut for the path to the fpcmp executable
-set(FPCMP ${CMAKE_BINARY_DIR}/tools/fpcmp-target)
+set(FPCMP fpcmp-target)
 if (TEST_SUITE_USER_MODE_EMULATION)
-  set(FPCMP ${CMAKE_BINARY_DIR}/tools/fpcmp)
+  set(FPCMP fpcmp)
 endif()
+
+add_subdirectory(litsupport)
 
 option(TEST_SUITE_COLLECT_COMPILE_TIME
        "Measure compile time by wrapping compiler invocations in timeit" ON)
@@ -335,11 +326,13 @@ if(NOT TEST_SUITE_SUBDIRS)
   set(TEST_SUITE_SUBDIRS "")
   foreach(entry ${sub_cmakelists})
     get_filename_component(subdir ${entry} DIRECTORY)
-	 # Exclude tools and CTMark from default list
-    if(NOT ${subdir} STREQUAL tools AND NOT ${subdir} STREQUAL CTMark)
-      list(APPEND TEST_SUITE_SUBDIRS ${subdir})
-    endif()
+    list(APPEND TEST_SUITE_SUBDIRS ${subdir})
   endforeach()
+  # Drop things we do not want to be automatically added.
+  list(REMOVE_ITEM TEST_SUITE_SUBDIRS litsupport tools CTMark)
+  if(NOT TEST_SUITE_FORTRAN)
+    list(REMOVE_ITEM TEST_SUITE_SUBDIRS Fortran)
+  endif()
   set(TEST_SUITE_SUBDIRS "${TEST_SUITE_SUBDIRS}")
 endif()
 set(TEST_SUITE_SUBDIRS "${TEST_SUITE_SUBDIRS}" CACHE STRING

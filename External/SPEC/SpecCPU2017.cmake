@@ -102,59 +102,65 @@ macro (speccpu2017_benchmark)
     # Create benchmark working directories.
     foreach (_run_type IN LISTS TEST_SUITE_RUN_TYPE)
       set(RUN_${_run_type}_DIR "${CMAKE_CURRENT_BINARY_DIR}/run_${_run_type}")
+      set(RUN_${_run_type}_DIR_REL "%S/run_${_run_type}")
       file(MAKE_DIRECTORY ${RUN_${_run_type}_DIR})
     endforeach ()
 
 
-    # Mandatory flags
-    add_definitions(-DSPEC -DSPEC_CPU -DNDEBUG)
+    # Mandatory SPEC definitions
+    set(SPEC_COMMON_DEFS)
+    list(APPEND SPEC_COMMON_DEFS "-DSPEC;-DSPEC_CPU;-DNDEBUG")
 
     if (RATE)
       # rate benchmarks never use parallelism
-      add_definitions(-DSPEC_AUTO_SUPPRESS_OPENMP)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_AUTO_SUPPRESS_OPENMP")
     endif ()
 
     # Portability flags
+    # SPEC_AUTO_BYTEORDER_value variable is used for Fortran tests that use specpp
     if (ENDIAN STREQUAL "little")
-      add_definitions(-DSPEC_AUTO_BYTEORDER=0x12345678)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_AUTO_BYTEORDER=0x12345678")
     elseif (ENDIAN STREQUAL "big")
-      add_definitions(-DSPEC_AUTO_BYTEORDER=0x87654321)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_AUTO_BYTEORDER=0x87654321")
     endif ()
 
     check_type_size("long long" SIZEOF_LONG_LONG)
     check_type_size("long" SIZEOF_LONG)
     check_type_size("int" SIZEOF_INT)
+    # SPEC_PTR_TYPE variable is used for Fortran tests that use specpp
     if (CMAKE_SIZEOF_VOID_P EQUAL 4 AND SIZEOF_LONG_LONG EQUAL 8 AND SIZEOF_LONG EQUAL 4 AND SIZEOF_INT EQUAL 4)
-      add_definitions(-DSPEC_ILP32)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_ILP32")
     elseif (CMAKE_SIZEOF_VOID_P EQUAL 8 AND SIZEOF_LONG_LONG EQUAL 8 AND SIZEOF_LONG EQUAL 4 AND SIZEOF_INT EQUAL 4)
-      add_definitions(-DSPEC_P64)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_P64")
     elseif (CMAKE_SIZEOF_VOID_P EQUAL 8 AND SIZEOF_LONG_LONG EQUAL 8 AND SIZEOF_LONG EQUAL 8 AND SIZEOF_INT EQUAL 4)
-      add_definitions(-DSPEC_LP64)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_LP64")
     elseif (CMAKE_SIZEOF_VOID_P EQUAL 8 AND SIZEOF_LONG_LONG EQUAL 8 AND SIZEOF_LONG EQUAL 8 AND SIZEOF_INT EQUAL 8)
-      add_definitions(-DSPEC_ILP64)
+      list(APPEND "-DSPEC_ILP64")
     else ()
       message(FATAL_ERROR "SPEC CPU 2017 unsupported data model (supported: ILP32/LLP64/LP64/ILP64)")
     endif ()
 
     if (TARGET_OS STREQUAL "Linux")
-      add_definitions(-DSPEC_LINUX) # 526.blender_r
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_LINUX") # 526.blender_r
     endif ()
 
     if(ARCH STREQUAL "x86" AND TARGET_OS STREQUAL "Linux")
       if (CMAKE_SIZEOF_VOID_P EQUAL 8)
         # Linux x86_64
-        add_definitions(-DSPEC_LINUX_X64) # perlbench
+	list(APPEND SPEC_COMMON_DEFS "-DSPEC_LINUX_X64") # perlbench
       elseif (CMAKE_SIZEOF_VOID_P EQUAL 4)
         # Linux x86
-        add_definitions(-DSPEC_ILP32)
-        add_definitions(-D_FILE_OFFSET_BITS=64)
-        add_definitions(-DSPEC_LINUX_I32) # perlbench
+	list(APPEND SPEC_COMMON_DEFS "-DSPEC_ILP32")
+	list(APPEND SPEC_COMMON_DEFS "-D_FILE_OFFSET_BITS=64")
+	list(APPEND SPEC_COMMON_DEFS "-DSPEC_LINUX_I32") # perlbench
       endif ()
     elseif (ARCH STREQUAL "AArch64" AND TARGET_OS STREQUAL "Linux" AND CMAKE_SIZEOF_VOID_P EQUAL 8)
       # Linux ARM
-      add_definitions(-DSPEC_LINUX_AARCH64)
+      list(APPEND SPEC_COMMON_DEFS "-DSPEC_LINUX_AARCH64")
     elseif (ARCH STREQUAL "x86" AND TARGET_OS STREQUAL "Windows")
       # Windows x86/x64
+    elseif (TARGET_OS STREQUAL "Darwin")
+      add_definitions(-DSPEC_MACOSX)
     else ()
       message("ARCH: ${ARCH}")
       message("TARGET_OS: ${TARGET_OS}")
@@ -164,7 +170,16 @@ macro (speccpu2017_benchmark)
     endif ()
 
     # No OpenMP for the moment, even for the _s suites.
-    add_definitions(-DSPEC_SUPPRESS_OPENMP)
+    list(APPEND SPEC_COMMON_DEFS "-DSPEC_SUPPRESS_OPENMP")
+
+    # Add SPEC_COMMON_DEFS
+    add_definitions(${SPEC_COMMON_DEFS})
+
+    if (TEST_SUITE_FORTRAN)
+      # Used by cam4, pop2, and wrf tests for portability
+      # https://gcc.gnu.org/gcc-10/porting_to.html
+      check_fortran_compiler_flag("-fallow-argument-mismatch" SUPPORTS_FALLOW_ARGUMENT_MISMATCH)
+    endif ()
 
   endif ()
 endmacro()
@@ -193,12 +208,6 @@ endmacro ()
 # SUITE_TYPE (rate or speed)
 #            Only run in the _r or _s benchmark suites.
 #
-# WORKDIR    Working dir for the executable to run in.
-#            "input" means the dataset source directory. Does not require
-#                    copying the input data to the rundir, but the benchmark
-#                    must not write data there.
-#            If not defined, the run_{run_type} directory is chosen.
-#
 # STDOUT     Write the benchmark's stdout into this file in the rundir.
 #
 # STDERR     Write the benchmark's stderr into this file in the rundir.
@@ -206,7 +215,7 @@ endmacro ()
 # ARGN       Benchmark's command line arguments
 macro (speccpu2017_run_test)
   cmake_parse_arguments(_arg
-    "" "RUN_TYPE;SUITE_TYPE;WORKDIR;STDOUT;STDERR" "" ${ARGN})
+    "" "RUN_TYPE;SUITE_TYPE;STDOUT;STDERR" "" ${ARGN})
 
   if ((NOT DEFINED _arg_SUITE_TYPE) OR
       (BENCHMARK_SUITE_TYPE IN_LIST _arg_SUITE_TYPE))
@@ -215,33 +224,24 @@ macro (speccpu2017_run_test)
 
       set(_stdout)
       if (DEFINED _arg_STDOUT)
-        set(_stdout > "${RUN_${_arg_RUN_TYPE}_DIR}/${_arg_STDOUT}")
+        set(_stdout > "${RUN_${_arg_RUN_TYPE}_DIR_REL}/${_arg_STDOUT}")
       endif ()
 
       set(_stderr)
       if (DEFINED _arg_STDERR)
-        set(_stderr 2> "${RUN_${_arg_RUN_TYPE}_DIR}/${_arg_STDERR}")
+        set(_stderr 2> "${RUN_${_arg_RUN_TYPE}_DIR_REL}/${_arg_STDERR}")
       endif ()
 
-      set(_executable)
-      if (NOT DEFINED _arg_WORKDIR)
-        set(_workdir "${RUN_${_arg_RUN_TYPE}_DIR}")
-
-        # perlbench, xalancbmk need to be invoked with relative paths
-        # (SPEC made modifications that prepend another path to find the rundir)
-        file(RELATIVE_PATH _executable
-          "${_workdir}" "${CMAKE_CURRENT_BINARY_DIR}/${PROG}")
-        set (_executable EXECUTABLE "${_executable}")
-      elseif (_arg_WORKDIR STREQUAL "input")
-        set(_workdir "${INPUT_${_arg_RUN_TYPE}_DIR}")
-      else ()
-        set(_workdir "${_arg_WORKDIR}")
-      endif ()
+      # perlbench, xalancbmk need to be invoked with relative paths
+      # (SPEC made modifications that prepend another path to find the rundir)
+      file(RELATIVE_PATH _executable
+          "${RUN_${_arg_RUN_TYPE}_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/${PROG}")
+      set (_executable EXECUTABLE "${_executable}")
 
       llvm_test_run(
         ${_arg_UNPARSED_ARGUMENTS} ${_stdout} ${_stderr}
         RUN_TYPE ${_arg_RUN_TYPE}
-        WORKDIR "${_workdir}"
+        WORKDIR "${RUN_${_arg_RUN_TYPE}_DIR_REL}"
         ${_executable}
       )
     endif ()
@@ -260,17 +260,18 @@ macro(speccpu2017_validate_image _imgfile _cmpfile _outfile)
     add_executable(${VALIDATOR} ${_validator_sources})
     target_link_libraries(${VALIDATOR} m)
     set_target_properties(${VALIDATOR} PROPERTIES COMPILE_FLAGS "-DSPEC")
-    add_dependencies(${VALIDATOR} timeit-target)
+    add_dependencies(${VALIDATOR} build-timeit)
+    add_dependencies(${VALIDATOR} build-timeit-target)
   endif ()
 
   if ((NOT DEFINED _carg_SUITE_TYPE) OR (${BENCHMARK_SUITE_TYPE} IN_LIST _carg_SUITE_TYPE))
     get_filename_component(_basename "${_imgfile}" NAME_WE)
     get_filename_component(_ext "${_imgfile}" EXT)
     llvm_test_verify(
-      cd "${RUN_${_carg_RUN_TYPE}_DIR}" &&
-      "${CMAKE_CURRENT_BINARY_DIR}/${VALIDATOR}" ${_carg_UNPARSED_ARGUMENTS}
-        "${_imgfile}" "${DATA_${_carg_RUN_TYPE}_DIR}/compare/${_cmpfile}"
-        > ${RUN_${_carg_RUN_TYPE}_DIR}/${_outfile}
+      cd "${RUN_${_carg_RUN_TYPE}_DIR_REL}" &&
+      "%S/${VALIDATOR}" ${_carg_UNPARSED_ARGUMENTS}
+        "${_imgfile}" "${RUN_${_carg_RUN_TYPE}_DIR_REL}/compare/${_cmpfile}"
+        > ${RUN_${_carg_RUN_TYPE}_DIR_REL}/${_outfile}
       RUN_TYPE ${_carg_RUN_TYPE}
     )
   endif ()
@@ -300,11 +301,12 @@ macro(speccpu2017_verify_output)
   foreach (_runtype IN LISTS TEST_SUITE_RUN_TYPE ITEMS all)
     file(GLOB_RECURSE _reffiles "${OUTPUT_${_runtype}_DIR}/*")
     foreach (_reffile IN LISTS _reffiles)
-      file(RELATIVE_PATH _relfile "${OUTPUT_${_runtype}_DIR}" "${_reffile}")
-      set(_outfile "${RUN_${_runtype}_DIR}/${_relfile}")
+      file(RELATIVE_PATH _filename "${OUTPUT_${_runtype}_DIR}" "${_reffile}")
+      set(_outfile "${RUN_${_runtype}_DIR_REL}/${_filename}")
+      set(_comparefile "${RUN_${_runtype}_DIR_REL}/compare/${_filename}")
       llvm_test_verify(RUN_TYPE ${_runtype}
-        "${FPCMP}" ${_abstol} ${_reltol} ${_ignorewhitespace}
-          "${_reffile}" "${_outfile}"
+        "%b/${FPCMP}" ${_abstol} ${_reltol} ${_ignorewhitespace}
+          "${_comparefile}" "${_outfile}"
       )
     endforeach ()
   endforeach ()
@@ -338,7 +340,7 @@ macro(speccpu2017_add_executable)
 endmacro()
 
 
-# Copy the input data to the rundir.
+# Copy the input and comparison data to the rundir.
 #
 # Can often be avoided by either passing an absolute path to the file in the
 # input dir, or using the input dir as working directory and specify the output
@@ -349,5 +351,70 @@ macro(speccpu2017_prepare_rundir)
       llvm_copy_dir(${PROG} "${RUN_${_runtype}_DIR}" "${INPUT_all_DIR}")
     endif ()
     llvm_copy_dir(${PROG} "${RUN_${_runtype}_DIR}" "${INPUT_${_runtype}_DIR}")
+
+    file(MAKE_DIRECTORY "${RUN_${_runtype}_DIR}/compare")
+    llvm_copy_dir(${PROG}
+      "${RUN_${_runtype}_DIR}/compare" "${OUTPUT_${_runtype}_DIR}")
+    if (EXISTS "${OUTPUT_${_runtype}_DIR}/../compare")
+        llvm_copy_dir(${PROG}
+          "${RUN_${_runtype}_DIR}/compare" "${OUTPUT_${_runtype}_DIR}/../compare")
+    endif ()
   endforeach ()
 endmacro()
+
+# Run specpp on a list of SRCS provided and add them to the TARGET.
+# Three arguments are required:
+# TARGET must be already be defined prior to calling this command.
+# SRCS is provided usually via a GLOB command external to this macro.
+# DEFS are the arguments that would normally be passed to specpp.
+# https://www.spec.org/cpu2017/Docs/specpp.html
+# specpp is needed due to legacy use of filepp by a number of
+# climate/weather codes.
+macro(speccpu2017_run_specpp)
+  cmake_parse_arguments(_arg "" "TARGET" "SRCS;DEFS" ${ARGN})
+  set(_specpp_bin ${TEST_SUITE_SPEC2017_ROOT}/bin/specpp)
+  # Add common specpp arguments used by all SPEC CPU 2017 tests.
+  # -U__FILE__ is included as a work around. Source files uses _FILE_
+  # as the filename without the path, but a few source files have a
+  # typo and use __FILE__ instead which is an absolute path. So specpp
+  # fails to do a replacement with just the filename (i.e. without the
+  # path as intended). This is usually a benign error, but __FILE__
+  # can lead to a deeply nested directory due CMake's build
+  # directories. As a result, the source file line length becomes
+  # incredibly long, so you end up with a ridiculously long line that
+  # some compilers, like GCC, are unable to compile.
+  set(ARG_COMMON -w -U__FILE__ ${SPEC_COMMON_DEFS} -DSPEC_CASE_FLAG -I${SRC_DIR})
+
+  foreach(_absfilename ${_arg_SRCS})
+    # message("Adding to source ${_absfilename} to target ${PROG}")
+    get_filename_component(_filename ${_absfilename} NAME)
+    add_custom_command(
+      OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${_filename}"
+      COMMAND "${_specpp_bin}" ${ARG_COMMON} ${_arg_DEFS} "${_absfilename}" > "${CMAKE_CURRENT_BINARY_DIR}/${_filename}"
+      DEPENDS "${_absfilename}"
+      VERBATIM
+      )
+    target_sources(${_arg_TARGET} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/${_filename}")
+  endforeach ()
+endmacro()
+
+
+# Check if compiler can support big-endian IO format, if true proceed
+# otherwise, return immediately. This is due to some binary input
+# files stored in big-endian format that are required by the SPEC tests
+macro(speccpu2017_convert_bigendian_required)
+  if (ENDIAN STREQUAL "little")
+    # GCC
+    check_fortran_compiler_flag("-fconvert=big-endian" SUPPORTS_FCONVERT_BIG_ENDIAN)
+    # Intel
+    check_fortran_compiler_flag("-convert big_endian" SUPPORTS_CONVERT_BIG_ENDIAN)
+    # Flang
+    # TBD
+    if (NOT SUPPORTS_FCONVERT_BIG_ENDIAN)
+    elseif (NOT SUPPORTS_CONVERT_BIG_ENDIAN)
+    else ()
+      message(WARN "Test not supported. No way to read big-endian binary IO on little-endian architecture.")
+      return ()
+    endif ()
+  endif ()
+endmacro ()

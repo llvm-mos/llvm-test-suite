@@ -5,8 +5,12 @@ llvm_externals_find(TEST_SUITE_HIP_ROOT "hip" "HIP prerequisites")
 # Create targets for HIP tests that are part of the test suite.
 macro(create_local_hip_tests VariantSuffix)
   set(VariantOffload "hip")
+  # Set per-source compilation/link options
+  set_source_files_properties(with-fopenmp.hip PROPERTIES
+    COMPILE_FLAGS -fopenmp)
   # Add HIP tests to be added to hip-tests-simple
   list(APPEND HIP_LOCAL_TESTS empty)
+  list(APPEND HIP_LOCAL_TESTS with-fopenmp)
   list(APPEND HIP_LOCAL_TESTS saxpy)
   foreach(_hip_test IN LISTS HIP_LOCAL_TESTS)
     create_one_local_test(${_hip_test} ${_hip_test}.hip
@@ -70,7 +74,7 @@ macro(create_hip_tests)
     get_version(_RocmVersion ${_RocmPath})
     set(_HIP_Suffix "hip-${_RocmVersion}")
     # Set up HIP test flags
-    set(_HIP_CPPFLAGS -xhip --hip-device-lib-path=${_RocmPath}/amdgcn/bitcode
+    set(_HIP_CPPFLAGS -D__HIP_ROCclr__ -xhip --hip-device-lib-path=${_RocmPath}/amdgcn/bitcode
                       -I${_RocmPath}/include)
     set(_HIP_LDFLAGS -L${_RocmPath}/lib -lamdhip64)
     set(_HIP_Libs amdhip64-${RocmVersion})

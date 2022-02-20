@@ -2,6 +2,7 @@
 include(CheckCCompilerFlag)
 
 add_subdirectory(C++11)
+add_subdirectory(Float)
 add_subdirectory(SignlessTypes)
 if(NOT ARCH STREQUAL "MOS")
   add_subdirectory(Threads)
@@ -15,14 +16,12 @@ if(TARGET_OS STREQUAL "Darwin")
   add_subdirectory(ObjC++)
 endif()
 
-# Fortran
-if(TEST_SUITE_FORTRAN)
-  add_subdirectory(Fortran)
-endif()
-
 file(GLOB Source RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.c *.cpp)
-if(TARGET_OS STREQUAL "AIX" AND ARCH STREQUAL "PowerPC" AND NOT PPC_IS_PPC64_ENABLED) 
-  list(REMOVE_ITEM Source AtomicOps.c)
+if(TARGET_OS STREQUAL "AIX" AND ARCH STREQUAL "PowerPC")
+  list(REMOVE_ITEM Source 2007-04-25-weak.c)
+  if (NOT PPC_IS_PPC64_ENABLED)
+    list(REMOVE_ITEM Source AtomicOps.c)
+  endif()
 endif()
 if(TARGET_OS STREQUAL "Darwin")
   list(REMOVE_ITEM Source 2007-04-25-weak.c)

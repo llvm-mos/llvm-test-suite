@@ -30,6 +30,13 @@ set(SUPPORTED_GPU_CUDA_10_2 ${SUPPORTED_GPU_CUDA_10_1})
 
 set(SUPPORTED_GPU_CUDA_11_0 ${SUPPORTED_GPU_CUDA_10_2}
   sm_80)
+set(SUPPORTED_GPU_CUDA_11_1 ${SUPPORTED_GPU_CUDA_11_0}
+  sm_86)
+set(SUPPORTED_GPU_CUDA_11_2 ${SUPPORTED_GPU_CUDA_11_1})
+set(SUPPORTED_GPU_CUDA_11_3 ${SUPPORTED_GPU_CUDA_11_2})
+set(SUPPORTED_GPU_CUDA_11_4 ${SUPPORTED_GPU_CUDA_11_3})
+set(SUPPORTED_GPU_CUDA_11_5 ${SUPPORTED_GPU_CUDA_11_4})
+set(SUPPORTED_GPU_CUDA_11_6 ${SUPPORTED_GPU_CUDA_11_5})
 
 # Create targets for CUDA tests that are part of the test suite.
 macro(create_local_cuda_tests VariantSuffix)
@@ -299,7 +306,7 @@ macro(create_cuda_tests)
         get_version(_GccVersion ${_GccPath})
         set(_Gcc_Suffix "libstdc++-${_GccVersion}")
         # Tell clang to use libstdc++ and where to find it.
-        set(_Stdlib_CPPFLAGS -stdlib=libstdc++ -gcc-toolchain ${_GccPath})
+        set(_Stdlib_CPPFLAGS -stdlib=libstdc++ --gcc-toolchain=${_GccPath})
         set(_Stdlib_LDFLAGS  -stdlib=libstdc++)
         # Add libstdc++ as link dependency.
         set(_Stdlib_Libs libstdcxx-${_GccVersion})
