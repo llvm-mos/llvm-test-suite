@@ -2,9 +2,9 @@
 include(CheckCCompilerFlag)
 
 add_subdirectory(C++11)
-add_subdirectory(Float)
 add_subdirectory(SignlessTypes)
 if(NOT ARCH STREQUAL "MOS")
+  add_subdirectory(Float)
   add_subdirectory(Threads)
   add_subdirectory(Vector)
   add_subdirectory(Vectorizer)
