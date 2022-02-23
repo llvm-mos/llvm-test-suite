@@ -6,6 +6,7 @@ on:
     - cron: '57 7 * * *'
   workflow_dispatch:
   repository_dispatch:
+    types: [on-sdk-update]
 
 jobs:
   test:
@@ -17,24 +18,10 @@ jobs:
           sudo apt-get install cmake ninja-build
       - name: Check out the test suite.
         uses: actions/checkout@v2
-      - name: Download the latest llvm-mos release.
+      - name: Fetch the prerelase llvm-mos SDK.
         run: |
-          curl -L -o llvm-mos.tar.xz \
-            https://github.com/llvm-mos/llvm-mos/releases/download/llvm-mos-linux-main/llvm-mos-linux-main.tar.xz
-      - name: Extract llvm-mos.
-        run: tar -xvf llvm-mos.tar.xz
-      - name: Check out the SDK.
-        uses: actions/checkout@v2
-        with:
-          repository: 'llvm-mos/llvm-mos-sdk'
-          path: 'llvm-mos-sdk'
-      - name: Build the SDK.
-        run: |
-          cd llvm-mos-sdk
-          mkdir build
-          cd build
-          cmake -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/llvm-mos -G "Ninja" ..
-          ninja install
+          curl -LO https://github.com/llvm-mos-sdk/llvm-mos-sdk/releases/download/linux-prerelease/llvm-mos.tar.xz
+          tar -xvf llvm-mos.tar.xz
       - name: Build the benchmarks.
         run: |
           mkdir build
