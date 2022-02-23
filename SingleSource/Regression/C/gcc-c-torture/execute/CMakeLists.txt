@@ -425,14 +425,6 @@ if(ARCH STREQUAL "MOS")
     # Requires __builtin_trap
     20020418-1.c
 
-    # Too big at -O0
-    strlen-4.c
-    strlen-5.c
-
-    # Too much stack at -O0
-    20000412-2.c
-    nestfunc-4.c
-
     # Requires silent inline asm operand truncation.
     20030222-1.c
     pr52286.c
@@ -666,6 +658,21 @@ if(ARCH STREQUAL "MOS")
   )
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
+  if (CMAKE_BUILD_TYPE STREQUAL Debug AND CMAKE_C_FLAGS_DEBUG MATCHES -O0)
+    file(GLOB MOSO0TestsToSkip CONFIGURE_DEPENDS
+      # Too big.
+      strlen-4.c
+      strlen-5.c
+
+      # Too much stack.
+      20000412-2.c
+      nestfunc-4.c
+
+      # Too much reg pressure.
+      builtin-bitops-1.c
+    )
+    list(APPEND TestsToSkip ${MOSO0TestsToSkip})
+  endif()
 endif()
 
 # Darwin Test Blacklist
