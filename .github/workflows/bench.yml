@@ -9,7 +9,7 @@ on:
     types: [on-sdk-update]
 
 jobs:
-  test:
+  bench:
     runs-on: ubuntu-latest
 
     steps:
