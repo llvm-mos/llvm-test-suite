@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Fetch the prerelase llvm-mos SDK.
         run: |
-          curl -LO https://github.com/llvm-mos-sdk/llvm-mos-sdk/releases/download/linux-prerelease/llvm-mos.tar.xz
+          curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/linux-prerelease/llvm-mos.tar.xz
           tar -xvf llvm-mos.tar.xz
       - name: Build the benchmarks.
         run: |
