@@ -39,17 +39,17 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
         run: |
           curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/linux-prerelease/llvm-mos.tar.xz
-          tar -xvf llvm-mos-linux-main.tar.xz
+          tar -xvf llvm-mos.tar.xz
       - name: Fetch the latest Windows llvm-mos release.
         if: startsWith(matrix.os, 'windows')
         run: |
           curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/windows-prerelease/llvm-mos.7z
-          7z x llvm-mos-windows-main.7z
+          7z x llvm-mos.7z
       - name: Fetch the latest Mac llvm-mos release.
         if: startsWith(matrix.os, 'macos')
         run: |
           curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/macos-prerelease/llvm-mos.tar.xz
-          tar -xvf llvm-mos-darwin-main.tar.xz
+          tar -xvf llvm-mos.tar.xz
 
       - name: Build the test suite.
         run: |
