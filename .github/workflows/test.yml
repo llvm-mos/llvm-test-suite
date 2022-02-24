@@ -51,7 +51,25 @@ jobs:
           curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/macos-prerelease/llvm-mos.tar.xz
           tar -xvf llvm-mos.tar.xz
 
-      - name: Build the test suite.
+      - name: Build the test suite on Windows.
+        if: startsWith(matrix.os, 'windows')
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_C_COMPILER=$env:GITHUB_WORKSPACE/llvm-mos/bin/mos-sim-clang `
+            -DCMAKE_CXX_COMPILER=$env:GITHUB_WORKSPACE/llvm-mos/bin/mos-sim-clang++ `
+            -DARCH=MOS `
+            -DTEST_SUITE_SUBDIRS=SingleSource/ `
+            -DTEST_SUITE_RUN_UNDER=$env:GITHUB_WORKSPACE/llvm-mos/bin/mos-sim `
+            -DTEST_SUITE_USER_MODE_EMULATION=yes `
+            -DTEST_SUITE_LLVM_SIZE="" `
+            -DCMAKE_STRIP="" `
+            -G Ninja `
+            -C../cmake/caches/${{ matrix.opt }}.cmake `
+            ..
+          ninja
+      - name: Build the test suite on POSIX.
+        if: ${{!startsWith(matrix.os, 'windows')}}
         run: |
           mkdir build
           cd build
@@ -67,6 +85,7 @@ jobs:
             -C../cmake/caches/${{ matrix.opt }}.cmake \
             ..
           ninja
+
       - name: Run the test suite.
         run: |
           cd build
