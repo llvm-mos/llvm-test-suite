@@ -3,6 +3,8 @@ set(ARCH MOS CACHE STRING "")
 if (NOT DEFINED LLVM_MOS)
   message(FATAL_ERROR "LLVM_MOS must be set to a llvm-mos SDK installation.")
 endif()
+file(TO_CMAKE_PATH "${LLVM_MOS}" LLVM_MOS)
+
 set(TEST_SUITE_RUN_UNDER ${LLVM_MOS}/bin/mos-sim CACHE STRING "")
 set(TEST_SUITE_USER_MODE_EMULATION yes CACHE BOOL "")
 set(TEST_SUITE_LLVM_SIZE "" CACHE STRING "")
