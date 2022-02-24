@@ -30,7 +30,7 @@ jobs:
         run: |
           brew update
           brew install ninja
-          python -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
+          python3 -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
 
       - name: Check out the test suite.
         uses: actions/checkout@v2
