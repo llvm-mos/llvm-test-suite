@@ -26,16 +26,10 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/mos-sim-clang \
-            -DCMAKE_CXX_COMPILER=$GITHUB_WORKSPACE/llvm-mos/bin/mos-sim-clang++ \
-            -DARCH=MOS \
-            -DTEST_SUITE_SUBDIRS=SingleSource/ \
-            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos/bin/mos-sim \
-            -DTEST_SUITE_USER_MODE_EMULATION=yes \
-            -DTEST_SUITE_LLVM_SIZE="" \
-            -DCMAKE_STRIP="" \
-            -G Ninja \
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos \
             -C../cmake/caches/Os.cmake \
+            -C../cmake/caches/target-mos.cmake \
+            -G Ninja \
             ..
           ninja SingleSource/Benchmarks/all
       - name: Run the benchmark.

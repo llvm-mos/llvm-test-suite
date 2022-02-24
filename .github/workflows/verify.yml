@@ -76,17 +76,11 @@ jobs:
           cd llvm-test-suite
           mkdir build
           cd build
-          cmake -DCMAKE_C_COMPILER=$GITHUB_WORKSPACE/llvm-mos/build/bin/mos-sim-clang \
-            -DCMAKE_CXX_COMPILER=$GITHUB_WORKSPACE/llvm-mos/build/bin/mos-sim-clang++ \
-            -DARCH=MOS \
-            -DTEST_SUITE_ARCH_FLAGS="-Wl,-mllvm,-verify-machineinstrs" \
-            -DTEST_SUITE_SUBDIRS=SingleSource/ \
-            -DTEST_SUITE_RUN_UNDER=$GITHUB_WORKSPACE/llvm-mos/build/bin/mos-sim \
-            -DTEST_SUITE_USER_MODE_EMULATION=yes \
-            -DTEST_SUITE_LLVM_SIZE="" \
-            -DCMAKE_STRIP="" \
-            -G Ninja \
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos \
             -C../cmake/caches/${{ matrix.opt }}.cmake \
+            -C../cmake/caches/target-mos.cmake \
+            -DTEST_SUITE_ARCH_FLAGS="-Wl,-mllvm,-verify-machineinstrs" \
+            -G Ninja \
             ..
           ninja
       - name: Run the test suite.
