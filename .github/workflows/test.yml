@@ -57,9 +57,9 @@ jobs:
           mkdir build
           cd build
           cmake -DLLVM_MOS=${{github.workspace}}\llvm-mos `
-            -C../cmake/caches/${{ matrix.opt }}.cmake `
-            -C../cmake/caches/target-mos.cmake `
-            -G Ninja \
+            -C..\cmake\caches\${{ matrix.opt }}.cmake `
+            -C..\cmake\caches\target-mos.cmake `
+            -G Ninja `
             ..
           ninja
       - name: Build the test suite on POSIX.
