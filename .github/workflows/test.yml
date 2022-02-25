@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
+        os: [macos-latest, ubuntu-latest]
         opt: [O0, O3, Os, Oz]
       fail-fast: false
     steps:
@@ -19,11 +19,6 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
         run: |
           sudo apt-get -y install ninja-build
-          python -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
-      - name: Install Windows build dependencies.
-        if: startsWith(matrix.os, 'windows')
-        run: |
-          choco install curl ninja
           python -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
       - name: Install MacOS tools
         if: startsWith(matrix.os, 'macos')
@@ -40,30 +35,13 @@ jobs:
         run: |
           curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/linux-prerelease/llvm-mos.tar.xz
           tar -xvf llvm-mos.tar.xz
-      - name: Fetch the latest Windows llvm-mos release.
-        if: startsWith(matrix.os, 'windows')
-        run: |
-          curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/windows-prerelease/llvm-mos.7z
-          7z x llvm-mos.7z
       - name: Fetch the latest Mac llvm-mos release.
         if: startsWith(matrix.os, 'macos')
         run: |
           curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/macos-prerelease/llvm-mos.tar.xz
           tar -xvf llvm-mos.tar.xz
 
-      - name: Build the test suite on Windows.
-        if: startsWith(matrix.os, 'windows')
-        run: |
-          mkdir build
-          cd build
-          cmake -DLLVM_MOS=${{github.workspace}}\llvm-mos `
-            -C..\cmake\caches\${{ matrix.opt }}.cmake `
-            -C..\cmake\caches\target-mos.cmake `
-            -G Ninja `
-            ..
-          ninja
-      - name: Build the test suite on POSIX.
-        if: ${{!startsWith(matrix.os, 'windows')}}
+      - name: Build the test suite.
         run: |
           mkdir build
           cd build
