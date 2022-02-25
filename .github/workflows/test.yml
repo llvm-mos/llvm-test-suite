@@ -33,13 +33,13 @@ jobs:
       - name: Fetch the latest Ubuntu llvm-mos release.
         if: startsWith(matrix.os, 'ubuntu')
         run: |
-          curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/linux-prerelease/llvm-mos.tar.xz
-          tar -xvf llvm-mos.tar.xz
+          curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/prerelease/llvm-mos-linux.tar.xz
+          tar -xvf llvm-mos-linux.tar.xz
       - name: Fetch the latest Mac llvm-mos release.
         if: startsWith(matrix.os, 'macos')
         run: |
-          curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/macos-prerelease/llvm-mos.tar.xz
-          tar -xvf llvm-mos.tar.xz
+          curl -LO https://github.com/llvm-mos/llvm-mos-sdk/releases/download/prerelease/llvm-mos-macos.tar.xz
+          tar -xvf llvm-mos-macos.tar.xz
 
       - name: Build the test suite.
         run: |
