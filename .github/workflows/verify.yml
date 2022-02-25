@@ -76,7 +76,7 @@ jobs:
           cd llvm-test-suite
           mkdir build
           cd build
-          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos \
+          cmake -DLLVM_MOS=$GITHUB_WORKSPACE/llvm-mos/build \
             -C../cmake/caches/${{ matrix.opt }}.cmake \
             -C../cmake/caches/target-mos.cmake \
             -DTEST_SUITE_ARCH_FLAGS="-Wl,-mllvm,-verify-machineinstrs" \
