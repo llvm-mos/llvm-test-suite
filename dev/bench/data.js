@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1647331990076,
-  "repoUrl": "",
+  "lastUpdate": 1647360969925,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -20817,6 +20817,90 @@ window.BENCHMARK_DATA = {
             "value": 2507974,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 2507974 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6862,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6862 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16582,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16582 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76491,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76491 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288490816,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288490816 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 19914195,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 19914195 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "cfba7b011560612c40a432e4e8596648fa73444c",
+          "message": "Fix ranlib name.",
+          "timestamp": "2022-03-15T08:59:08-07:00",
+          "tree_id": "974abbf1ac5e0e0fc0d7dd01790d63b9a11f07cb",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/cfba7b011560612c40a432e4e8596648fa73444c"
+        },
+        "date": 1647360967704,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3753105,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3753105 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813789,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813789 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2508974,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2508974 cycles\nthreads: 1"
           },
           {
             "name": "6502-compilers/bench/coroutine",
