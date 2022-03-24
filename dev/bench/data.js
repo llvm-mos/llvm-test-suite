@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1648080419543,
+  "lastUpdate": 1648102225278,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -21985,6 +21985,90 @@ window.BENCHMARK_DATA = {
             "value": 19914195,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 19914195 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "751d828b8e31a8db8d2f5aabf602858f83905170",
+          "message": "Refactor SDK.\n\nInstead of #including functionality into .S files, this change\nestablishes a real abstraction for merging static libraries together\nusing CMake.\n\nFunctionality is then built into pick-and-choose mini-libraries in the\ncommon target. This allows targets to be more configured than built from\nscratch; in particularly, this should help make it much easier to begin\nretargeting common without mucking around in the SDK.",
+          "timestamp": "2022-03-23T22:54:17-07:00",
+          "tree_id": "d70435a6215f76a28650466ee7e5905a5fba1e97",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/751d828b8e31a8db8d2f5aabf602858f83905170"
+        },
+        "date": 1648102223443,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3777356,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3777356 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 846984,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 846984 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2533793,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2533793 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7070,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7070 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 30547,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 30547 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 475,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 475 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76523,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76523 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288661093,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288661093 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20133685,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20133685 cycles\nthreads: 1"
           },
           {
             "name": "CoreMark",
