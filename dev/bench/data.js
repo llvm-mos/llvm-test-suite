@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1648142283398,
+  "lastUpdate": 1648157575182,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -22233,6 +22233,90 @@ window.BENCHMARK_DATA = {
             "value": 20133685,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 20133685 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "288856a525a71bdd161e9e661690b4668d92c1ed",
+          "message": "Sim doensn't need BSS zeroing.",
+          "timestamp": "2022-03-24T14:16:25-07:00",
+          "tree_id": "da47d8ce4aa66883218c36a2707234ad5bd60aa5",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/288856a525a71bdd161e9e661690b4668d92c1ed"
+        },
+        "date": 1648157573395,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3753129,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3753129 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813713,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813713 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2511768,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2511768 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6886,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6886 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16606,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16606 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 183,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 183 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76523,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76523 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288490840,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288490840 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 19914202,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 19914202 cycles\nthreads: 1"
           },
           {
             "name": "CoreMark",
