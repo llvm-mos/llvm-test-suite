@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1649405586887,
-  "repoUrl": "",
+  "lastUpdate": 1649482852510,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -24126,6 +24126,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/f50b0747ccd34c54439c6648bf39c041b18946fe"
         },
         "date": 1649405584028,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3753119,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3753119 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 813904,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 813904 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2510966,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2510966 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6876 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 16596,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 16596 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 173,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 173 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 76510,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 76510 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 288490830,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 288490830 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 19914202,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 19914202 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "3afa2a7b836f831eb1efcfc461247dd7c11b406e",
+          "message": "Majorly Refactor SDK.\n\nThe goal of this refactor was twofold:\n1) To rely on as much built-in CMake functionality as possible, and\n2) To increase flexibility for platform construction and layout.\n\nThe SDK scripts previously placed a considerable number of implicit\nconstraints on the layout of the source directories, and generally what\nconstitutes a target. An attempt here has been made to construct the\nplatforms in more of a library style; a platform is now any subdirectory\nthat calls platform(), and the usual CMake install logic is used to\ncontrol layout.\n\nThe examples were made into an external project that is invoked multiple\ntimes; once per target. This both allows it to use simple add_executable\ndefinitions and allows us to include the real CMakeLists.txt file for\nall the examples with the SDK install.\n\nFinally, the Clang config files are now automatically generated; we do\nlose a bit of flexibility here, but it shouldn't be hard to get it back\nif need be. I'd like to move most of the current functionality into the\ncompiler driver anyway, so no big loss.\n\nThis removes around 200 lines. We do lose the run-XXX simulator targets,\nbut everything else made it through.",
+          "timestamp": "2022-04-08T14:35:24-07:00",
+          "tree_id": "4c292635d27d2339a251668d651431828e74eb48",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/3afa2a7b836f831eb1efcfc461247dd7c11b406e"
+        },
+        "date": 1649482850631,
         "tool": "googlecpp",
         "benches": [
           {
