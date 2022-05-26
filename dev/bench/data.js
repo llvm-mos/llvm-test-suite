@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653552897114,
-  "repoUrl": "",
+  "lastUpdate": 1653593981415,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -29534,6 +29534,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d8eebf0f81e95e1a955eaea6aee49e1b5cc3cab7"
         },
         "date": 1653552894924,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3800218,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3800218 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 682396,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 682396 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2366309,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2366309 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6876 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 12542,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 12542 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 167,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 167 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 47467,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 47467 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490977,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490977 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20574200,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20574200 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 123,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 123 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "stephan.muehlstrasser@web.de",
+            "name": "Stephan Mühlstrasser",
+            "username": "smuehlst"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "91cd402d1a8738a039f63ff8e642addb1b546a46",
+          "message": "Clear screen via crt0.c (#38)\n\n* Minimal OSI C1P implementation\r\n\r\nAll boilerplate except for the custom _exit implementation\r\nthat jumps to the PROM monitor prompt.\r\n\r\n* __putchar() for OSI target\r\n\r\n* Remove obsolete comment\r\n\r\n* Switch to loop exit implementation\r\n\r\nThis does make more sense with the existing examples that\r\notherweise would jump directly to the PROM monitor.\r\n\r\n* Switch to exit-loop implementation\r\n\r\nThe endless  loop in the abort implementation is\r\nobsolete with the switch to the common-exit-loop\r\nimplementation.\r\n\r\n* Address review comments\r\n\r\nUse ' ' consistently for space character.\r\nFix incorrect encoding for CR and LF.\r\n\r\n* C standard semantics of '\\n'\r\n\r\n* Attempt to implement crt0.c\r\n\r\nThis is a first broken attempt to hook up a call for clearing the screen\r\nbefore entering main.\r\n\r\n* Missing newline\r\n\r\n* Fix problem with crt0.c\r\n\r\nThe CMake call for merge_libraries for common-crt0-o was missing.\r\nThis caused an invalid executable being generated where main itself\r\nwas missing.\r\n\r\n* Adapt to new library merging strategy\r\n\r\nIt is no longer necessary to merge the crt0.o module explicitly\r\nwith the parent library crt0.o module.\r\n\r\n* Fix incorrect argument for memset()\r\n\r\nFixed the bug that the address of function scr_base was passed\r\nto memset() instead of calling scr_base() and passing the\r\nresult to memset().\r\n\r\n* Fix C++ namespace pollution\r\n\r\nFix pollution of C++ namespace by class name that is\r\nnot prefixed by underscores.\r\n\r\nFixes https://github.com/llvm-mos/llvm-mos-sdk/issues/39.\r\n\r\n* Simplify clear screen in crt0\r\n\r\nReplaced crt0 C module containing inline assembly with\r\nplain assembler module where __clrscr is called directly\r\nwithout involving an additional C function.",
+          "timestamp": "2022-05-26T20:24:29+01:00",
+          "tree_id": "d4d0dea374737539d0ab0b8b3bc47afb28b8e2b9",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/91cd402d1a8738a039f63ff8e642addb1b546a46"
+        },
+        "date": 1653593979078,
         "tool": "googlecpp",
         "benches": [
           {
