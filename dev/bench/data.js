@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1654935134987,
-  "repoUrl": "",
+  "lastUpdate": 1654987967281,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -30982,6 +30982,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/d8eebf0f81e95e1a955eaea6aee49e1b5cc3cab7"
         },
         "date": 1654935132154,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3800218,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3800218 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 682396,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 682396 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2366309,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2366309 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6876 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 12542,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 12542 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 167,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 167 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 47467,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 47467 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490977,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490977 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20574200,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20574200 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 123,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 123 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "stephan.muehlstrasser@web.de",
+            "name": "Stephan Mühlstrasser",
+            "username": "smuehlst"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4fd5ae03575017c6161c03b93d14c553c7afc884",
+          "message": "getchar() implementation for osi-c1p target (#43)\n\n* Port keyboard reading function from cc65\r\n\r\n* Minor cleanup and clarifications\r\n\r\nPut state of keyboard polling routine into dedicated section.\r\nAdjust size of storage region for keyboard variables.\r\n\r\n* Cleanup assembler code\r\n\r\nRemoved assignments to register X that were made due to\r\ncc65 calling convention. The only return value used is stored in\r\n__CHARBUF.\r\nAlways store return value in __CHARBUF.\r\n\r\n* More idiomatic assignment of zero-page sections\r\n\r\nImproved according to review comment:\r\n\r\nhttps://github.com/llvm-mos/llvm-mos-sdk/pull/43#discussion_r895067819\r\n\r\n* Invoke __kbhit via C function call\r\n\r\nImprove readability.",
+          "timestamp": "2022-06-11T15:36:29-07:00",
+          "tree_id": "2f0fbcda0e6b164cfa944b7fdcf4ebedfdffd63f",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/4fd5ae03575017c6161c03b93d14c553c7afc884"
+        },
+        "date": 1654987964822,
         "tool": "googlecpp",
         "benches": [
           {
