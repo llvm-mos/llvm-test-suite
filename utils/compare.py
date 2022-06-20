@@ -13,6 +13,8 @@ import re
 import numbers
 import argparse
 
+GEOMEAN_ROW = 'Geomean difference'
+
 def read_lit_json(filename):
     import json
     jsondata = json.load(open(filename))
@@ -120,29 +122,34 @@ def get_values(values):
     else:
         return (values.min(axis=1), values.max(axis=1))
 
-def add_diff_column(values, absolute_diff=False):
-    values0, values1 = get_values(values)
+def add_diff_column(metric, values, absolute_diff=False):
+    values0, values1 = get_values(values[metric])
+    values0.fillna(0.0, inplace=True)
+    values1.fillna(0.0, inplace=True)
     # Quotient or absolute difference?
     if absolute_diff:
-        values['diff'] = values1 - values0
+        values[(metric, 'diff')] = values1 - values0
     else:
-        values['diff'] = values1 / values0
-        values['diff'] -= 1.0
+        values[(metric, 'diff')] = (values1 / values0) - 1.0
     return values
 
-def add_geomean_row(data, dataout):
+def add_geomean_row(metrics, data, dataout):
     """
     Normalize values1 over values0, compute geomean difference and add a
     summary row to dataout.
     """
-    values0, values1 = get_values(data)
-    relative = values1 / values0
-    gm_diff = stats.gmean(relative) - 1.0
-
-    gm_row = {c: '' for c in dataout.columns}
-    gm_row['diff'] = gm_diff
-    series = pd.Series(gm_row, name='Geomean difference')
-    return dataout.append(series)
+    gm = pd.DataFrame(index=[GEOMEAN_ROW], columns=dataout.columns,
+                      dtype='float64')
+    for metric in metrics:
+        values0, values1 = get_values(data[metric])
+        # Avoid infinite values in the diff and instead use NaN, as otherwise
+        # the computation of the geometric mean will fail.
+        values0 = values0.replace({0: float('NaN')})
+        relative = values1 / values0
+        gm_diff = stats.gmean(relative.dropna()) - 1.0
+        gm[(metric, 'diff')] = gm_diff
+    gm.Program = GEOMEAN_ROW
+    return pd.concat([dataout, gm])
 
 def filter_failed(data, key='Exec'):
     return data.loc[data[key] == "pass"]
@@ -201,39 +208,40 @@ def determine_common_prefix_suffix(names, min_len=8):
     prefix_len = max(0, min(shortest_name - suffix_len, prefix_len))
     return (prefix_len, suffix_len)
 
-def format_diff(value):
+def format_relative_diff(value):
     if not isinstance(value, numbers.Integral):
         return "%4.1f%%" % (value * 100.)
     else:
         return "%-5d" % value
 
 def print_result(d, limit_output=True, shorten_names=True, minimal_names=False,
-                 show_diff_column=True, sortkey='diff', sort_by_abs=True):
-    # sort (TODO: is there a more elegant way than create+drop a column?)
+                 show_diff_column=True, sortkey='diff', sort_by_abs=True,
+                 absolute_diff=False):
+    metrics = d.columns.levels[0]
     if sort_by_abs:
-        d['$sortkey'] = d[sortkey].abs()
+        d = d.sort_values(by=(metrics[0], sortkey), key=pd.Series.abs, ascending=False)
     else:
-        d['$sortkey'] = d[sortkey]
+        d = d.sort_values(by=(metrics[0], sortkey), ascending=False)
 
-    d = d.sort_values("$sortkey", ascending=False)
-    del d['$sortkey']
+    # Ensure that the columns are grouped by metric (rather than having the
+    # diffs at the end of the line).
+    d = d.reindex(columns=d.columns.levels[0], level=0)
+
     if not show_diff_column:
-        del d['diff']
+        # Remove all diff columns (using level=1 since level 0 is the metric).
+        d.drop(labels='diff', level=1, axis=1, inplace=True)
     dataout = d
     if limit_output:
         # Take 15 topmost elements
         dataout = dataout.head(15)
 
-    if show_diff_column:
-      dataout = add_geomean_row(d, dataout)
-
-    # Turn index into a column so we can format it...
-    dataout.insert(0, 'Program', dataout.index)
-
     formatters = dict()
-    formatters['diff'] = format_diff
+    if not absolute_diff:
+        for m in metrics:
+            formatters[(m, 'diff')] = format_relative_diff
+    # Turn index into a column so we can format it...
+    formatted_program = dataout.index.to_series()
     if shorten_names:
-        drop_prefix, drop_suffix = determine_common_prefix_suffix(dataout.Program)
         def format_name(name, common_prefix, common_suffix):
             name = name[common_prefix:]
             if common_suffix > 0:
@@ -247,22 +255,34 @@ def print_result(d, limit_output=True, shorten_names=True, minimal_names=False,
                 name = name[:-5]
             return name
 
+        # The to_string formatters argument appears to be ignored for
+        # dtype=object, so transform the program column manually.
         if minimal_names:
-            formatters['Program'] = strip_name_fully
+            formatted_program = formatted_program.map(strip_name_fully)
         else:
-            formatters['Program'] = lambda name: format_name(name, drop_prefix, drop_suffix)
+            drop_prefix, drop_suffix = determine_common_prefix_suffix(formatted_program)
+            formatted_program = formatted_program.map(lambda name: format_name(name, drop_prefix, drop_suffix))
+    dataout.insert(0, 'Program', formatted_program)
+    # Add the geometric mean row after we have formatted the program names
+    # as it will otherwise interfere with common prefix/suffix computation.
+    if show_diff_column and not absolute_diff:
+        # geometric mean only makes sense for relative differences.
+        dataout = add_geomean_row(metrics, d, dataout)
+
     def float_format(x):
         if x == '':
             return ''
         return "%6.2f" % (x,)
 
     pd.set_option("display.max_colwidth", 0)
-    out = dataout.to_string(index=False, justify='left',
+    pd.set_option('display.width', 0)
+    # Print an empty value instead of NaN (for the geomean row).
+    out = dataout.to_string(index=False, justify='left', na_rep='',
                             float_format=float_format, formatters=formatters)
     print(out)
     print(d.describe())
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(prog='compare.py')
     parser.add_argument('-a', '--all', action='store_true')
     parser.add_argument('-f', '--full', action='store_true')
@@ -271,6 +291,8 @@ if __name__ == "__main__":
     parser.add_argument('--nodiff', action='store_false', dest='show_diff',
                         default=None)
     parser.add_argument('--diff', action='store_true', dest='show_diff')
+    parser.add_argument('--absolute-diff', action='store_true',
+                        help='Use an absolute instead of a relative difference')
     parser.add_argument('--filter-short', action='store_true',
                         dest='filter_short')
     parser.add_argument('--no-filter-failed', action='store_false',
@@ -309,9 +331,9 @@ if __name__ == "__main__":
 
         # Filter minimum of lhs and rhs
         lhs_d = readmulti(lhs)
-        lhs_merged = config.merge_function(lhs_d, level=1)
+        lhs_merged = lhs_d.groupby(level=1).apply(config.merge_function)
         rhs_d = readmulti(rhs)
-        rhs_merged = config.merge_function(rhs_d, level=1)
+        rhs_merged = rhs_d.groupby(level=1).apply(config.merge_function)
 
         # Combine to new dataframe
         data = pd.concat([lhs_merged, rhs_merged], names=['l/r'],
@@ -375,18 +397,23 @@ if __name__ == "__main__":
         data = data[metrics]
 
     data = data.unstack(level=0)
-    # unstack() gave us a complicated multiindex for the columns, simplify
-    # things by renaming to a simple index.
-    data.columns = [(c[1] if c[1] else c[0]) for c in data.columns.values]
 
-    data = add_diff_column(data)
+    for metric in data.columns.levels[0]:
+        data = add_diff_column(metric, data, absolute_diff=config.absolute_diff)
 
     sortkey = 'diff'
+    # TODO: should we still be sorting by diff even if the diff is hidden?
     if len(config.files) == 1:
-        sortkey = data.columns[0]
+        sortkey = data.columns.levels[1][0]
 
     # Print data
     print("")
     shorten_names = not config.full
     limit_output = (not config.all) and (not config.full)
-    print_result(data, limit_output, shorten_names, config.minimal_names, config.show_diff, sortkey, config.no_abs_sort)
+    print_result(data, limit_output, shorten_names, config.minimal_names,
+                 config.show_diff, sortkey, config.no_abs_sort,
+                 config.absolute_diff)
+
+
+if __name__ == "__main__":
+    main()

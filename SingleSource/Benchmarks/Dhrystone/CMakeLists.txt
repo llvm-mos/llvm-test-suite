@@ -10,4 +10,5 @@ if (ARCH STREQUAL "MOS")
 endif()
 
 list(APPEND LDFLAGS -lm)
+list(APPEND CFLAGS -Wno-implicit-int)
 llvm_singlesource()
