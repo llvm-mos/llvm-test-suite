@@ -27,7 +27,11 @@ jobs:
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
       - name: Archive the compiler.
         run: |
-          tar --zstd -cf compiler.tar.zst llvm-mos/{build/{bin,lib/clang},llvm/utils/lit}
+          mkdir -p staging/llvm-mos
+          mv llvm-mos/{build/{bin,lib/clang},llvm/utils/lit} staging/llvm-mos
+          rm -rf llvm-mos
+          cd staging
+          tar --zstd -cf ../compiler.tar.zst llvm-mos
           rm -rf llvm-mos
       - name: Upload the compiler.
         uses: actions/upload-artifact@v2
