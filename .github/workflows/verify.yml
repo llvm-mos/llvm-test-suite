@@ -27,7 +27,6 @@ jobs:
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
       - name: Archive the compiler.
         run: |
-          mkdir -p staging/llvm-mos/{build,lib/clang,llvm/utils}
           for dir in build/bin lib/clang llvm/utils; do
             mkdir -p staging/llvm-mos/$(dirname $bin)
             mv llvm-mos/$bin staging/llvm-mos/$(dirname $bin)
