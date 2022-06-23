@@ -28,8 +28,8 @@ jobs:
       - name: Archive the compiler.
         run: |
           for dir in build/bin lib/clang llvm/utils; do
-            mkdir -p staging/llvm-mos/$(dirname $bin)
-            mv llvm-mos/$bin staging/llvm-mos/$(dirname $bin)
+            mkdir -p staging/llvm-mos/$(dirname $dir)
+            mv llvm-mos/$dir staging/llvm-mos/$(dirname $dir)
           done
           rm -rf llvm-mos
           cd staging
