@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1656663188790,
-  "repoUrl": "",
+  "lastUpdate": 1656707910930,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -35083,6 +35083,90 @@ window.BENCHMARK_DATA = {
             "value": 288490343,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 288490343 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21418264,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21418264 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 114,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "5438ec46a7c00fdf1621a406d6dccb28f7c528c7",
+          "message": "Fix static stack semantics for libcalls; cleanup LTO.",
+          "timestamp": "2022-07-01T13:22:11-07:00",
+          "tree_id": "6d01e4532d33dd1f974034d1038dcbfd72e4aab4",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/5438ec46a7c00fdf1621a406d6dccb28f7c528c7"
+        },
+        "date": 1656707907836,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3534104,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3534104 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 683856,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 683856 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2378680,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2378680 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6876 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 167,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 167 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490599,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490599 cycles\nthreads: 1"
           },
           {
             "name": "BYTE Sieve",
