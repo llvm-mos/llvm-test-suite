@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1657095215843,
-  "repoUrl": "",
+  "lastUpdate": 1657135025395,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -35678,6 +35678,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/cd463bddc2324c4d36437abea8999ab325935bfb"
         },
         "date": 1657095213055,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3534104,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3534104 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 683856,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 683856 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2378680,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2378680 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6876,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6876 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 167,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 167 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490599,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490599 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21418264,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21418264 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 114,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "anoyes34@gmail.com",
+            "name": "Andrew Noyes",
+            "username": "atn34"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "664baf56fd2bad541f4471c10c6d58e34a4eae9d",
+          "message": "Initial support for the dodo platform (#49)\n\n* First attempt at dodo support\r\n\r\nSuccessfully compiles 0xDEADBEEF (see https://play.dodolabs.io/#), but\r\ndoesn't compile any of the other sample games due to missing itoa,\r\nsrand, and rand implementations.\r\n\r\n* Add version check\r\n\r\n* Fix CLEAR_SPRITE comment formatting\r\n\r\n* Fix missing newline at end of file\r\n\r\n* Remove redundant #pragma once",
+          "timestamp": "2022-07-06T12:00:41-07:00",
+          "tree_id": "74c6dc98a8801df2ff2ec3e0466a543fa25d8d9d",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/664baf56fd2bad541f4471c10c6d58e34a4eae9d"
+        },
+        "date": 1657135022846,
         "tool": "googlecpp",
         "benches": [
           {
