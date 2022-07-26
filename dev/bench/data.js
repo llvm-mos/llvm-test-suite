@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1658823228640,
-  "repoUrl": "",
+  "lastUpdate": 1658845450265,
+  "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
       {
@@ -38883,6 +38883,90 @@ window.BENCHMARK_DATA = {
             "value": 114,
             "unit": "sec/iter",
             "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "119c2758c113a73a817f2967d5bf27525de007c8",
+          "message": "Configure compiler with available zero page.",
+          "timestamp": "2022-07-18T20:40:04-07:00",
+          "tree_id": "cd765f730c2c67702103cb8f91f6a67defdf941c",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/119c2758c113a73a817f2967d5bf27525de007c8"
+        },
+        "date": 1658845446603,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3532957,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3532957 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 675989,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 675989 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2404196,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2404196 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6364,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6364 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 165,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 165 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490599,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490599 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21558366,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21558366 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 113,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 113 sec\nthreads: 1"
           }
         ]
       }
