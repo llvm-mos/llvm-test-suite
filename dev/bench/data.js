@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1660058984890,
+  "lastUpdate": 1660060529197,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -42174,6 +42174,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/680c348f75228e2840a1d0a72a57166a4fb42377"
         },
         "date": 1660058981919,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3532957,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3532957 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 675989,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 675989 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2404196,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2404196 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6364,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6364 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 165,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 165 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490599,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490599 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21558366,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21558366 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 113,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 113 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Mlund@mac.com",
+            "name": "Mikael Lund",
+            "username": "mlund"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "39984cb70afd57f6c3ff8d3afe9228342f2cb490",
+          "message": "Add volatile to peek and poke (#69)\n\nFixed #67.",
+          "timestamp": "2022-08-09T08:08:52-07:00",
+          "tree_id": "a5e274324c3d6c754c8aa281a1b665690a0d1a74",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/39984cb70afd57f6c3ff8d3afe9228342f2cb490"
+        },
+        "date": 1660060526815,
         "tool": "googlecpp",
         "benches": [
           {
