@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1660157487896,
+  "lastUpdate": 1660158935454,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -42674,6 +42674,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/7f9eec208ef8da87877f5b0f102bfd61dbf4a74a"
         },
         "date": 1660157484266,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3532957,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3532957 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 675989,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 675989 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2404196,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2404196 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6364,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6364 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 165,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 165 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490599,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490599 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21558366,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21558366 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 113,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 113 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Mlund@mac.com",
+            "name": "Mikael Lund",
+            "username": "mlund"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "672cc4dee7372e9f881c5872fe51ca847457b06c",
+          "message": "Add CPU definition to mega65 target (#73)\n\nThe 65ce02 is currently the closest match to the derived GS4510 used in the mega65.",
+          "timestamp": "2022-08-10T11:55:37-07:00",
+          "tree_id": "4153fcc927166a325fb3f31b3c01c0d3fb61373d",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/672cc4dee7372e9f881c5872fe51ca847457b06c"
+        },
+        "date": 1660158932237,
         "tool": "googlecpp",
         "benches": [
           {
