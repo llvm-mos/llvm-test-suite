@@ -33,7 +33,27 @@
 # clean-up fort.* files otherwise one of the tests will fail
 llvm_test_prepare(rm -f %S/fort.*)
 
+# Group 1:
+# Tests 905 and 907 use list-directed output, for which the standard allows some
+# flexibility, e.g., with regards to how many white space characters or
+# floating point decimals to print. Treat them separately.
+# FIXME: Reenable these tests after moving the buildbots from using
+# flang-to-external-fc to using flang-new.
+set(SPECIAL_CASES "FM905.f" "FM907.f")
+if (NOT CMAKE_Fortran_COMPILER_ID STREQUAL "LLVMFlang")
+  set(Source ${SPECIAL_CASES})
+  set(FP_IGNOREWHITESPACE ON)
+  llvm_singlesource()
+  set(Source)
+endif()
+
+# Group 2:
+# Generic case. Make sure to exclude the special cases which have already been
+# added as part of Group 1.
 file(GLOB Source CONFIGURE_DEPENDS *.f)
+foreach (SPECIAL_CASE ${SPECIAL_CASES})
+  list(FILTER Source EXCLUDE REGEX ${SPECIAL_CASE})
+endforeach()
 
 # Test 509 requires this flag in more recent versions of GCC.
 # If this flag is not supported, the test should be excluded.
@@ -45,7 +65,22 @@ else()
   list(FILTER Source EXCLUDE REGEX "FM509\.f$")
 endif()
 
+# Skip some tests that currently fail with flang on AArch64 when using libpgmath.
+# FIXME: Reenable these tests after libpgmath is fixed or after we no longer
+# depend on it.
+if (CMAKE_Fortran_COMPILER_ID STREQUAL "LLVMFlang" AND ARCH STREQUAL "AArch64")
+  # Regex because the GLOB returns the full path to each file
+  list(FILTER Source EXCLUDE REGEX "FM813\.f$")
+  list(FILTER Source EXCLUDE REGEX "FM815\.f$")
+  list(FILTER Source EXCLUDE REGEX "FM817\.f$")
+  list(FILTER Source EXCLUDE REGEX "FM820\.f$")
+  list(FILTER Source EXCLUDE REGEX "FM828\.f$")
+  list(FILTER Source EXCLUDE REGEX "FM831\.f$")
+  list(FILTER Source EXCLUDE REGEX "FM833\.f$")
+endif()
+
 set(FP_TOLERANCE 1.0e-11) # set by the most sensitive numerical test
+set(FP_IGNOREWHITESPACE OFF)
 llvm_singlesource()
 
 file(COPY lit.local.cfg DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
