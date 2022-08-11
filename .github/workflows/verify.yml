@@ -19,10 +19,10 @@ jobs:
         with:
           repository: 'llvm-mos/llvm-mos'
           path: 'llvm-mos'
-      - name: Build the compiler in debug mode.
+      - name: Build the compiler.
         run: |
           cd llvm-mos
-          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_LINKER=lld
+          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_USE_LINKER=lld
           cd build
           cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size
       - name: Archive the compiler.
