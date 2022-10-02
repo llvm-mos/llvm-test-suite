@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1664646717157,
+  "lastUpdate": 1664689101170,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -50866,6 +50866,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/e96e8c38ea4eb566cba35af895413b025517b329"
         },
         "date": 1664646714003,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3452782,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3452782 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 741075,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 741075 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2241145,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2241145 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6364,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6364 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 165,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 165 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490593,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490593 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20831946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20831946 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 112,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 112 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "9df52ca03e5815fcc22eb888c889dea59fcf03b4",
+          "message": "C++ extern C for padlib and zaplib.",
+          "timestamp": "2022-10-01T22:22:44-07:00",
+          "tree_id": "8a170dd41f109bb332850fddad9d271f01f09a40",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/9df52ca03e5815fcc22eb888c889dea59fcf03b4"
+        },
+        "date": 1664689098400,
         "tool": "googlecpp",
         "benches": [
           {
