@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1666599940052,
+  "lastUpdate": 1666626196479,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -54278,6 +54278,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/b9c06ea9dcf6071ccb68c34162fe9bd624e24f63"
         },
         "date": 1666599936373,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3452782,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3452782 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 741075,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 741075 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2241145,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2241145 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6364,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6364 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 165,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 165 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490593,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490593 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20831946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20831946 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 112,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 112 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "72891927+cnelson20@users.noreply.github.com",
+            "name": "Cameron Nelson",
+            "username": "cnelson20"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7189a32c75e4c3e8e3560960d1bebacce53ae195",
+          "message": "Add code for cbm_k functions in cbm.h (#87)\n\n* assembly source for cbm.h functions\r\n\r\n* add cbm_h functions to libc\r\n\r\n* remove ifdef from cbm_h that commented out the cbm_k functions; remove fastcall characteristic from functions\r\n\r\n* change assembly source function names, fix cmakelist.txt, add cbm_k_chrout.s\r\n\r\n* fix spacing on CMakeLists.txt\r\n\r\n* rewrite some source files in c to allow inlining; others updated to use __ routines for calls\r\n\r\n* add newlines to ends of files\r\n\r\n* change var names to align with cbm.h",
+          "timestamp": "2022-10-24T08:22:35-07:00",
+          "tree_id": "f41b287514a8a8f37fcf74fff882b2fd33cb4dbb",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/7189a32c75e4c3e8e3560960d1bebacce53ae195"
+        },
+        "date": 1666626192592,
         "tool": "googlecpp",
         "benches": [
           {
