@@ -139,6 +139,10 @@ file(GLOB UnsupportedTests CONFIGURE_DEPENDS
   # Clang at -O0 does not enable -finstrument-functions
   # (https://bugs.llvm.org/show_bug.cgi?id=49143)
   eeprof-1.c
+
+  # Size of array element is not a multiple of its alignment.
+  pr36093.c
+  pr43783.c
 )
 list(APPEND TestsToSkip ${UnsupportedTests})
 
@@ -190,12 +194,6 @@ file(GLOB TestRequiresLibM CONFIGURE_DEPENDS
   980709-1.c
   float-floor.c
   complex-5.c  # -lm needed on FreeBSD
-)
-
-# Tests that require newnlib Nano IO (--undefined=_printf_float ldflag)
-file(GLOB TestRequiresNanoIO CONFIGURE_DEPENDS
-  920501-8.c
-  930513-1.c
 )
 
 ##
@@ -718,10 +716,6 @@ foreach(File ${TestFiles})
 
   if(${File} IN_LIST TestRequiresFWrapV)
     list(APPEND MaybeCFlags "-fwrapv")
-  endif()
-
-  if(${File} IN_LIST TestRequiresNanoIO)
-    list(APPEND MaybeLDFlags "-Wl,-u,_printf_float")
   endif()
 
   # Add Test Target
