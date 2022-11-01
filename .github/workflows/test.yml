@@ -19,13 +19,13 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
         run: |
           sudo apt-get -y install ninja-build
-          python -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
+          python -m pip install lit
       - name: Install MacOS tools
         if: startsWith(matrix.os, 'macos')
         run: |
           brew update
           brew install ninja
-          python3 -m pip install git+https://github.com/llvm/llvm-project.git#subdirectory=llvm/utils/lit
+          python3 -m pip install lit
 
       - name: Check out the test suite.
         uses: actions/checkout@v2
