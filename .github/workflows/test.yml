@@ -19,13 +19,13 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
         run: |
           sudo apt-get -y install ninja-build
-          python -m pip install lit
+          python3 -m pip install --user --use-pep517 lit
       - name: Install MacOS tools
         if: startsWith(matrix.os, 'macos')
         run: |
           brew update
           brew install ninja
-          python3 -m pip install lit
+          python3 -m pip install --user --use-pep517 lit
 
       - name: Check out the test suite.
         uses: actions/checkout@v2
@@ -55,4 +55,4 @@ jobs:
       - name: Run the test suite.
         run: |
           cd build
-          lit .
+          $(python3 -m site --user-base)/bin/lit .

@@ -1,4 +1,5 @@
 name: Verify
+concurrency: verify
 on:
   push:
     branches: [ main ]
