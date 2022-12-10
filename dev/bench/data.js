@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1670573655651,
+  "lastUpdate": 1670651692160,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -61310,6 +61310,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/ad21cc3dbac2a517d48b1266d3940f00948338ea"
         },
         "date": 1670573651643,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3160713,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3160713 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 741225,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 741225 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2170919,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2170919 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6936,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6936 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10136,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10136 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 165,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 165 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44832,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44832 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490591,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490591 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21269477,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21269477 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 113,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 113 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cw@f00f.org",
+            "name": "Chris Wedgwood",
+            "username": "cwedgwood"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "02514bf9ebfb0556a331e360241d111c95750d5a",
+          "message": "add atari8-stdcart target (#92)\n\n* add atari8-stdcart target\n\n* cleanup/fix atari8-stdcart target\n\n* atari8-stdcart typo\n\n* atari8-stdcart fix crt0 and .*data copies\n\n* atari8-stdcart avoid duplicate symbols, expose _cart_init\n\ntweak to avoid duplicate symbols (tested with --whole-archive)\n\nallow override of _cart_init; this won't be used most of the time but\nis useful in cases where you want to taint memory in order to test\nthat the data copy functions are working\n\n* reference copy-data.c from mos-common",
+          "timestamp": "2022-12-09T21:37:27-08:00",
+          "tree_id": "4e3abc0f583f2b04f594bfb091d43bf7c4fa28dc",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/02514bf9ebfb0556a331e360241d111c95750d5a"
+        },
+        "date": 1670651688946,
         "tool": "googlecpp",
         "benches": [
           {
