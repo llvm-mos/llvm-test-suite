@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1671351197901,
+  "lastUpdate": 1671385384142,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -62434,6 +62434,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/ad21cc3dbac2a517d48b1266d3940f00948338ea"
         },
         "date": 1671351194306,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3153299,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3153299 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 741530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 741530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2165159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2165159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490601,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490601 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21269477,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21269477 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 113,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 113 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "oskar.linde@gmail.com",
+            "name": "Oskar Linde",
+            "username": "OskarLinde"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "70dfd7fa247f38ddb42edbbc56d4b39b081b9026",
+          "message": "[C64] Increase available RAM to 50KB by swapping out BASIC ROM (#94)\n\n* [C64] Increase available RAM to 50KB by swapping out BASIC ROM\n\n* Fix compilation error on MacOS/arm64",
+          "timestamp": "2022-12-18T09:25:26-08:00",
+          "tree_id": "70e3664a31e760dd936f0d2e156ceed969d3afd6",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/70dfd7fa247f38ddb42edbbc56d4b39b081b9026"
+        },
+        "date": 1671385380726,
         "tool": "googlecpp",
         "benches": [
           {
