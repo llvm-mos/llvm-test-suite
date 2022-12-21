@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1671649973973,
+  "lastUpdate": 1671650731334,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -62842,6 +62842,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/ec527b7bf582e9028f9019ff510cddf372bb552c"
         },
         "date": 1671649969526,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3153299,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3153299 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 741530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 741530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2165159,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2165159 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 284490601,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 284490601 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21269477,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21269477 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 113,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 113 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "fox@scene.pl",
+            "name": "Piotr Fusik",
+            "username": "pfusik"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "beb2b9a632d53bc1990c06a3832ad2d07ba9fb65",
+          "message": "Start implementations of <algorithm>, <array>, <iterator>, <utility> (#95)\n\n* Add partial implementations of <algorithm>, <array>, <iterator>, <utility>\r\n\r\nSee #52.\r\n\r\n* Avoid #pragma once.",
+          "timestamp": "2022-12-21T13:53:23-05:00",
+          "tree_id": "b5052e2b3a0da0d6bc5617350e8a441abc24aed1",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/beb2b9a632d53bc1990c06a3832ad2d07ba9fb65"
+        },
+        "date": 1671650727575,
         "tool": "googlecpp",
         "benches": [
           {
