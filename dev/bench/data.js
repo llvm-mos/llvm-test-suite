@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1676704707957,
+  "lastUpdate": 1676707972492,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -68866,6 +68866,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/a45f7a4c0008b73130bb12a4e8407c5adf7197f2"
         },
         "date": 1676704704234,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 723530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 723530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249765,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249765 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "8a981e368c9d3bd2bafe885719c14fe8e9d03f8a",
+          "message": "Use sccache to speed up verify build.",
+          "timestamp": "2023-02-07T17:35:03Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/8a981e368c9d3bd2bafe885719c14fe8e9d03f8a"
+        },
+        "date": 1676707968697,
         "tool": "googlecpp",
         "benches": [
           {
