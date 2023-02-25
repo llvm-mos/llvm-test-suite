@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1677312795306,
+  "lastUpdate": 1677355516590,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -69666,6 +69666,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/8a981e368c9d3bd2bafe885719c14fe8e9d03f8a"
         },
         "date": 1677312791745,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 723530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 723530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249765,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249765 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "80b355d777adc50674b7e7122ce568fa69bb99cc",
+          "message": "[NES] [Breaking] Make NES targets PRG-ROM LMAs accurate.\n\nPreviously, the NES targets used a fictious notion of LMA correpsonding\nto offsets within the NES ROM image. The intended use of linker LMAs is\nto be the visible address of the ROM at start; the corresponding VMA\nis intended to be the address of the value at run time. If they differ,\na copy must occur at start.\n\nUsing fictitious LMAs meant we were fighting the linker; we needed\ncomplicated expressions to generate the fake LMAs, and duplicated\nsections to make sure the fake and real LMAs ligned up.\n\nInstead, we can just let LMAs be LMAs and VMAs be VMAs. We don't\nactually *need* an offset in the ROM image; the existing output format\nscripts can be generalized to accomodate the existing mappers. This\ngeneratlly reduces the complexity of the NES targets.\n\nAs a result, there's a slight breaking change; the MMC1 mapper now uses\nprg-rom-fixed.ld in cases where the mapper's address line is\ndisconnected, and prg-rom-32.ld now refers to the case where it is\nconnected, but only 32KiB of PRG-ROM is available.",
+          "timestamp": "2023-02-25T11:03:09-08:00",
+          "tree_id": "7c07588d9d66c7aa5bd2d15acefaabd6dd65bbb6",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/80b355d777adc50674b7e7122ce568fa69bb99cc"
+        },
+        "date": 1677355513034,
         "tool": "googlecpp",
         "benches": [
           {
