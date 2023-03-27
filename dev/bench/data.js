@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1679904834557,
+  "lastUpdate": 1679938659668,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -72638,6 +72638,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/8a981e368c9d3bd2bafe885719c14fe8e9d03f8a"
         },
         "date": 1679904830443,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 723530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 723530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249765,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249765 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "5ce49a09df7a1d5efd26919dc1af5abca2111691",
+          "message": "Weakify libc functions so they can be overridden.",
+          "timestamp": "2023-03-27T10:19:27-07:00",
+          "tree_id": "808d8439e5ea3dc05c6332c69e20315c265818b4",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/5ce49a09df7a1d5efd26919dc1af5abca2111691"
+        },
+        "date": 1679938655270,
         "tool": "googlecpp",
         "benches": [
           {
