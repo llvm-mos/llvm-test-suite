@@ -143,6 +143,11 @@ file(GLOB UnsupportedTests CONFIGURE_DEPENDS
   # Size of array element is not a multiple of its alignment.
   pr36093.c
   pr43783.c
+
+  # Uses an incorrect method to prevent tailcalls which clang at -O1 or above
+  # can see through and tail call regardless. Also the callee compares
+  # pointers to different objects, which is undefined behaviour.
+  frame-address.c
 )
 list(APPEND TestsToSkip ${UnsupportedTests})
 
@@ -247,6 +252,19 @@ if(ARCH MATCHES "Mips")
   endif()
 
   list(APPEND TestsToSkip ${MipsTestsToSkip})
+endif()
+
+# LoongArch Test Blacklist
+if(ARCH MATCHES "LoongArch")
+  file(GLOB LoongArchTestsToSkip CONFIGURE_DEPENDS
+    # No backend support for __builtin_longjmp/__builtin_setjmp
+    built-in-setjmp.c
+    pr84521.c
+    # Triggers "return address can be determined only for current frame"
+    20030323-1.c
+  )
+
+  list(APPEND TestsToSkip ${LoongArchTestsToSkip})
 endif()
 
 # RISC-V Test Blacklist

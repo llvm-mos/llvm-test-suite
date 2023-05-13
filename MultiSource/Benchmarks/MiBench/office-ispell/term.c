@@ -47,6 +47,10 @@ static char Rcs_Id[] =
 
 /*
  * $Log$
+ *
+ * Revision 1.2  2020/03/23 12:59:43  stevenwan
+ * Add IBM AIX workaround.
+ *
  * Revision 1.1  2007/01/09 23:57:18  lattner
  * initial recheckin of mibench
  *
@@ -72,8 +76,9 @@ static char Rcs_Id[] =
 #include "msgs.h"
 #include <signal.h>
 
-#if defined(__GLIBC__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__) || (defined(__sun__) && defined(__svr4__))
-/* Use termios under at least glibc */
+#if defined(__GLIBC__) || defined(__FreeBSD__) || defined(__NetBSD__) || \
+    defined(__OpenBSD__) || defined(__APPLE__) || \
+    (defined(__sun__) && defined(__svr4__))
 #include <termios.h>
 #define USE_TERMIOS
 #ifndef USG
@@ -84,6 +89,12 @@ static char Rcs_Id[] =
 #include <termio.h>
 #else
 #include <sgtty.h>
+#endif
+#endif
+
+#if _AIX && !defined(_ALL_SOURCE)
+#ifdef TIOCGWINSZ
+#undef TIOCGWINSZ
 #endif
 #endif
 

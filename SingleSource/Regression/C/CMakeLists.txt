@@ -2,7 +2,7 @@
 if(ARCH MATCHES "x86" OR ARCH MATCHES "riscv" OR
    ARCH MATCHES "SystemZ" OR ARCH MATCHES "Mips" OR
    ARCH MATCHES "AArch64" OR ARCH MATCHES "ARM" OR
-   ARCH MATCHES "MOS")
+   ARCH MATCHES "MOS" OR ARCH MATCHES "LoongArch")
   add_subdirectory(gcc-c-torture)
 endif()
 
