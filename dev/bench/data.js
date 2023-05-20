@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1684570173892,
+  "lastUpdate": 1684606174536,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -77706,6 +77706,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/0bd88a67987805b5a9553c62b9209d0cba63922c"
         },
         "date": 1684570170006,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 723530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 723530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249688,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249688 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dg@cowlark.com",
+            "name": "David Given",
+            "username": "davidgiven"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a6bc5b21be97cd19ffdafa17d2480991d7d3f2fb",
+          "message": "Update CPM65; add some missing ctype and string functions (#114)\n\n* Because absolute addresses aren't relocated, make sure that the source address\nfor the initialised zero page isn't absolute --- LOADADDR() returns absolute\naddresses.\n\n* Add isspace and isalnum implementations.\n\n* Add implementations of strrev, strspn, strpbrk and strtok.\n\n* Fix the prototype for cpm_readline(), which didn't have the pointer shim and so\nwas passing a bogus parameter. Added BIOS entrypoints for CP/M-65 driver\nmanagement. Also added a helper routine to parse filenames into FCBs because\nit's annoyingly hard and nearly every program needs it.\n\n* Avoid memset.\n\n* Update coding style (clang-format --style=llvm).\n\n* Declare both variables inside the for declarator.\n\n---------\n\nCo-authored-by: dg <dg>",
+          "timestamp": "2023-05-20T10:58:05-07:00",
+          "tree_id": "1c80fa6e3f836e7451a08d1586dfec81f050fd5a",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/a6bc5b21be97cd19ffdafa17d2480991d7d3f2fb"
+        },
+        "date": 1684606169062,
         "tool": "googlecpp",
         "benches": [
           {
