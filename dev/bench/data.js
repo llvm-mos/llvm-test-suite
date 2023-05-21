@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1684606174536,
+  "lastUpdate": 1684637254888,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -77790,6 +77790,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/a6bc5b21be97cd19ffdafa17d2480991d7d3f2fb"
         },
         "date": 1684606169062,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 723530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 723530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249688,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249688 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dg@cowlark.com",
+            "name": "David Given",
+            "username": "davidgiven"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1ac342ed712577ffc326afe6b4e9c1119aaf92fc",
+          "message": "Replace the old cpm_parse_filename() library function with a system call of the (#115)\n\nsame name (but, unfortunately, different parameters).",
+          "timestamp": "2023-05-20T19:36:01-07:00",
+          "tree_id": "187257f886c424c3e8b893756fb2da27ff20b835",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/1ac342ed712577ffc326afe6b4e9c1119aaf92fc"
+        },
+        "date": 1684637248844,
         "tool": "googlecpp",
         "benches": [
           {
