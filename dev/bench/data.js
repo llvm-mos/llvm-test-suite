@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1688186006831,
+  "lastUpdate": 1688187956166,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -82370,6 +82370,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/caf5e57dbd8622504a32f917d61a6785776656f6"
         },
         "date": 1688186002014,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 723530,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 723530 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249688,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249688 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kontakt@asie.pl",
+            "name": "Adrian Siekierka",
+            "username": "asiekierka"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bcfe4141a6bbab58f17554854adfbc7135d9ebb6",
+          "message": "[PCE] Add pce-cd target. (#127)\n\n* [PCE] Split into pce-common and pce.\r\n\r\n* [PCE] Implement initial version of pce-mkcd.\r\n\r\n* [PCE] Add pce-cd target.\r\n\r\n* [PCE] Respect CD-ROM specification padding requirements.\r\n\r\n* [PCE] Add @list.txt support to pce-mkcd.\r\n\r\n* [PCE] Clarify pce-mkcd post-linking limitation.\r\n\r\n* [PCE] Map out most of the CD BIOS.\r\n\r\n* [PCE] CD target adjustments.\r\n\r\n* [PCE] Add argument support to pce-mkcd.\r\n\r\n* [PCE] Use hexadecimal constants in generated linker scripts.\r\n\r\n* [PCE] CD target fixes\r\n\r\n* [PCE] More pce-cd fixes",
+          "timestamp": "2023-06-30T21:53:54-07:00",
+          "tree_id": "2dbd50d654bf31f22e8094626bebf789d58b9bc2",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/bcfe4141a6bbab58f17554854adfbc7135d9ebb6"
+        },
+        "date": 1688187951122,
         "tool": "googlecpp",
         "benches": [
           {
