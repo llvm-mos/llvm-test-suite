@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1688372059306,
+  "lastUpdate": 1688453022236,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -82938,6 +82938,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/0bd88a67987805b5a9553c62b9209d0cba63922c"
         },
         "date": 1688372052752,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 744653,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 744653 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 88327801,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 88327801 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249688,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249688 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 111,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 111 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "XarkLabs@users.noreply.github.com",
+            "name": "Xark",
+            "username": "XarkLabs"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "37bde1b98d26f0de61d0b21188bc0b60dff4d395",
+          "message": "Cx16 kernal support (#131)\n\n* use void* vs unsigned int\r\n\r\n* update cx16 kernal and add cbm kernal globals\r\n\r\n* fix uint64_t printf warning\r\n\r\n* add cx16 kernal wrappers and headers\r\n\r\n* WIP cx16 kernal wrappers\r\n\r\n* add kernal routine CINT\r\n\r\n* rework for new llvm reg layout, needs more testing\r\n\r\n* Squashed commit of the following:\r\n\r\ncommit f0b30a65175db41621ce31e1eb101dcbe831b280\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 25 08:05:43 2023 +0200\r\n\r\n    Update README.md to list all currently supported platforms\r\n\r\ncommit d3caa19665738a9667c23d1656dd6ce9e0970899\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 22:53:36 2023 +0200\r\n\r\n    [PCE] Fix issues.\r\n\r\ncommit 2b05b08b9923cd73a4764081885614a9d4a44211\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 22:35:24 2023 +0200\r\n\r\n    [PCE] Remove pce_memcpy/pce_memmove/pce_memset first pass implementations.\r\n\r\n    They are not suitable as a general replacement for memcpy/memmove/memset, as\r\n    they stall interrupts while they are being executed.\r\n\r\n    These can be reinstated in a separate PR, once the best way to expose this\r\n    to the end user is evaluated.\r\n\r\ncommit 6dd6af160908abb5499ddf5da931dee79bb3c169\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 22:27:50 2023 +0200\r\n\r\n    [PCE] Downgrade virtual bank system to a much less complex physical bank offset mapping system.\r\n\r\ncommit 5763cf6b6cdea156ae0e770f52f9f6d2eca39ab5\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 14:31:28 2023 +0200\r\n\r\n    [PCE] Fix typo.\r\n\r\ncommit 82d1ee7ff6497bb884e8a5cb0c641e35263fb299\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 14:22:09 2023 +0200\r\n\r\n    [PCE] Add pce_sgx_detect().\r\n\r\ncommit 8e380466ecd71281bb97cf1e6b6572a6d8f1c0b6\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 11:14:40 2023 +0200\r\n\r\n    [PCE] Add PCE_FREQ_TO_TIMER define, fully derive its origin.\r\n\r\ncommit f1760290c1a1114e1ec591a2f11feb0b1cb00196\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sat Jun 24 11:04:19 2023 +0200\r\n\r\n    [PCE] Add missing newlines.\r\n\r\ncommit eb8c933e13190b8d09aea3fc86f3928bd2ed7f0a\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Thu Jun 22 23:24:00 2023 +0200\r\n\r\n    [PCE] Fix pce_rom_vbankN_call safety.\r\n\r\ncommit 71876fcd73d0f9a0ac02bfec0e8ba113d7e86ccc\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Thu Jun 22 20:55:58 2023 +0200\r\n\r\n    [PCE] Add pce_rom_vbankN_bank getter\r\n\r\ncommit 5e74a93e16aa2ab5150c8f06d8a889ca90b70bcc\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 22:17:52 2023 +0200\r\n\r\n    [PCE] Fix set_resolution optimization regression, add pce_sgx_vdc_init\r\n\r\ncommit 101d0bc751dbebf1500d89714b71c546640bd119\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 21:58:37 2023 +0200\r\n\r\n    [PCE] Add support for two VDCs in vdc.c.\r\n\r\ncommit dbd398eaef7c467c138cfc2c9c0926fe7b0250b7\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 21:39:30 2023 +0200\r\n\r\n    [PCE] Add SuperGrafx MMIO defines.\r\n\r\ncommit d61c0a58480cae34ecb137d7b803cc3f35853a50\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 18:10:36 2023 +0200\r\n\r\n    [PCE] Adjust color-cycle.c example to use interrupts.\r\n\r\ncommit b802a2cf86cd8faab8dd2a1702a1901b8036b45e\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 17:37:41 2023 +0200\r\n\r\n    [PCE] Finish writing initial VDC functions.\r\n\r\ncommit 07e4b21e3aca66f6feead049d64f626e50bc4822\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 17:17:06 2023 +0200\r\n\r\n    [PCE] Bugfixes, add VDC/VCE/PSG reset routines.\r\n\r\ncommit dabf4c8c311f2563fca420e8da1ada6bb49d210b\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 16:48:29 2023 +0200\r\n\r\n    [PCE] Further unify VBank naming conventions.\r\n\r\ncommit 3f9a307b692ef6e28b10c7a5ad962f3b22d82db9\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 01:03:59 2023 +0200\r\n\r\n    [PCE] Implement VDC enable/disable routines, fixes.\r\n\r\ncommit 5ddc148b61597cb7821efe10bbe0e3606cd48f0f\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Wed Jun 21 00:17:30 2023 +0200\r\n\r\n    [PCE] Implement VDC/VCE copy routines.\r\n\r\ncommit c8f201adcd7971b3a6e1014d4862ef533142b785\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Tue Jun 20 22:01:05 2023 +0200\r\n\r\n    [PCE] Add pce_memop, minor cleanup.\r\n\r\ncommit bc2bf2fc23c4497d61e5a842f4456c1ec7adeb05\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Tue Jun 20 20:50:05 2023 +0200\r\n\r\n    [PCE] Add VDC resolution configuration functions, PCE_ROM_FIXED_BANK_SIZE define\r\n\r\ncommit cc36ab5389b0693a34053d83901e317d6e452de1\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Tue Jun 20 19:00:21 2023 +0200\r\n\r\n    [PCE] Fix hardware stack init regression.\r\n\r\ncommit 7e9981bad20578873c6dfd3b31d07a1150b72018\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Tue Jun 20 18:58:18 2023 +0200\r\n\r\n    [PCE] Implement optimized zero-bss handlers.\r\n\r\ncommit 4af4ac9ecccb6318acffdcd8d4be4517ac844f6a\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Tue Jun 20 18:33:32 2023 +0200\r\n\r\n    [PCE] Support changing the size of virtual bank 0.\r\n\r\ncommit 6f32c9edb793248d894170825d138d439916e3a7\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Mon Jun 19 22:46:18 2023 +0200\r\n\r\n    [PCE] Add optimized memcpy/memmove/memset implementations.\r\n\r\ncommit 7fd8bca0fbb0378081fc547d9b3ad3313585d4c2\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Mon Jun 19 20:38:00 2023 +0200\r\n\r\n    [PCE] Document libpce functions.\r\n\r\ncommit 6d919202369cb49f6f6d34e89c5c4d2f52821196\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Mon Jun 19 20:18:41 2023 +0200\r\n\r\n    [PCE] Add Arcade Card and Super System Card hardware defines.\r\n\r\ncommit 864f1a774befdae3619d0dda0dcd5d00348b089b\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Mon Jun 19 19:54:02 2023 +0200\r\n\r\n    [PCE] Add to README.\r\n\r\ncommit 06c447d0c617f2518eaeae92e28d6903cba4e854\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Mon Jun 19 19:18:27 2023 +0200\r\n\r\n    [PCE] Fix banking example.\r\n\r\ncommit a343c94e9fb133440b9dbb0db065d26cd3462271\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Mon Jun 19 18:53:59 2023 +0200\r\n\r\n    [PCE] vbank system refactors, add support for SGX RAM\r\n\r\ncommit 673b243c7704d80cd344b82b77c48c079b374d19\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 23:24:32 2023 +0200\r\n\r\n    [PCE] Initial interrupt implementation.\r\n\r\ncommit f2d43739627d37968d1b79df3aa74198cf0ce2e8\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 22:34:21 2023 +0200\r\n\r\n    [PCE] Fix soft stack location.\r\n\r\ncommit 91166949813618698504882488cbb32f94dfd622\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 21:51:57 2023 +0200\r\n\r\n    [PCE] Adjust linkscript symbol convention to match NES target\r\n\r\ncommit bf1618ff6a894d12b7d9c1a18c4b419994874e4b\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 20:17:33 2023 +0200\r\n\r\n    [PCE] Adjust linkscript symbols for llvm-mlb.\r\n\r\ncommit 9acebcfe9486611005d2ba4dec06c45c9fdd5793\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 18:10:01 2023 +0200\r\n\r\n    [PCE] Add pce_vbank_call helper routines.\r\n\r\ncommit 0d05f4d0b2e6c55d86673eca17069df63fd3ab29\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 15:48:59 2023 +0200\r\n\r\n    [PCE] Clean up bank.h/.c/.S after figuring out the banking system.\r\n\r\ncommit 33566e10b01dd964167bd2109e5ad0ef956d7753\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 15:41:05 2023 +0200\r\n\r\n    [PCE] Optimize vbank_set for 8KB vbanks, fix PCE_VBANK_DECLARE for >8KB vbanks.\r\n\r\ncommit 3aed2ec1a49e22930b9fd69ff94318270304aea0\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 15:22:28 2023 +0200\r\n\r\n    [PCE] Banking improvements.\r\n\r\n    - Provide missing one-bank getters and setters.\r\n    - Use C where using ASM provides no \"bank chain\" size advantage to allow for\r\n      inlining opportunities.\r\n\r\ncommit 219b83cda12ddabe186c4582ed299cd94aac0009\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 15:03:05 2023 +0200\r\n\r\n    [PCE] Introduce banking system.\r\n\r\ncommit fb2f650b3f4114c06934d75922cafdd124b47ae9\r\nAuthor: Adrian Siekierka <kontakt@asie.pl>\r\nDate:   Sun Jun 18 12:35:15 2023 +0200\r\n\r\n    Initial pce (PC Engine) platform.\r\n\r\n    Banking is not yet implemented, so limited to eight-kilobyte ROMs.\r\n    This will be improved soon...\r\n\r\n* working nicely saving extra regs per X16 docs\r\n\r\n* new funcs, cc65 funcs, new tests, some debugging\r\n\r\n* spelling fix, consistent license comments\r\n\r\n* Cleanup PR\r\n\r\n* Revert erroneous PCE changes\r\n\r\n* Merge branch 'main' into cx16_kernal_support\r\n\r\n---------\r\n\r\nCo-authored-by: Xark <Xark@XarkLabs.com>\r\nCo-authored-by: Daniel Thornburgh <mysterymath@gmail.com>",
+          "timestamp": "2023-07-03T18:37:48-07:00",
+          "tree_id": "d8bc9f5ea25b4ae5b0f0d67fed234bb4b39b497c",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/37bde1b98d26f0de61d0b21188bc0b60dff4d395"
+        },
+        "date": 1688453017287,
         "tool": "googlecpp",
         "benches": [
           {
