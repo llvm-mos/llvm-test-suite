@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1693087243327,
+  "lastUpdate": 1693118127338,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -90122,6 +90122,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/0bd88a67987805b5a9553c62b9209d0cba63922c"
         },
         "date": 1693087236510,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 744653,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 744653 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 40327821,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 40327821 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249917,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249917 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 109,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 109 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "rhys.weatherley@gmail.com",
+            "name": "rweather",
+            "username": "rweather"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2eb18b294e5e217d8105b60a34da783d79970f58",
+          "message": "Make local asm labels actually local in the eater platform (#157)",
+          "timestamp": "2023-08-26T23:22:54-07:00",
+          "tree_id": "8d7de1f1374c7ce911bcec63a2be0a0944f5cc09",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/2eb18b294e5e217d8105b60a34da783d79970f58"
+        },
+        "date": 1693118121651,
         "tool": "googlecpp",
         "benches": [
           {
