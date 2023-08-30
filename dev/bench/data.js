@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1693296806483,
+  "lastUpdate": 1693374673393,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -90858,6 +90858,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/0bd88a67987805b5a9553c62b9209d0cba63922c"
         },
         "date": 1693296799946,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3124419,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3124419 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 744653,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 744653 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2261648,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2261648 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 40327821,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 40327821 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249917,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249917 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 109,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 109 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "18e0edd90648f67717b26f99559dae408eaa8b32",
+          "message": "[Breaking] Remove legacy LMA setup from linker scripts; refactor\n\n- c.ld now places read-only sections and initializer LMAs into\n  c_readable. It also now places writeable sections and their VMAs in\n  c_writeable. These need to be defined explicitly now, rather than\n  defaulting to \"ram\". Rom targets are now just as numerous as RAM\n  targets, so this removes duplication by allowing c.ld to be used by\n  both.\n\nFixes #158",
+          "timestamp": "2023-08-29T10:31:04-07:00",
+          "tree_id": "fa1a4c9c404b20cac10f537c419489ed8bb84ede",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/18e0edd90648f67717b26f99559dae408eaa8b32"
+        },
+        "date": 1693374667265,
         "tool": "googlecpp",
         "benches": [
           {
