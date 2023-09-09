@@ -452,6 +452,9 @@ if(ARCH STREQUAL "MOS")
     # Bizarre use of computed goto (LLVM bug 45818).
     920302-1.c
 
+    # Undefined behavior with short enums and short == int. 
+    enum-3.c
+
     # Temporarily disabled tests.
     # ---------------------------
 
