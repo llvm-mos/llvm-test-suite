@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1694719143765,
+  "lastUpdate": 1694719507103,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -94290,6 +94290,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/27c49bcc273a88b0a75fb59d28417bad69233550"
         },
         "date": 1694719137921,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3085193,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3085193 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2098427,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2098427 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 40327821,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 40327821 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249917,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249917 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 107,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 107 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "853c07a9505895049d0aec0d6cafb4f679ea6bce",
+          "message": "[Breaking] Remove CHR-ROM shadow accessors from NES Action53\n\nThese are difficult to keep accurate in the case of arbitrary interrupts\n(since interrupts may occur between setting of the shadow register and\nthe hardware register). They also have uncertain utility, and current\nCHR banking state can always be manually tracked via user wrapper.\nAccordingly, it doesn't seem worth the complexity cost of including them\nby default, either to maintain them or to enumerate/correct their\ncaveats.",
+          "timestamp": "2023-09-14T12:08:10-07:00",
+          "tree_id": "2f2ebd08bc80df1a12ab605e148a486dcc14f47d",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/853c07a9505895049d0aec0d6cafb4f679ea6bce"
+        },
+        "date": 1694719501479,
         "tool": "googlecpp",
         "benches": [
           {
