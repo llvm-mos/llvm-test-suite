@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1694592734908,
+  "lastUpdate": 1694656731862,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -93958,6 +93958,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1694592728682,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3085193,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3085193 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2098427,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2098427 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 40327821,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 40327821 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249917,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249917 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 107,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 107 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "eb6742013952ca2372410201a2a24091cd732dac",
+          "message": "Add C++ struct-of-arrays library and example (#197)\n\n* Add C++ struct-of-arrays library and example\n\nThis adds two new types to the SDK under soa.h:\n  - soa::Array<T, s> is an array of T of size s, but where the\n    k'th byte of each T are stored contiguously.\n  - soa::Ptr<T> is a pointer to an element of soa::Array.\n\nThe include-eable soa-struct.h specializes soa::Ptr<T> for a struct\ntype, including its members as distinct soa::Ptr<T> instances that\npoint to the members.\n\nUsing this library allows global arrays of structs to be accessed using\nthe absolute indexed addressing mode if it's always known at\ncompile-time what portion of the struct is being accessed. This is\ngenerally true if there are no pointers into the array; in that common\ncase, using this library can produce a huge speedup.\n\nSee the included example for more details; the library is quite\nexpansive in practice, so the examples walk through what you can and\ncan't do with it.\n\n* Provide a broader introduction to the library\n\n* Make constant more precise",
+          "timestamp": "2023-09-13T18:46:46-07:00",
+          "tree_id": "d5423a47e24036487b6d5406e6603ad85d29a20a",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/eb6742013952ca2372410201a2a24091cd732dac"
+        },
+        "date": 1694656726116,
         "tool": "googlecpp",
         "benches": [
           {
