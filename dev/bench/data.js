@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1695227144350,
+  "lastUpdate": 1695270184815,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -95770,6 +95770,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/685d263a5df6a0be1981e3d7e977660dc48acd7f"
         },
         "date": 1695227137498,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3085193,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3085193 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2098427,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2098427 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 40327821,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 40327821 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249917,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249917 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 107,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 107 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "55210408+ToboterXP@users.noreply.github.com",
+            "name": "ToboterXP",
+            "username": "ToboterXP"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cbe12f69e83b0d6dec3583889707e5b1d964e40f",
+          "message": "Added VERA FX registers to cx16.h (#207)",
+          "timestamp": "2023-09-20T21:10:32-07:00",
+          "tree_id": "5ceb4091cad3e69f42139178ff176d1da78c58d6",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/cbe12f69e83b0d6dec3583889707e5b1d964e40f"
+        },
+        "date": 1695270177977,
         "tool": "googlecpp",
         "benches": [
           {
