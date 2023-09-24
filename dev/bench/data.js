@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1695580994707,
+  "lastUpdate": 1695596511920,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -96506,6 +96506,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/0284793cceb05f46f1dbaf7fa684829bb5c74d70"
         },
         "date": 1695580987551,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3085193,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3085193 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2098427,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2098427 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 44845,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 44845 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 40327821,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 40327821 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 21249917,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 21249917 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 107,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 107 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cogwheel@users.noreply.github.com",
+            "name": "Matthew Orlando",
+            "username": "cogwheel"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "55051ddf16e70679c48c7318dbd6bb8b17f9f7bf",
+          "message": "Split neslib and nesdoug components so they are linked conditionally (#217)\n\n* Link neslib nmi update components separately\r\n\r\nThe following components are only linked in if used (including any data,\r\ninit/nmi routines, etc.):\r\n\r\n- vram update (aka name_upd)\r\n- OAM_BUF\r\n- PAL_BUF\r\n- pal_bright\r\n\r\n* Link nesdoug vram_buf and metatile objects separately\r\n\r\n* Use init priority <300 for neslib/nesdoug",
+          "timestamp": "2023-09-24T13:55:04-07:00",
+          "tree_id": "6265da0e0fc7a2251ea1c53606c666bbaa7e7a55",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/55051ddf16e70679c48c7318dbd6bb8b17f9f7bf"
+        },
+        "date": 1695596504561,
         "tool": "googlecpp",
         "benches": [
           {
