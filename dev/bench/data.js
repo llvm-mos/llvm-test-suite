@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1697271086337,
+  "lastUpdate": 1697328836119,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -99834,6 +99834,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1697271080155,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3079153,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3079153 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2098427,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2098427 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20348900,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20348900 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 107,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 107 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "b3c6a274c205c4f28e16fc70f6e4615718d6581e",
+          "message": "[NES] Move aligned buffers to .aligned_buffers at 0x200\n\nThe NES typically has noinit buffers of high alignment; given its\npaucity of RAM, this risks wasting a ton of space. Typically these\nbuffers are placed immediately after the hard stack at 0x200, so this\nchange change creates an `.aligned_buffers` section there. OAM_BUF,\nVRAM_BUF, and PAL_BUF in the SDK are placed there, with alignments 256,\n128, and 32, respectively. The linker already sorts by decreasing\nalignment, so no space is then ever wasted for these buffers.\n\nFixes #219\nFixes #229",
+          "timestamp": "2023-10-14T17:01:29-07:00",
+          "tree_id": "c286cf788df3f6190ff3006c33847145151b82cf",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/b3c6a274c205c4f28e16fc70f6e4615718d6581e"
+        },
+        "date": 1697328829517,
         "tool": "googlecpp",
         "benches": [
           {
