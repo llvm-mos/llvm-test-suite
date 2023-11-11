@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1699667433648,
+  "lastUpdate": 1699671219114,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -102966,6 +102966,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1699667429171,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 3079153,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 3079153 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 2098427,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2098427 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20348900,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20348900 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 107,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 107 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sehugg@users.noreply.github.com",
+            "name": "Steven Hugg",
+            "username": "sehugg"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "14c05257f6030c72f5b37b194ef04e01fb222fb0",
+          "message": "Added initial Atari 2600 support (4K and 3E mappers) (#237)\n\n* Added initial Atari 2600 support (4K and 3E mappers)\r\n\r\n* Atari 2600:\r\n\r\n* Updated section origins to include bank index.\r\n* Fixed mapper weak symbols.\r\n* Fix for set_horiz_pos() register ordering.\r\n* Pass -mcpu=mos6502x flag.\r\n* Added license notices.\r\n\r\n* Atari 2600:\r\n- Refactored into atari2600-common as parent.\r\n- Changed to MAPPER_* defines.\r\n- Better XRAM support with DECLARE_XRAM_VARIABLE macro.\r\n\r\n* [Atari 2600] Refactored headers for future mappers. Added 3E signature for Stella.\r\n\r\n* [Atari 2600] Minor updates.\r\n- Removed weak attributes and redundant declarations.\r\n- 16 more bytes of zeropage, leaving 16 bytes of stack.\r\n- 3E mapper selects ROM0 on startup.\r\n- MAPPER_CART_ROM_KB macro.\r\n\r\n* [Atari 2600] Removed (leaf) attribute from C functions.",
+          "timestamp": "2023-11-10T18:42:22-08:00",
+          "tree_id": "d4a67e0a8962e1c2e2d00c335452071b694d0623",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/14c05257f6030c72f5b37b194ef04e01fb222fb0"
+        },
+        "date": 1699671210891,
         "tool": "googlecpp",
         "benches": [
           {
