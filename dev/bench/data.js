@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1700122378009,
+  "lastUpdate": 1700170858300,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -103938,6 +103938,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1700122373354,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2460554,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2460554 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1444210,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1444210 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20348927,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20348927 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "XarkLabs@users.noreply.github.com",
+            "name": "Xark",
+            "username": "XarkLabs"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "653182a478478f761aed3f1dc28b2ef4350bbda3",
+          "message": "Rename cx16 kernel call savehl to bsave (#243)\n\nThis call was not documented previously, and internal vector was called savehl (save headerless).  Now it is documented as BSAVE so this PR renames kernel vector and function to match documentation.\r\n\r\nCo-authored-by: Xark <Xark@XarkLabs.com>",
+          "timestamp": "2023-11-16T13:31:12-08:00",
+          "tree_id": "bf555e09945e9c034ea4f2c6b6f4e391c7789334",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/653182a478478f761aed3f1dc28b2ef4350bbda3"
+        },
+        "date": 1700170852790,
         "tool": "googlecpp",
         "benches": [
           {
