@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1700381454845,
+  "lastUpdate": 1700436773655,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -104426,6 +104426,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1700381450183,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2460554,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2460554 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 647635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 647635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1444210,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1444210 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 6946,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 6946 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20348927,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20348927 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sehugg@users.noreply.github.com",
+            "name": "Steven Hugg",
+            "username": "sehugg"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a2479347ca82ed4713bb7226781b05a7e813883d",
+          "message": "Emutest + Libretro tests (Atari 2600 + NES) (#241)\n\n* [Atari 2600] Bug fixes:\n- Fixed zp section overlapping registers.\n- Fixed bank selection macros to accept macro parameters.\n- Better Stella signature.\n\n* New test runner using Libretro cores, emutest and Stella2014 core for Atari 2600.\n\n* [NES] Converted tests to use emutest and Libretro Nestopia core. Not all tests pass.\n\n* Added frame buffer CRC test support to emutest. Added Atari 2600 tests.\n\n* Split test libraries into emutest vs Mesen.\n\n* modify emutest library on NES to not allocate RAM for signature, but still some failures\n\n* Modified Github Action to use Ubuntu 20.04, use env vars for finding test helpers in CMake.\n\n* Added FCEUMM Libretro core for tests, 2 nes-gtrom tests still failing.\n\n* Applied a simple encoding to the test signatures to prevent a false positive/negative from a stray memcpy().\n\n* Made a separate Github Actions job for building test tools.\n\n* Tests: Replaced Nestopia with Mesen core, added README sections.\n\n* Removed unused #include",
+          "timestamp": "2023-11-19T15:16:41-08:00",
+          "tree_id": "86108a519df25f6e4effba83c3835eb432482eb5",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/a2479347ca82ed4713bb7226781b05a7e813883d"
+        },
+        "date": 1700436768862,
         "tool": "googlecpp",
         "benches": [
           {
