@@ -123,6 +123,8 @@ endif()
 
 llvm_singlesource()
 
-if (COMPILER_HAS_MATRIX_FLAG)
-  set_property(TARGET matrix-types-spec PROPERTY LINK_OPTIONS -fenable-matrix)
+if(NOT ARCH STREQUAL "MOS")
+  if (COMPILER_HAS_MATRIX_FLAG)
+    set_property(TARGET matrix-types-spec PROPERTY LINK_OPTIONS -fenable-matrix)
+  endif()
 endif()
