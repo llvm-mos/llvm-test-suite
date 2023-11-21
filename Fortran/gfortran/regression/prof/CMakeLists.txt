@@ -6,5 +6,7 @@
 #
 #===------------------------------------------------------------------------===#
 
+message(STATUS "Adding directory Fortran/gfortran/regression/prof")
+
 # The tests in this directory seem to check profiling. For now, there is nothing
 # useful that we can do with it.

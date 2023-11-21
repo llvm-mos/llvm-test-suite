@@ -41,6 +41,18 @@ set(SUPPORTED_GPU_CUDA_11_7 ${SUPPORTED_GPU_CUDA_11_6})
 set(SUPPORTED_GPU_CUDA_11_8 ${SUPPORTED_GPU_CUDA_11_7}
   sm_89 sm_90)
 
+# CUDA-12.0 no longer supports sm_3x and older GPUs.
+set(SUPPORTED_GPU_CUDA_12_0
+  sm_50 sm_52 sm_53
+  sm_60 sm_61 sm_62
+  sm_70 sm_72 sm_75
+  sm_80 sm_86 sm_87 sm_89
+  sm_90
+)
+set(SUPPORTED_GPU_CUDA_12_1 ${SUPPORTED_GPU_CUDA_12_0})
+set(SUPPORTED_GPU_CUDA_12_2 ${SUPPORTED_GPU_CUDA_12_1})
+set(SUPPORTED_GPU_CUDA_12_3 ${SUPPORTED_GPU_CUDA_12_2})
+
 set(CUDA_NEW_DRIVER ON CACHE BOOL "Use the new Clang offloading Driver")
 
 # Create targets for CUDA tests that are part of the test suite.

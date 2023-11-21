@@ -6,15 +6,7 @@
 #
 #===------------------------------------------------------------------------===#
 
-# These tests trigger internal compiler errors.
-file(GLOB Skipped CONFIGURE_DEPENDS
-  # error: unexpected typeless constant value
-  pointer_assign_16.f90
-)
-
-list(APPEND UnsupportedTests "")
-list(APPEND UnimplementedTests "")
-list(APPEND SkippedTests "${Skipped}")
-list(APPEND FailingTests "")
-
-add_tests("${UnsupportedTests}" "${UnimplementedTests}" "${SkippedTests}" "${FailingTests}")
+set(TESTS)
+gfortran_populate_tests(TESTS)
+gfortran_add_execute_tests_from("${TESTS}")
+gfortran_add_compile_tests_from("${TESTS}")

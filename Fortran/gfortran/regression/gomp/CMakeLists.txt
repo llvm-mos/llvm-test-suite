@@ -6,7 +6,7 @@
 #
 #===------------------------------------------------------------------------===#
 
-# There are currently no tests in this directory to be disabled for any reason.
-add_tests("" "" "" "")
-
-add_subdirectory(appendix-a)
+set(TESTS)
+gfortran_populate_tests(TESTS)
+gfortran_add_execute_tests_from("${TESTS}")
+gfortran_add_compile_tests_from("${TESTS}" FFLAGS -fopenmp)
