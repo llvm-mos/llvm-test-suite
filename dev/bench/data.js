@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1700878752502,
+  "lastUpdate": 1700879732172,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -105474,6 +105474,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1700878747544,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2369296,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2369296 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645630,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645630 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1422223,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1422223 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7310,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7310 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20348968,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20348968 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "dccf9f7874790a6f5a29f860720e662dfcfbdcc5",
+          "message": "Base printf routines on one another (#248)\n\nThere should only be one printf routine present given its size, but the\ninliner may inline the implementation into multiple different versions\nof the function. Explicitly basing the routines on one another\ndiscourages this.",
+          "timestamp": "2023-11-24T18:20:56-08:00",
+          "tree_id": "58a7b9ee6d82dfdadf37eb6c08a3a4eaae6bd162",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/dccf9f7874790a6f5a29f860720e662dfcfbdcc5"
+        },
+        "date": 1700879727530,
         "tool": "googlecpp",
         "benches": [
           {
