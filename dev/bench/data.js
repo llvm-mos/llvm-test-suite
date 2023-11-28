@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1701130049616,
+  "lastUpdate": 1701146135724,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -105962,6 +105962,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/530a35c099095f1cd1eeead6df120ceb12fda47d"
         },
         "date": 1701130044499,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2369296,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2369296 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645630,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645630 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1422223,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1422223 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7310,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7310 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 20348968,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 20348968 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cw@f00f.org",
+            "name": "Chris Wedgwood",
+            "username": "cwedgwood"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7d60841a2e5359e87c48db9e6409ff9d0a2dd088",
+          "message": "Atari 8-bit XEGS (bank-switched) cartridge support (#250)\n\n* Atari 8-bit XEGS (bank-switched) cartridge support\r\n\r\nSupport for XEGS cartridges from 32K to 512K.\r\n\r\n* increase bank LMAs for better symbol ordering\r\n\r\n* Updates based on feedback",
+          "timestamp": "2023-11-27T20:21:34-08:00",
+          "tree_id": "611d47c9d29b27242fa1197c9024615a27d021e3",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/7d60841a2e5359e87c48db9e6409ff9d0a2dd088"
+        },
+        "date": 1701146130811,
         "tool": "googlecpp",
         "benches": [
           {
