@@ -6,7 +6,7 @@ int target_isinf(double x) {
   union {
     double d;
     struct {
-      unsigned mantissa2;
+      unsigned long mantissa2;
       unsigned long mantissa1 : 20;
       unsigned exponent  : 11;
       unsigned sign      :  1;

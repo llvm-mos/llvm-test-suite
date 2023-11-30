@@ -16,9 +16,9 @@ main(int argc, char** argv) {
   double DI = getDI();
   unsigned char  uc = (unsigned char ) DC;
   unsigned short us = (unsigned short) DS;
-  unsigned int   ui = (unsigned int  ) DI;
+  unsigned long   ui = (unsigned long  ) DI;
   printf("DC = %lf, DS = %lf, DI = %lf\n", DC, DS, DI);
-  printf("uc = %u, us = %u, ui = %u\n", uc, us, ui);
+  printf("uc = %u, us = %u, ui = %lu\n", uc, us, ui);
   return 0;
 }
 

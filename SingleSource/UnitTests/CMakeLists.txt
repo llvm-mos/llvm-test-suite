@@ -83,24 +83,9 @@ if(ARCH STREQUAL "MOS")
     # Temporarily disabled tests.
     # ---------------------------
 
-    # Requires floating point.
-    2002-05-02-ArgumentTest.c
-    2002-05-02-ManyArguments.c
-    2002-10-12-StructureArgs.c
-    2002-10-12-StructureArgsSimple.c
-    2003-05-07-VarArgs.c
-    2003-08-05-CastFPToUint.c
-    2003-08-11-VaListArg.c
-    2004-02-02-NegativeZero.c
+    # Requires printing large floating point whole numbers
     2005-05-12-Int64ToFP.c
     2005-07-17-INT-To-FP.c
-    2006-12-01-float_varg.c
-    2007-01-04-KNR-Args.c
-    2009-04-16-BitfieldInitialization.c
-    2009-12-07-StructReturn.c
-    FloatPrecision.c
-    StructModifyTest.c
-    byval-alignment.c
 
     # Requires scanf.
     2004-11-28-GlobalBoolLayout.c
@@ -123,7 +108,23 @@ endif()
 
 llvm_singlesource()
 
-if(NOT ARCH STREQUAL "MOS")
+if(ARCH STREQUAL "MOS")
+  target_link_libraries(2002-05-02-ArgumentTest PRIVATE printf_flt)
+  target_link_libraries(2002-05-02-ManyArguments PRIVATE printf_flt)
+  target_link_libraries(2002-10-12-StructureArgs PRIVATE printf_flt)
+  target_link_libraries(2002-10-12-StructureArgsSimple PRIVATE printf_flt)
+  target_link_libraries(2003-05-07-VarArgs PRIVATE printf_flt)
+  target_link_libraries(2003-08-05-CastFPToUint PRIVATE printf_flt)
+  target_link_libraries(2003-08-11-VaListArg PRIVATE printf_flt)
+  target_link_libraries(2004-02-02-NegativeZero PRIVATE printf_flt)
+  target_link_libraries(2006-12-01-float_varg PRIVATE printf_flt)
+  target_link_libraries(2007-01-04-KNR-Args PRIVATE printf_flt)
+  target_link_libraries(2009-04-16-BitfieldInitialization PRIVATE printf_flt)
+  target_link_libraries(2009-12-07-StructReturn PRIVATE printf_flt)
+  target_link_libraries(FloatPrecision PRIVATE printf_flt)
+  target_link_libraries(StructModifyTest PRIVATE printf_flt)
+  target_link_libraries(byval-alignment PRIVATE printf_flt)
+else()
   if (COMPILER_HAS_MATRIX_FLAG)
     set_property(TARGET matrix-types-spec PROPERTY LINK_OPTIONS -fenable-matrix)
   endif()

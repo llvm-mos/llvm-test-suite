@@ -7,6 +7,6 @@ void printfn(int a, short b, double C, float D, signed char E, char F, void *G, 
 }
 
 int main() {
-	printfn(12, 2, 123.234, 1231.12312f, -12, 23, (void*)123456, 0, 1234567, 123124124124LL);
+	printfn(12, 2, 123.234, 1231.12312f, -12, 23, (void*)12345, 0, 12345, 123124124124LL);
 	return 0;
 }
