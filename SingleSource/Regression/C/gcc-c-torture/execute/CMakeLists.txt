@@ -202,6 +202,7 @@ file(GLOB TestRequiresLibM CONFIGURE_DEPENDS
   complex-5.c  # -lm needed on FreeBSD
 )
 
+
 ##
 ## Architecture-specific Test Blacklists
 ##
@@ -406,7 +407,9 @@ if(ARCH STREQUAL "MOS")
     pr65427.c
     pr70903.c
     pr85169.c
+    scal-to-vec1.c
     scal-to-vec2.c
+    scal-to-vec3.c
     simd-1.c
     simd-2.c
     simd-4.c
@@ -455,10 +458,57 @@ if(ARCH STREQUAL "MOS")
     # Undefined behavior with short enums and short == int. 
     enum-3.c
 
+    # Too slow.
+    loop-ivopts-1.c
+    pr59643.c
+
     # Temporarily disabled tests.
     # ---------------------------
 
-    # Requires floating point.
+    # Requires libm
+    pr39501.c
+
+    # Requires __builtin_return_address.
+    20010122-1.c
+    20030323-1.c
+    20030811-1.c
+    pr17377.c
+
+    # Requires __builtin_frame_address.
+    frame-address.c
+
+    # Requires built-in-setjmp
+    built-in-setjmp.c
+    pr84521.c
+
+    # Requires FILE*
+    fprintf-1.c
+    fprintf-2.c
+    printf-2.c
+    user-printf.c
+    vfprintf-1.c
+    gofast.c
+
+    # Requires qsort
+    pr34456.c
+
+    # Requres "g" inline asm contraint.
+    pr40022.c
+    pr51933.c
+    pr56866.c
+    pr65053-1.c
+    pr65053-2.c
+    pr68328.c
+    pr78726.c
+    pr81588.c
+    pr82954.c
+    pr88904.c
+    pr65956.c
+    stkalign.c
+  )
+  list(APPEND MOSTestsToSkip ${TestRequiresLibM})
+
+  file(GLOB TestRequiresLibPrintfFlt CONFIGURE_DEPENDS
     20000223-1.c
     20000603-1.c
     20000605-1.c
@@ -638,44 +688,8 @@ if(ARCH STREQUAL "MOS")
     va-arg-7.c
     va-arg-pack-1.c
     va-arg-trap-1.c
-
-    # Requires __builtin_return_address.
-    20010122-1.c
-    20030323-1.c
-    20030811-1.c
-    pr17377.c
-
-    # Requires __builtin_frame_address.
-    frame-address.c
-
-    # Requires built-in-setjmp
-    built-in-setjmp.c
-    pr84521.c
-
-    # Requires FILE*
-    fprintf-1.c
-    fprintf-2.c
-    printf-2.c
-    user-printf.c
-    vfprintf-1.c
-
-    # Requires qsort
-    pr34456.c
-
-    # Requres "g" inline asm contraint.
-    pr40022.c
-    pr51933.c
-    pr56866.c
-    pr65053-1.c
-    pr65053-2.c
-    pr68328.c
-    pr78726.c
-    pr81588.c
-    pr82954.c
-    pr88904.c
-    pr65956.c
-    stkalign.c
   )
+
 
   list(APPEND TestsToSkip ${MOSTestsToSkip})
   if (CMAKE_BUILD_TYPE STREQUAL Debug AND CMAKE_C_FLAGS_DEBUG MATCHES -O0)
@@ -738,6 +752,10 @@ foreach(File ${TestFiles})
 
   if(${File} IN_LIST TestRequiresFWrapV)
     list(APPEND MaybeCFlags "-fwrapv")
+  endif()
+
+  if(${File} IN_LIST TestRequiresLibPrintfFlt)
+    list(APPEND MaybeLDFlags "-lprintf_flt")
   endif()
 
   # Add Test Target
