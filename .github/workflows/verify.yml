@@ -36,9 +36,9 @@ jobs:
       - name: Build the compiler.
         run: |
           cd llvm-mos
-          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_USE_LINKER=lld -DCMAKE_C_COMPILER_LAUNCHER=sccache -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
+          cmake -C clang/cmake/caches/MOS.cmake -G Ninja -S llvm -B build -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_USE_LINKER=lld -DCMAKE_C_COMPILER_LAUNCHER=sccache -DCMAKE_CXX_COMPILER_LAUNCHER=sccache
           cd build
-          cmake --build . --target clang lld llvm-ar llvm-ranlib llvm-size llvm-mlb
+          cmake --build . --target builtins clang lld llvm-ar llvm-ranlib llvm-size llvm-mlb
       - name: Archive the compiler.
         run: |
           for dir in build/{bin,lib/clang} llvm/utils; do
