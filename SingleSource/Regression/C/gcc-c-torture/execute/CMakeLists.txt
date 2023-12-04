@@ -506,6 +506,9 @@ if(ARCH STREQUAL "MOS")
     pr88904.c
     pr65956.c
     stkalign.c
+
+    # Too much register pressure
+    pr28982a.c
   )
   list(APPEND MOSTestsToSkip ${TestRequiresLibM})
 
@@ -707,7 +710,6 @@ if(ARCH STREQUAL "MOS")
 
       # Too much reg pressure.
       builtin-bitops-1.c
-      pr28982a.c
     )
     list(APPEND TestsToSkip ${MOSO0TestsToSkip})
   endif()
