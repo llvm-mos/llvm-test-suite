@@ -44,10 +44,11 @@ if (ARCH STREQUAL "MOS")
   )
 
   if (CMAKE_BUILD_TYPE STREQUAL Debug AND CMAKE_C_FLAGS_DEBUG MATCHES -O0)
-  list(REMOVE_ITEM Source
-    # Too big
-    matrixTranspose.c
-  )
+    list(REMOVE_ITEM Source
+      # Too big
+      matrixTranspose.c
+    )
+  endif()
 endif()
 
 list(APPEND LDFLAGS -lm)

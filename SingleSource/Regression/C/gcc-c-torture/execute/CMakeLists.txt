@@ -466,6 +466,7 @@ if(ARCH STREQUAL "MOS")
     # ---------------------------
 
     # Requires libm
+    990826-0.c
     pr39501.c
 
     # Requires __builtin_return_address.
@@ -695,11 +696,13 @@ if(ARCH STREQUAL "MOS")
   if (CMAKE_BUILD_TYPE STREQUAL Debug AND CMAKE_C_FLAGS_DEBUG MATCHES -O0)
     file(GLOB MOSO0TestsToSkip CONFIGURE_DEPENDS
       # Too big.
+      pr58574.c
       strlen-4.c
       strlen-5.c
 
       # Too much stack.
       20000412-2.c
+      multi-ix.c
       nestfunc-4.c
 
       # Too much reg pressure.
