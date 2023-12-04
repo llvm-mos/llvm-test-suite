@@ -707,6 +707,7 @@ if(ARCH STREQUAL "MOS")
 
       # Too much reg pressure.
       builtin-bitops-1.c
+      pr28982a.c
     )
     list(APPEND TestsToSkip ${MOSO0TestsToSkip})
   endif()
