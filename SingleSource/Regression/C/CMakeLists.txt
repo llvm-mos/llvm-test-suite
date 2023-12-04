@@ -42,6 +42,12 @@ if (ARCH STREQUAL "MOS")
     # Requires argc/argv.
     2005-05-06-LongLongSignedShift.c
   )
+
+  if (CMAKE_BUILD_TYPE STREQUAL Debug AND CMAKE_C_FLAGS_DEBUG MATCHES -O0)
+  list(REMOVE_ITEM Source
+    # Too big
+    matrixTranspose.c
+  )
 endif()
 
 list(APPEND LDFLAGS -lm)
@@ -53,5 +59,7 @@ if(ARCH STREQUAL "MOS")
   target_link_libraries(Regression-C-2003-05-21-UnionTest PRIVATE printf_flt)
   target_link_libraries(Regression-C-2008-01-07-LongDouble PRIVATE printf_flt)
   target_link_libraries(Regression-C-callargs PRIVATE printf_flt)
-  target_link_libraries(Regression-C-matrixTranspose PRIVATE printf_flt)
+  if (NOT (CMAKE_BUILD_TYPE STREQUAL Debug AND CMAKE_C_FLAGS_DEBUG MATCHES -O0))
+    target_link_libraries(Regression-C-matrixTranspose PRIVATE printf_flt)
+  endif()
 endif()
