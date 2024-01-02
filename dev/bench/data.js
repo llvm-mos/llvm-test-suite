@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1704227214588,
+  "lastUpdate": 1704227910341,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -111242,6 +111242,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/785c071d34875a9b5d72c899f4b30c71d425aaa6"
         },
         "date": 1704227208800,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2409856,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2409856 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1422213,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1422213 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7310,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7310 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24758161,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24758161 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cw@f00f.org",
+            "name": "Chris Wedgwood",
+            "username": "cwedgwood"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f6adfc3f48b22af1598ed95283e3ecee18d99d75",
+          "message": "Atari 8-bit MegaCart (bank-switched) cartridge support (#276)\n\n* Atari 8-bit MegaCart (bank-switched) cartridge support\r\n\r\nSupport for MegaCart cartridges from 16 KiB to 512 KiB, with handling\r\nfor SIC! cartridges.\r\n\r\n* Fix bad comment.\r\n\r\n* replace hard-coded bytes with assembly\r\n\r\n* replicate fixed region across all banks\r\n\r\n* Atari 8-bit MegaCart, linker offset fixes.\r\n\r\nFor ROMS that are smaller than the maximum size we have some regions\r\nare have to be zero length.\r\n\r\nBuild & boot tested with sizes from 16 through 512.\r\n\r\n* Comment fix\r\n\r\n* default to largest size",
+          "timestamp": "2024-01-02T12:13:17-08:00",
+          "tree_id": "e6cf394345a18dc7b0879badf5a537e7fa709d2c",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/f6adfc3f48b22af1598ed95283e3ecee18d99d75"
+        },
+        "date": 1704227904379,
         "tool": "googlecpp",
         "benches": [
           {
