@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1704183172816,
+  "lastUpdate": 1704225926246,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -111074,6 +111074,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/cf8e61b69747d05eb4fd809a6ff84d54e61da418"
         },
         "date": 1704183166789,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2409856,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2409856 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1422213,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1422213 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7310,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7310 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24758161,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24758161 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cw@f00f.org",
+            "name": "Chris Wedgwood",
+            "username": "cwedgwood"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0b5f8f4d2885cd717b52f854b7b73acc48d3e2a2",
+          "message": "fix nes-nrom \"no-compile\" tests to fail for the right reasons (#280)\n\nnrom doesn't have mapper.h, use ines.h",
+          "timestamp": "2024-01-02T11:51:22-08:00",
+          "tree_id": "fa52da5818e45e07e09d51fbcfd2a4cc15e8fe2d",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/0b5f8f4d2885cd717b52f854b7b73acc48d3e2a2"
+        },
+        "date": 1704225921319,
         "tool": "googlecpp",
         "benches": [
           {
