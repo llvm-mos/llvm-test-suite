@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1704225926246,
+  "lastUpdate": 1704227214588,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -111158,6 +111158,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/0b5f8f4d2885cd717b52f854b7b73acc48d3e2a2"
         },
         "date": 1704225921319,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2409856,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2409856 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645635,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645635 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1422213,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1422213 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7310,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7310 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24758161,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24758161 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 124,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 124 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cw@f00f.org",
+            "name": "Chris Wedgwood",
+            "username": "cwedgwood"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "785c071d34875a9b5d72c899f4b30c71d425aaa6",
+          "message": "NES GTROM; support smaller sized ROMs (#277)\n\n* NES GTROM; support smaller sized roms\r\n\r\nBy default we test and build with the largest possible size.  The\r\nlinker script does have partial support for smaller sizes, this\r\npermits those to generate the correct output.\r\n\r\n* Fix tests to explicitly set the ROM size\r\n\r\n* nes-gtrom, default to largest ROM size",
+          "timestamp": "2024-01-02T12:12:21-08:00",
+          "tree_id": "ae2888ca94cfe9b325941898b5e93d2779bc5901",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/785c071d34875a9b5d72c899f4b30c71d425aaa6"
+        },
+        "date": 1704227208800,
         "tool": "googlecpp",
         "benches": [
           {
