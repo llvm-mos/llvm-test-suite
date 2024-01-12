@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Install build dependencies.
         run: |
-          sudo apt-get install cmake ninja-build
+          sudo apt-get install cmake ninja-build llvm
       - name: Check out the test suite.
         uses: actions/checkout@v2
       - name: Fetch the prerelase llvm-mos SDK.

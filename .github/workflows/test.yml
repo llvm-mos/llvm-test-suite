@@ -18,7 +18,7 @@ jobs:
       - name: Install Ubuntu build dependencies.
         if: startsWith(matrix.os, 'ubuntu')
         run: |
-          sudo apt-get -y install ninja-build
+          sudo apt-get -y install ninja-build llvm
           python3 -m pip install --user --use-pep517 lit
       - name: Install MacOS tools
         if: startsWith(matrix.os, 'macos')
