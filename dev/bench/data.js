@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1705260149227,
+  "lastUpdate": 1705260557661,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -114110,6 +114110,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/fd971ed5bcc183641f5b9d84814e14bfddc8fa29"
         },
         "date": 1705260144081,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2369296,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2369296 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645502,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645502 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1422223,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1422223 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 7310,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 7310 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24758137,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24758137 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "a1a8d2211e9f87f8167f6b43dbc98d363849f922",
+          "message": "Implement strtol family using PDCLib\n\nThis also adds a non-standard strtosc/strtouc and strto[u]i for char and\nint, respectively.",
+          "timestamp": "2024-01-14T10:43:17-08:00",
+          "tree_id": "8727e156cfb7ba60dd30290c5f37d40f528cfb17",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/a1a8d2211e9f87f8167f6b43dbc98d363849f922"
+        },
+        "date": 1705260551604,
         "tool": "googlecpp",
         "benches": [
           {
