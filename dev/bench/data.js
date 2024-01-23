@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1705997581053,
+  "lastUpdate": 1706039948839,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -115746,6 +115746,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/a87117d5d479a758a05662a71cc9ae683fa24aff"
         },
         "date": 1705997575783,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311776,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311776 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645502,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645502 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1495661,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1495661 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8679,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8679 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24757550,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24757550 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "cw@f00f.org",
+            "name": "Chris Wedgwood",
+            "username": "cwedgwood"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6f85873b27e6beb5a5aa5e9a10279392559482ae",
+          "message": "[atari8-stdcart] test; 16 KiB ROM fit 14 KiB of RODATA (#290)",
+          "timestamp": "2024-01-22T22:44:41-08:00",
+          "tree_id": "8c8838907d18887e9957315dc85cd872f3b94246",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/6f85873b27e6beb5a5aa5e9a10279392559482ae"
+        },
+        "date": 1706039943211,
         "tool": "googlecpp",
         "benches": [
           {
