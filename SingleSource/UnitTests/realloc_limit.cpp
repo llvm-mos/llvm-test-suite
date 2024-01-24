@@ -7,7 +7,7 @@
 
 // The amount of bytes used in overhead is an implementation detail.
 // This amount might need to be adjusted if the implementation changes.
-static constexpr size_t ALLOC_OVERHEAD = 32;
+static constexpr size_t ALLOC_OVERHEAD = 16;
 
 // test the allocation pattern typical of a vector.
 static void testVectorAlloc() {
@@ -81,25 +81,25 @@ static void testAdjacentRealloc() {
   }
 
   if (__heap_bytes_used() > 13 + 15 + 42 + ALLOC_OVERHEAD) {
-    puts("UNEXPECTED MEM USAGE AFTER REALLOC");
+    printf("UNEXPECTED MEM USAGE AFTER REALLOC: %u", __heap_bytes_used());
     abort();
   }
 
   free(allocLeft);
   if (__heap_bytes_used() > 15 + 42 + ALLOC_OVERHEAD) {
-    puts("UNEXPECTED MEM USAGE AFTER FIRST FREE)");
+    printf("UNEXPECTED MEM USAGE AFTER FIRST FREE: %u", __heap_bytes_used());
     abort();
   }
 
   free(moveMiddleAlloc);
   if (__heap_bytes_used() > 15 + ALLOC_OVERHEAD) {
-    puts("UNEXPECTED MEM USAGE AFTER SECOND FREE");
+    printf("UNEXPECTED MEM USAGE AFTER SECOND FREE: %u", __heap_bytes_used());
     abort();
   }
 
   free(allocRight);
   if (__heap_bytes_used() > ALLOC_OVERHEAD) {
-    puts("MEM LEAKED IN TESTADJACENTREALLOC");
+    printf("MEM LEAKED IN TESTADJACENTREALLOC: %u", __heap_bytes_used());
     abort();
   }
 }

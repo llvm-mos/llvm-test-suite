@@ -123,7 +123,7 @@ int main() {
 
     const auto new_limit = ::heap_limit() + 8192;
     ::set_heap_limit(new_limit);
-    for (; i < 1000; i += 1) {
+    for (; i < ALLOC_COUNT; i += 1) {
       vector_of_ptrs[i] = new std::size_t{i};
     }
 
