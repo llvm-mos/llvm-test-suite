@@ -1,0 +1,3 @@
+Second quick_exit handler to be registered.
+First quick_exit handler to be registered.
+exit 42
