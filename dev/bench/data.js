@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1706504960459,
+  "lastUpdate": 1706515962401,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -116986,6 +116986,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/181b89d21e7576aeb9bab81999685909eb33a559"
         },
         "date": 1706504955038,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311776,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311776 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645502,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645502 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1495661,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1495661 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8679,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8679 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24757550,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24757550 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "committer": {
+            "name": "Daniel Thornburgh",
+            "username": "Daniel Thornburgh"
+          },
+          "id": "42908db1205a58167eba54b1e47ccf5a2b3437bc",
+          "message": "Fix/add allocator tests",
+          "timestamp": "2024-01-24T19:55:37Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/42908db1205a58167eba54b1e47ccf5a2b3437bc"
+        },
+        "date": 1706515957100,
         "tool": "googlecpp",
         "benches": [
           {
