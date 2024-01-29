@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1706473918343,
+  "lastUpdate": 1706487392470,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -116818,6 +116818,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/ff1966134d790f5c8056a676e78e46724aaf2f7c"
         },
         "date": 1706473912629,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311776,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311776 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645502,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645502 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1495661,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1495661 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8679,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8679 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24757550,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24757550 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "d2313256667c80986627440bf42d918b5d7f7f68",
+          "message": "[Breaking] Remove _exit\n\nThis function should be part of <unistd.h>, not <stdlib.h>, as it's part\nof POSIX. Since it has an exact C counterpart, C17, we should only have\never included _Exit(), for consistency with the general policy that the\nSDK provides a C runtime, not part of a POSIX operating system.",
+          "timestamp": "2024-01-28T15:55:54-08:00",
+          "tree_id": "87db5548e4e1aae22622cc2d97c701bbdee819e5",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/d2313256667c80986627440bf42d918b5d7f7f68"
+        },
+        "date": 1706487387021,
         "tool": "googlecpp",
         "benches": [
           {
