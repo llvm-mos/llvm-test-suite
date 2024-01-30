@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1706607016327,
+  "lastUpdate": 1706651910202,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -118066,6 +118066,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/b46fe2315bff130dc97eb149e6fa2f2c0c983452"
         },
         "date": 1706607010174,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311776,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311776 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 645502,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 645502 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1495661,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1495661 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8679,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8679 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10146,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10146 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 175,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 175 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 34546,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 34546 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 36312197,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 36312197 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 24757550,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 24757550 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 108,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 108 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "ea8aea8ba780077cb88c214df40eb1ceba730193",
+          "message": "[Breaking] Break character conversion out of __putchar\n\n__putchar now simply outputs to the target equivalent of file descriptor\nzero; it no longer converts to the target character set. Accordingly,\n__putchar now replaces __chrout on most targets; __chrout has been\nremoved. Character conversion functionality has been moved to a new\n__char_conv.",
+          "timestamp": "2024-01-30T13:46:13-08:00",
+          "tree_id": "a1a6669859f692a31cb8a6010a243826660160da",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/ea8aea8ba780077cb88c214df40eb1ceba730193"
+        },
+        "date": 1706651904921,
         "tool": "googlecpp",
         "benches": [
           {
