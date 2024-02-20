@@ -45,4 +45,6 @@ else()
   llvm_add_host_executable(build-timeit timeit timeit.c)
 endif()
 
-add_executable(not ${CMAKE_CURRENT_SOURCE_DIR}/not.cpp)
+if(NOT ARCH STREQUAL "MOS")
+  add_executable(not ${CMAKE_CURRENT_SOURCE_DIR}/not.cpp)
+endif()
