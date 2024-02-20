@@ -44,3 +44,5 @@ else()
   endif()
   llvm_add_host_executable(build-timeit timeit timeit.c)
 endif()
+
+add_executable(not ${CMAKE_CURRENT_SOURCE_DIR}/not.cpp)

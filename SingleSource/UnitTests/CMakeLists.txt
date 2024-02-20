@@ -10,6 +10,7 @@ if(NOT ARCH STREQUAL "MOS")
   add_subdirectory(Vector)
   add_subdirectory(Vectorizer)
   add_subdirectory(X86)
+  add_subdirectory(AArch64)
 endif()
 
 list(APPEND CFLAGS -Wno-implicit-function-declaration -Wno-implicit-int)

@@ -1,0 +1,41 @@
+smoke
+https://github.com/ROCm/aomp
+
+This directory contains a CMakeLists.txt for the aomp benchmark with 
+the smoke test that is built as part of the LLVM test-suite.
+Its sources are not part of the test-suite but
+have to be fetched separately from https://github.com/ROCm/aomp
+
+The CMakeLists.txt contains internal greenlists and redlists that the user
+must declare which options to use with SYSTEM_GPU. The user is able to
+declare multiple lists to use.
+
+here are all of the options:
+-amd (this is the greenlist that contains tests that passes)
+-amd_runtime_redlist
+-amd_compiler_redlist
+-amd_redlist(this is the combination of both runtime and compiler redlists)
+-nvidia (this is the greenlist that contains tests that passes)
+-nvidia_runtime_redlist
+-nvidia_compiler_redlist
+-nvidia_redlist(this is the combination of both runtime and compiler redlists)
+-intel (this is the greenlist that contains tests that passes)
+-intel_runtime_redlist
+-intel_compiler_redlist
+-intel_redlist(this is the combination of both runtime and compiler redlists)
+
+An example run is:
+
+$ cmake ../llvm-test-suite \
+  -GNinja -DCMAKE_BUILD_TYPE=Release           \
+  -DTEST_SUITE_SMOKE_ROOT=${HOME}/src/aomp                    \
+  -DTEST_SUITE_LIT=${HOME}/build/llvm-project/release/bin/llvm-lit      \
+  -DCMAKE_C_COMPILER=${HOME}/install/llvm-project/release/bin/clang     \
+  -DCMAKE_CXX_COMPILER=${HOME}/install/llvm-project/release/bin/clang++ \
+  -DTEST_SUITE_SUBDIRS=External/smoke                              \
+  -DTEST_SUITE_OFFLOADING_CFLAGS=--offload-arch=native \
+  -DTEST_SUITE_OFFLOADING_LDFLAGS=--offload-arch=native;-lopenmptarget \
+  -DSYSTEM_GPU="amd\;amd_runtime_redlist" \
+  -DTEST_SUITE_LIT_FLAGS=-svj1
+
+$ LD_LIBRARY_PATH=${HOME}/install/llvm-project/release/lib ninja check
