@@ -41,5 +41,16 @@ sub fp large - small unsigned 800.50
 sub fp small - large signed 349.50
 sub fp small - large unsigned 64735.50
 sub fp small - large unsigned FFFCDF80
-mul int small signed -101.59
+mul int small signed -32.39
+mul fp small signed -35.60
+mul int overflow signed 103.61
+mul fp overflow signed 88.53
+mul int small signed 32.39
+mul fp small signed 35.59
+mul int overflow signed 88.29
+mul fp overflow signed 147.70
+sign < unsigned true
+sign > unsigned false
+sign == unsigned false
+large sign < unsigned true
 exit 0

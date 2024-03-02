@@ -6,13 +6,13 @@
 template<typename T>
 void print_float(const char* name, T fp) {
   uint8_t fsize = fp.frac_bitcount();
-  float fscale = (1 << fsize) * 1.0f;
+  float fscale = (float) (1llu << fsize);
   auto f = fp.get();
-  if (fp.int_bitcount() + fsize == 24 && !fp.is_signed()) {
+  if ((fp.int_bitcount() + fsize) == 24 && !fp.is_signed()) {
     // If we are writing a 24bit number, the underlying type is 32 bit, so mask off the upper byte
     f &= 0xffffff;
   }
-  auto val = f / fscale;
+  float val = f / fscale;
   printf("%s %.02f\n", name, val);
 }
 
@@ -171,13 +171,23 @@ int main(void) {
   print_float("sub fp small - large unsigned", out);
   print_hex("sub fp small - large unsigned", out);
 
+  // Multiplication checks
+  auto signval = -10.8_8_8;
+  auto unsignval = 10.8_8_8;
+  print_float("mul int small signed", signval * 3);
+  print_float("mul fp small signed", signval * 3.3_8_8);
+  print_float("mul int overflow signed", small_signed * 3);
+  print_float("mul fp overflow signed", small_signed * 3.3_8_8);
+  print_float("mul int small signed", unsignval * 3);
+  print_float("mul fp small signed", unsignval * 3.3_8_8);
+  print_float("mul int overflow signed", small_unsigned * 3);
+  print_float("mul fp overflow signed", small_unsigned * 3.3_8_8);
 
-  
-  print_float("mul int small signed", small_signed * 2);
-  print_hex("test 1 ", small_signed * 2);
-  print_float("mul fp small signed", small_signed * 2.5_8_8);
-  print_hex("test 1 ", small_signed * 2.5_8_8);
-
+  // Comparison checks
+  printf("sign < unsigned %s\n", (-10.0_8_8 < 10.0_8_8) ? "true" : "false");
+  printf("sign > unsigned %s\n", (-10.0_8_8 > 10.0_8_8) ? "true" : "false");
+  printf("sign == unsigned %s\n", (-10.0_8_8 == 10.0_8_8) ? "true" : "false");
+  printf("large sign < unsigned %s\n", (-1000.0_16_8 < 10.0_8_8) ? "true" : "false");
 
   return 0;
 }
