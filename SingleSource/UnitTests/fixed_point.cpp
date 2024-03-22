@@ -3,13 +3,13 @@
 #include <stdio.h>
 
 // My extremely hardcoded print float method since there isn't %f print support
-template<typename T>
-void print_float(const char* name, T fp) {
+template <typename T> void print_float(const char *name, T fp) {
   uint8_t fsize = fp.frac_bitcount();
-  float fscale = (float) (1llu << fsize);
+  float fscale = (float)(1llu << fsize);
   auto f = fp.get();
   if ((fp.int_bitcount() + fsize) == 24 && !fp.is_signed()) {
-    // If we are writing a 24bit number, the underlying type is 32 bit, so mask off the upper byte
+    // If we are writing a 24bit number, the underlying type is 32 bit, so mask
+    // off the upper byte
     f &= 0xffffff;
   }
   float val = f / fscale;
@@ -17,57 +17,59 @@ void print_float(const char* name, T fp) {
 }
 
 template <bool Signed = true, typename T>
-void print_hex(const char* name, T fp) {
-
+void print_hex(const char *name, T fp) {
   switch (sizeof(fp)) {
-    case 1:
-      if (Signed) {
-        printf("%s %lX\n", name, (int8_t)fp.get());
-      } else {
-        printf("%s %lX\n", name, (uint8_t)fp.get());
-      }
-      break;
-    case 2:
-      if (Signed) {
-        printf("%s %X\n", name, (int16_t)fp.get());
-      } else {
-        printf("%s %X\n", name, (uint16_t)fp.get());
-      }
-      break;
-    case 3:
-    case 4:
-      if (Signed) {
-        printf("%s %lX\n", name, (int32_t)fp.get());
-      } else {
-        printf("%s %lX\n", name, (uint32_t)fp.get());
-      }
-      break;
-    default:
-      break;
+  case 1:
+    if (Signed) {
+      printf("%s %lX\n", name, (int8_t)fp.get());
+    } else {
+      printf("%s %lX\n", name, (uint8_t)fp.get());
+    }
+    break;
+  case 2:
+    if (Signed) {
+      printf("%s %X\n", name, (int16_t)fp.get());
+    } else {
+      printf("%s %X\n", name, (uint16_t)fp.get());
+    }
+    break;
+  case 3:
+  case 4:
+    if (Signed) {
+      printf("%s %lX\n", name, (int32_t)fp.get());
+    } else {
+      printf("%s %lX\n", name, (uint32_t)fp.get());
+    }
+    break;
+  default:
+    break;
   }
 }
 
 int main(void) {
-
   ////////
   // Constructor tests
 
   // basic literal constructor
   using namespace fixedpoint_literals;
   f8_8 basic_constructor{100};
-  printf("basic_constructor %d.%d\n", (char)basic_constructor.as_i(), (char)basic_constructor.as_f());
+  printf("basic_constructor %d.%d\n", (char)basic_constructor.as_i(),
+         (char)basic_constructor.as_f());
 
   // using a negative value in a signed class
   f8_8 signed_value{-100};
   print_float("signed_value", signed_value);
 
-  // using an signed value with a negative number and storing to an unsigned is converted to the unsigned value
+  // using an signed value with a negative number and storing to an unsigned is
+  // converted to the unsigned value
   fu8_8 unsigned_value{-100};
-  printf("unsigned_value %hd.%hd\n", (uint16_t) unsigned_value.get() / 256, (uint8_t) ((((int16_t)unsigned_value.as_f()) * 256) / 100) );
+  printf("unsigned_value %hd.%hd\n", (uint16_t)unsigned_value.get() / 256,
+         (uint8_t)((((int16_t)unsigned_value.as_f()) * 256) / 100));
 
   // floating point number constructor
   f8_8 from_float{10.9};
-  print_float("from_float", from_float); // gets rounded a bit when printing so it says 10.89
+  print_float("from_float",
+              from_float); // gets rounded a bit when printing so it says 10.89
 
   // copy constructors
   // basic copy constructor with same sizes
@@ -77,7 +79,8 @@ int main(void) {
   // copy constructor from signed to unsigned type
   fu8_8 copy_of_signed_positive = basic_constructor;
   print_float("copy_of_signed_positive", copy_of_signed_positive);
-  // copy constructor from negative signed number to unsigned treats the integer portion as unsigned
+  // copy constructor from negative signed number to unsigned treats the integer
+  // portion as unsigned
   fu8_8 copy_of_signed_negative = signed_value;
   print_float("copy_of_signed_negative", copy_of_signed_negative);
   // copy constructor with a larger int size (same float size)
@@ -87,15 +90,17 @@ int main(void) {
   // copy constructor with a signed larger int size sign extends
   f16_8 copy_bigger_signed = signed_value;
   print_float("copy_bigger_signed", copy_bigger_signed);
-  print_hex("copy_bigger_signed", copy_bigger_signed); // verify that it gets sign extended
+  print_hex("copy_bigger_signed",
+            copy_bigger_signed); // verify that it gets sign extended
 
   // Copy constructor to an unsigned larger int with a signed number
   fu16_8 copy_bigger_unsigned = signed_value;
   print_float("copy_bigger_unsigned", copy_bigger_unsigned);
   print_hex("copy_bigger_unsigned", copy_bigger_unsigned);
 
-  // Copy constructor with a smaller int size with a signed number truncates the upper bits
-  f16_8 bigger_int_size = -800.8_16_8; // 
+  // Copy constructor with a smaller int size with a signed number truncates the
+  // upper bits
+  f16_8 bigger_int_size = -800.8_16_8; //
   f8_8 smaller_int_size = bigger_int_size.as<8, 8>();
   print_float("smaller_int_size", smaller_int_size); // truncates to df
 
@@ -105,9 +110,8 @@ int main(void) {
   print_float("bigger_float_size", bigger_float_size);
 
   fu16_16 big_float_size = 18.7_u16_16;
-  fu8_8 small_float_size = big_float_size.as<8,8,false>();
+  fu8_8 small_float_size = big_float_size.as<8, 8, false>();
   print_float("small_float_size", small_float_size);
-
 
   ////////////////
   // Operator overloads
@@ -187,7 +191,8 @@ int main(void) {
   printf("sign < unsigned %s\n", (-10.0_8_8 < 10.0_8_8) ? "true" : "false");
   printf("sign > unsigned %s\n", (-10.0_8_8 > 10.0_8_8) ? "true" : "false");
   printf("sign == unsigned %s\n", (-10.0_8_8 == 10.0_8_8) ? "true" : "false");
-  printf("large sign < unsigned %s\n", (-1000.0_16_8 < 10.0_8_8) ? "true" : "false");
+  printf("large sign < unsigned %s\n",
+         (-1000.0_16_8 < 10.0_8_8) ? "true" : "false");
 
   return 0;
 }
