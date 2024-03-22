@@ -8,8 +8,8 @@ copy_of_signed_negative 156.00
 copy_bigger_size 100.00
 copy_bigger_signed -100.00
 copy_bigger_signed FFFF9C00
-copy_bigger_unsigned 156.00
-copy_bigger_unsigned 9C00
+copy_bigger_unsigned 65436.00
+copy_bigger_unsigned FF9C00
 smaller_int_size -32.80
 bigger_float_size 12.50
 small_float_size 18.70
