@@ -1,0 +1,56 @@
+basic_constructor 100.0
+signed_value -100.00
+unsigned_value 156.0
+from_float 10.90
+copy_same_size 10.90
+copy_of_signed_positive 100.00
+copy_of_signed_negative 156.00
+copy_bigger_size 100.00
+copy_bigger_signed -100.00
+copy_bigger_signed FFFF9C00
+copy_bigger_unsigned 65436.00
+copy_bigger_unsigned FF9C00
+smaller_int_size -32.80
+bigger_float_size 12.50
+small_float_size 18.70
+unary_minus_op -100.60
+unary_minus_op 9B67
+unary_negate_op -100.60
+modulo_op 27.10
+binary_and 124.00
+binary_or 10.50
+binary_xor 6.80
+add int small signed -49.80
+add fp small signed -49.70
+add int small unsigned 201.10
+add fp small unsigned 201.20
+add fp small signed overflow 105.10
+add fp small unsigned overflow 44.20
+add fp large + small signed -451.09
+add fp large + small unsigned 1200.70
+add fp small + large signed -451.09
+add fp small + large unsigned 1200.70
+sub int small signed -51.80
+sub fp small signed -51.89
+sub int small unsigned 199.10
+sub fp small unsigned 199.00
+sub fp small signed overflow 49.30
+sub fp small unsigned overflow 100.00
+sub fp large - small signed -349.50
+sub fp large - small unsigned 800.50
+sub fp small - large signed 349.50
+sub fp small - large unsigned 64735.50
+sub fp small - large unsigned FFFCDF80
+mul int small signed -32.39
+mul fp small signed -35.60
+mul int overflow signed 103.61
+mul fp overflow signed 88.53
+mul int small signed 32.39
+mul fp small signed 35.59
+mul int overflow signed 88.29
+mul fp overflow signed 147.70
+sign < unsigned true
+sign > unsigned false
+sign == unsigned false
+large sign < unsigned true
+exit 0
