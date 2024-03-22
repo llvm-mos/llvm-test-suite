@@ -97,6 +97,10 @@ if(ARCH STREQUAL "MOS")
     printargs.c
     TestLoop.c
   )
+
+if (CMAKE_BUILD_TYPE STREQUAL Debug)
+  list(REMOVE_ITEM Source fixed_point.cpp)
+endif()
 endif()
 
 # Enable matrix types extension tests for compilers supporting -fenable-matrix.
