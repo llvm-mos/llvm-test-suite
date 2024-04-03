@@ -62,19 +62,70 @@ set(TEST_SUITE_FORTRAN_ISO_C_HEADER_DIR "" CACHE STRING
 # The following cause errors if they are passed to flang via FFLAGS. This could
 # be because they are currently unsupported and might eventually be supported
 # or because they are GCC-specific and will never be supported.
+#
+# FIXME: The flags here necessarily include the value as well, not just the
+# flag itself. For instance, in the list are -fcheck=all, -fcheck=bits etc. In
+# principle, one only needs the -fcheck. The argument should not matter. The
+# problem is that the annotation parser currently does not parse the flag into
+# `flag-name` and `flag-value`. Once this is fixed, we need only have the
+# flag name here.
 set(FLANG_ERRORING_FFLAGS
+  # The "flags" that do not start with a hyphen (-) are actually arguments to
+  # some other flag but use the "-flag value" syntax (as opposed to the
+  # "-flag=value" syntax). Since we don't actually parse the command line, they
+  # are treated as if they were "flags" .
+  analyzer-max-svalue-depth=0
+  ggc-min-expand=0
+  ggc-min-heapsize=0
+  iv-max-considered-uses=2
+  large-stack-frame=4000
   max-completely-peel-loop-nest-depth=1
+  max-completely-peeled-insns=0
+  max-completely-peeled-insns=200
+  max-cse-insns=0
+  max-inline-insns-auto=0
+  max-inline-insns-single=0
+  parloops-chunk-size=2
+  parloops-min-per-thread=5
+  sccvn-max-alias-queries-per-access=1
+  vect-epilogues-nomask=0
+  vect-max-peeling-for-alignment=0
+
+  # This is an argument that should go with -idirafter which is not correctly
+  # handled right now. Once that is fixed, this can be removed.
+  fdaf
+  "/fdaf/"
+
+  -dA
+  -dH
+  -dirafter
+  -dp
+  -faggressive-function-elimination
+  -fall-intrinsics
+  -fallow-argument-mismatch
   -fallow-invalid-boz
+  -fautomatic
+  -fblas-matmul-limit=1
+  -fbounds-check
   -fcheck-array-temporaries
+  -fcheck=all
+  -fcheck=bits
   -fcheck=bounds
   -fcheck=do
+  -fcheck=mem
+  -fcheck=pointer
   -fcheck=recursion
+  -fcompare-debug
   -fcoarray=lib
+  -fcoarray=single
   -fcray-pointer
+  -fd-lines-as-code
+  -fd-lines-as-comments
   -fdec
   -fdec-format-defaults
   -fdec-static
   -fdec-structure
+  -fdollar-ok
   -frecord-marker=4
   -fbounds-check
   -fcheck-bounds
@@ -84,140 +135,317 @@ set(FLANG_ERRORING_FFLAGS
   # form in which case, this will have to be modified to accommodate those.
   -fdefault-real-10
   -fdefault-real-16
+  -fdiagnostics-format=json
+  -fdiagnostics-show-option
+  -fdollar-ok
   -fdump-ipa-cp-details
   -fdump-ipa-fnsummary-details
   -fdump-ipa-inline-details
+  -fdump-ipa-sra-details
+  -fdump-rtl-combine
   -fdump-rtl-expand
   -fdump-tree-all
   -fdump-tree-cunroll-details
   -fdump-tree-cunrolli-details
+  -fdump-tree-dom2
+  -fdump-tree-dom2-details
+  -fdump-tree-forwprop2
   -fdump-tree-fre1
   -fdump-tree-gimple
   -fdump-tree-ifcvt
+  -fdump-tree-ldist-all
+  -fdump-tree-ldist-details
+  -fdump-tree-lim2
+  -fdump-tree-lim2-details
+  -fdump-tree-linterchange-details
   -fdump-tree-lversion-details
   -fdump-tree-omplower
   -fdump-tree-optimized
+  -fdump-tree-optimized-raw
   -fdump-tree-original
+  -fdump-tree-original-lineno
+  -fdump-tree-parloops2-details
   -fdump-tree-pcom-details
+  -fdump-tree-pre
   -fdump-tree-pre-details
-  -fdump-tree-profile-estimate
+  -fdump-tree-profile_estimate
   -fdump-tree-reassoc1
+  -fdump-tree-slp-details
+  -fdump-tree-slp2-details
   -fdump-tree-vect-details
+  -fexceptions
   -fexpensive-optimizations
+  -fexternal-blas
   -ff2c
+  -ffixed-xmm1
+  -ffixed-xmm10
+  -ffixed-xmm11
+  -ffixed-xmm12
+  -ffixed-xmm13
+  -ffixed-xmm14
+  -ffixed-xmm15
+  -ffixed-xmm2
+  -ffixed-xmm3
+  -ffixed-xmm4
+  -ffixed-xmm5
+  -ffixed-xmm6
+  -ffixed-xmm7
+  -ffixed-xmm8
+  -ffixed-xmm9
+  -ffloat-store
   -ffree-line-length-none
   -ffrontend-optimize
   -fgcse
+  -fgcse-after-reload
+  -fgnu-tm
+  -findirect-inlining
+  -finit-character=32
+  -finit-derived
+  -finit-local-zero
+  -finit-integer=42
+  -finit-integer=12345678
+  -finit-logical=0
+  -finit-logical=true
+  -finit-real=inf
+  -finline-functions
   -finline-matmul-limit=0
   -finline-matmul-limit=10
   -finline-matmul-limit=100
   -finline-matmul-limit=1000
   -finline-matmul-limit=2
   -finline-matmul-limit=30
+  -finline-small-functions
+  -finstrument-functions
   -fipa-cp
   -fipa-cp-clone
   -fipa-pta
   -fipa-reference
+  -flinker-output=nolto-rel
+  -floop-interchange
+  -fmax-array-constructor=100000
+  -fmax-stack-var-size=8
+  -fmax-stack-var-size=100
+  -fmodule-private
   -fmodulo-sched
   -fno-align-commons
   -fno-asynchronous-unwind-tables
   -fno-backtrace
   -fno-bounds-check
   -fno-check-array-temporaries
+  -fno-code-hoisting
   -fno-dec
+  -fno-dse
+  -fno-early-inlining
   -fno-f2c
+  -fno-frontend-loop-interchange
   -fno-frontend-optimize
   -fno-guess-branch-probability
+  -fno-init-local-zero
   -fno-inline
+  -fno-inline-arg-packing
+  -fno-inline-functions-called-once
   -fno-ipa-cp
+  -fno-ipa-icf
   -fno-ipa-modref
   -fno-ipa-sra
+  -fno-move-loop-stores
+  -fno-openacc
+  -fno-openmp
   -fno-pad-source
+  -fno-protect-parens
   -fno-range-check
   -fno-realloc-lhs
+  -fno-schedule-insns
   -fno-sign-zero
   -fno-strict-aliasing
+  -fno-trapping-math
   -fno-tree-ccp
+  -fno-tree-ch
+  -fno-tree-copy-prop
+  -fno-tree-dce
+  -fno-tree-dominator-opts
   -fno-tree-forwprop
   -fno-tree-fre
+  -fno-tree-loop-ch
+  -fno-tree-loop-distribute-patterns
+  -fno-tree-loop-im
+  -fno-tree-loop-ivcanon
   -fno-tree-loop-optimize
   -fno-tree-loop-vectorize
+  -fno-tree-pre
+  -fno-tree-scev-cprop
+  -fno-tree-sink
+  -fno-tree-slp-vectorize
+  -fno-tree-vectorize
+  -fno-tree-vrp
+  -fnon-call-exceptions
+  -fopenmp-simd
+  -fopt-info-vec-optimized
   -fpad-source
   -fpeel-loops
+  -fpre-include=simd-builtins-1.h
+  -fpre-include=simd-builtins-3.h
+  -fpre-include=simd-builtins-4.h
+  -fpre-include=simd-builtins-7.h
+  -fpre-include=simd-builtins-8.h
+  -fpreprocessed
+  -fpredictive-commoning
+  -fprefetch-loop-arrays
+  -fprofile-arcs
+  -fprofile-generate
+  -frecord-marker=4
   -frecursive
+  -frepack-arrays
+  -frounding-math
+  -fsanitize=float-cast-overflow
+  -fsanitize=null
+  -fsanitize=signed-integer-overflow
   -fsanitize=undefined
   -fschedule-insns
+  -fsecond-underscore
+  -fsel-sched-pipelining
+  -fsel-sched-pipelining-outer-loops
+  -fselective-scheduling
+  -fselective-scheduling2
   -fset-g77-defaults
   -fshort-enums
   -fstrict-aliasing
+  -fsplit-loops
   -ftest-forall-temp
+  -ftest-coverage
+  -ftracer
+  -ftrapv
   -ftree-loop-distribution
+  -ftree-loop-if-convert
   -ftree-loop-vectorize
+  -ftree-parallelize-loops
+  -ftree-parallelize-loops=2
   -ftree-pre
   -ftree-slp-vectorize
   -ftree-tail-merge
   -ftree-vectorize
   -ftree-vrp
+  -funconstrained-commons
+  -funroll-all-loops
   -funroll-loops
+  -funsafe-math-optimizations
+  -fvect-cost-model=dynamic
+  -fwhole-program
   -fwrapv
+  -gno-strict-dwarf
+  -idirafter
+  -mavx
+  -mavx2
+  -mavx512f
+  -mcmodel=medium
   -mdalign
   -mdejagnu-cpu=power4
+  -mdejagnu-cpu=power7
+  -mdejagnu-cpu=power10
   -mfpmath=387
   -mfpmath=sse
+  -mlow-precision-sqrt
+  -mno-avx
+  -mno-power8-vector
+  -mno-power9-vector
+  -mprefer-avx128
+  -msse
+  -msse2
+  -msse3
+  -msse4.1
   -mtune=amdfam10
+  -mtune=generic
+  -mveclibabi=mass
+  -mveclibabi=svml
+  -mvsx
+  -mvzeroupper
+  -mzarch
+  -nostdinc
+  -nostdlib
   # -Os might eventually be supported, so this might also need to be removed
   # at some point
   -Og
   -Os
+  -pedantic-errors
+  # -pthread should be supported at some point.
+  -pthread
+  -r
   # At some point, if we ever support explicit standard flags, some of these
   # should be removed.
   -pedantic-errors
   -std=gnu
   -std=legacy
   -std=f95
+  --std=f95
   -std=f2003
   -std=f2008
   -std=f2008ts
   # At the time of writing, -W warnings are not supported. flang errors out
   # saying that only -Werror is supported.
+  -W
+  -Waliasing
   -Wall
   -Wampersand
   -Wanalyzer-too-complex
   -Warray-bounds
   -Warray-temporaries
+  -Wc-binding-type
+  -Wcharacter-truncation
+  -Wcompare-reals
   -Wconversion
   -Wconversion-extra
-  -Werner
+  -Wdate-time
+  -Wdo-subscript
   -Werror
   -Wextra
   -Wfunction-elimination
+  -Wimplicit-interface
   -Wimplicit-procedure
+  -Winteger-division
   -Wintrinsic-shadow
   -Wintrinsics-std
   -Wline-truncation
+  -Wmaybe-uninitialized
+  -Wmissing-include-dirs
   -Wno-all
+  -Wno-analyzer-malloc-leak
+  -Wno-analyzer-memory-leak
   -Wno-analyzer-null-dereference
   -Wno-analyzer-possible-null-dereference
   -Wno-analyzer-too-complex
   -Wno-analyzer-use-of-uninitialized-value
   -Wno-c-binding-type
   -Wno-complain-wrong-lang
+  -Wno-cpp
   -Wno-error
+  -Wno-error=cpp
   -Wno-intrinsic-shadow
   -Wno-intrinsics-std
+  -Wno-line-truncation
   -Wno-lto-type-mismatch
+  -Wno-missing-include-dirs
+  -Wno-overwrite-recursive
+  -Wno-pedantic
   -Wno-tabs
   -Wno-underflow
+  -Wno-uninitialized
+  -Wno-unused-dummy-argument
+  -Wno-zerotrip
+  -Wopenacc-parallelism
+  -Wpadded
   -Wrealloc-lhs
   -Wrealloc-lhs-all
   -Wreturn-type
   -Wstringop-overflow
   -Wsurprising
   -Wtabs
+  -Wtarget-lifetime
+  -Wundefined-do-loop
   -Wuninitialized
   -Wunused
   -Wunused-dummy-argument
   -Wunused-function
+  -Wunused-label
   -Wunused-parameter
   -Wunused-variable
   -Wzerotrip
@@ -225,28 +453,55 @@ set(FLANG_ERRORING_FFLAGS
   --param
 )
 
-# Find all the Fortran files in the current source directory that may be test
-# files. This will filter out those files that have been explicitly disabled
-# for any reason. The returned files will be consist of the main file for
-# "execute" and "compile" tests as well as any dependencies for multi-file
-# tests.
-function(gfortran_find_test_files unsupported unimplemented skipped failing out)
-  # This will just get all the Fortran source files in the directory. Since
-  # the tests may be a mix of single-source and multi-source tests, this will
-  # include files that are dependencies of some "main" test file as well.
-  file(GLOB files CONFIGURE_DEPENDS LIST_DIRECTORIES false
-    *.f*
-    *.F*
-  )
+# Determine disabled tests for this directory and return them via the OUT
+# parameter.
+function(gfortran_populate_disabled_tests out)
+  set(unsupported "")
+  set(unimplemented "")
+  set(skipped "")
+  set(failing "")
 
-  set(ignore "")
+  # This will provide the lists of unsupported, unimplemented, skipped and
+  # failing files.
+  include(${CMAKE_CURRENT_SOURCE_DIR}/DisabledFiles.cmake)
+
+  list(APPEND unsupported ${UNSUPPORTED_FILES})
+  list(APPEND unimplemented ${UNIMPLEMENTED_FILES})
+  list(APPEND skipped ${SKIPPED_FILES})
+  list(APPEND failing ${FAILING_FILES})
+
+  # do the same for any requested feature extentions
+  foreach(feature ${TEST_SUITE_FORTRAN_FEATURES})
+    set(UNSUPPORTED_FILES "")
+    set(UNIMPLEMENTED_FILES "")
+    set(SKIPPED_FILES "")
+    set(FAILING_FILES "")
+    include(${CMAKE_CURRENT_SOURCE_DIR}/DisabledFiles${feature}.cmake)
+    list(APPEND unsupported ${UNSUPPORTED_FILES})
+    list(APPEND unimplemented ${UNIMPLEMENTED_FILES})
+    list(APPEND skipped ${SKIPPED_FILES})
+    list(APPEND failing ${FAILING_FILES})
+
+    # enable any tests that now pass for this feature
+    set(SUPPORTED_FILES "")
+    set(IMPLEMENTED_FILES "")
+    set(UNSKIPPED_FILES "")
+    set(PASSING_FILES "")
+    include(${CMAKE_CURRENT_SOURCE_DIR}/EnabledFiles${feature}.cmake)
+    list(REMOVE_ITEM unsupported ${SUPPORTED_FILES})
+    list(REMOVE_ITEM unimplemented ${IMPLEMENTED_FILES})
+    list(REMOVE_ITEM skipped ${UNSKIPPED_FILES})
+    list(REMOVE_ITEM failing ${PASSING_FILES})
+  endforeach()
+
+  set(disabled "")
 
   # There is still a chance that some of the unsupported tests may need to be
   # enabled, for instance if the non-standard extensions that they exercise are
   # supported due to user demand.
   if (NOT TEST_SUITE_FORTRAN_FORCE_ALL_TESTS AND
       NOT TEST_SUITE_FORTRAN_FORCE_UNSUPPORTED_TESTS)
-    list(APPEND ignore ${unsupported})
+    list(APPEND disabled ${unsupported})
   endif()
 
   # For the remaining tests, there is cause to build and run the skipped, failing
@@ -256,78 +511,72 @@ function(gfortran_find_test_files unsupported unimplemented skipped failing out)
   # become redundant and removed.
   if (NOT TEST_SUITE_FORTRAN_FORCE_ALL_TESTS AND
       NOT TEST_SUITE_FORTRAN_FORCE_UNIMPLEMENTED_TESTS)
-    list(APPEND ignore ${unimplemented})
+    list(APPEND disabled ${unimplemented})
   endif()
 
   if (NOT TEST_SUITE_FORTRAN_FORCE_ALL_TESTS AND
       NOT TEST_SUITE_FORTRAN_FORCE_SKIPPED_TESTS)
-    list(APPEND ignore ${skipped})
+    list(APPEND disabled ${skipped})
   endif()
 
   if (NOT TEST_SUITE_FORTRAN_FORCE_ALL_TESTS AND
       NOT TEST_SUITE_FORTRAN_FORCE_FAILING_TESTS)
-    list(APPEND ignore ${failing})
+    list(APPEND disabled ${failing})
   endif()
 
-  foreach(file ${ignore})
-    list(REMOVE_ITEM files ${file})
-  endforeach()
-
-  set(${out} ${files} PARENT_SCOPE)
+  set(${out} ${disabled} PARENT_SCOPE)
 endfunction()
 
-# Populate the tests from the files in the subdirectory. This macro will be
-# called from each subdirectory containing tests. It is expected that the
-# subdirectory will contain a file named "DisabledFiles.cmake" which will
-# provide the list of files that are disabled in that subdirectory for various
-# reasons. A list named TESTS is expected to be in scope before this macro is
-# called.
-macro(gfortran_populate_tests TESTS)
-  string(REPLACE "${CMAKE_SOURCE_DIR}/" "" DIR "${CMAKE_CURRENT_SOURCE_DIR}")
-  message(STATUS "Adding directory ${DIR}")
+# Check the test configuration to make sure that it is not out of date.
+# USED_FORT is the list of Fortran files that are used in the tests. USED_OTHER
+# is the list of non-Fortran files that are used. This is intended be a sanity
+# check in case the test suite is updated without updating the static test
+# configuration. In particular, we want to catch situations where failing to
+# update the test configuration results in the new new tests being skipped
+# silently.
+function(gfortran_check_test_config used_fort used_other)
+  list(SORT used_fort)
+  list(REMOVE_DUPLICATES used_fort)
 
-  set(UNSUPPORTED "")
-  set(UNIMPLEMENTED "")
-  set(SKIPPED "")
-  set(FAILING "")
+  list(SORT used_other)
+  list(REMOVE_DUPLICATES used_other)
 
-  # This will provide the lists of unsupported, unimplemented, skipped and
-  # failing files.
-  include(${CMAKE_CURRENT_SOURCE_DIR}/DisabledFiles.cmake)
+  # All the Fortran files in the current directory.
+  file(GLOB files CONFIGURE_DEPENDS LIST_DIRECTORIES false
+    *.f*
+    *.F*
+  )
+  list(SORT files)
 
-  list(APPEND UNSUPPORTED ${UNSUPPORTED_FILES})
-  list(APPEND UNIMPLEMENTED ${UNIMPLEMENTED_FILES})
-  list(APPEND SKIPPED ${SKIPPED_FILES})
-  list(APPEND FAILING ${FAILING_FILES})
+  set(msg_unused "File not used in any test configuration")
+  set(msg_missing "File used in test configuration not found")
+  set(msg_rerun "You may need to run utils/update-test-config.py")
 
-  # do the same for any requested feature extentions
-  foreach(feature ${TEST_SUITE_FORTRAN_FEATURES})
-    set(UNSUPPORTED_FILES "")
-    set(UNIMPLEMENTED_FILES "")
-    set(SKIPPED_FILES "")
-    set(FAILING_FILES "")
-    include(${CMAKE_CURRENT_SOURCE_DIR}/DisabledFiles${feature}.cmake)
-    list(APPEND UNSUPPORTED ${UNSUPPORTED_FILES})
-    list(APPEND UNIMPLEMENTED ${UNIMPLEMENTED_FILES})
-    list(APPEND SKIPPED ${SKIPPED_FILES})
-    list(APPEND FAILING ${FAILING_FILES})
+  # Now that files and used_fort are both sorted and without any duplicates,
+  # they should be identical. If they are not, it suggests that some Fortran
+  # files have been added or removed.
+  foreach (f u IN ZIP_LISTS files used_fort)
+    if (NOT f STREQUAL u)
+      list(FIND used ${f} idx)
+      if (idx EQUAL -1)
+        message(FATAL_ERROR "${msg_unused}\n  ${f}\n${msg_rerun}\n")
+      else ()
+        message(FATAL_ERROR "${msg_missing}\n  ${u}\n${msg_rerun}\n")
+      endif ()
+    endif ()
+  endforeach ()
 
-    # enable any tests that now pass for this feature
-    set(SUPPORTED_FILES "")
-    set(IMPLEMENTED_FILES "")
-    set(UNSKIPPED_FILES "")
-    set(PASSING_FILES "")
-    include(${CMAKE_CURRENT_SOURCE_DIR}/EnabledFiles${feature}.cmake)
-    list(REMOVE_ITEM UNSUPPORTED ${SUPPORTED_FILES})
-    list(REMOVE_ITEM UNIMPLEMENTED ${IMPLEMENTED_FILES})
-    list(REMOVE_ITEM SKIPPED ${UNSKIPPED_FILES})
-    list(REMOVE_ITEM FAILING ${PASSING_FILES})
+  # It is highly likely that any non-Fortran files will be dependents of tests.
+  # They are most likely to be .c files, but we cannot guarantee that. Just
+  # check if the files in the test configuration exist. If any dependent files
+  # are added and they are missing from the test configuration, it will most
+  # likely result in a build-time error, so it won't pass by silently.
+  foreach (f ${used_other})
+    if (NOT EXISTS ${f})
+      message(FATAL_ERROR "${msg_missing}\n  ${f}\n${msg_rerun}\n")
+    endif ()
   endforeach()
-
-  # The TESTS variable is expected to be set before the macro is called.
-  gfortran_find_test_files(
-    "${UNSUPPORTED}" "${UNIMPLEMENTED}" "${SKIPPED}" "${FAILING}" "${TESTS}")
-endmacro()
+endfunction()
 
 # Generate a unique target name from the given base and prepend it with the
 # given prefix.
@@ -408,7 +657,7 @@ function(gfortran_add_compile_test expect_error main others fflags ldflags)
 
   # Add the CMake-wide environment variable CMAKE_Fortran_FLAGS
   # CMake escapes spaces. To really get a space (between arguments) use a ;
-  string(REPLACE " " ";" fflags ${fflags} ";" ${CMAKE_Fortran_FLAGS})
+  string(REPLACE " " ";" fflags "${fflags};${CMAKE_Fortran_FLAGS}")
 
   add_custom_command(
     OUTPUT ${out}
@@ -455,85 +704,12 @@ function(gfortran_add_compile_test expect_error main others fflags ldflags)
   llvm_add_test(${target}.test %S/${relpath}/${DUMMY_EXE})
 endfunction()
 
-# Look for "compile" tests in TESTS and create a test for each "main" file that
-# is found.
-function(gfortran_add_compile_tests_from tests)
-  cmake_parse_arguments(GFORTRAN "" "" "FFLAGS;LDFLAGS" ${ARGN})
-
-  foreach (file ${tests})
-    # Whether this test is expected to pass or fail.
-    set(expect_error OFF)
-
-    # For multi-file tests, these are the other files needed. For the "compile"
-    # tests, there don't seem to be any multi-file tests at the time of writing,
-    # but leave it general in case that ever changes.
-    set(others "")
-
-    set(fflags "")
-    set(ldflags "")
-    list(APPEND fflags ${GFORTRAN_FFLAGS})
-    list(APPEND ldflags ${GFORTRAN_LDFLAGS})
-
-    file(STRINGS ${file} lines)
-    foreach (line ${lines})
-      # The "compile" tests have a { dg-do compile } directive.
-      if (line MATCHES "^.*[{][ ]*dg-do[ ]*compile(.*)[}].*$")
-        # TODO: We completely ignore any target directives that may be attached
-        # to the run directives. For now, it seems to be ok, but as these tests
-        # are enabled on more platforms, the target directives might need to be
-        # handled.
-      elseif (line MATCHES "dg-additional-sources[ ]*[\"]?(.+)[\"]?[ ]*[}]")
-        separate_arguments(others UNIX_COMMAND ${CMAKE_MATCH_1})
-        list(TRANSFORM others STRIP)
-      elseif (LINE MATCHES "dg-(additional-)?options [{]?[ ]*\"([^\"]*)\"[ ]*[}]?(.*)")
-        # TODO: We completely ignore any target directives that may be attached
-        # to the run directives. For now, it seems to be ok, but as these tests
-        # are enabled on more platforms, the target directives might need to be
-        # handled.
-        separate_arguments(file_fflags UNIX_COMMAND ${CMAKE_MATCH_2})
-        list(REMOVE_ITEM file_fflags ${FLANG_ERRORING_FFLAGS})
-        list(APPEND fflags ${file_fflags})
-      elseif (line MATCHES "[{][ ]*dg-error[ ]*")
-        # Currently, we don't try to match gfortran's expected errors with
-        # flang's expected error messages. Instead, if gfortran expects an
-        # error, we test that flang produces "some" error.
-        # TODO: It may be more useful to match gfortran's error messages to
-        # flang's in which case we should do something more sophisticated here,
-        # but as a first pass, the more basic approach should do.
-        set(expect_error ON)
-      endif()
-    endforeach()
-
-    # Some files look like they ought to be "compile" tests but they don't
-    # contain a DejaGNU compile directive. Some have an error or other
-    # directive that could be used to infer that they are actually compile tests
-    # but for those that are intended to succeed, there may be no directives
-    # at all. So just treat all files as if they were "compile" tests (even
-    # those that are the main files of execute tests and ones that are
-    # dependencies in multi-file tests).
-    gfortran_add_compile_test(${expect_error} ${file} "${others}" "${fflags}" "${ldflags}")
-  endforeach()
-endfunction()
-
-# Creates a "compile" test from each file in TESTS. It is assumed that the
-# compilation is intended to succeed. Any compile/link flags that the test needs
-# must be passed explicitly.
-function(gfortran_add_compile_tests tests)
-  cmake_parse_arguments(GFORTRAN "" "" "FFLAGS;LDFLAGS" ${ARGN})
-
-  list(APPEND fflags ${GFORTRAN_FFLAGS})
-  list(APPEND ldflags ${GFORTRAN_LDFLAGS})
-
-  foreach (file ${tests})
-    gfortran_add_compile_test(OFF ${file} "" "${fflags}" "${ldflags}")
-  endforeach()
-endfunction()
-
 # Setup an "execute" test. In the case of multi-file tests, MAIN will be the
 # main file. For multi-file tests, OTHERS will be the remaining files needed by
 # the test. FFLAGS are additional compiler flags needed by the test. LDFLAGS
-# are the other linker flags needed by the test.
-function(gfortran_add_execute_test main others fflags ldflags)
+# are the other linker flags needed by the test. If EXPECT_ERROR evaluates to
+# true, the test is expected to fail.
+function(gfortran_add_execute_test expect_error main others fflags ldflags)
   # PREFIX_EXECUTE will have been defined in the subdirectory from which this
   # function is called.
   gfortran_unique_target_name("${PREFIX_EXECUTE}" "${main}" target)
@@ -541,7 +717,13 @@ function(gfortran_add_execute_test main others fflags ldflags)
   get_filename_component(working_dir_name "${working_dir}" NAME)
 
   llvm_test_executable_no_test(${target} ${main} ${others})
-  llvm_test_run(WORKDIR "%S/${working_dir_name}")
+  if (expect_error)
+    llvm_test_run(
+      EXECUTABLE "%b/not --crash %S/${target}"
+      WORKDIR "%S/${working_dir_name}")
+  else ()
+    llvm_test_run(WORKDIR "%S/${working_dir_name}")
+  endif ()
   llvm_add_test_for_target(${target})
 
   target_include_directories(${target}
@@ -570,72 +752,148 @@ function(gfortran_add_execute_test main others fflags ldflags)
   set_target_properties(${target} PROPERTIES LINKER_LANGUAGE Fortran)
 endfunction()
 
-# Look for "execute" tests in TESTS and create a test for each "main" file that
-# is found. In the case of multi-file tests, other files may be needed for the
-# test. Those will be obtained by parsing the DejaGNU directives in the "main"
-# file.
-function(gfortran_add_execute_tests_from tests)
+# The main entry point to populate the tests in the current source directory.
+# This parses the static test configuration file, filters out the disabled
+# tests, sets up the tests and performs some sanity checks. The keyword FFLAGS
+# and LDFLAGS arguments can be used to force specific compile-time and link-time
+# flags to be used when building the tests.
+function(gfortran_populate_tests)
   cmake_parse_arguments(GFORTRAN "" "" "FFLAGS;LDFLAGS" ${ARGN})
 
-  foreach(file ${tests})
-    # The file containing the "run" directive will be the main file.
-    set(main "")
+  # These are used to collect the list of source files that are used in at
+  # least one test. This is used as a sanity check to ensure that all the
+  # source files are accounted for. This is necessary to alert the user in case
+  # the tests were updated by upstream gfortran but the static test
+  # configuration was not re-generated.
+  set(used_fort)
+  set(used_other)
 
-    # For multi-file tests, these are the other files needed.
-    set(others "")
+  string(REPLACE "${CMAKE_SOURCE_DIR}/" "" pwd "${CMAKE_CURRENT_SOURCE_DIR}")
+  message(STATUS "Adding directory ${pwd}")
 
-    # Any flags needed to compile the test. These will be flang-specific flags.
-    # Directives in the test files may specify additional flags needed by the
-    # test. Those will be parsed in gfortran_add_execute_test.
-    set(fflags "")
-    set(ldflags "")
-    list(APPEND fflags ${GFORTRAN_FFLAGS})
-    list(APPEND ldflags ${GFORTRAN_LDFLAGS})
+  # The target triple is roughly of the form ${arch}-${vendor}-${sys}. Cmake
+  # has no concept of a vendor, so we set it to "unknown". The targets
+  # specification in the tests generally ignores the vendor and only matches
+  # against either the architecture or the system, so this is ok.
+  string(TOLOWER "${CMAKE_SYSTEM_PROCESSOR}" arch)
+  string(TOLOWER "${CMAKE_SYSTEM_NAME}" sys)
+  set(triple "${arch}-unknown-${sys}")
 
-    file(STRINGS ${file} lines)
-    foreach (line ${lines})
-      # The "execute" tests have a { dg-do run }, or a { dg-lto-do run }
-      # directive.
-      if (line MATCHES "^.*[{][ ]*dg-(lto-)?do[ ]*run (.*)[}]$")
-        # TODO: We completely ignore any target directives that may be attached
-        # to the run directives. For now, it seems to be ok, but as these tests
-        # are enabled on more platforms, the target directives might need to be
-        # handled.
-        set(main "${file}")
-      elseif (line MATCHES "dg-additional-sources[ ]*[\"]?(.+)[\"]?[ ]*[}]")
-        separate_arguments(others UNIX_COMMAND ${CMAKE_MATCH_1})
-        list(TRANSFORM others STRIP)
-      elseif (line MATCHES "dg-(additional-)?options [{]?[ ]*\"([^\"]*)\"[ ]*[}]?(.*)")
-        # TODO: We completely ignore any target-specific options that may be
-        # present. These are usually in the form of target directives. For now,
-        # it seems to be ok, but as these tests are enabled on more platforms,
-        # target directives might need to be handled.
-        separate_arguments(file_fflags UNIX_COMMAND ${CMAKE_MATCH_2})
-        list(REMOVE_ITEM file_fflags ${FLANG_ERRORING_FFLAGS})
-        list(APPEND fflags ${file_fflags})
-      endif()
+  set(disabled)
+  gfortran_populate_disabled_tests(disabled)
+
+  file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/tests.cmake lines)
+  foreach (line ${lines})
+    # Skip comment lines where the first non-whitespace character is a #.
+    if (line MATCHES "^[ ]*#")
+      continue()
+    endif()
+
+    list(GET line 1 sources_t)
+    string(REPLACE " " ";" sources "${sources_t}")
+    list(TRANSFORM sources PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/)
+
+    # The tests in the configuration must be added to the used list even if the
+    # test is disabled because the sanity check will expect that the list of
+    # Fortran files in the directory exactly matches the list of used Fortran
+    # files.
+    set(rest)
+    list(LENGTH sources nsources)
+    math(EXPR iend "${nsources} - 1")
+    foreach (i RANGE ${iend})
+      list(GET sources ${i} source)
+      if (source MATCHES "^.+[.][Ff].*$")
+        list(APPEND used_fort ${source})
+      else ()
+        list(APPEND used_other ${source})
+      endif ()
+      if (${i} GREATER 0)
+        list(APPEND rest ${source})
+      endif ()
     endforeach()
 
-    # Since any dependent files could also be processed by this function, there
-    # is no guarantee that main will have been set.
-    if (main)
-      gfortran_add_execute_test(${main} "${others}" "${fflags}" "${ldflags}")
+    # If the test is only allowed to run on certain targets, process those.
+    list(GET line 4 incl_t)
+    if (incl_t)
+      # If there are any explicit include targets, then we should assume that
+      # we cannot run the test on the current platform unless there is at
+      # least one match.
+      set(exclude ON)
+      string(REPLACE " " ";" includes ${incl_t})
+      foreach (incl ${includes})
+        string(REGEX MATCH ${incl} m ${triple})
+        if (m)
+          set(exclude OFF)
+        endif ()
+      endforeach()
+
+      # The current platform was not matched, so we should not run the test.
+      if (exclude)
+        continue()
+      endif ()
+    endif ()
+
+    # If the test is explicitly disabled on certain targets, process those.
+    list(GET line 5 excl_t)
+    if (excl_t)
+      # If there are any targets to explicitly exclude, then we should assume
+      # that we can run the test on this platform unless there is at least
+      # one match.
+      set(exclude OFF)
+      string(REPLACE " " ";" excludes ${excl_t})
+      foreach (excl ${excludes})
+        string(REGEX MATCH ${excl} m ${triple})
+        if (m)
+          set(exclude ON)
+        endif ()
+      endforeach ()
+
+      # The current platform was matched, so we should not run the test.
+      if (exclude)
+        continue ()
+      endif()
+    endif ()
+
+    # Only the main file will be in the list of disabled tests. If it is, move
+    # on to the next test in the configuration.
+    list(GET sources 0 main)
+    list(FIND disabled ${main} i)
+    if (NOT i EQUAL -1)
+      continue ()
+    endif()
+
+    # The test was not excluded and not disabled. Now we can process the other
+    # parameters and set up the test.
+    set(xfail OFF)
+    list(GET line 2 xfail_t)
+    if (xfail_t STREQUAL "xfail")
+      set(xfail ON)
+    endif ()
+
+    set(fflags)
+    list(GET line 3 options_t)
+    string(REPLACE " " ";" file_fflags "${options_t}")
+    list(REMOVE_ITEM file_fflags ${FLANG_ERRORING_FFLAGS})
+    list(APPEND fflags ${GFORTRAN_FFLAGS})
+    list(APPEND fflags ${file_fflags})
+
+    set(ldflags)
+    list(APPEND ldflags ${GFORTRAN_LDFLAGS})
+
+    list(GET line 0 kind)
+    if (kind STREQUAL "run")
+      gfortran_add_execute_test(${xfail} ${main} "${rest}" "${fflags}" "${ldflags}")
+    else()
+      # FIXME: For now, we treat all non-execute tests as compile tests, but we
+      # probably should do something more sensible for the "preprocess",
+      # "assemble", and "link" tests.
+      gfortran_add_compile_test(${xfail} ${main} "${rest}" "${fflags}" "${ldflags}")
     endif()
   endforeach()
-endfunction()
 
-# Creates an "execute" test from each file in TESTS. The tests are assumed to
-# not contain any additional DejaGNU directives. Any compiler/linker flags
-# needed by the test must be passed explicitly.
-function(gfortran_add_execute_tests tests)
-  cmake_parse_arguments(GFORTRAN "" "" "FFLAGS;LDFLAGS" ${ARGN})
-
-  list(APPEND fflags ${GFORTRAN_FFLAGS})
-  list(APPEND ldflags ${GFORTRAN_LDFLAGS})
-
-  foreach(file ${tests})
-    gfortran_add_execute_test(${file} "" "${fflags}" "${ldflags}")
-  endforeach()
+  # It would be nice to do the sanity check early, but that would complicate
+  # this code since cmake is not the nicest programming language.
+  gfortran_check_test_config("${used_fort}" "${used_other}")
 endfunction()
 
 set(HEADER_SEARCH_PATH "${TEST_SUITE_FORTRAN_ISO_C_HEADER_DIR}")
