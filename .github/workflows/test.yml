@@ -25,7 +25,7 @@ jobs:
         run: |
           brew update
           brew install ninja
-          python3 -m pip install --user --use-pep517 lit
+          python3 -m pip install --user --use-pep517 --break-system-packages lit
 
       - name: Check out the test suite.
         uses: actions/checkout@v2
