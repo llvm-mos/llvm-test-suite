@@ -138,8 +138,10 @@ set(FLANG_ERRORING_FFLAGS
   -fdiagnostics-format=json
   -fdiagnostics-show-option
   -fdollar-ok
+  -fdump-fortran-original
   -fdump-ipa-cp-details
   -fdump-ipa-fnsummary-details
+  -fdump-ipa-inline
   -fdump-ipa-inline-details
   -fdump-ipa-sra-details
   -fdump-rtl-combine
@@ -149,6 +151,7 @@ set(FLANG_ERRORING_FFLAGS
   -fdump-tree-cunrolli-details
   -fdump-tree-dom2
   -fdump-tree-dom2-details
+  -fdump-tree-dse-details
   -fdump-tree-forwprop2
   -fdump-tree-fre1
   -fdump-tree-gimple
@@ -470,28 +473,25 @@ function(gfortran_populate_disabled_tests out)
   list(APPEND skipped ${SKIPPED_FILES})
   list(APPEND failing ${FAILING_FILES})
 
-  # do the same for any requested feature extentions
+  # do the same for any requested feature extensions
   foreach(feature ${TEST_SUITE_FORTRAN_FEATURES})
     set(UNSUPPORTED_FILES "")
     set(UNIMPLEMENTED_FILES "")
     set(SKIPPED_FILES "")
     set(FAILING_FILES "")
-    include(${CMAKE_CURRENT_SOURCE_DIR}/DisabledFiles${feature}.cmake)
+    include(${CMAKE_CURRENT_SOURCE_DIR}/DisabledFiles_${feature}.cmake)
     list(APPEND unsupported ${UNSUPPORTED_FILES})
     list(APPEND unimplemented ${UNIMPLEMENTED_FILES})
     list(APPEND skipped ${SKIPPED_FILES})
     list(APPEND failing ${FAILING_FILES})
 
     # enable any tests that now pass for this feature
-    set(SUPPORTED_FILES "")
-    set(IMPLEMENTED_FILES "")
-    set(UNSKIPPED_FILES "")
-    set(PASSING_FILES "")
-    include(${CMAKE_CURRENT_SOURCE_DIR}/EnabledFiles${feature}.cmake)
-    list(REMOVE_ITEM unsupported ${SUPPORTED_FILES})
-    list(REMOVE_ITEM unimplemented ${IMPLEMENTED_FILES})
-    list(REMOVE_ITEM skipped ${UNSKIPPED_FILES})
-    list(REMOVE_ITEM failing ${PASSING_FILES})
+    set(ENABLED_FILES "")
+    include(${CMAKE_CURRENT_SOURCE_DIR}/EnabledFiles_${feature}.cmake)
+    list(REMOVE_ITEM unsupported ${ENABLED_FILES})
+    list(REMOVE_ITEM unimplemented ${ENABLED_FILES})
+    list(REMOVE_ITEM skipped ${ENABLED_FILES})
+    list(REMOVE_ITEM failing ${ENABLED_FILES})
   endforeach()
 
   set(disabled "")
@@ -508,7 +508,7 @@ function(gfortran_populate_disabled_tests out)
   # and unimplemented tests since some could be enabled once some feature is
   # implemented. Eventually, all the TEST_SUITE_FORTRAN_FORCE_* options (perhaps
   # with the exception of TEST_SUITE_FORTRAN_FORCE_UNSUPPORTED_TESTS) should
-  # become redundant and removed.
+  # become redundant and should be removed.
   if (NOT TEST_SUITE_FORTRAN_FORCE_ALL_TESTS AND
       NOT TEST_SUITE_FORTRAN_FORCE_UNIMPLEMENTED_TESTS)
     list(APPEND disabled ${unimplemented})
