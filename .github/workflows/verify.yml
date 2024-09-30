@@ -51,7 +51,7 @@ jobs:
           cd ..
           rm -rf staging
       - name: Upload the compiler.
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: compiler
           path: compiler.tar.zst
