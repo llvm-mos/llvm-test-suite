@@ -5,7 +5,6 @@ sha3
 rdm
 lse
 sha2
-sha1
 aes
 pmull
 rcpc
@@ -25,4 +24,23 @@ fp
 crc
 sme
 sme2
+ls64
+f32mm
+f64mm
+fp16fml
+frintts
+predres
+rcpc3
+rng
+sve
+sve2
+sve2-bitperm
+sve2-sha3
+sve2-sm4
+wfxt
+sb
+sm4
+sme-f64f64
+sme-i16i64
+mops
 exit 0

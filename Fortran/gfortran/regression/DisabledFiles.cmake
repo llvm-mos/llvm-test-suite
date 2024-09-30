@@ -1052,6 +1052,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   io_real_boz2.f90
   io_real_boz_4.f90
   io_real_boz_5.f90
+  namelist_96.f90 # real data for integer NAMELIST input
   no_unit_error_1.f90
   pointer_check_10.f90
   pointer_remapping_6.f08
@@ -1301,6 +1302,8 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   pr95614_2.f90
   pr95882_3.f90
   recursive_check_3.f90
+  restricted_expression_2.f90
+  restricted_expression_3.f90
   return_1.f90
   size_kind_3.f90
   string_3.f90
