@@ -6,7 +6,6 @@ rdm
 lse
 sha2
 aes
-pmull
 rcpc
 rcpc2
 fcma
@@ -17,7 +16,7 @@ bf16
 i8mm
 dit
 fp16
-ssbs2
+ssbs
 bti
 simd
 fp
@@ -34,6 +33,7 @@ rcpc3
 rng
 sve
 sve2
+sve2-aes
 sve2-bitperm
 sve2-sha3
 sve2-sm4
@@ -43,4 +43,5 @@ sm4
 sme-f64f64
 sme-i16i64
 mops
+memtag
 exit 0
