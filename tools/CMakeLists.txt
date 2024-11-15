@@ -47,8 +47,6 @@ endif()
 
 if(NOT ARCH STREQUAL "MOS")
   add_executable(not ${CMAKE_CURRENT_SOURCE_DIR}/not.cpp)
+  add_subdirectory(test)
 endif()
 
-# Always add the test subdirectory. After all, we really should test these
-# tools.
-add_subdirectory(test)
