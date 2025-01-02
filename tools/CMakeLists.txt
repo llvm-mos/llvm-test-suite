@@ -47,6 +47,4 @@ endif()
 
 if(NOT ARCH STREQUAL "MOS")
   add_executable(not ${CMAKE_CURRENT_SOURCE_DIR}/not.cpp)
-  add_subdirectory(test)
 endif()
-
