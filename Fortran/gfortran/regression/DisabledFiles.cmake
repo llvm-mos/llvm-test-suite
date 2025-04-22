@@ -33,10 +33,6 @@ file(GLOB UNSUPPORTED_FILES CONFIGURE_DEPENDS
   dec_io_2a.f90                   # fseek
   fgetc_1.f90                     # fgetc, fputc
   fgetc_2.f90                     # fgetc, fputc
-  fseek.f90                       # fseek
-  ftell_1.f90                     # ftell
-  ftell_2.f90                     # ftell
-  ftell_3.f90                     # ftell
   inquire_10.f90                  # getcwd
   int_conv_1.f90                  # int2, int8
   itime_idate_1.f                 # itime, idate
@@ -767,6 +763,10 @@ file(GLOB SKIPPED_FILES CONFIGURE_DEPENDS
   # error: Result of pure function may not have an impure FINAL subroutine
   finalize_51.f90
 
+  # error: local non-SAVE variable has coarray component
+  # Consider using override.yaml to enable this test but expect different behavior
+  coarray_lib_realloc_1.f90
+
   # --------------------------------------------------------------------------
   #
   # These tests are skipped for a variety of reasons that don't fit well in
@@ -1042,6 +1042,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   namelist_96.f90 # real data for integer NAMELIST input
   no_unit_error_1.f90
   pointer_check_10.f90
+  pointer_check_11.f90 # test exhibits UB, sometimes at O3 it hangs forever
   pointer_remapping_6.f08
   unpack_bounds_1.f90
 
@@ -1182,6 +1183,8 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   bind_c_usage_28.f90
   c_loc_tests_11.f03
   coarray_collectives_2.f90
+  coarray_collectives_10.f90
+  coarray_collectives_13.f90
   implicit_14.f90
   pr90290.f90
   pr91564.f90
@@ -1626,9 +1629,29 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
 
   # Tests looking for runtime errors (e.g., bound checks). Correctly
   # caught by flang runtime, but not caught with Flang optimizations,
-  # e.g. due to intrinsics inlining. These can pass with -O0:
+  # e.g. due to intrinsics inlining.
+  # Until https://github.com/orgs/llvm/projects/12?pane=issue&itemId=29048733
+  # is implemented, they can only pass at -O0:
+  all_bounds_1.f90
   cshift_bounds_3.f90
   cshift_bounds_4.f90
+  inline_matmul_15.f90
+  matmul_5.f90
+  matmul_bounds_11.f90
+  matmul_bounds_13.f90
+  matmul_bounds_15.f
+  matmul_bounds_16.f
+  matmul_bounds_7.f90
+  matmul_bounds_9.f90
+  maxloc_bounds_1.f90
+  maxloc_bounds_2.f90
+  maxloc_bounds_3.f90
+  maxloc_bounds_4.f90
+  maxloc_bounds_6.f90
+  maxloc_bounds_7.f90
+  maxloc_bounds_8.f90
+  pack_bounds_1.f90
+  spread_bounds_1.f90
 
   # Bad test, assigning an 11 elements array to a 12 elements array.
   transfer_array_intrinsic_4.f90
@@ -1846,4 +1869,9 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
 
   # Tests expect semantic errors that are not raised.
   c_sizeof_7.f90
+
+  # We allow USE association of a subprogram's name into its scope, with a portability
+  # warning, so long as it is not used in that scope.
+  use_15.f90
+  use_rename_8.f90
 )
