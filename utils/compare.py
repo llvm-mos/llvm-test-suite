@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Tool to filter, organize, compare and display benchmarking results. Usefull
 for smaller datasets. It works great with a few dozen runs it is not designed to
 deal with hundreds.
@@ -118,6 +118,13 @@ def readmulti(filenames):
     # Merge datasets
     d = pd.concat(datasets, axis=0, names=["run"], keys=datasetnames)
     return d
+
+
+def merge_values(values, merge_function):
+    # Drop the "hash" column because it's irreducible for averages.
+    if merge_function in [pd.DataFrame.mean, pd.DataFrame.median] and "hash" in values.columns:
+        values = values[[c for c in values.columns if c != "hash"]]
+    return values.groupby(level=1).apply(merge_function)
 
 
 def get_values(values):
@@ -352,6 +359,12 @@ def main():
         default=pd.DataFrame.min,
     )
     parser.add_argument(
+        "--merge-median",
+        action="store_const",
+        dest="merge_function",
+        const=pd.DataFrame.median,
+    )
+    parser.add_argument(
         "--merge-min",
         action="store_const",
         dest="merge_function",
@@ -417,11 +430,11 @@ def main():
         lhs = files[0:split]
         rhs = files[split + 1 :]
 
-        # Filter minimum of lhs and rhs
+        # Combine the multiple left and right hand sides.
         lhs_d = readmulti(lhs)
-        lhs_merged = lhs_d.groupby(level=1).apply(config.merge_function)
+        lhs_merged = merge_values(lhs_d, config.merge_function)
         rhs_d = readmulti(rhs)
-        rhs_merged = rhs_d.groupby(level=1).apply(config.merge_function)
+        rhs_merged = merge_values(rhs_d, config.merge_function)
 
         # Combine to new dataframe
         data = pd.concat(
