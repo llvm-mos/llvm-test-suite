@@ -54,6 +54,7 @@ endif()
 
 list(APPEND LDFLAGS -lm)
 list(APPEND CFLAGS -Wno-implicit-int)
+list(APPEND CFLAGS -Wno-error=incompatible-pointer-types)
 llvm_singlesource(PREFIX "Regression-C-")
 
 if(ARCH STREQUAL "MOS")

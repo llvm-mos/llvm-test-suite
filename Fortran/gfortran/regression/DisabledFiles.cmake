@@ -1617,6 +1617,7 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   all_bounds_1.f90
   cshift_bounds_3.f90
   cshift_bounds_4.f90
+  eoshift_bounds_1.f90
   inline_matmul_15.f90
   matmul_5.f90
   matmul_bounds_11.f90
@@ -1757,6 +1758,10 @@ file(GLOB FAILING_FILES CONFIGURE_DEPENDS
   # Depends on gfortran emitting "Infinity" for formatted output;
   # some compilers, including f18, emit "Inf".
   large_real_kind_1.f90
+
+  # gfortran allows pointers to be associated with zero sized entities.
+  # flang doesn't allow it per F2023, 16.9.20, p5, case (v)-(vi)
+  pointer_init_8.f90
 
   # Require -finit-local-zero or similar.
   dec_init_2.f90 # needs -finit-derived -finit-integer=42 &c.
