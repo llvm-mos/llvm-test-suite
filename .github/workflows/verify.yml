@@ -107,4 +107,4 @@ jobs:
       - name: Run the test suite.
         run: |
           cd llvm-test-suite/build
-          $GITHUB_WORKSPACE/llvm-mos/build/bin/llvm-lit .
+          $GITHUB_WORKSPACE/llvm-mos/build/bin/llvm-lit -v .

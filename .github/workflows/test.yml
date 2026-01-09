@@ -55,4 +55,4 @@ jobs:
       - name: Run the test suite.
         run: |
           cd build
-          $(python3 -m site --user-base)/bin/lit .
+          $(python3 -m site --user-base)/bin/lit -v .
