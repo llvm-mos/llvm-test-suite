@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772598038221,
+  "lastUpdate": 1772598508866,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -198782,6 +198782,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/03a37fb2d52e39d962f4cb7a5d3b791f1571af3c"
         },
         "date": 1772598024754,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23794106,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23794106 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ale.alessandro.grassi@gmail.com",
+            "name": "Alessandro",
+            "username": "alessandrograssi-dev"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "45371581201110552a51b3b1de2aae1a0b0af89c",
+          "message": "utils: Merge Mesen 1 and 2 printf scripts (#432)\n\nUse runtime API detection to support both Mesen versions\nwith a single Lua script.",
+          "timestamp": "2026-03-03T20:08:33-08:00",
+          "tree_id": "aa91fdbac3b68d17ca50741a2872c4686114423c",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/45371581201110552a51b3b1de2aae1a0b0af89c"
+        },
+        "date": 1772598493240,
         "tool": "googlecpp",
         "benches": [
           {
