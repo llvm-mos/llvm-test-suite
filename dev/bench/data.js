@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772526672078,
+  "lastUpdate": 1772594434365,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -198614,6 +198614,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/9f5e9987ba6dcb99294e26aa62425edf299a97b5"
         },
         "date": 1772526659358,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23794106,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23794106 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Mlund@mac.com",
+            "name": "Mikael Lund",
+            "username": "mlund"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b139f8d03c4e036582c176d149f942878ecd8c16",
+          "message": "Add MEGA65 graphical demo examples (#429)\n\nEnhance the plasma example with palette cycling colors using a\n16-shade blue gradient rotated through palette RAM each frame,\nand circular-dithered charset for smooth gradients.\n\nAdd three new examples:\n\n- mandelbrot.cc: 80-column fixed-point Mandelbrot with ordered-dither\n  charset and C64 color palette\n- mandelbrot_fcm.cc: 320x200 Full Color Mode Mandelbrot using VIC-IV\n  FCM tiles, hardware math accelerator, and DMA to graphics memory\n  at $40000+\n- vector_logo.cc: real-time 3D rotating \"LLVM-MOS\" wireframe logo on\n  hires bitmap with breathing zoom, running at 3.5 MHz\n\nMEGA65 features used across examples:\n- VIC-IV Full Color Mode (CHR16 + FCLRHI)\n- Hardware math accelerator ($D768) for fixed-point multiply\n- Enhanced DMA controller for bitmap clear and memory copy\n- VIC-IV extended screen/char pointers\n- Palette RAM ($D100) for custom color gradients\n- 80-column and 40-column text modes\n- C64-compatible Bit Map Mode (BMM) via VIC-IV\n\nCo-authored-by: mlund <mlund@localhost>\nCo-authored-by: Claude AI Opus 4.6 <noreply@anthropic.com>\nCo-authored-by: Mikael Lund <mlund@users.noreply.github.com>",
+          "timestamp": "2026-03-03T19:08:07-08:00",
+          "tree_id": "874d3d58dba3310adc2e40b4566081171153431e",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/b139f8d03c4e036582c176d149f942878ecd8c16"
+        },
+        "date": 1772594418457,
         "tool": "googlecpp",
         "benches": [
           {
