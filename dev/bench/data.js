@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1774773010134,
+  "lastUpdate": 1774821461875,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -201026,6 +201026,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/9f5e9987ba6dcb99294e26aa62425edf299a97b5"
         },
         "date": 1774772996881,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23794106,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23794106 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "74131798+Kyuchumimo@users.noreply.github.com",
+            "name": "Kyuchumimo",
+            "username": "Kyuchumimo"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "028a510062133a68c75993968bae0d700ca14947",
+          "message": "Fixed supervision.h typo in SV_AUDIO_NOISE macro (#435)",
+          "timestamp": "2026-03-29T14:46:14-07:00",
+          "tree_id": "6c57acb101f87bde5535c75e8a95eee8cdb9ced7",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/028a510062133a68c75993968bae0d700ca14947"
+        },
+        "date": 1774821448834,
         "tool": "googlecpp",
         "benches": [
           {
