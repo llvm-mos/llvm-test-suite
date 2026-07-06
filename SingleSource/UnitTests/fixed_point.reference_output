@@ -49,6 +49,14 @@ mul int small signed 32.39
 mul fp small signed 35.59
 mul int overflow signed 88.29
 mul fp overflow signed 147.70
+div int signed no remainder -6.00
+div fp signed no rounding -4.80
+div int large signed -16.93
+div fp large signed -15.41
+div int unsigned no remainder 6.00
+div fp unsigned no rounding 4.80
+div int large unsigned 66.70
+div fp large unsigned 60.69
 sign < unsigned true
 sign > unsigned false
 sign == unsigned false

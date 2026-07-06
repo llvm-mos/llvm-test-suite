@@ -187,6 +187,18 @@ int main(void) {
   print_float("mul int overflow signed", small_unsigned * 3);
   print_float("mul fp overflow signed", small_unsigned * 3.3_8_8);
 
+  // Division checks
+  auto divsignval = -12.0_8_8;
+  auto divunsignval = 12.0_8_8;
+  print_float("div int signed no remainder", divsignval / 2);
+  print_float("div fp signed no rounding", divsignval / 2.5_8_8);
+  print_float("div int large signed", small_signed / 3);
+  print_float("div fp large signed", small_signed / 3.3_8_8);
+  print_float("div int unsigned no remainder", divunsignval / 2);
+  print_float("div fp unsigned no rounding", divunsignval / 2.5_8_8);
+  print_float("div int large unsigned", small_unsigned / 3);
+  print_float("div fp large unsigned", small_unsigned / 3.3_u8_8);
+
   // Comparison checks
   printf("sign < unsigned %s\n", (-10.0_8_8 < 10.0_8_8) ? "true" : "false");
   printf("sign > unsigned %s\n", (-10.0_8_8 > 10.0_8_8) ? "true" : "false");
