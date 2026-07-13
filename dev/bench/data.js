@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1783849436081,
+  "lastUpdate": 1783911490277,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -209670,6 +209670,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/9f5e9987ba6dcb99294e26aa62425edf299a97b5"
         },
         "date": 1783849420563,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23794187,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23794187 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jroweboy@gmail.com",
+            "name": "James Rowe",
+            "username": "jroweboy"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b51440551746d9c3a12141a1c9cbc6be80d99546",
+          "message": "Small fixes to soa.h and fixed_point.h (#442)\n\n* Remove the pragma unroll in soa.h\n\nChanges from pragma unrolled loops into recursive tail call functions\nin order to make the debugging info created for these lines simpler.\nWith pragma unroll, I noticed that the debug info could not resolve\nthe soa inlined accessors properly because the unrolling destroyed\nthe line information during an optimization pass. This new approach\nperforms identically (as LLVM properly unrolls the recursion) and\nretains the debug information in my testing.\n\n* Use default constructors to make FixedPoint trivial\n\nThis allows users to use the FixedPoint class in classes that require\ntrivial types such as Soa structs. This is safe because the previous\nconstructors only did a byte for byte copy anyway (the default behavior)\n\n* Use correct shift amount for fixed point division\n\nThis was silently broken before due to the infrequent use of division on the platform",
+          "timestamp": "2026-07-12T19:45:32-07:00",
+          "tree_id": "38f6aa05ede29f5932282c6c6084934d90e5854d",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/b51440551746d9c3a12141a1c9cbc6be80d99546"
+        },
+        "date": 1783911474787,
         "tool": "googlecpp",
         "benches": [
           {
