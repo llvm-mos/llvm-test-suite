@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1784195774086,
+  "lastUpdate": 1784218258025,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -210154,6 +210154,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/9f5e9987ba6dcb99294e26aa62425edf299a97b5"
         },
         "date": 1784195762368,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23794187,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23794187 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jyvinet@hotmail.ca",
+            "name": "Jean-Yves Vinet",
+            "username": "vinej"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d0b137e5fd443fda1f70bf98ecd739cc131e18f9",
+          "message": "[cx16] Fix vpoke() reading the address from the wrong registers (#443)\n\nvpoke.s contradicted its own header comment. The comment has it right --\naddr occupies X (byte 0), __rc2 (byte 1), __rc3 (byte 2), __rc4 (byte 3)\n-- but the code loaded __rc4, __rc3 and __rc2 into ADDR_H, ADDR_M and\nADDR_L: address bytes 3, 2 and 1 where it wants 2, 1 and 0. It never read\nX at all, so the low byte was dropped and every write landed at addr >> 8.\nvpoke(0xAB, 0x08000) stored at $00080, and vpoke(0xCD, 0x01234) at $00012.\n\nBoth routines are ports of cc65's, where the arguments arrive on a\nsoftware stack and must be remapped. vpeek was remapped correctly and is\nwhat this now mirrors; vpoke looks like it assumed addr began at __rc2, as\nit would have if data had not taken A.\n\nTaking the low byte straight from X also makes the routine one\ninstruction shorter.\n\nCo-authored-by: Claude Fable 5 <noreply@anthropic.com>",
+          "timestamp": "2026-07-16T08:56:48-07:00",
+          "tree_id": "30485cb982bae69125eabd6b01f16531304e0d14",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/d0b137e5fd443fda1f70bf98ecd739cc131e18f9"
+        },
+        "date": 1784218243905,
         "tool": "googlecpp",
         "benches": [
           {
