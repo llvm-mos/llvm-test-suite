@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1786092437409,
+  "lastUpdate": 1786143696191,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -212217,6 +212217,90 @@ window.BENCHMARK_DATA = {
             "value": 23794187,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 23794187 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "committer": {
+            "email": "mysterymath@gmail.com",
+            "name": "Daniel Thornburgh",
+            "username": "mysterymath"
+          },
+          "distinct": true,
+          "id": "7e47e7dff564f4989129ea4131d2f9db9650513e",
+          "message": "[NES] Do not read a memory region's end from the location counter\n\n.dpcm and MMC3's .reset both need \"wherever c_readonly / prg_rom_fixed has\ngot to so far\", clamped up to a fixed address, and both asked for it with `.`\nin their output section address expression.  That never meant what it looked\nlike: `.` is a single global location counter, not rebased per memory region,\nso in an address expression it holds the end of whichever output section was\nlaid out last -- for a banked ROM, usually a .prg_rom_N tens of KiB away in an\nunrelated region.\n\nIt worked because lld used to overwrite `.` with the region's next free\naddress before evaluating the expression.  llvm/llvm-project#197293 removed\nthat to match GNU ld, which has always evaluated the global counter here, and\nit is listed as a breaking change in the LLD 24 release notes.  Verified: GNU\nld 2.47 and current lld agree on this, released lld 23 is the odd one out.\n\nWithout it, .dpcm and .reset land wherever the last bank section ended and\noverflow their region: all five nes-mmc1 tests and all seven nes-mmc3 tests\nfail to link, and nes-mmc3/fixed reports .rodata overlapping .reset.  nes-nrom,\nnes-unrom-512 and nes-gtrom escaped only because the section preceding theirs\nhappens to belong to the same region -- on nes-mmc1 that was .prg_rom_fixed,\nwhich is dropped when empty, which is what exposed this.\n\nInside an output section *body* `.` is the section's own address, which does\ncome from the region, so an empty section allocated to the region captures the\nvalue.  MAX() also replaces the ternaries, which were spelling MAX the long\nway.\n\nRelinking every NES test both ways: the twelve previously failing links now\nsucceed, and every ROM image and .mlb label file that linked before is\nbyte-identical.  The .elf gains one zero-size, non-loadable section and its\nsymbol.",
+          "timestamp": "2026-08-07T15:48:43-07:00",
+          "tree_id": "d4cfcd0ceb7d1dbe7363fdc47dedeab20382a626",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/7e47e7dff564f4989129ea4131d2f9db9650513e"
+        },
+        "date": 1786143681105,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23921717,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23921717 cycles\nthreads: 1"
           },
           {
             "name": "CoreMark",
