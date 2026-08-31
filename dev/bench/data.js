@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1788133026049,
+  "lastUpdate": 1788136146704,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -214726,6 +214726,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/9f5e9987ba6dcb99294e26aa62425edf299a97b5"
         },
         "date": 1788133010866,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2311826,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2311826 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1502092,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1502092 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 38847,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 38847 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23921717,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23921717 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 115,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 115 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "johnwbyrd@gmail.com",
+            "name": "John Byrd",
+            "username": "johnwbyrd"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ad908820f22542bad2ce027383398fd6c058fd27",
+          "message": "Stop __set_heap_size from trashing soft stack (#410)\n\n* New global default stack size setting\n__set_heap_limit now sanity checks against stack; users can  now grab all memory for heap\nmos-sim flushes every output character -- no waiting for output\n\nThese changes were necessary to be able to get pi.c to calculate to 50000 digits on the Commodore 64.  Memory allocation had a tendency to walk all over the stack; this puts some sanity checks in place to prevent others from doing the same.  Default behavior is still 4 KB for heap.\n\n* Remove unused string from malloc.cc\n\n---------\n\nCo-authored-by: Daniel Thornburgh <mysterymath@gmail.com>",
+          "timestamp": "2026-08-30T17:15:30-07:00",
+          "tree_id": "a29681ca57a90b60daad7b39f944d93bb923ceaf",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/ad908820f22542bad2ce027383398fd6c058fd27"
+        },
+        "date": 1788136131514,
         "tool": "googlecpp",
         "benches": [
           {
