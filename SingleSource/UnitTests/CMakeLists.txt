@@ -16,8 +16,7 @@ endif()
 
 list(APPEND CFLAGS -Wno-implicit-function-declaration -Wno-implicit-int)
 
-# FIXME: Disable SJLJ tests for now, until EH edges are represented.
-# add_subdirectory(SetjmpLongjmp)
+add_subdirectory(SetjmpLongjmp)
 if(TARGET_OS STREQUAL "Darwin")
   add_subdirectory(ObjC)
   add_subdirectory(ObjC++)

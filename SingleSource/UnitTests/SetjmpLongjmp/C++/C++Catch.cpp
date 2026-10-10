@@ -12,7 +12,10 @@ jmp_buf buf;
 
 void foo()
 {
-  C Obj("foo");
+  // longjmp must not skip an automatic object's non-trivial destructor.
+  {
+    C Obj("foo");
+  }
   printf("Longjmping from foo() function\n");
   longjmp(buf, 37);
 }

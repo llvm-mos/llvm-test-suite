@@ -1,4 +1,5 @@
 #include <setjmp.h>
+#include <stdio.h>
 
 void baz(jmp_buf buf)
 {
@@ -9,14 +10,19 @@ void baz(jmp_buf buf)
 int main()
 {
   jmp_buf buf;
-  int ret;
 
   printf("Inside main\n");
 
-  if ((ret = setjmp(buf)) != 0) {
-    printf("ret == %d\n", ret);
-  } else {
+  switch (setjmp(buf)) {
+  case 0:
     baz(buf);
+    break;
+  case 37:
+    printf("ret == 37\n");
+    break;
+  default:
+    printf("Unexpected setjmp return value\n");
+    return 1;
   }
 
   return 0;

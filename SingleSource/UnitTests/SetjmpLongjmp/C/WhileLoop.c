@@ -13,10 +13,9 @@ int main()
 
   while (i--) {
     jmp_buf buf;
-    int ret;
-
-    if ((ret = setjmp(buf)) != 0) {
-      printf("Return from longjmp: %d\n", ret);
+    if (setjmp(buf)) {
+      // i is unchanged between setjmp and longjmp, including the zero argument.
+      printf("Return from longjmp: %d\n", i ? i : 1);
     } else {
       foo(buf, i);
     }
