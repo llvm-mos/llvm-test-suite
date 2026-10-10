@@ -1,0 +1,5 @@
+Destroying C in function foo
+Longjmping from foo() function
+longjmp throw NOT caught in catch(...) block
+Destroying C in function main
+exit 0

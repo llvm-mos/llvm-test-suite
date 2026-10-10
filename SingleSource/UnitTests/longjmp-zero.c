@@ -11,12 +11,25 @@ static jmp_buf env;
 // because it changes between setjmp and longjmp.
 static int jump(int val) {
   volatile int jumped = 0;
-  int ret = setjmp(env);
-  if (!jumped) {
-    jumped = 1;
-    longjmp(env, val);
+  switch (setjmp(env)) {
+  case 0:
+    if (!jumped) {
+      jumped = 1;
+      longjmp(env, val);
+    }
+    return 0;
+  case 1:
+    return 1;
+  case 7:
+    return 7;
+  case 256:
+    return 256;
+  case -1:
+    return -1;
+  default:
+    // 2 is outside the input vector and signals an unexpected return value.
+    return 2;
   }
-  return ret;
 }
 
 int main(void) {

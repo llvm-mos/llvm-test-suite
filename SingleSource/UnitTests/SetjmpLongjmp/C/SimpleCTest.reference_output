@@ -1,0 +1,4 @@
+Inside main
+Inside baz
+ret == 37
+exit 0
