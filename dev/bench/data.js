@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1791600493268,
+  "lastUpdate": 1791641131479,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -219222,6 +219222,86 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/b2b09b72dfca4f8f6fbf1bc3f0ff6c2ccbd9b232"
         },
         "date": 1791600482474,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2275900,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2275900 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1567858,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1567858 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 33933,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 33933 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23941312,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23941312 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 114,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Will Norris",
+            "username": "Will Norris"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "GitHub"
+          },
+          "id": "5f38e99463eb6024176e985d733787160b16cee9",
+          "message": "Restore setjmp/longjmp tests and check zero return values (#20)\n\n* Add a test for longjmp(env, 0) returning one from setjmp\n\nC requires longjmp(env, 0) to make setjmp return 1. The test jumps with 0, 1,\n7, 256 and -1, and exits nonzero on the first value whose setjmp result is\nwrong.\n\nThe existing SetjmpLongjmp tests are disabled for every target, so this is a\nstandalone file picked up by the UnitTests glob.\n\nAI attribution: Claude Code 2.1.295, model Claude Sonnet 5.5\n(claude-sonnet-5-5), reasoning effort high.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_012Tm5osWxSMUvv28Uw7nudx\n\n* Restore setjmp/longjmp unit-test coverage\n\nEnable the existing C tests with output and exit-status oracles. Use permitted setjmp expression contexts, supply the stdio declaration, and repair the C++ destructor lifetime while probing exception support before enabling its test. Correct the standalone zero-return regression to use a control expression as well.\n\nValidation: 24 focused MOS llvm-lit checks pass with the clean CI prerelease compiler and SDK #450 assembly; 28 host C/C++ checks pass. The unfixed SDK fails WhileLoop and longjmp-zero, and all seven oracles reject an incorrect exit status. Test landing requires CI to use the fixed SDK.\n\nAI assistance: OpenAI Codex 0.162.1; model gpt-6.1-sol; medium reasoning effort; verified session 01a1208b-91e0-7e33-b5bf-8787d2a9c919. Original standalone regression attribution remains in the parent commit.\n\n---------\n\nCo-authored-by: Claude Sonnet 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-10T02:10:09Z",
+          "url": "https://github.com/llvm-mos/llvm-test-suite/commit/5f38e99463eb6024176e985d733787160b16cee9"
+        },
+        "date": 1791641111570,
         "tool": "googlecpp",
         "benches": [
           {
