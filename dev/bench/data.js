@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1791598493055,
+  "lastUpdate": 1791600493268,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -219138,6 +219138,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/5f38e99463eb6024176e985d733787160b16cee9"
         },
         "date": 1791598476303,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2275900,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2275900 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1567858,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1567858 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 33933,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 33933 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23941312,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23941312 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 114,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "wbniv@users.noreply.github.com",
+            "name": "Will Norris",
+            "username": "wbniv"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b2b09b72dfca4f8f6fbf1bc3f0ff6c2ccbd9b232",
+          "message": "[common] Make longjmp(env, 0) return one from setjmp (#450)\n\nNormalize an all-zero return value to one in the longjmp epilogue while\npreserving every nonzero 16-bit value, as POSIX.1-2024 (aligned with\nISO C) requires.\n\nAI attribution: Claude Code 2.1.295, model Claude Sonnet 5.5\n(claude-sonnet-5-5), reasoning effort high.\n\n\nClaude-Session: https://claude.ai/code/session_012Tm5osWxSMUvv28Uw7nudx\n\nCo-authored-by: Claude Sonnet 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-09T19:09:40-07:00",
+          "tree_id": "bdcb8ac35a708d956a292287041f59754332a8c1",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/b2b09b72dfca4f8f6fbf1bc3f0ff6c2ccbd9b232"
+        },
+        "date": 1791600482474,
         "tool": "googlecpp",
         "benches": [
           {
