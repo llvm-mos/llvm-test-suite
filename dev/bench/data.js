@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792356546868,
+  "lastUpdate": 1792358647729,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -220022,6 +220022,90 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/llvm-mos/llvm-test-suite/commit/5f38e99463eb6024176e985d733787160b16cee9"
         },
         "date": 1792356529235,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2275900,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2275900 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681622,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681622 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1567858,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1567858 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 33933,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 33933 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23941312,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23941312 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 114,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "Mlund@mac.com",
+            "name": "Mikael Lund",
+            "username": "mlund"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "327de902ffc49f8455ca5447b7682bc77be5de05",
+          "message": "[MEGA65] Correct Mega65 headers for VIC and ethernet controller (#445)\n\n* [MEGA65] Name the $D02F key sequences\n\n$D02F selects which registers appear at $D000-$DFFF, and takes three\ndifferent two-byte sequences: $A5,$96 for VIC-III, $47,$53 for VIC-IV, and\n$45,$54 to map the 45E100 ethernet buffers (mega65-core viciv.vhdl). They\nhad no names.\n\nAdd VIC4_KEY_* alongside the other VIC-IV constants.\n\nAlso correct _45E100.h, which said the controller is \"enabled by writing 0x53\nand then 0x47\". That is the VIC-IV sequence, reversed, and it is not what maps\nthe ethernet buffers.\n\n* [MEGA65] Fix the 45E100 register header\n\nFive problems, all found while writing a driver against it.\n\nThe twenty masks were one flat enum with nothing saying which register each\nbelongs to, and the values repeat: ETH_RST_MASK and ETH_NOPROM_MASK are both\n0b00000001, in $D6E0 and $D6E5. Group them by register and name it.\n\nThe size assertion was inside #ifdef __cplusplus, so it never ran for C\ncallers -- the ones most likely to reach a register by indexing past the\nstruct. Assert for C as well. It also now establishes that the unaligned\nuint16_t miimv at offset 7 gets no padding.\n\n$D6EF was outside the struct entirely, so the debug window had no name and\ncould only be reached by indexing past the end. Add it; the block is\n$D6E0-$D6EF.\n\nETH_RXBF_MASK described only the read. Writing bit 1 of $D6E1 hands back the\ncurrent receive buffer and presents the next frame, and is edge triggered\n(ethernet.vhdl:1787 keeps last_rx_rotate_bit and acts on 0 -> 1), so it takes\ntwo writes. Add ETH_RXROTATE_MASK.\n\nETH_TXPH_MASK and ETH_RXPH_MASK are two-bit fields, so ORing the mask sets\nboth bits rather than a value. Add the shifts.\n\nAlso record that iomap.txt annotates $D6E5.0 as both \"disable promiscuous\nmode\" and \"enable filtering of unicast frames if MAC address does not match\",\nand $D6E5.5 as both the multicast and the unicast enable. The generated\ncomments carry one reading of each; callers should know the other exists.\n\n---------\n\nCo-authored-by: mlund <mlund@localhost>",
+          "timestamp": "2026-10-18T13:51:00-07:00",
+          "tree_id": "a3e99c30db07a12853ee267308149919d591acf0",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/327de902ffc49f8455ca5447b7682bc77be5de05"
+        },
+        "date": 1792358631310,
         "tool": "googlecpp",
         "benches": [
           {
