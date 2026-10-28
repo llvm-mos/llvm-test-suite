@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1793198469192,
+  "lastUpdate": 1793199077746,
   "repoUrl": "https://github.com/llvm-mos/llvm-test-suite",
   "entries": {
     "Benchmark -Os": [
@@ -221441,6 +221441,90 @@ window.BENCHMARK_DATA = {
             "value": 23941290,
             "unit": "cycles/iter",
             "extra": "iterations: 1\ncpu: 23941290 cycles\nthreads: 1"
+          },
+          {
+            "name": "CoreMark",
+            "value": 114,
+            "unit": "sec/iter",
+            "extra": "iterations: 10\ncpu: 114 sec\nthreads: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "16963588+rumbledethumps@users.noreply.github.com",
+            "name": "rumbledethumps",
+            "username": "rumbledethumps"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "555253f65a0fa3b4bbe8a203fe21f160da27f931",
+          "message": "RP6502 update and SDK removal (#455)\n\n* RP6502 v0.34 and SDK removal (#2)\n\n* changes to match cc65 volatile work (#3)\n\n* fix printf padding\n\n* Improve C spec compliance (#4)\n\n* drop static inline, let LTO do it",
+          "timestamp": "2026-10-28T07:28:29-07:00",
+          "tree_id": "6fd7f7b04c8d00d919f7af0f4be71b4cf16e199f",
+          "url": "https://github.com/llvm-mos/llvm-mos-sdk/commit/555253f65a0fa3b4bbe8a203fe21f160da27f931"
+        },
+        "date": 1793199059724,
+        "tool": "googlecpp",
+        "benches": [
+          {
+            "name": "6502-compilers/bench/ccgame/game_01_start",
+            "value": 2269780,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 2269780 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims",
+            "value": 681390,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 681390 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/ccgame/game_modern_optims_structarray",
+            "value": 1567738,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1567738 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/coroutine",
+            "value": 8675,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 8675 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/memcpy",
+            "value": 10142,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 10142 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/rpg",
+            "value": 59,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 59 cycles\nthreads: 1"
+          },
+          {
+            "name": "6502-compilers/bench/unzip",
+            "value": 33933,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 33933 cycles\nthreads: 1"
+          },
+          {
+            "name": "Dhrystone",
+            "value": 1748,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 1748 cycles\nthreads: 1"
+          },
+          {
+            "name": "BYTE Sieve",
+            "value": 23941278,
+            "unit": "cycles/iter",
+            "extra": "iterations: 1\ncpu: 23941278 cycles\nthreads: 1"
           },
           {
             "name": "CoreMark",
